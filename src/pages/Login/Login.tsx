@@ -59,7 +59,7 @@ export const Login: React.FC<Props> = () => {
             return;
         }
         const registerData = {
-            username: username,
+            name: username,
             email: email,
             password: password,
             role: "customer"

@@ -10,7 +10,7 @@ import { logout } from '../../redux/UserReducer/UserReducer';
 
 const Header: React.FC = () => {
     const dispatch: DispatchType = useDispatch();
-    const name = useSelector((state: RootState) => state.UserReducer.username);
+    const name = useSelector((state: RootState) => state.UserReducer.name);
     // const email = useSelector((state: RootState) => state.UserReducer.email);
     const isLogin = useSelector((state: RootState) => state.UserReducer.isAuthenticated);
 

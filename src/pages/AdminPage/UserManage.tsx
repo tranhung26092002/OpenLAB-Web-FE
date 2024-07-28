@@ -60,7 +60,7 @@ const UserManage = () => {
         setCurrentEditingUser(user);
         setIsEditModalVisible(true);
         form.setFieldsValue({
-            username: user.username,
+            username: user.name,
             email: user.email,
             password: '',
             vaiTro: user.role,

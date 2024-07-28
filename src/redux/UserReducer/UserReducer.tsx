@@ -14,7 +14,7 @@ export interface AuthState {
     loading: boolean;
     error: string | null | undefined;
     userId: number | null;
-    username: string | null;
+    name: string | null;
     email: string | null;
     roles: string[] | null;
     users: User[];
@@ -23,7 +23,7 @@ export interface AuthState {
 export interface LoginResponse {
     token: string;
     userId: number | null;
-    username: string | null;
+    name: string | null;
     roles: string[] | null;
     email: string | null;
     message: string;
@@ -48,14 +48,14 @@ export interface ApiResponse {
 
 export interface User {
     id: number;
-    username: string,
+    name: string,
     email: string;
     password: string;
     role: string;
 }
 
 export interface newUser {
-    username: string,
+    name: string,
     email: string;
     password: string;
     role: string;
@@ -69,7 +69,7 @@ const initialState: AuthState = {
     loading: false,
     error: "",
     userId: userLoginData && userLoginData.userId ? Number(userLoginData.userId) : null,
-    username: userLoginData && userLoginData.username ? userLoginData.username : '',
+    name: userLoginData && userLoginData.name ? userLoginData.name : '',
     email: userLoginData && userLoginData.email ? userLoginData.email : '',
     roles: userLoginData && Array.isArray(userLoginData.roles) ? userLoginData.roles : [], // xử lý role là mảng
     users: []
@@ -85,7 +85,7 @@ export const loginUser = createAsyncThunk<LoginResponse, LoginRequestPayload, { 
                 return {
                     token: response.data.data.token,
                     userId: response.data.data.id,
-                    username: response.data.data.username,
+                    name: response.data.data.name,
                     roles: response.data.data.roles,
                     email: response.data.data.email,
                     message: response.data.message,
@@ -134,7 +134,7 @@ export const editUser = createAsyncThunk<ApiResponse, { userId: number, userData
     async ({ userId, userData }, thunkAPI) => {
         try {
             const params = new URLSearchParams();
-            params.append('username', userData.username);
+            params.append('username', userData.name);
             params.append('email', userData.email);
             params.append('password', userData.password);
             params.append('role', userData.role);
@@ -180,7 +180,7 @@ const userReducer = createSlice({
             state.token = null;
             state.isAuthenticated = false;
             state.userId = null;
-            state.username = null;
+            state.name = null;
             state.email = null;
             state.roles = null;
             localStorage.removeItem('token');
@@ -202,13 +202,13 @@ const userReducer = createSlice({
                 state.token = action.payload.token;
                 state.userId = action.payload.userId;
                 state.roles = action.payload.roles;
-                state.username = action.payload.username;
+                state.name = action.payload.name;
                 state.email = action.payload.email;
                 settings.setStorage(ACCESS_TOKEN, action.payload.token);
                 settings.setStorageJson(USER_LOGIN, {
                     token: action.payload.token,
                     userId: action.payload.userId,
-                    username: action.payload.username,
+                    name: action.payload.name,
                     roles: action.payload.roles,
                     email: action.payload.email,
                 });
