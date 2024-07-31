@@ -5,7 +5,7 @@ FROM node:20 AS build
 WORKDIR /app
 
 # Sao chép các file cấu hình của dự án
-COPY package*.json ./
+COPY package.json .
 
 # Cài đặt các phụ thuộc
 RUN npm install
