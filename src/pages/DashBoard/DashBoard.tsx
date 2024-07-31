@@ -9,8 +9,7 @@ const DashBoard: React.FC = () => {
     const [temperature, setTemperature] = useState<number>(0);
     const [humidity, setHumidity] = useState<number>(0);
     const [gas, setGas] = useState<number>(0);
-    const [led, setLed] = useState<string>('off'); // Trạng thái của đèn LED ('on' hoặc 'off')
-    // const [buzzer, setBuzzer] = useState<number>(0);
+    const [led, setLed] = useState<string>('off');
     const [connectionStatus, setConnectionStatus] = useState<string>('Disconnected');
     const [temperatureHistory, setTemperatureHistory] = useState<number[]>([]);
     const [humidityHistory, setHumidityHistory] = useState<number[]>([]);
@@ -34,13 +33,11 @@ const DashBoard: React.FC = () => {
                 const humidityValue = parseFloat(data.humidity).toFixed(2);
                 const gasValue = parseFloat(data.gas).toFixed(2);
                 const ledValue = data.led || 'off';
-                // const buzzerValue = data.buzzer || 0;
 
                 setTemperature(parseFloat(temperatureValue));
                 setHumidity(parseFloat(humidityValue));
                 setGas(parseFloat(gasValue));
                 setLed(ledValue);
-                // setBuzzer(buzzerValue);
 
                 updateTemperatureHistory(parseFloat(temperatureValue));
                 updateHumidityHistory(parseFloat(humidityValue));
@@ -72,13 +69,8 @@ const DashBoard: React.FC = () => {
 
     const toggleLed = () => {
         if (client) {
-            // Chuyển đổi trạng thái LED từ 'off' sang 'on' hoặc ngược lại
             const newLedState = led === 'off' ? 1 : 0;
-
-            // Gửi tin nhắn qua MQTT với trạng thái LED mới (1 hoặc 0)
             client.publish('client', JSON.stringify({ led: newLedState }));
-
-            // Cập nhật trạng thái LED trong component
             setLed(newLedState === 1 ? 'on' : 'off');
         }
     };
@@ -87,17 +79,6 @@ const DashBoard: React.FC = () => {
         <Fragment>
             <Header />
             <div className={styles.container}>
-                {/* <aside className={styles.sidebar}>
-                    <div className={styles.top}>
-                        <div className={styles.logo}>
-                        </div>
-                    </div>
-                    <nav className={styles.nav}>
-                        <a href="#" className={styles.active}>
-                            <h3>Dashboard</h3>
-                        </a>
-                    </nav>
-                </aside> */}
                 <main className={styles.mainContent}>
                     <div className={styles.content_container}>
                         <div className={styles.header_content}>
@@ -115,7 +96,7 @@ const DashBoard: React.FC = () => {
                                     <h1>{temperature.toFixed(2)}°C</h1>
                                 </div>
                                 <div className={styles.icon} style={{ color: 'red' }}>
-                                    <i className="fas fa-thermometer-half"></i> {/* Nhiệt độ */}
+                                    <i className="fas fa-thermometer-half"></i>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +107,7 @@ const DashBoard: React.FC = () => {
                                     <h1>{humidity.toFixed(2)}%</h1>
                                 </div>
                                 <div className={styles.icon} style={{ color: 'blue' }}>
-                                    <i className="fas fa-tint"></i> {/* Độ ẩm */}
+                                    <i className="fas fa-tint"></i>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +118,7 @@ const DashBoard: React.FC = () => {
                                     <h1>{gas.toFixed(2)} ppm</h1>
                                 </div>
                                 <div className={styles.icon} style={{ color: 'green' }}>
-                                    <i className="fas fa-gas-pump"></i> {/* Khí gas */}
+                                    <i className="fas fa-gas-pump"></i>
                                 </div>
                             </div>
                         </div>
@@ -279,7 +260,7 @@ const DashBoard: React.FC = () => {
                                             threshold: {
                                                 line: { color: 'red', width: 4 },
                                                 thickness: 0.75,
-                                                value: 300,
+                                                value: 500,
                                             },
                                         },
                                     },

@@ -33,7 +33,7 @@ const Products = () => {
     }, [searchTerm, searchResults, currentItems]);
 
     const totalItemsToDisplay = searchTerm ? (searchResults.data ? searchResults.data.length : 0) : data.length;
-    // console.log("searchResults", searchResults);
+
     const debouncedSearch = debounce((term) => {
         if (term) {
             dispatch(searchCourse(term));
@@ -85,8 +85,6 @@ const Products = () => {
             });
         });
     };
-
-
 
     const handleDetail = (ProductId: number) => {
         navigate(`/products/detail?productId=${ProductId}`);
@@ -210,6 +208,9 @@ const Products = () => {
                                             onChange={handleSearch}
                                         />
                                     </div>
+                                    {searchTerm && searchResults.data && searchResults.data.length === 0 && (
+                                        <div>Không tìm thấy kết quả cho "{searchTerm}".</div>
+                                    )}
                                 </div>
                             </Col>
                         </Row>

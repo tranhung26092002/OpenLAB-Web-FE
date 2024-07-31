@@ -13,84 +13,7 @@ $header-height: 60px;
     display: flex;
     height: 100vh;
 
-    aside.sidebar {
-        width: $sidebar-width;
-        background-color: $sidebar-bg;
-        color: $sidebar-text-color;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        border-radius: 0.5rem;  // Bo góc cho toàn bộ sidebar
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  // Tạo hiệu ứng bóng đáy
-    
-        .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-    
-            .logo {
-                display: flex;
-                align-items: center;
-    
-                img {
-                    height: 40px;
-                    border-radius: 50%;
-                    margin-right: 0.5rem;
-                }
-    
-                h2 {
-                    font-size: 1.5rem;
-                    margin: 0;
-                }
-            }
-    
-            .close {
-                cursor: pointer;
-                font-size: 1.5rem;
-                padding: 0.5rem;
-                border-radius: 50%;
-                transition: background-color 0.3s;
-    
-                &:hover {
-                    background-color: rgba(255, 255, 255, 0.1);
-                }
-            }
-        }
-    
-        .nav {
-            display: flex;
-            flex-direction: column;
-    
-            a {
-                display: flex;
-                align-items: center;
-                color: $sidebar-text-color;
-                text-decoration: none;
-                padding: 0.75rem 1rem;
-                border-radius: 0.5rem;
-                transition: background-color 0.3s;
-    
-                &:hover,
-                &.active {
-                    background-color: $primary-color;
-                }
-    
-                .material_symbols_sharp {
-                    font-size: 1.25rem;
-                    margin-right: 0.5rem;
-                }
-    
-                h3 {
-                    margin: 0;
-                    font-size: 1rem;
-                }
-            }
-        }
-    }
-    
-
-    main {
+    .mainContent {
         flex: 1;
         background-color: $main-bg;
         padding: 1rem;
@@ -239,32 +162,7 @@ $header-height: 60px;
     .container {
         flex-direction: column;
 
-        aside {
-            width: 100%;
-            position: relative;
-            box-shadow: none;
-
-            .top {
-                flex-direction: column;
-                align-items: flex-start;
-
-                .logo {
-                    margin-bottom: 1rem;
-                }
-            }
-
-            .nav {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-
-                a {
-                    margin: 0.5rem;
-                }
-            }
-        }
-
-        main {
+        .mainContent {
             padding: 0.5rem;
         }
 

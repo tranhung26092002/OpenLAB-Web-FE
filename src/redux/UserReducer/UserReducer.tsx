@@ -18,6 +18,7 @@ export interface AuthState {
     email: string | null;
     roles: string[] | null;
     users: User[];
+    user: User | null;
 }
 
 export interface LoginResponse {
@@ -52,6 +53,7 @@ export interface User {
     email: string;
     password: string;
     role: string;
+    phone: string
 }
 
 export interface newUser {
@@ -72,7 +74,8 @@ const initialState: AuthState = {
     name: userLoginData && userLoginData.name ? userLoginData.name : '',
     email: userLoginData && userLoginData.email ? userLoginData.email : '',
     roles: userLoginData && Array.isArray(userLoginData.roles) ? userLoginData.roles : [], // xử lý role là mảng
-    users: []
+    users: [],
+    user: null
 };
 
 export const loginUser = createAsyncThunk<LoginResponse, LoginRequestPayload, { rejectValue: RejectedValue }>(
@@ -134,7 +137,7 @@ export const editUser = createAsyncThunk<ApiResponse, { userId: number, userData
     async ({ userId, userData }, thunkAPI) => {
         try {
             const params = new URLSearchParams();
-            params.append('username', userData.name);
+            params.append('name', userData.name);
             params.append('email', userData.email);
             params.append('password', userData.password);
             params.append('role', userData.role);
@@ -146,6 +149,16 @@ export const editUser = createAsyncThunk<ApiResponse, { userId: number, userData
         }
     }
 );
+
+
+export const getUser = createAsyncThunk(
+    'auth/getUser',
+    async ( userId: number | null) => {       
+        const response = await http.get(`/auth/${userId}`);
+        return response.data;       
+    }
+);
+
 
 export const getAllUsers = createAsyncThunk<ApiResponse, void, { rejectValue: string }>(
     'auth/getAllUsers',
@@ -186,7 +199,7 @@ const userReducer = createSlice({
             localStorage.removeItem('token');
             settings.clearStorage(ACCESS_TOKEN);
             settings.clearStorage(USER_LOGIN);
-            window.location.reload();
+            // window.location.reload();
             history.push("/login");
         }
     },
@@ -236,6 +249,11 @@ const userReducer = createSlice({
                     state.users[index] = action.payload.data;
                 }
                 state.loading = false;
+            })
+
+            builder.addCase(getUser.fulfilled, (state, action) => {
+                state.loading = action.payload.status;
+                state.user = action.payload.data;
             })
 
             .addCase(getAllUsers.fulfilled, (state, action: PayloadAction<ApiResponse>) => {

@@ -16,6 +16,7 @@ import RoleGuard from './components/RoleGuard';
 import AuthGuard from './components/AuthGuard';
 
 import AdminPage from './pages/AdminPage/AdminPage';
+import AccountPage from './pages/Home/Account/Account';
 import ContactPage from './pages/Home/Contact/Contact';
 import AboutPage from './pages/Home/About/About';
 import BlogPage from './pages/Home/Blog/Blog';
@@ -40,6 +41,7 @@ root.render(
         <Route path="/login" element={<Login />}></Route>
         <Route path="/admin" element={<RoleGuard requiredRole="admin"><AdminPage></AdminPage></RoleGuard>}></Route>
 
+        <Route path='/account' element={<AuthGuard><AccountPage></AccountPage></AuthGuard>}></Route>
         <Route path='/contact' element={<ContactPage></ContactPage>}></Route>
         <Route path='/about' element={<AboutPage></AboutPage>}></Route>
         <Route path='/blog' element={<BlogPage></BlogPage>}></Route>

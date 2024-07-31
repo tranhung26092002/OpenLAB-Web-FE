@@ -26,10 +26,6 @@ const Header: React.FC = () => {
         history.push("/account");
     };
 
-    const handleChangePass = () => {
-        history.push("/account/change-password")
-    };
-
     const handlePurchase = () => {
         history.push("/account/order-history");
     }
@@ -42,9 +38,6 @@ const Header: React.FC = () => {
         <Menu>
             <Menu.Item key="profile">
                 <span className="text-decoration-none" onClick={handleProfile}>Trang cá nhân</span>
-            </Menu.Item>
-            <Menu.Item key="change-password">
-                <span className="text-decoration-none" onClick={handleChangePass}>Đổi mật khẩu</span>
             </Menu.Item>
             <Menu.Item key="purchase-history">
                 <span className="text-decoration-none" onClick={handlePurchase}>Lịch sử mua hàng</span>
@@ -69,8 +62,8 @@ const Header: React.FC = () => {
             <Menu.Item key="price">
                 <NavLink to="/price">Báo giá</NavLink>
             </Menu.Item>
-            <Menu.Item key="blog">
-                <NavLink to="/blog">Blog</NavLink>
+            <Menu.Item key="dashboard">
+                <NavLink to="/dashboard">Dashboard</NavLink>
             </Menu.Item>
             <Menu.Item key="contact">
                 <NavLink to="/contact">Liên hệ</NavLink>
@@ -113,10 +106,10 @@ const Header: React.FC = () => {
                             Báo giá
                         </NavLink><br />
                         <NavLink
-                            to="/blog"
+                            to="/dashboard"
                             className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                         >
-                            Blog
+                            Dashboard
                         </NavLink><br />
                         <NavLink
                             to="/contact"

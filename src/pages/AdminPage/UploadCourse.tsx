@@ -49,7 +49,7 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                 title: values.title,
                 thumbnail: thumbnailFile,
                 createdBy: values.createdBy,
-                typeCourse: values.typeCourse,
+                typeProduct: values.typeProduct,
                 isPublish: values.isPublish,
                 description: values.description,
                 originalPrice: values.originalPrice
@@ -146,7 +146,7 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                                             id: record.id,
                                             title: record.title,
                                             createdBy: record.createdBy,
-                                            typeProduct: record.typeCourse,
+                                            typeProduct: record.typeProduct,
                                             isPublish: record.isPublish,
                                             description: record.description,
                                             originalPrice: record.originalPrice,

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, Fragment, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { notification, Card, Row, Col, Button, List, Pagination, AutoComplete } from 'antd';
+import { Card, Row, Col, Button, List, Pagination, AutoComplete } from 'antd';
 import { debounce } from 'lodash';
 
 import { DispatchType, RootState } from '../../../redux/configStore';
-import { addCourse, fetchAllMyProduct, searchMyProduct } from '../../../redux/MyLearningReducer/MyLearningReducer';
+import { fetchAllMyProduct, searchMyProduct } from '../../../redux/MyLearningReducer/MyLearningReducer';
 import Header from '../../../components/Header/Header';
 import Footer from '../../../components/Footer/Footer';
 import styles from './Mylearning.module.scss';
@@ -19,7 +19,6 @@ const MyLearning: React.FC = () => {
     const userId = useSelector((state: RootState) => state.UserReducer.userId);
     const searchResults = useSelector((state: RootState) => state.MyLearningReducer.searchResult) as any;
 
-    const [deviceId, setDeviceId] = useState<string>('');
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(3);
     const [searchTerm, setSearchTerm] = useState('');
@@ -49,47 +48,6 @@ const MyLearning: React.FC = () => {
         debouncedSearch(value);
     };
 
-    const handleAddDevice = (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (deviceId.trim() === '') {
-            alert('Vui lòng nhập ID thiết bị.');
-            return;
-        }
-
-        const data = {
-            deviceId: deviceId,
-            userId: userId
-        };
-
-        dispatch(addCourse(data)).then((action: any) => {
-            if (action.payload.status === 200) {
-                notification.success({
-                    message: 'Thành công',
-                    description: 'Thêm thiết bị thành công!',
-                    duration: 1,
-                });
-
-                setDeviceId('');
-                dispatch(fetchAllMyProduct(userId)); // Update list after successful addition
-            } else {
-                notification.error({
-                    message: 'Lỗi',
-                    description: 'Thêm thiết bị thất bại. Vui lòng thử lại!',
-                    duration: 1,
-                });
-            }
-            navigate("/my-learning");
-        }).catch((error) => {
-            console.error('Error:', error);
-            notification.error({
-                message: 'Lỗi',
-                description: 'Thêm thiết bị thất bại. Vui lòng thử lại!',
-                duration: 1,
-            });
-        });
-    };
-
     const handleDetail = (ProductId: number) => {
         navigate(`/my-learning/detail?productId=${ProductId}`);
     };
@@ -102,7 +60,7 @@ const MyLearning: React.FC = () => {
         <Fragment>
             <Header />
             <div className={styles.products_padding}>
-            <section className={styles.container_course}>
+                <section className={styles.container_course}>
                     <div className={styles.items}>
                         <Row gutter={16}>
                             <Col span={18}>
@@ -147,6 +105,9 @@ const MyLearning: React.FC = () => {
                                             onChange={handleSearch}
                                         />
                                     </div>
+                                    {searchTerm && searchResults.data && searchResults.data.length === 0 && (
+                                        <div>Không tìm thấy kết quả cho "{searchTerm}".</div>
+                                    )}
                                 </div>
                             </Col>
                         </Row>
