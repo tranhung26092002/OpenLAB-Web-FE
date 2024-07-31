@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Mở cổng 80 để phục vụ ứng dụng
-EXPOSE 80
+EXPOSE 3000
 
 # Khởi động node
 CMD ["npm", "start"]
