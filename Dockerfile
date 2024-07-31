@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Mở cổng 80 để phục vụ ứng dụng
-EXPOSE 3000
+EXPOSE 80
 
-# Khởi động Nginx
+# Khởi động node
 CMD ["npm", "start"]
