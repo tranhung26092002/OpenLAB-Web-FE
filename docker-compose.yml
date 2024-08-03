@@ -1,18 +1,44 @@
-version: '3.9'
+version: '3'
 
 services:
-  mosquitto:
-    container_name: mqtt
-    image: eclipse-mosquitto
-    restart: always
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-app
+    expose:
+      - "80"
+      - "443"
     volumes:
-      - ./config:/mosquitto/config
-      - ./data:/mosquitto/data
-      - ./log:/mosquitto/log
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - certbot
+    networks:
+      - web
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./webroot:/var/lib/letsencrypt
+    entrypoint: "/bin/sh -c 'certbot certonly --webroot -w /var/lib/letsencrypt -d openlab.com.vn && cp -r /etc/letsencrypt /var/lib/letsencrypt'"
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
     ports:
-      - 1883:1883
-      - 9001:9001
-volumes:
-  config:
-  data:
-  log:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - react-app
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
