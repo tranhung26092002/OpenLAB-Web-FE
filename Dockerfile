@@ -5,17 +5,16 @@ FROM node:20 AS build
 WORKDIR /app
 
 # Sao chép các file cấu hình của dự án
-COPY package.json package-lock.json ./
+COPY package.json .
+
+# Cài đặt các phụ thuộc
 RUN npm install
 
 # Sao chép toàn bộ mã nguồn vào container
 COPY . .
 
-# Build ứng dụng
-RUN npm run build
+# Mở cổng 80 để phục vụ ứng dụng
+EXPOSE 3000
 
-# Bước 2: Sử dụng image Nginx để phục vụ ứng dụng
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 80
+# Khởi động node
+CMD ["npm", "start"]
