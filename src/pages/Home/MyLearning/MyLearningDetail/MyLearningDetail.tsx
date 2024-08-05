@@ -54,14 +54,14 @@ const MylearningDetailPage = () => {
                             <h2>{titleLesson}</h2>
                         </div>
                         <div className={styles.aspect_video}>
-                            <iframe
-                                src={`${DOMAIN_VIDEO}/api/upload/video/${videoUrl}`}
+                            <video
                                 title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerPolicy="strict-origin-when-cross-origin"
-                                allowFullScreen
-                            ></iframe>
+                                controls
+                                src={`${DOMAIN_VIDEO}/api/upload/video/${videoUrl}`}
+                                style={{ border: '1px solid #ddd', borderRadius: '4px' }}
+                            >
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
 
                     </div>
