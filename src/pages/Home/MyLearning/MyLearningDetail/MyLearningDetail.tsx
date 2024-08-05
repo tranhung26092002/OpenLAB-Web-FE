@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DispatchType, RootState } from '../../../../redux/configStore';
 import { fetchMyProductDetail } from '../../../../redux/MyLearningReducer/MyLearningReducer';
 import { useLocation } from 'react-router-dom';
+import { DOMAIN_VIDEO } from '../../../../../src/util/config';
 
 const MylearningDetailPage = () => {
     const location = useLocation();
@@ -54,7 +55,7 @@ const MylearningDetailPage = () => {
                         </div>
                         <div className={styles.aspect_video}>
                             <iframe
-                                src={videoUrl}
+                                src={`${DOMAIN_VIDEO}/api/upload/video/${videoUrl}`}
                                 title="YouTube video player"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
