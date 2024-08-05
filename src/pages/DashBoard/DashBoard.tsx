@@ -18,7 +18,7 @@ const DashBoard: React.FC = () => {
     const [client, setClient] = useState<mqtt.MqttClient | null>(null);
 
     useEffect(() => {
-        const mqttClient = mqtt.connect('ws://222.255.119.57:9001/mqtt');
+        const mqttClient = mqtt.connect('ws://222.255.119.57:8083/mqtt');
         setClient(mqttClient);
 
         mqttClient.on('connect', () => {
