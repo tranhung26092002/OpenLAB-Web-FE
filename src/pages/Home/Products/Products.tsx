@@ -157,7 +157,7 @@ const Products = () => {
                         <h2 className={styles.content_header}>
                             Khóa học lập trình nhúng IoT
                         </h2>
-                        <a href="/products/course">
+                        <a href="/products">
                             <button type='button' className={styles.btn_header}>
                                 Xem thêm
                             </button>
@@ -165,55 +165,47 @@ const Products = () => {
                     </div>
 
                     <div className={styles.items}>
-                        <Row gutter={16}>
-                            <Col span={18}>
-                                <List
-                                    itemLayout="horizontal"
-                                    dataSource={Array.isArray(itemsToDisplay) ? itemsToDisplay : []}
-                                    renderItem={item => (
-                                        <Card style={{ width: '100%', marginTop: 16 }}>
-                                            <Row align="middle" gutter={16}>
-                                                <Col span={6}>
-                                                    <img src={(item.thumbnail)} alt={(item.title)} style={{ width: '100%' }} />
-                                                </Col>
-                                                <Col span={18}>
-                                                    <div className={styles.desciption_item}>
-                                                        <h3 className={styles.text_item}>
-                                                            {item.title}
-                                                        </h3>
-                                                        <div className={styles.price_item}>
-                                                            <strong>
-                                                                {item.originalPrice.toLocaleString()}
-                                                                <span> VND</span>
-                                                            </strong>
-                                                        </div>
-                                                    </div>
-                                                    <Button onClick={() => handleDetail(item.id)}>
-                                                        Chi Tiết
-                                                    </Button>
-                                                </Col>
-                                            </Row>
-                                        </Card>
-                                    )}
+                        <div className={styles.search_container}>
+                            <h4>Tìm kiếm</h4>
+                            <div className={styles.search_bar}>
+                                <AutoComplete
+                                    style={{ flex: 1 }}
+                                    placeholder="Tìm kiếm bài IoT..."
+                                    value={searchTerm}
+                                    onChange={handleSearch}
                                 />
-                            </Col>
-                            <Col span={6}>
-                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                                    <h4>Tìm kiếm</h4>
-                                    <div style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
-                                        <AutoComplete
-                                            style={{ flex: 1 }}
-                                            placeholder="Tìm kiếm bài IoT..."
-                                            value={searchTerm}
-                                            onChange={handleSearch}
-                                        />
-                                    </div>
-                                    {searchTerm && searchResults.data && searchResults.data.length === 0 && (
-                                        <div>Không tìm thấy kết quả cho "{searchTerm}".</div>
-                                    )}
-                                </div>
-                            </Col>
-                        </Row>
+                            </div>
+                            {searchTerm && searchResults.data && searchResults.data.length === 0 && (
+                                <div>Không tìm thấy kết quả cho "{searchTerm}".</div>
+                            )}
+                        </div>
+                        <div className={styles.item_grid}>
+                            <Row gutter={[16, 16]}>
+                                {Array.isArray(itemsToDisplay) && itemsToDisplay.map((item, index) => (
+                                    <Col xs={24} sm={12} md={8} key={index}>
+                                        <Card className={styles.card}>
+                                            <div className={styles.image_container}>
+                                                <img src={item.thumbnail} alt={item.title} className={styles.image} />
+                                            </div>
+                                            <div className={styles.description_item}>
+                                                <h3 className={styles.text_item}>
+                                                    {item.title}
+                                                </h3>
+                                                <div className={styles.price_item}>
+                                                    <strong>
+                                                        {item.originalPrice?.toLocaleString() || 'N/A'}
+                                                        <span> VND</span>
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                            <Button onClick={() => handleDetail(item.id)}>
+                                                Chi Tiết
+                                            </Button>
+                                        </Card>
+                                    </Col>
+                                ))}
+                            </Row>
+                        </div>
                     </div>
 
                     <div className={styles.paginationContainer}>

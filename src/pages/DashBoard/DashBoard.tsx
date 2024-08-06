@@ -79,7 +79,7 @@ const DashBoard: React.FC = () => {
         <Fragment>
             <Header />
             <div className={styles.container}>
-                <main className={styles.mainContent}>
+                <div className={styles.mainContent}>
                     <div className={styles.content_container}>
                         <div className={styles.header_content}>
                             <h1>OpenKIT-B</h1>
@@ -117,7 +117,7 @@ const DashBoard: React.FC = () => {
                                     <h3>Gas</h3>
                                     <h1>{gas.toFixed(2)} ppm</h1>
                                 </div>
-                                <div className={styles.icon} style={{ color: 'green' }}>
+                                <div className={styles.icon} style={{ color: 'brown' }}>
                                     <i className="fas fa-gas-pump"></i>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@ const DashBoard: React.FC = () => {
                                 </div>
                                 <div
                                     className={styles.icon}
-                                    style={{ color: led === 'off' ? 'yellow' : 'red' }}
+                                    style={{ color: led === 'off' ? 'green' : 'red' }}
                                 >
                                     <i className="fas fa-lightbulb"></i>
                                 </div>
@@ -270,7 +270,7 @@ const DashBoard: React.FC = () => {
                             />
                         </div>
                     </div>
-                </main>
+                </div>
             </div>
             <Footer />
         </Fragment>

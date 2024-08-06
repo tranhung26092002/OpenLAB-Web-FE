@@ -13,27 +13,27 @@ const Contact = () => {
             <Header />
             <div className={styles.container}>
                 <div className={styles.infor_tex}>
-                    <h2>Liên Hệ A.I-Soft</h2>
+                    <h2>Liên Hệ OpenLAB</h2>
                     <p>Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần. Chúng tôi sẽ phản hồi trong thời gian sớm nhất!</p>
                     <ul>
                         <li>
                             <div>
                                 <i className="fa-solid fa-envelope"></i>
-                                <a href="mailto:contact@aisoft.com.vn">contact@aisoft.com.vn</a>
+                                <a href="mailto:vanhung.tran@openlab.com.vn">vanhung.tran@openlab.com.vn</a>
                             </div>
                             <hr />
                         </li>
                         <li>
                             <div>
                                 <i className="fa-solid fa-phone"></i>
-                                <a href="tel:0856606961">085.660.6961</a>
+                                <a href="tel:+84856606961">(+84) 12 345 5679</a>
                             </div>
                             <hr />
                         </li>
                         <li>
                             <div>
                                 <i className="fa-solid fa-location-pin"></i>
-                                <a href="">Tầng 2, Tòa New Skyline Văn Quán, Hà Đông, HN</a>
+                                <a href="">Tầng 8, tòa A2, Học viện Công nghệ Bưu chính Viễn thông, Văn Quán, Hà Đông, HN</a>
                             </div>
                         </li>
                     </ul>

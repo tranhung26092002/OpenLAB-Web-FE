@@ -1,17 +1,18 @@
 // Đặt biến màu sắc và kích thước cho dễ quản lý
-$primary-color: #f88542;
+$primary-color: #484bf9;
 $sidebar-bg: #fff;
 $sidebar-text-color: #fff;
 $main-bg: #f4f4f4;
 $card-bg: #fff;
 $card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 $sidebar-width: 250px;
 $header-height: 60px;
 
 // Container chính
 .container {
     display: flex;
-    height: 100vh;
+    flex-direction: column; // Để chính xác khi màn hình nhỏ
 
     .mainContent {
         flex: 1;
@@ -25,7 +26,7 @@ $header-height: 60px;
             background-color: $card-bg;
             padding: 1rem;
             box-shadow: $card-shadow;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem; // Bo góc cho phần tử
             margin-bottom: 1rem;
 
             .header_content {
@@ -34,8 +35,8 @@ $header-height: 60px;
                 h1 {
                     margin: 0;
                     font-weight: bold;
-                    color: red;
-                    font-size: 60px;
+                    color: #dc3545; // Đổi màu chữ cho tiêu đề
+                    font-size: 3rem; // Điều chỉnh kích thước tiêu đề
                 }
             }
 
@@ -43,7 +44,7 @@ $header-height: 60px;
                 margin-bottom: 10px;
                 h3 {
                     margin: 0;
-                    font-size: 25px;
+                    font-size: 1.5rem;
                 }
 
                 .status {
@@ -63,11 +64,17 @@ $header-height: 60px;
                 background-color: $card-bg;
                 padding: 1rem;
                 box-shadow: $card-shadow;
-                border-radius: 0.5rem;
+                border-radius: 0.75rem; // Bo góc cho phần tử
                 flex: 1;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                transition: box-shadow 0.3s ease, transform 0.3s ease; // Thêm hiệu ứng chuyển đổi
+
+                &:hover {
+                    box-shadow: $hover-shadow; // Hiệu ứng nổi lên
+                    transform: translateY(-5px); // Hiệu ứng di chuyển lên
+                }
 
                 .insightContent {
                     display: flex;
@@ -78,17 +85,14 @@ $header-height: 60px;
                         h3 {
                             margin: 0;
                             font-size: 1rem;
-                            color: black;
+                            color: #333; // Đổi màu chữ cho phần left
                         }
 
                         h1 {
                             margin: 0;
                             font-size: 2rem;
                             font-weight: bold;
-                            color: black;
-                        }
-                        .ledContent{
-                            
+                            color: #333; // Đổi màu chữ cho tiêu đề trong phần left
                         }
                     }
 
@@ -102,21 +106,23 @@ $header-height: 60px;
         .histories {
             h2 {
                 margin-bottom: 1rem;
+                color: #333; // Đổi màu chữ cho tiêu đề của phần lịch sử
             }
         
             .history_charts {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1rem;
-        
+                justify-content: center; // Căn giữa các biểu đồ
+
                 .history_chart_item {
-                    flex: 1;
-                    min-width: 300px; // Đảm bảo mỗi biểu đồ có đủ không gian
+                    flex: 1 1 calc(33% - 1rem); // Đảm bảo ba biểu đồ trên một hàng với khoảng cách giữa chúng
+                    min-width: 300px; // Chiều rộng tối thiểu cho các biểu đồ
                     height: 300px; // Điều chỉnh chiều cao theo nhu cầu
-                    background-color: #fff;
-                    border-radius: 0.5rem;
+                    background-color: $card-bg;
+                    border-radius: 0.75rem; // Bo góc cho phần tử
                     box-shadow: $card-shadow;
-        
+
                     // Đảm bảo các biểu đồ có độ cao và chiều rộng đầy đủ
                     .react-plotly.js-plot {
                         width: 100%;
@@ -133,7 +139,7 @@ $header-height: 60px;
         
                 .history_chart_item {
                     min-width: 100%; // Chiếm toàn bộ chiều ngang khi màn hình nhỏ
-                    height: 300px; // Điều chỉnh chiều cao theo nhu cầu
+                    height: 200px; // Điều chỉnh chiều cao theo nhu cầu
                 }
             }
         }
@@ -141,6 +147,7 @@ $header-height: 60px;
         .gauges {
             h2 {
                 margin-bottom: 1rem;
+                color: #333; // Đổi màu chữ cho tiêu đề của phần gauge
             }
 
             .gauge_charts {
@@ -151,6 +158,15 @@ $header-height: 60px;
                 .plot-container {
                     width: 300px;
                     height: 250px;
+                    background-color: $card-bg;
+                    border-radius: 0.75rem; // Bo góc cho phần tử
+                    box-shadow: $card-shadow;
+                    transition: box-shadow 0.3s ease, transform 0.3s ease; // Thêm hiệu ứng chuyển đổi
+
+                    &:hover {
+                        box-shadow: $hover-shadow; // Hiệu ứng nổi lên
+                        transform: translateY(-5px); // Hiệu ứng di chuyển lên
+                    }
                 }
             }
         }
@@ -167,11 +183,11 @@ $header-height: 60px;
         }
 
         .insights,
-        .ledControl,
         .histories,
         .gauges {
-            .plot-container {
-                height: 200px;
+            .plot-container,
+            .history_chart_item {
+                height: 200px; // Điều chỉnh chiều cao cho phù hợp với màn hình nhỏ
             }
         }
 
@@ -179,6 +195,52 @@ $header-height: 60px;
             .gauge_charts {
                 flex-direction: column;
                 align-items: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .container {
+        .mainContent {
+            padding: 1rem;
+        }
+
+        .insights,
+        .histories,
+        .gauges {
+            .plot-container,
+            .history_chart_item {
+                height: 250px; // Điều chỉnh chiều cao cho màn hình vừa phải
+            }
+        }
+
+        .gauges {
+            .gauge_charts {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+@media (min-width: 1201px) {
+    .container {
+        .mainContent {
+            padding: 1rem;
+        }
+
+        .insights,
+        .histories,
+        .gauges {
+            .plot-container,
+            .history_chart_item {
+                height: 300px; // Điều chỉnh chiều cao cho màn hình lớn
+            }
+        }
+
+        .gauges {
+            .gauge_charts {
+                flex-direction: row;
             }
         }
     }

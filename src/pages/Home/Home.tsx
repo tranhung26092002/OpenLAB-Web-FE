@@ -23,7 +23,7 @@ export const Home = (props: Props) => {
                             <p className={styles.description}>
                                 Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến các dịch vụ chất lượng có giá trị thực tiễn cao!
                             </p>
-                            <a className={styles.btn} href="/home/products">
+                            <a className={styles.btn} href="/products">
                                 Các dịch vụ của chúng tôi
                             </a>
                         </div>
@@ -117,7 +117,7 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/home/product">E-LAB: Thực hành trực tuyến AI/IoT</a>
+                                        <a href="/products">E-LAB: Thực hành trực tuyến AI/IoT</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
@@ -149,7 +149,7 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/home/product">E-KIT: Hệ thống KIT thực hành thông minh AI/Iot</a>
+                                        <a href="/products">E-KIT: Hệ thống KIT thực hành thông minh AI/Iot</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
@@ -180,7 +180,7 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/home/product">E-Course: Khóa học thực hành chuyên sâu AI/IoT</a>
+                                        <a href="/products">E-Course: Khóa học thực hành chuyên sâu AI/IoT</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
@@ -210,38 +210,7 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/home/product">E-Bot: Chatbot AI hỗ trợ thực hành trực tuyến</a>
-                                    </div>
-                                    <div className={styles.project_meta_info}>
-                                        <i className="far fa-quote-left me-2"></i>
-                                        Trục liên thông là nền tảng kết nối, chia sẻ dữ liệu giữa các hệ thống thông tin phục vụ chỉ đạo, điều hành của toàn trường; Kết nối, chia sẻ dữ liệu giữa các hệ thống của Trường với Bộ                                    </div>
-                                    <div className={styles.project_footer}>
-                                        <div className={styles.project_price}></div>
-                                        <a className={styles.btn} href="/home/product">
-                                            Xem chi tiết
-                                            <i className="fa fa-long-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.project_column}>
-                            <div className={styles.project_grid}>
-                                <div className={styles.project_header}>
-                                    <span>
-                                        <img src={require("../../assets/img/project3.webp")} alt="project 3" />
-                                    </span>
-                                </div>
-                                <div className={styles.project_content}>
-                                    <div className={styles.project_meta}>
-                                        <span className={styles.category}>App</span>
-                                        <span className={styles.label}>
-                                            <i className="fas fa-signal me-2"></i>
-                                            Có sẵn
-                                        </span></div>
-                                    <div className={styles.project_title}>
-                                        <a href="/home/product">Dịch vụ nhà thông minh giá rẻ</a>
+                                        <a href="/products">E-Bot: Chatbot AI hỗ trợ thực hành trực tuyến</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
@@ -272,7 +241,38 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/home/product">Máy chấm công thông minh</a>
+                                        <a href="/products">Dịch vụ nhà thông minh giá rẻ</a>
+                                    </div>
+                                    <div className={styles.project_meta_info}>
+                                        <i className="far fa-quote-left me-2"></i>
+                                        Trục liên thông là nền tảng kết nối, chia sẻ dữ liệu giữa các hệ thống thông tin phục vụ chỉ đạo, điều hành của toàn trường; Kết nối, chia sẻ dữ liệu giữa các hệ thống của Trường với Bộ                                    </div>
+                                    <div className={styles.project_footer}>
+                                        <div className={styles.project_price}></div>
+                                        <a className={styles.btn} href="/home/product">
+                                            Xem chi tiết
+                                            <i className="fa fa-long-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.project_column}>
+                            <div className={styles.project_grid}>
+                                <div className={styles.project_header}>
+                                    <span>
+                                        <img src={require("../../assets/img/project3.webp")} alt="project 3" />
+                                    </span>
+                                </div>
+                                <div className={styles.project_content}>
+                                    <div className={styles.project_meta}>
+                                        <span className={styles.category}>App</span>
+                                        <span className={styles.label}>
+                                            <i className="fas fa-signal me-2"></i>
+                                            Có sẵn
+                                        </span></div>
+                                    <div className={styles.project_title}>
+                                        <a href="/products">Máy chấm công thông minh</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
@@ -291,7 +291,7 @@ export const Home = (props: Props) => {
                     <div className={styles.footer_project}>
                         <div className={styles.text_center}>
                             Bạn muốn tìm hiểu thêm về chúng tôi, về các dự án chúng tôi đang nghiên cứu?
-                            <a className={styles.text_style} href="/project">Tất cả sản phẩm</a>
+                            <a className={styles.text_style} href="/products">Tất cả sản phẩm</a>
                         </div>
                     </div>
                 </div>
@@ -402,7 +402,7 @@ export const Home = (props: Props) => {
                         <div className={styles.content_contact}>
                             <h2 className={styles.header_content}>Liên hệ OpenLAB</h2>
                             <p className={styles.main_content}>Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần. Chúng tôi sẽ phản hồi trong thời gian sớm nhất!</p>
-                            <a className={styles.footer_content} href="/home/contact">Liên hệ</a>
+                            <a className={styles.footer_content} href="/contact">Liên hệ</a>
                         </div>
                     </div>
                 </div>

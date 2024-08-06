@@ -1,102 +1,320 @@
+// About.module.scss
+
 .container {
     width: 100%;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.intro, .intro_detail, .field_active, .whyAISOFT, .giai_phap, .so_lieu {
-    margin-bottom: 40px;
+.intro {
+    text-align: center;
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin: 0;
+        
+        span a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    }
 }
 
-.intro h1, .intro_detail h1, .field_active h2, .whyAISOFT h1, .giai_phap h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.intro_detail {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
 }
 
-.intro_detail p, .field_active p, .whyAISOFT p, .giai_phap p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
+.field_active {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-.field_active ol {
-    list-style: none;
-    padding: 0;
-}
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
 
-.field_active ol li {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
+    p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
 
-.field_active a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.field_active a:hover {
-    text-decoration: underline;
+    ol {
+        list-style: decimal;
+        padding-left: 20px;
+        margin: 0;
+        
+        li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    }
 }
 
 .whyAISOFT {
     display: flex;
-    flex-wrap: wrap;
-}
+    flex-direction: column;
+    gap: 20px;
 
-.img_left {
-    flex: 1 1 40%;
-    text-align: center;
-    margin-right: 20px;
-}
+    .img_left {
+        text-align: center;
 
-.reasons_right {
-    flex: 1 1 60%;
-}
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 
-.reason1, .reason2, .reason3 {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
+    .reasons_right {
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-.icon_left {
-    width: 60px;
-    margin-right: 20px;
-}
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
 
-.text_reason_right {
-    flex: 1;
+        .reason1, .reason2, .reason3 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+
+            .icon_left {
+                width: 50px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .text_reason_right {
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
 
 .giai_phap {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
+
+    .content_left {
+        flex: 1;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                i {
+                    color: #007bff;
+                }
+            }
+        }
+    }
+
+    .img_right {
+        flex: 1;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 }
 
-.content_left {
-    flex: 1 1 50%;
+.so_lieu {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            text-align: center;
+
+            h3 {
+                font-size: 24px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
 }
 
-.img_right {
-    flex: 1 1 50%;
-    text-align: center;
+// Responsive Design
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 10px;
+    }
+
+    .whyAISOFT {
+        flex-direction: column;
+    }
+
+    .giai_phap {
+        flex-direction: column;
+    }
 }
 
-.so_lieu ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
+@media (max-width: 768px) {
+    .intro, .intro_detail, .field_active, .whyAISOFT, .giai_phap, .so_lieu {
+        padding: 15px;
+        box-shadow: none; // Remove shadow for smaller screens
+    }
+
+    .intro h1 {
+        font-size: 24px;
+    }
+
+    .intro h3 {
+        font-size: 16px;
+    }
+
+    .intro_detail h1 {
+        font-size: 24px;
+    }
+
+    .whyAISOFT .reasons_right {
+        .reason1, .reason2, .reason3 {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .giai_phap {
+        .content_left, .img_right {
+            flex: 1;
+        }
+    }
+
+    .so_lieu ul {
+        flex-direction: column;
+    }
 }
 
-.so_lieu li {
-    text-align: center;
-}
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 20px;
+    }
 
-.so_lieu h3 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
+    .intro h3 {
+        font-size: 14px;
+    }
 
-.so_lieu p {
-    font-size: 1.2em;
+    .intro_detail h1 {
+        font-size: 20px;
+    }
+
+    .whyAISOFT .reasons_right {
+        .reason1, .reason2, .reason3 {
+            .text_reason_right {
+                h4 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .giai_phap {
+        .content_left {
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            ul {
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .img_right img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .so_lieu ul {
+        li {
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
 }

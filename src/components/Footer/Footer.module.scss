@@ -1,83 +1,106 @@
-*,
-:after,
-:before {
-  box-sizing: border-box;
-}
+// Footer.module.scss
 
 .footer {
-  background-color: #120f2d;
-  color: #ffffff;
-  padding: 60px 0;
+  background-color: #003366; // Xanh dương đậm cho toàn bộ footer
+  color: #ffffff; // Màu chữ trắng
+  padding: 40px 0;
 
   .info_footer {
-    .container_footer {
-      .row_footer {
+    border-bottom: 1px solid #002244; // Xanh dương tối hơn cho đường viền
+    padding-bottom: 20px;
+
+    .footer_introduce {
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #003366; // Xanh dương đậm cho phần giới thiệu
+      border-radius: 10px; // Góc bo tròn
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Đổ bóng nhẹ
+
+      .footer_links {
         display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
 
-        .footer_introduce,
-        .footer_location,
-        .footer_discover,
-        .footer_project {
-          flex: 1 1 22%; // Điều chỉnh chiều rộng của mỗi phần
-          min-width: 200px; // Đảm bảo rằng các phần không quá nhỏ
+        span {
+          display: inline-block;
+          margin-right: 15px;
 
-          .footer_widget {
-            .widget_title {
-              font-size: 1.2rem;
-              color: #ffffff;
-              margin-bottom: 15px;
-            }
+          img {
+            width: 120px; // Kích thước logo lớn hơn
+            height: auto; // Giữ tỷ lệ
+            display: block;
+          }
+        }
 
-            .footer_links {
-              display: flex;
-              align-items: center;
-              gap: 10px;
+        a {
+          font-size: 20px; // Kích thước chữ lớn hơn cho dễ đọc
+          color: #ffffff; // Màu chữ trắng
+          text-decoration: none;
 
-              img {
-                max-width: 50px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .mt {
+        color: #cccccc; // Xám nhạt cho chữ
+        font-size: 16px; // Kích thước chữ hơi lớn hơn
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.5; // Cải thiện khả năng đọc
+      }
+    }
+
+    .container_footer {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 15px;
+
+      .footer_location,
+      .footer_discover,
+      .footer_project {
+        width: 30%;
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+
+        .footer_widget {
+          .widget_title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff; // Màu chữ trắng
+            margin-bottom: 10px;
+          }
+
+          .list_unstyled {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              margin-bottom: 10px;
+
+              i {
+                margin-right: 8px;
+                color: #cccccc; // Xám nhạt cho biểu tượng
               }
 
               a {
-                color: #ffffff;
+                color: #cccccc; // Xám nhạt cho liên kết
+                font-size: 14px;
                 text-decoration: none;
-                font-weight: bold;
-                transition: color 0.3s ease;
 
                 &:hover {
-                  color: #007bff;
-                }
-              }
-            }
-
-            p {
-              font-size: 0.9rem;
-              line-height: 1.6;
-              color: white;
-            }
-
-            .list_unstyled {
-              padding: 0;
-              list-style: none;
-              margin: 0;
-
-              li {
-                margin-bottom: 10px;
-
-                i {
-                  margin-right: 8px;
-                }
-
-                a {
-                  color: #ffffff;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-
-                  &:hover {
-                    color: #007bff;
-                  }
+                  color: #ffffff; // Trắng khi hover
+                  text-decoration: underline;
                 }
               }
             }
@@ -88,24 +111,25 @@
   }
 
   .btm_footer {
-    background-color: #23272b;
-    color: white;
+    background-color: #002244; // Xanh dương tối hơn cho phần chân footer
     padding: 10px 0;
 
     .content {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 15px;
+
       .text_center {
-        margin: 0;
         text-align: center;
-        font-size: 0.85rem;
+        font-size: 14px;
+        color: #cccccc; // Xám nhạt cho chữ
 
         a {
-          color: #ffffff;
+          color: #ffffff; // Trắng cho liên kết
           text-decoration: none;
-          font-weight: bold;
-          transition: color 0.3s ease;
 
           &:hover {
-            color: #007bff;
+            text-decoration: underline;
           }
         }
       }
@@ -114,28 +138,28 @@
 
   .fixed_btm_top {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
-  
-    .croll_to_top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #007bff;
-      color: white;
-      width: 50px; /* Kích thước hình vuông */
-      height: 50px;
-      border-radius: 4px; /* Bo góc nhẹ */
-      font-size: 1.5rem; /* Kích thước dấu ^ */
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-  
+    bottom: 10px;
+    right: 10px;
+
+    .scroll_to_top {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #002244; // Xanh dương tối hơn cho nút cuộn lên
+      color: #ffffff; // Trắng cho chữ
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
       i {
-        font-style: normal; /* Đảm bảo dấu ^ không bị ảnh hưởng bởi các style khác */
+        font-size: 18px;
+      }
+
+      &:hover {
+        background-color: #003366; // Xanh dương đậm hơn khi hover
+        text-decoration: none;
       }
     }
-  }  
+  }
 }

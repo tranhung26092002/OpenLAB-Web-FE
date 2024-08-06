@@ -26,7 +26,7 @@ const MylearningDetailPage = () => {
 
     // Set default video URL when data is loaded
     useEffect(() => {
-        if (data && data.lessons && data.lessons.length > 1) {
+        if (data && data.lessons && data.lessons.length > 0) {
             setVideoUrl(data.lessons[0].urlVideo);
             setTitleLesson(data.lessons[0].titleLesson);
         }
