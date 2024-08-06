@@ -44,10 +44,12 @@ export const getAllLessonOfCourse = createAsyncThunk(
 
 export const addLessonToCourse = createAsyncThunk(
     'lesson/addLessonToCourse',
-    async (data: { title: string; courseId: number; file: File }, thunkAPI) => {
+    async (data: { title: string; document: string; description: string; courseId: number; file: File }, thunkAPI) => {
         const formData = new FormData();
         formData.append('file', data.file);
         formData.append('title', data.title);
+        formData.append('document', data.document);
+        formData.append('description', data.description);
         formData.append('courseId', String(data.courseId));
 
         try {
@@ -61,12 +63,14 @@ export const addLessonToCourse = createAsyncThunk(
 
 export const updateLesson = createAsyncThunk(
     'lesson/updateLesson',
-    async (payload: { file?: File; title: string; lessonId: number; courseId: number }, thunkAPI) => {
+    async (payload: { file?: File; title: string; document: string; description: string; lessonId: number; courseId: number }, thunkAPI) => {
         const formData = new FormData();
         if (payload.file) {
             formData.append('file', payload.file);
         }
         formData.append('title', payload.title);
+        formData.append('document', payload.document);
+        formData.append('description', payload.description);
         formData.append('lessonId', payload.lessonId.toString());
         formData.append('courseId', payload.courseId.toString());
 

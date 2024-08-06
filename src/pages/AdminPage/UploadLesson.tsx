@@ -30,19 +30,19 @@ const UploadLesson: React.FC<UploadLessonProps> = ({ courseId, titleCourse }) =>
     const [editMode, setEditMode] = useState(false);
 
     const handleAddLesson = async (values: any) => {
-        const { title } = values;
+        const { title, document, description } = values;
         const file = fileList[0]; // Lấy file đầu tiên từ fileList
         if (file && file.originFileObj) {
-            await dispatch(addLessonToCourse({ title, courseId, file: file.originFileObj }));
+            await dispatch(addLessonToCourse({ title, document, description, courseId, file: file.originFileObj }));
             setIsModalVisible(false);
         }
     };
 
     const handleUpdateLesson = async (values: any) => {
         if (currentLesson) {
-            const { title } = values;
+            const { title, document, description } = values;
             const file = fileList[0]; // Lấy file đầu tiên từ fileList
-            await dispatch(updateLesson({ title, lessonId: currentLesson.id, courseId, file: file ? file.originFileObj : undefined }));
+            await dispatch(updateLesson({ title, document, description, lessonId: currentLesson.id, courseId, file: file ? file.originFileObj : undefined }));
             setIsModalVisible(false);
         }
     };
@@ -157,6 +157,23 @@ const UploadLesson: React.FC<UploadLessonProps> = ({ courseId, titleCourse }) =>
                         >
                             <Input />
                         </Form.Item>
+
+                        <Form.Item
+                            label="Link tài liệu"
+                            name="document"
+                            rules={[{ required: true, message: 'Vui lòng nhập đường dẫn tài liệu!' }]}
+                        >
+                            <Input />
+                        </Form.Item>
+
+                        <Form.Item
+                            label="Mô tả"
+                            name="description"
+                            rules={[{ required: true, message: 'Vui lòng nhập mô tả bài học!' }]}
+                        >
+                            <Input />
+                        </Form.Item>
+
                         <Form.Item
                             label="Video"
                             name="file"

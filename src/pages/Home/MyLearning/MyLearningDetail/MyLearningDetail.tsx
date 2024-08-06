@@ -16,6 +16,8 @@ const MylearningDetailPage = () => {
     const data = useSelector((state: RootState) => state.MyLearningReducer.currentItem);
     const [videoUrl, setVideoUrl] = useState("");
     const [titleLesson, setTitleLesson] = useState("");
+    const [documentUrl, setDocumentUrl] = useState("");
+    const [descriptionLesson, setDescriptionLesson] = useState("");
 
     // Fetch device details when the component mounts or when id changes
     useEffect(() => {
@@ -29,6 +31,8 @@ const MylearningDetailPage = () => {
         if (data && data.lessons && data.lessons.length > 0) {
             setVideoUrl(data.lessons[0].urlVideo);
             setTitleLesson(data.lessons[0].titleLesson);
+            setDocumentUrl(data.lessons[0].urlDocument);
+            setDescriptionLesson(data.lessons[0].description);
         }
     }, [data]);
 
@@ -36,9 +40,11 @@ const MylearningDetailPage = () => {
         return <p>No data available</p>;
     }
 
-    const handleLessonClick = (urlVideo: string, titleLesson: string) => {
+    const handleLessonClick = (urlVideo: string, titleLesson: string, documentUrl: string, descriptionLesson: string) => {
         setVideoUrl(urlVideo);
         setTitleLesson(titleLesson);
+        setDocumentUrl(documentUrl);
+        setDescriptionLesson(descriptionLesson);
     };
 
     return (
@@ -63,7 +69,15 @@ const MylearningDetailPage = () => {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-
+                        <div className={styles.document_lesson}>
+                            <span>Tài liệu:</span>
+                            <a href={documentUrl} target="_blank" rel="noopener noreferrer">
+                                {documentUrl}
+                            </a>
+                        </div>
+                        <div className={styles.description_lesson}>
+                            <h2>{descriptionLesson}</h2>
+                        </div>
                     </div>
 
                     <div className={styles.process_course}>
@@ -75,7 +89,7 @@ const MylearningDetailPage = () => {
                                         <li
                                             key={index}
                                             className={styles.item_list}
-                                            onClick={() => handleLessonClick(lesson.urlVideo, lesson.titleLesson)}
+                                            onClick={() => handleLessonClick(lesson.urlVideo, lesson.titleLesson, lesson.urlDocument, lesson.description)}
                                         >
                                             <span className={styles.icon_item}>
 

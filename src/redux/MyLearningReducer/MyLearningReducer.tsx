@@ -18,6 +18,8 @@ export interface MyProductItem {
 export interface lessonItem {
     id: number,
     titleLesson: string,
+    urlDocument: string,
+    description: string,
     urlVideo: string,
     isCompleted: boolean,
 }

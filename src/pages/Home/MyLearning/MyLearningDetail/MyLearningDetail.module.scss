@@ -7,18 +7,22 @@
     padding: 20px;
     box-sizing: border-box;
     background-color: #f0f0f0;
-    border-radius: 10px; /* Bo góc container */
-    margin: 20px; /* Khoảng cách với các phần tử xung quanh */
+    border-radius: 10px;
+    /* Bo góc container */
+    margin: 20px;
+    /* Khoảng cách với các phần tử xung quanh */
 
     .title_course {
         text-align: center;
         margin-bottom: 20px;
 
         h1 {
-            font-size: 28px; /* Tăng kích thước font lên 28px */
-            font-weight: bold; /* In đậm */
+            font-size: 28px;
+            /* Tăng kích thước font lên 28px */
+            font-weight: bold;
+            /* In đậm */
             color: #333;
-        }        
+        }
     }
 
     .container_course {
@@ -28,7 +32,6 @@
         justify-content: center;
         width: 100%;
         margin-top: 20px;
-
 
         .video_course {
             flex: 2;
@@ -63,6 +66,47 @@
                     border-radius: 10px;
                 }
             }
+
+            .document_lesson {
+                margin-top: 20px;
+
+                span {
+                    font-size: 16px;
+                    color: #333;
+                    /* Màu sắc của chữ "Tài liệu:" */
+                    margin-right: 5px;
+                    /* Khoảng cách giữa chữ "Tài liệu:" và liên kết */
+                }
+
+                a {
+                    font-size: 16px;
+                    color: #007bff;
+                    /* Màu xanh dương cho liên kết */
+                    text-decoration: none;
+                    /* Xóa gạch dưới mặc định */
+                    border: 1px solid #007bff;
+                    padding: 10px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s, color 0.3s;
+                    /* Hiệu ứng chuyển màu nền và chữ */
+                    text-align: center;
+
+                    &:hover {
+                        background-color: #007bff;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .description_lesson {
+                margin-top: 20px;
+
+                h2 {
+                    font-size: 16px;
+                    color: #666;
+                    line-height: 1.5;
+                }
+            }
         }
 
         .process_course {
@@ -95,6 +139,15 @@
                         align-items: center;
                         padding: 10px;
                         border-bottom: 1px solid #eee;
+                        cursor: pointer;
+                        /* Thay đổi con trỏ khi hover */
+                        transition: background-color 0.3s;
+                        /* Hiệu ứng chuyển màu nền */
+
+                        &:hover {
+                            background-color: #f5f5f5;
+                            /* Màu nền khi hover */
+                        }
 
                         .icon_item {
                             width: 30px;
