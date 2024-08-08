@@ -22,7 +22,7 @@ import AboutPage from './pages/Home/About/About';
 import BlogPage from './pages/Home/Blog/Blog';
 import ProductsPage from './pages/Home/Products/Products';
 import MyLearningPage from './pages/Home/MyLearning/MyLearning';
-import DashBoardPage from './pages/DashBoard/DashBoard';
+import OpenKitBPage from './pages/OpenKitB/OpenKitB';
 
 import ProductsDetailPage from './pages/Home/Products/ProductsDetail/ProductsDetai';
 import MyLearningDetailPage from './pages/Home/MyLearning/MyLearningDetail/MyLearningDetail';
@@ -51,7 +51,7 @@ root.render(
         <Route path='/my-learning/detail' element={<AuthGuard><MyLearningDetailPage></MyLearningDetailPage></AuthGuard>}></Route>
         <Route path='/products/detail' element={<ProductsDetailPage></ProductsDetailPage>}></Route>
 
-        <Route path='/dashboard' element={<DashBoardPage></DashBoardPage>}></Route>
+        <Route path='/dashboard' element={<OpenKitBPage></OpenKitBPage>}></Route>
 
         <Route path='*' element={<Navigate to="" />}></Route>
       </Routes>

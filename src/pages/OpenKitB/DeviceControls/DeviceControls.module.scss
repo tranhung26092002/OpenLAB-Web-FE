@@ -1,0 +1,140 @@
+// Variables
+$primary-color: #484bf9;
+$main-bg: #f4f4f4;
+$card-bg: #fff;
+$card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        color: #333;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .dashboard {
+        flex: 1;
+        background-color: $main-bg;
+        padding: 1rem;
+        overflow-y: auto;
+
+        .insights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            .insightItem {
+                background-color: $card-bg;
+                padding: 1rem;
+                box-shadow: $card-shadow;
+                border-radius: 0.75rem;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+                &:hover {
+                    box-shadow: $hover-shadow;
+                    transform: translateY(-5px);
+                }
+
+                .insightContent {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    .left {
+                        h3 {
+                            margin: 0;
+                            font-size: 1rem;
+                            color: #333;
+                        }
+
+                        h1 {
+                            margin: 0;
+                            font-size: 2rem;
+                            font-weight: bold;
+                            color: #333;
+                        }
+                    }
+
+                    .icon {
+                        font-size: 2rem;
+                    }
+
+                    .ledContent {
+                        button {
+                            padding: 0.5rem 1rem;
+                            border: none;
+                            border-radius: 0.25rem;
+                            background-color: $primary-color;
+                            color: white;
+                            font-size: 1rem;
+                            cursor: pointer;
+                            transition: background-color 0.3s ease;
+
+                            &:hover {
+                                background-color: darken($primary-color, 10%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .histories {
+            h2 {
+                margin-bottom: 1rem;
+                color: #333;
+            }
+
+            .history_charts {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1rem;
+
+                .chart_item {
+                    background-color: $card-bg;
+                    border-radius: 0.75rem;
+                    box-shadow: $card-shadow;
+                    overflow: hidden;
+                    height: 300px; // Default height
+
+                    &:hover {
+                        box-shadow: $hover-shadow;
+                    }
+                }
+            }
+        }
+
+        .gauges {
+            h2 {
+                margin-bottom: 1rem;
+                color: #333;
+            }
+
+            .gauge_charts {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1rem;
+
+                .gauge_item {
+                    background-color: $card-bg;
+                    border-radius: 0.75rem;
+                    box-shadow: $card-shadow;
+                    overflow: hidden;
+                    height: 250px; // Default height
+
+                    &:hover {
+                        box-shadow: $hover-shadow;
+                    }
+                }
+            }
+        }
+    }
+}

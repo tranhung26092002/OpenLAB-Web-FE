@@ -63,7 +63,7 @@ const Header: React.FC = () => {
                 <NavLink to="/price">Báo giá</NavLink>
             </Menu.Item>
             <Menu.Item key="dashboard">
-                <NavLink to="/dashboard">Dashboard</NavLink>
+                <NavLink to="/dashboard">OpenKIT-B</NavLink>
             </Menu.Item>
             <Menu.Item key="contact">
                 <NavLink to="/contact">Liên hệ</NavLink>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                             to="/dashboard"
                             className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                         >
-                            Dashboard
+                            OpenKIT-B
                         </NavLink><br />
                         <NavLink
                             to="/contact"
