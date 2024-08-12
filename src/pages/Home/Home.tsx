@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import styles from './Home.module.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -6,6 +6,41 @@ import Footer from '../../components/Footer/Footer';
 type Props = {}
 
 export const Home = (props: Props) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const imageContainerRef = useRef<HTMLDivElement>(null);
+
+    const images = [
+        require('../../assets/img/home/10.png'),
+        require('../../assets/img/home/11.png'),
+        require('../../assets/img/home/12.png'),
+        require('../../assets/img/home/13.png'),
+        require('../../assets/img/home/14.png'),
+        require('../../assets/img/home/15.png'),
+    ];
+  
+    const totalImages = images.length;
+    const imagesToShow = 3;
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex + 1 >= totalImages ? 0 : prevIndex + 1
+        );
+      }, 3000); // Dịch chuyển sau mỗi 3 giây
+  
+      return () => {
+        clearInterval(interval);
+      };
+    }, [totalImages]);
+  
+    useEffect(() => {
+      if (imageContainerRef.current) {
+        imageContainerRef.current.style.transform = `translateX(-${
+          currentIndex * (100 / imagesToShow)
+        }%)`;
+      }
+    }, [currentIndex]);
+    
     return (
         <Fragment>
             <Header />
@@ -13,15 +48,15 @@ export const Home = (props: Props) => {
                 <div className={styles.container_banner}>
                     <div className={styles.content_banner}>
                         <div className={styles.text_banner}>
-                            <span className={styles.sub_heading}>AI/IoT as service</span>
+                            {/* <span className={styles.sub_heading}>AI/IoT as service</span> */}
                             <h1 className={styles.heading}>
                                 Nền tảng thực hành số,
                             </h1>
                             <h1 className={styles.heading}>
-                                dịch dụ AI/IoT giá rẻ cho chuyển đổi số
+                                dịch dụ AI/IoT giá rẻ cho chuyển đổi số giáo dục
                             </h1>
                             <p className={styles.description}>
-                                Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến các dịch vụ chất lượng có giá trị thực tiễn cao!
+                                Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến các dịch vụ chất lượng, có giá trị thực tiễn cao!
                             </p>
                             <a className={styles.btn} href="/products">
                                 Các dịch vụ của chúng tôi
@@ -44,11 +79,14 @@ export const Home = (props: Props) => {
                         <div className={styles.feature_column} >
                             <div className={styles.feature_item} >
                                 <div className={styles.feature_icon}>
-                                    <i className="fa-solid fa-building-columns"></i>
+                                    <span>
+                                        <img src={require("../../assets/img/home/1.jpg")} alt="Nền tảng thực hành trực tuyến" />
+                                    </span>
+                                    {/* <i className="fa-solid fa-building-columns"></i> */}
                                 </div>
                                 <div className={styles.feature_text}>
-                                    <h4>Thực hành số</h4>
-                                    <p>Phát triển nền tảng thực hành trực tuyến AI/IoT</p>
+                                    <h4>Nền tảng thực hành trực tuyến</h4>
+                                    <p>Cung cấp các dịch vụ thực hành trực truyến AI/IoT</p>
                                 </div>
                             </div>
                         </div>
@@ -56,11 +94,14 @@ export const Home = (props: Props) => {
                         <div className={styles.feature_column} >
                             <div className={styles.feature_item} >
                                 <div className={styles.feature_icon}>
-                                    <i className="fa-solid fa-layer-group"></i>
+                                    <span>
+                                        <img src={require("../../assets/img/home/2.jpg")} alt="Thiết bị thực hành trực tuyến" />
+                                    </span>
+                                    {/* <i className="fa-solid fa-layer-group"></i> */}
                                 </div>
                                 <div className={styles.feature_text}>
-                                    <h4>Thiết bị thực hành chuyên sâu</h4>
-                                    <p>Phát triển hệ sinh thái thiết bị thực hành thông minh gồm LAB và KIT</p>
+                                    <h4>Thiết bị thực hành trực tuyến</h4>
+                                    <p>Cung cấp các bộ KIT thực hành trực tuyến AI/IoT</p>
                                 </div>
                             </div>
                         </div>
@@ -68,11 +109,14 @@ export const Home = (props: Props) => {
                         <div className={styles.feature_column} >
                             <div className={styles.feature_item} >
                                 <div className={styles.feature_icon}>
-                                    <i className="fa-solid fa-video"></i>
+                                    <span>
+                                        <img src={require("../../assets/img/home/3.jpg")} alt="Khóa học thực hành trực tuyến" />
+                                    </span>
+                                    {/* <i className="fa-solid fa-video"></i> */}
                                 </div>
                                 <div className={styles.feature_text}>
-                                    <h4>Khóa học thực hành chuyên sâu</h4>
-                                    <p>Phát triển các khóa học thực hành chuyên sâu, thực chiến dự án AI/IoT</p>
+                                    <h4>Khóa học thực hành trực tuyến</h4>
+                                    <p>Cung cấp các khóa học thực hành trực tuyến AI/IoT chuyên sâu, thực chiến dự án</p>
                                 </div>
                             </div>
                         </div>
@@ -80,11 +124,14 @@ export const Home = (props: Props) => {
                         <div className={styles.feature_column} >
                             <div className={styles.feature_item} >
                                 <div className={styles.feature_icon}>
-                                    <i className="fa-solid fa-chart-line"></i>
+                                    <span>
+                                        <img src={require("../../assets/img/home/4.jpg")} alt="Trợ giảng số trực tuyến" />
+                                    </span>
+                                    {/* <i className="fa-solid fa-chart-line"></i> */}
                                 </div>
                                 <div className={styles.feature_text}>
-                                    <h4>Dịch vụ AI/IoT giá rẻ</h4>
-                                    <p>Phát triển các giải pháp AI/IoT theo yêu cầu chuyển đổi số</p>
+                                    <h4>Trợ giảng số trực tuyến</h4>
+                                    <p>Cung cấp các dịch vụ Chatbot AI hỗ trợ thực hành trực tuyến 24/7</p>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +153,7 @@ export const Home = (props: Props) => {
                             <div className={styles.project_grid}>
                                 <div className={styles.project_header}>
                                     <span>
-                                        <img src={require("../../assets/img/project1.webp")} alt="project 1" />
+                                        <img src={require("../../assets/img/home/5.jpg")} alt="project 1" />
                                     </span>
                                 </div>
                                 <div className={styles.project_content}>
@@ -117,11 +164,13 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-LAB: Thực hành trực tuyến AI/IoT</a>
+                                        <a href="/products">E-LAB: Giải pháp phòng LAB thông minh</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
-                                        Mô hình đại học số thu nhỏ giúp đẩy mạnh tương tác giữa nhà trường, giảng viên và sinh viên, giúp người dùng tra cứu thời khóa biểu, điểm thi, cập nhật tin tức một cách nhanh chóng
+                                        <p>
+                                            E-LAB cung cấp giải pháp toàn diện cho hệ thống phòng Lab thông minh, bao gồm các các bộ kit thực hành thông minh, phần mềm thực hành, và hub trung tâm kết nối toàn bộ các thiết bị trong Lab như máy tính, máy chiếu, đèn điện, điều hòa,... tạo ra 1 hệ thống đồng bộ trên server...
+                                        </p>
                                     </div>
                                     <div className={styles.project_footer}>
                                         <div className="project-price"></div>
@@ -138,7 +187,7 @@ export const Home = (props: Props) => {
                             <div className={styles.project_grid}>
                                 <div className={styles.project_header}>
                                     <span>
-                                        <img src={require("../../assets/img/project2.webp")} alt="project 2" />
+                                        <img src={require("../../assets/img/home/6.jpg")} alt="project 2" />
                                     </span>
                                 </div>
                                 <div className={styles.project_content}>
@@ -149,11 +198,14 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-KIT: Hệ thống KIT thực hành thông minh AI/Iot</a>
+                                        <a href="/products">E-KIT: KIT thực hành thông minh</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
-                                        Đây là một nền tảng mở, cho phép liên kết, chia sẻ dữ liệu thông suốt với các hệ thống khác trong Trường mà không làm ảnh hưởng tới hoạt động của các trang web thành viên                                    </div>
+                                        <p>
+                                            E-KIT cung cấp hệ thống các bộ kit thực hành thông minh AI/IoT từ cơ bản đến chuyên sâu cho các chuyên ngành như Lập trình nhúng IoT, Điện toán đám mây, Mạng cảm biến không dây WSN, AI/ML, Kĩ thuật dữ liệu...
+                                        </p>
+                                    </div>
                                     <div className={styles.project_footer}>
                                         <div className="project-price"></div>
                                         <a className={styles.btn} href="/home/product">
@@ -169,7 +221,7 @@ export const Home = (props: Props) => {
                             <div className={styles.project_grid}>
                                 <div className={styles.project_header}>
                                     <span>
-                                        <img src={require("../../assets/img/project3.webp")} alt="project 3" />
+                                        <img src={require("../../assets/img/home/7.jpg")} alt="project 3" />
                                     </span>
                                 </div>
                                 <div className={styles.project_content}>
@@ -180,11 +232,14 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-Course: Khóa học thực hành chuyên sâu AI/IoT</a>
+                                        <a href="/products">E-Course: Khóa học thực hành chuyên sâu</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
-                                        Trục liên thông là nền tảng kết nối, chia sẻ dữ liệu giữa các hệ thống thông tin phục vụ chỉ đạo, điều hành của toàn trường; Kết nối, chia sẻ dữ liệu giữa các hệ thống của Trường với Bộ                                    </div>
+                                        <p>
+                                            E-COURSE cung cấp các khóa học thực hành AI/IoT từ cơ bản tới nâng cao cho nhiều loại kit khác nhau như STM32, ARDUINO, ESP, Raspberry Pi,... Mỗi khóa học bao gồm tài liệu, video, mẫu code và chatbot AI hỗ trợ trực tuyến 24/7
+                                        </p>
+                                    </div>
                                     <div className={styles.project_footer}>
                                         <div className={styles.project_price}></div>
                                         <a className={styles.btn} href="/home/product">
@@ -199,7 +254,7 @@ export const Home = (props: Props) => {
                             <div className={styles.project_grid}>
                                 <div className={styles.project_header}>
                                     <span>
-                                        <img src={require("../../assets/img/project3.webp")} alt="project 3" />
+                                        <img src={require("../../assets/img/home/4.jpg")} alt="project 3" />
                                     </span>
                                 </div>
                                 <div className={styles.project_content}>
@@ -210,73 +265,14 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-Bot: Chatbot AI hỗ trợ thực hành trực tuyến</a>
+                                        <a href="/products">E-CHAT: Trợ giảng số AI hỗ trợ thực hành 24/7</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
-                                        Trục liên thông là nền tảng kết nối, chia sẻ dữ liệu giữa các hệ thống thông tin phục vụ chỉ đạo, điều hành của toàn trường; Kết nối, chia sẻ dữ liệu giữa các hệ thống của Trường với Bộ                                    </div>
-                                    <div className={styles.project_footer}>
-                                        <div className={styles.project_price}></div>
-                                        <a className={styles.btn} href="/home/product">
-                                            Xem chi tiết
-                                            <i className="fa fa-long-arrow-right"></i>
-                                        </a>
+                                        <p>
+                                            E-CHAT cung cấp dịch vụ trợ giảng số AI, hỗ trợ chuyên sâu, đa dạng các nội dung thực hành theo yêu cầu của từng người dùng...
+                                        </p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.project_column}>
-                            <div className={styles.project_grid}>
-                                <div className={styles.project_header}>
-                                    <span>
-                                        <img src={require("../../assets/img/project3.webp")} alt="project 3" />
-                                    </span>
-                                </div>
-                                <div className={styles.project_content}>
-                                    <div className={styles.project_meta}>
-                                        <span className={styles.category}>App</span>
-                                        <span className={styles.label}>
-                                            <i className="fas fa-signal me-2"></i>
-                                            Có sẵn
-                                        </span></div>
-                                    <div className={styles.project_title}>
-                                        <a href="/products">Dịch vụ nhà thông minh giá rẻ</a>
-                                    </div>
-                                    <div className={styles.project_meta_info}>
-                                        <i className="far fa-quote-left me-2"></i>
-                                        Trục liên thông là nền tảng kết nối, chia sẻ dữ liệu giữa các hệ thống thông tin phục vụ chỉ đạo, điều hành của toàn trường; Kết nối, chia sẻ dữ liệu giữa các hệ thống của Trường với Bộ                                    </div>
-                                    <div className={styles.project_footer}>
-                                        <div className={styles.project_price}></div>
-                                        <a className={styles.btn} href="/home/product">
-                                            Xem chi tiết
-                                            <i className="fa fa-long-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.project_column}>
-                            <div className={styles.project_grid}>
-                                <div className={styles.project_header}>
-                                    <span>
-                                        <img src={require("../../assets/img/project3.webp")} alt="project 3" />
-                                    </span>
-                                </div>
-                                <div className={styles.project_content}>
-                                    <div className={styles.project_meta}>
-                                        <span className={styles.category}>App</span>
-                                        <span className={styles.label}>
-                                            <i className="fas fa-signal me-2"></i>
-                                            Có sẵn
-                                        </span></div>
-                                    <div className={styles.project_title}>
-                                        <a href="/products">Máy chấm công thông minh</a>
-                                    </div>
-                                    <div className={styles.project_meta_info}>
-                                        <i className="far fa-quote-left me-2"></i>
-                                        Trục liên thông là nền tảng kết nối, chia sẻ dữ liệu giữa các hệ thống thông tin phục vụ chỉ đạo, điều hành của toàn trường; Kết nối, chia sẻ dữ liệu giữa các hệ thống của Trường với Bộ                                    </div>
                                     <div className={styles.project_footer}>
                                         <div className={styles.project_price}></div>
                                         <a className={styles.btn} href="/home/product">
@@ -302,7 +298,7 @@ export const Home = (props: Props) => {
                         <div className={styles.about_column_left}>
                             <div className={styles.about_img}>
                                 <span>
-                                    <img src={require("../../assets/img/about.webp")} alt="about" />
+                                    <img src={require("../../assets/img/home/9.png")} alt="about" />
                                 </span>
                             </div>
                         </div>
@@ -319,7 +315,9 @@ export const Home = (props: Props) => {
                                         </div>
                                         <div className={styles.feature_text}>
                                             <h4>Khách hàng là trung tâm</h4>
-                                            <p>A.I-Soft luôn hướng tới việc đem lại những trải nghiệm tốt nhất cho khách hàng, tiếp thu mọi ý kiến đóng góp để cải thiện chất lượng sản phẩm.</p>
+                                            <p>
+                                                OpenLAB luôn nỗ lực làm việc để mang đến những dịch vụ chất lượng tốt nhất cho khách hàng, luôn nỗ lực lắng nghe để hiểu khách hàng và nâng cao trải nghiệm sản phẩm.
+                                            </p>
                                         </div>
                                     </div>
 
@@ -329,7 +327,9 @@ export const Home = (props: Props) => {
                                         </div>
                                         <div className={styles.feature_text}>
                                             <h4>Chất lượng dịch vụ</h4>
-                                            <p>A.I-Soft luôn tiên phong trong việc ứng dụng những tiến bộ Khoa học vào việc phát triển ứng dụng, nhu cầu thị trường hướng tới hiệu quả người dùng.</p>
+                                            <p>
+                                                OpenLAB luôn tiên phong trong việc đưa những tiến bộ mới nhất của công nghệ vào việc phát triển các dịch vụ có giá trị thực tiễn cao, phục vụ khách hàng bình dân.
+                                            </p>
                                         </div>
                                     </div>
 
@@ -339,7 +339,9 @@ export const Home = (props: Props) => {
                                         </div>
                                         <div className={styles.feature_text}>
                                             <h4>Nhiệt huyết, trách nhiệm trong công việc</h4>
-                                            <p>Đội ngũ A.I-Soft luôn khắt khe trong từng chi tiết nhỏ và lấy người dùng làm trung tâm.</p>
+                                            <p>
+                                                OpenLAB luôn khắt khe trong từng chi tiết nhỏ, lấy sự hài lòng của khách hàng làm tiêu chuẩn cho các dịch vụ của mình.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -353,39 +355,17 @@ export const Home = (props: Props) => {
                     <div className={styles.content_customer}>
                         <div className={styles.section_heading}>
                             <h2 className={styles.sub_heading}>Đối tác</h2>
-                            <p className={styles.heading}>
-                                Các đơn vị đang hợp tác cùng chúng tôi
-                            </p>
+                            <p className={styles.heading}>Các đơn vị đang hợp tác cùng chúng tôi</p>
                         </div>
                     </div>
                     <div className={styles.row_customer}>
                         <div className={styles.owl_customer}>
-                            <div className={styles.owl_stage}>
-                                <div className={styles.img_owl}>
-                                    <div className={styles.img}>
-                                        <img src={require("../../assets/img/apd.webp")} alt="apd" />
+                            <div className={styles.owl_stage} ref={imageContainerRef}>
+                                {images.map((image, index) => (
+                                    <div className={styles.img} key={index}>
+                                        <img src={image} alt={`partner-${index}`} />
                                     </div>
-                                    <div className={styles.img}>
-                                        <img src={require("../../assets/img/dav.webp")} alt="dav" />
-                                    </div>
-                                    <div className={styles.img}>
-                                        <img src={require("../../assets/img/hanu.webp")} alt="hanu" />
-                                    </div>
-                                    <div className={styles.img}>
-                                        <img src={require("../../assets/img/vktbd.webp")} alt="vktbd" />
-                                    </div>
-                                    <div className={styles.img}>
-                                        <img src={require("../../assets/img/vwa.webp")} alt="vwa" />
-                                    </div><div className={styles.img}>
-                                        <img src={require("../../assets/img/ft.webp")} alt="ft" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.owl_nav}>
-
-                            </div>
-                            <div className={styles.owl_dots}>
-
+                                ))}
                             </div>
                         </div>
                     </div>

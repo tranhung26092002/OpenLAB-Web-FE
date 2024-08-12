@@ -1,5 +1,3 @@
-// About.module.scss
-
 .container {
     width: 100%;
     max-width: 1200px;
@@ -14,52 +12,65 @@
     text-align: center;
 
     h1 {
-        font-size: 32px;
-        margin-bottom: 10px;
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #333;
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 20px;
         margin: 0;
+        color: #666;
         
         span a {
             text-decoration: none;
             color: #007bff;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
 
 .intro_detail {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fefefe;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 
     h1 {
-        font-size: 28px;
+        font-size: 30px;
         margin-bottom: 20px;
+        color: #4d41e1;
     }
 
     p {
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 15px;
+        line-height: 1.6;
+        color: #555;
     }
 }
 
 .field_active {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 
     h2 {
-        font-size: 24px;
-        margin-bottom: 15px;
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #333;
     }
 
     p {
-        font-size: 16px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555;
+        line-height: 1.6;
     }
 
     ol {
@@ -68,61 +79,19 @@
         margin: 0;
         
         li {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 10px;
-        }
-    }
-}
-
-.whyAISOFT {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    .img_left {
-        text-align: center;
-
-        img {
-            max-width: 100%;
-            height: auto;
+            color: #666;
         }
     }
 
-    .reasons_right {
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
 
-        p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .reason1, .reason2, .reason3 {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-
-            .icon_left {
-                width: 50px;
-                img {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-
-            .text_reason_right {
-                h4 {
-                    font-size: 18px;
-                    margin-bottom: 5px;
-                }
-
-                p {
-                    font-size: 16px;
-                }
-            }
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
@@ -134,19 +103,22 @@
 
     .content_left {
         flex: 1;
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        background-color: #fefefe;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 
         h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #4d41e1;
         }
 
         p {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
         }
 
         ul {
@@ -154,13 +126,15 @@
             padding: 0;
 
             li {
-                font-size: 16px;
+                font-size: 18px;
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                color: #555;
 
                 i {
                     color: #007bff;
+                    font-size: 20px;
                 }
             }
         }
@@ -173,15 +147,17 @@
         img {
             max-width: 100%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
         }
     }
 }
 
 .so_lieu {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fefefe;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 
     ul {
         display: flex;
@@ -194,41 +170,123 @@
             text-align: center;
 
             h3 {
-                font-size: 24px;
+                font-size: 32px;
                 margin-bottom: 5px;
+                color: #4d41e1;
             }
 
             p {
-                font-size: 16px;
+                font-size: 18px;
+                color: #555;
             }
         }
     }
 }
 
-// Responsive Design
+// Phần Thông tin phản ánh
+.feedbackSection {
+    background-color: #f7faff;
+    padding: 60px 0;
 
+    .sectionHeading {
+        text-align: center;
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+    }
+
+    .feedbackGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .feedbackItem {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .feedbackText {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+            position: relative;
+
+            i {
+                font-size: 24px;
+                color: #ff6b6b;
+                margin-bottom: 10px;
+                display: inline-block;
+            }
+
+            p {
+                margin-top: 10px;
+                font-style: italic;
+            }
+        }
+
+        .feedbackAuthor {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+
+            h4 {
+                font-size: 18px;
+                color: #333;
+                margin: 0;
+            }
+
+            p {
+                font-size: 14px;
+                color: #999;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+// Responsive Design
 @media (max-width: 1024px) {
     .container {
         padding: 10px;
     }
 
-    .whyAISOFT {
-        flex-direction: column;
-    }
-
     .giai_phap {
         flex-direction: column;
     }
-}
-
-@media (max-width: 768px) {
-    .intro, .intro_detail, .field_active, .whyAISOFT, .giai_phap, .so_lieu {
-        padding: 15px;
-        box-shadow: none; // Remove shadow for smaller screens
-    }
 
     .intro h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .intro h3 {
@@ -239,11 +297,15 @@
         font-size: 24px;
     }
 
-    .whyAISOFT .reasons_right {
-        .reason1, .reason2, .reason3 {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    .so_lieu ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro, .intro_detail, .field_active, .giai_phap, .so_lieu {
+        padding: 15px;
+        box-shadow: none; // Loại bỏ bóng cho màn hình nhỏ
     }
 
     .giai_phap {
@@ -251,15 +313,11 @@
             flex: 1;
         }
     }
-
-    .so_lieu ul {
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 480px) {
     .intro h1 {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .intro h3 {
@@ -268,19 +326,6 @@
 
     .intro_detail h1 {
         font-size: 20px;
-    }
-
-    .whyAISOFT .reasons_right {
-        .reason1, .reason2, .reason3 {
-            .text_reason_right {
-                h4 {
-                    font-size: 16px;
-                }
-                p {
-                    font-size: 14px;
-                }
-            }
-        }
     }
 
     .giai_phap {

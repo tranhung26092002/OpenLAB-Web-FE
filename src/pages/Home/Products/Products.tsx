@@ -157,7 +157,7 @@ const Products = () => {
                         <h2 className={styles.content_header}>
                             Khóa học lập trình nhúng IoT
                         </h2>
-                        <a href="/products">
+                        <a href="/dashboard">
                             <button type='button' className={styles.btn_header}>
                                 Xem thêm
                             </button>
