@@ -90,6 +90,19 @@ export const addCourse = createAsyncThunk(
     }
 );
 
+export const deleteCourse = createAsyncThunk(
+    'myProduct/deleteCourse',
+    async (data: { userId: number | null, courseId: number }, thunkAPI) => {
+        try {
+            await http.delete(`/api/user/${data.userId}/courses/${data.courseId}`);
+            return data.courseId;
+        } catch (error: any) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+    }
+);
+
+
 export const fetchMyProductDetail = createAsyncThunk(
     'myProduct/fetchDetail',
     async (id: number) => {
@@ -122,6 +135,14 @@ const MyProductSlice = createSlice({
             state.status = action.payload.status;
             state.items.push(action.payload.data);
         })
+
+        // Delete myCourse
+        builder.addCase(deleteCourse.fulfilled, (state, action) => {
+            state.items = state.items.filter(item => item.id !== (action.payload));
+        })
+        builder.addCase(deleteCourse.rejected, (state, action) => {
+            state.error = action.error.message || 'Unknown error';
+        });
 
         builder.addCase(fetchMyProductDetail.fulfilled, (state, action) => {
             state.status = action.payload.status;

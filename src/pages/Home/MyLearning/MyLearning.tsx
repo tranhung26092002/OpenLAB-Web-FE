@@ -1,11 +1,11 @@
 import React, { useState, useEffect, Fragment, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Card, Row, Col, Button, List, Pagination, AutoComplete } from 'antd';
+import { Card, Row, Col, Button, Pagination, AutoComplete } from 'antd';
 import { debounce } from 'lodash';
 
 import { DispatchType, RootState } from '../../../redux/configStore';
-import { fetchAllMyProduct, searchMyProduct } from '../../../redux/MyLearningReducer/MyLearningReducer';
+import { deleteCourse, fetchAllMyProduct, searchMyProduct } from '../../../redux/MyLearningReducer/MyLearningReducer';
 import Header from '../../../components/Header/Header';
 import Footer from '../../../components/Footer/Footer';
 import styles from './Mylearning.module.scss';
@@ -52,6 +52,17 @@ const MyLearning: React.FC = () => {
         navigate(`/my-learning/detail?productId=${ProductId}`);
     };
 
+
+
+    const handleDelete = (userId: number | null, courseId: number) => {
+        const data = {
+            courseId: courseId,
+            userId: userId
+        };
+
+        dispatch(deleteCourse(data));
+    };
+
     useEffect(() => {
         dispatch(fetchAllMyProduct(userId));
     }, [dispatch, userId]);
@@ -95,9 +106,14 @@ const MyLearning: React.FC = () => {
                                                     </strong>
                                                 </div>
                                             </div>
-                                            <Button onClick={() => handleDetail(item.id)}>
-                                                Chi Tiết
-                                            </Button>
+                                            <div className={styles.button_container}>
+                                                <Button onClick={() => handleDetail(item.id)}>
+                                                    Chi Tiết
+                                                </Button>
+                                                <Button danger onClick={() => handleDelete(userId, item.id)}>
+                                                    Xóa
+                                                </Button>
+                                            </div>
                                         </Card>
                                     </Col>
                                 ))}

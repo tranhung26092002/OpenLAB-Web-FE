@@ -352,24 +352,24 @@
                     display: flex;
                     flex-wrap: wrap;
                 }
-
+            
                 .ant-col {
                     display: flex;
                     justify-content: center;
                 }
-
+            
                 .card {
                     margin-top: 16px;
                     width: 100%;
                 }
-
+            
                 .image_container {
                     width: 100%;
                     padding-top: 75%; // Tỷ lệ khung hình 4:3
                     position: relative;
                     overflow: hidden;
                 }
-
+            
                 .image {
                     position: absolute;
                     top: 0;
@@ -378,80 +378,93 @@
                     height: 100%;
                     object-fit: cover;
                 }
-
+            
                 .description_item {
                     .text_item {
                         font-size: 1rem;
                         font-weight: bold;
                         margin: 0;
                     }
-
+            
                     .price_item {
                         margin-top: 0.5rem;
                         font-size: 0.875rem;
-
+            
                         strong {
                             font-size: 1rem;
                         }
-
+            
                         span {
                             font-size: 0.875rem;
                         }
                     }
                 }
-
-                button {
-                    margin-top: 0.5rem;
-                    padding: 0.5rem 1rem;
-                    font-size: 0.875rem;
-                    border-radius: 0.5rem;
-                    background-color: #f66b2d;
-                    color: white;
-                    border: none;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
-
-                    &:hover {
-                        background-color: #e25617;
+            
+                // Container cho các nút
+                .button_container {
+                    display: flex;
+                    justify-content: space-between; // Căn hai nút sang hai bên
+                    margin-top: 1rem;
+            
+                    button {
+                        width: 48%; // Đảm bảo hai nút có cùng kích thước và không bị tràn ra ngoài
+                        padding: 0.5rem 1rem;
+                        font-size: 0.875rem;
+                        border-radius: 0.5rem;
+                        background-color: #f66b2d;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+            
+                        &:hover {
+                            background-color: #e25617;
+                        }
                     }
                 }
-
+            
                 // Responsive Styles
                 @media (max-width: 1050px) {
                     .ant-col {
                         width: 50%;
                     }
                 }
-
+            
                 @media (max-width: 768px) {
                     .ant-col {
                         width: 100%;
                     }
-
+            
                     .description_item {
                         .text_item {
                             font-size: 0.875rem;
                         }
-
+            
                         .price_item {
                             font-size: 0.75rem;
-
+            
                             strong {
                                 font-size: 0.875rem;
                             }
-
+            
                             span {
                                 font-size: 0.75rem;
                             }
                         }
                     }
-
-                    button {
-                        font-size: 0.75rem;
-                        padding: 0.5rem;
+            
+                    .button_container {
+                        flex-direction: column; // Xếp nút theo chiều dọc trên màn hình nhỏ
+            
+                        button {
+                            width: 100%; // Đảm bảo nút chiếm hết chiều ngang
+                            font-size: 0.75rem;
+                            padding: 0.5rem;
+                            margin-bottom: 0.5rem; // Tạo khoảng cách giữa các nút
+                        }
                     }
                 }
-            }
+            }            
         }
 
         .pagination-container {

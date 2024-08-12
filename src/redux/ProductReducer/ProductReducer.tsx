@@ -192,7 +192,7 @@ const CourseSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        // Create baiIoT
+        // Create course
         builder.addCase(createCourse.fulfilled, (state, action) => {
             if (!Array.isArray(state.items)) {
                 state.items = [];
@@ -206,7 +206,7 @@ const CourseSlice = createSlice({
             history.push("/admin");
         });
 
-        // Update baiIoT
+        // Update course
         builder.addCase(updateCourse.fulfilled, (state, action) => {
             const index = state.items.findIndex(item => item.id === action.payload.id);
             if (index !== -1) {
@@ -221,7 +221,7 @@ const CourseSlice = createSlice({
             }
         });
 
-        // Delete baiIoT
+        // Delete course
         builder.addCase(deleteCourse.fulfilled, (state, action) => {
             state.items = state.items.filter(item => item.id !== parseInt(action.payload));
         })
@@ -235,12 +235,12 @@ const CourseSlice = createSlice({
             state.totalItems = action.payload.total;
         });
 
-        //Fetch all baiIoT
+        //Fetch all course
         builder.addCase(fetchAllCourse.fulfilled, (state, action) => {
             state.items = action.payload;
         });
 
-        // search baiIoT
+        // search course
         builder.addCase(searchCourse.fulfilled, (state, action) => {
             state.searchResult = action.payload;
         })
