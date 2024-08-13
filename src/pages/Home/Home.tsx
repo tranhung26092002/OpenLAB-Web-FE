@@ -17,30 +17,29 @@ export const Home = (props: Props) => {
         require('../../assets/img/home/14.png'),
         require('../../assets/img/home/15.png'),
     ];
-  
+
     const totalImages = images.length;
     const imagesToShow = 3;
-  
+
     useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex + 1 >= totalImages ? 0 : prevIndex + 1
-        );
-      }, 3000); // Dịch chuyển sau mỗi 3 giây
-  
-      return () => {
-        clearInterval(interval);
-      };
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) =>
+                prevIndex + 1 >= totalImages ? 0 : prevIndex + 1
+            );
+        }, 3000); // Dịch chuyển sau mỗi 3 giây
+
+        return () => {
+            clearInterval(interval);
+        };
     }, [totalImages]);
-  
+
     useEffect(() => {
-      if (imageContainerRef.current) {
-        imageContainerRef.current.style.transform = `translateX(-${
-          currentIndex * (100 / imagesToShow)
-        }%)`;
-      }
+        if (imageContainerRef.current) {
+            imageContainerRef.current.style.transform = `translateX(-${currentIndex * (100 / imagesToShow)
+                }%)`;
+        }
     }, [currentIndex]);
-    
+
     return (
         <Fragment>
             <Header />
@@ -144,7 +143,7 @@ export const Home = (props: Props) => {
                         <div className={styles.text_project}>
                             <div className={styles.section_heading}>
                                 <h2 className={styles.sub_heading}>Sản phẩm phổ biến</h2>
-                                <p className={styles.heading}>Các sản phẩm tiêu biểu của chúng tôi</p>
+                                <p className={styles.heading}>Các sản phẩm tiêu biểu trong hệ sinh thái thực hành số của OpenLAB</p>
                             </div>
                         </div>
                     </div>
@@ -159,17 +158,18 @@ export const Home = (props: Props) => {
                                 <div className={styles.project_content}>
                                     <div className={styles.project_meta}>
                                         <span className={styles.category}>App</span>
+
                                         <span className={styles.label}>
                                             <i className="fas fa-signal me-2"></i>
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-LAB: Giải pháp phòng LAB thông minh</a>
+                                        <a href="/products">OpenLab: Giải pháp phòng LAB thông minh</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
                                         <p>
-                                            E-LAB cung cấp giải pháp toàn diện cho hệ thống phòng Lab thông minh, bao gồm các các bộ kit thực hành thông minh, phần mềm thực hành, và hub trung tâm kết nối toàn bộ các thiết bị trong Lab như máy tính, máy chiếu, đèn điện, điều hòa,... tạo ra 1 hệ thống đồng bộ trên server...
+                                            OpenLab cung cấp giải pháp toàn diện cho hệ thống phòng Lab thông minh, bao gồm các các bộ kit thực hành thông minh, phần mềm thực hành, và hub điều khiển trung tâm kết nối Kit với toàn bộ các thiết bị trong Lab như máy chiếu, Tivi, điều hòa, đèn điện,... tạo ra một hệ thống đồng bộ trên server...
                                         </p>
                                     </div>
                                     <div className={styles.project_footer}>
@@ -193,17 +193,18 @@ export const Home = (props: Props) => {
                                 <div className={styles.project_content}>
                                     <div className={styles.project_meta}>
                                         <span className={styles.category}>App</span>
+
                                         <span className={styles.label}>
                                             <i className="fas fa-signal me-2"></i>
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-KIT: KIT thực hành thông minh</a>
+                                        <a href="/products">OpenKit: Thiết bị thực hành thông minh</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
                                         <p>
-                                            E-KIT cung cấp hệ thống các bộ kit thực hành thông minh AI/IoT từ cơ bản đến chuyên sâu cho các chuyên ngành như Lập trình nhúng IoT, Điện toán đám mây, Mạng cảm biến không dây WSN, AI/ML, Kĩ thuật dữ liệu...
+                                            OpenKit cung cấp hệ thống các bộ Kit thực hành thông minh AI/IoT cho các chuyên ngành như Lập trình nhúng IoT, Điện toán đám mây, Mạng cảm biến, ML, Phân tích dữ liệu...
                                         </p>
                                     </div>
                                     <div className={styles.project_footer}>
@@ -232,12 +233,12 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-Course: Khóa học thực hành chuyên sâu</a>
+                                        <a href="/products">OpenCourse: Khóa học thực hành chuyên sâu</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
                                         <p>
-                                            E-COURSE cung cấp các khóa học thực hành AI/IoT từ cơ bản tới nâng cao cho nhiều loại kit khác nhau như STM32, ARDUINO, ESP, Raspberry Pi,... Mỗi khóa học bao gồm tài liệu, video, mẫu code và chatbot AI hỗ trợ trực tuyến 24/7
+                                            OpenCourse cung cấp các khóa học thực hành chuyên sâu cho nhiều loại Kit khác nhau như STM32, ARDUINO, ESP, Raspberry Pi,... Mỗi khóa học bao gồm tài liệu, video, code mẫu và trợ giảng số AI hỗ trợ thực hành 24/7.
                                         </p>
                                     </div>
                                     <div className={styles.project_footer}>
@@ -265,12 +266,12 @@ export const Home = (props: Props) => {
                                             Có sẵn
                                         </span></div>
                                     <div className={styles.project_title}>
-                                        <a href="/products">E-CHAT: Trợ giảng số AI hỗ trợ thực hành 24/7</a>
+                                        <a href="/products">OpenChat: Trợ giảng số AI hỗ trợ thực hành 24/7</a>
                                     </div>
                                     <div className={styles.project_meta_info}>
                                         <i className="far fa-quote-left me-2"></i>
                                         <p>
-                                            E-CHAT cung cấp dịch vụ trợ giảng số AI, hỗ trợ chuyên sâu, đa dạng các nội dung thực hành theo yêu cầu của từng người dùng...
+                                            OpenChatcung cấp dịch vụ trợ giảng số AI, hỗ trợ chuyên sâu, đa dạng các nội dung thực hành theo yêu cầu của từng người dùng.
                                         </p>
                                     </div>
                                     <div className={styles.project_footer}>

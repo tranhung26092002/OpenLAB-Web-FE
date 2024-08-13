@@ -56,10 +56,10 @@ const About = () => {
                         <h2>Các giải pháp tiên phong</h2>
                         <p>Các gói giải pháp được lựa chọn riêng theo từng nhu cầu, quy mô. <br /> Tiêu chuẩn khẳng định vị thế tiên phong của OpenLAB</p>
                         <ul>
-                            <li><i className="fas fa-check"></i> Giải pháp phòng Lab thông minh E-LAB</li>
-                            <li><i className="fas fa-check"></i> Hệ thống Kit thực hành thông minh E-KIT</li>
-                            <li><i className="fas fa-check"></i> Khóa học thực hành chuyên sâu E-COURSE</li>
-                            <li><i className="fas fa-check"></i> Giải pháp trợ giảng số AI E-CHAT</li>
+                            <li><i className="fas fa-check"></i> Giải pháp phòng Lab thông minh OpenLab</li>
+                            <li><i className="fas fa-check"></i> Hệ thống Kit thực hành thông minh OpenKit</li>
+                            <li><i className="fas fa-check"></i> Khóa học thực hành chuyên sâu OpenCourse</li>
+                            <li><i className="fas fa-check"></i> Giải pháp trợ giảng số AI OpenChat</li>
                         </ul>
                     </div>
                     <div className={styles.img_right}>

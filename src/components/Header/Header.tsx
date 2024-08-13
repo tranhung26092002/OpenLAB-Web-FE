@@ -62,7 +62,7 @@ const Header: React.FC = () => {
             <Menu.Item key="price">
                 <NavLink to="/price">Báo giá</NavLink>
             </Menu.Item>
-            <Menu.Item key="dashboard">
+            <Menu.Item key="blog">
                 <NavLink to="/blog">Blog</NavLink>
             </Menu.Item>
             <Menu.Item key="contact">
@@ -120,10 +120,22 @@ const Header: React.FC = () => {
                     </div>
 
                     <Dropdown className={styles.dropdownNavigation} overlay={navMenu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                        <button className={styles.ant_dropdown_link} onClick={e => e.preventDefault()} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
                             Navigation <DownOutlined />
-                        </a>
+                        </button>
                     </Dropdown>
+
+
+                    <div className={styles.searchBar}>
+                        <input
+                            type="text"
+                            placeholder="Tìm kiếm khoá học, kit, sách..."
+                            className={styles.searchInput}
+                        />
+                        <button className={styles.searchButton}>
+                            <i className="fa fa-search"></i>
+                        </button>
+                    </div>
 
                     <div className={styles.cart}>
                         <i className="fa-solid fa-cart-plus"></i>
