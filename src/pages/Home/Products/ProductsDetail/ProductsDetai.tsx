@@ -7,6 +7,7 @@ import { DispatchType, RootState } from "../../../../redux/configStore";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseDetail } from "../../../../redux/ProductReducer/ProductReducer";
 import { DOMAIN_VIDEO } from '../../../../../src/util/config';
+import { BookOutlined, FileTextOutlined, PlayCircleOutlined, ReadOutlined, SolutionOutlined, VideoCameraOutlined } from "@ant-design/icons";
 
 
 const ProductsDetail = () => {
@@ -59,7 +60,7 @@ const ProductsDetail = () => {
                                 data.lessons.map((lesson, index) => (
                                     <li key={index} className={styles.item_list}>
                                         <span className={styles.icon_item}>
-
+                                            <ReadOutlined  />
                                         </span>
                                         <span className={styles.text_item}>
                                             {index + 1}. {lesson.titleLesson}
@@ -113,7 +114,7 @@ const ProductsDetail = () => {
                         <h3>Khoá học bao gồm</h3>
                         <ul>
                             <li>
-                                <span>13 bài giảng</span>
+                                <span>{data?.lessons?.length || 0} bài giảng</span>
                             </li>
                             <li>
                                 <span>1 - 2 giờ mỗi bài học</span>

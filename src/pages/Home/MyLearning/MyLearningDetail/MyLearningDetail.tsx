@@ -7,6 +7,7 @@ import { DispatchType, RootState } from '../../../../redux/configStore';
 import { fetchMyProductDetail } from '../../../../redux/MyLearningReducer/MyLearningReducer';
 import { useLocation } from 'react-router-dom';
 import { DOMAIN_VIDEO } from '../../../../../src/util/config';
+import { BookOutlined, FileTextOutlined, PlayCircleOutlined, ReadOutlined, SolutionOutlined, VideoCameraOutlined } from "@ant-design/icons";
 
 const MylearningDetailPage = () => {
     const location = useLocation();
@@ -92,7 +93,7 @@ const MylearningDetailPage = () => {
                                             onClick={() => handleLessonClick(lesson.urlVideo, lesson.titleLesson, lesson.urlDocument, lesson.description)}
                                         >
                                             <span className={styles.icon_item}>
-
+                                                <PlayCircleOutlined  />
                                             </span>
                                             <span className={styles.text_item}>
                                                 {index + 1}. {lesson.titleLesson}

@@ -10,7 +10,7 @@ import { DispatchType, RootState } from '../../../redux/configStore';
 import { history } from "../../../util/config";
 import { fetchAllCourse, searchCourse } from '../../../redux/ProductReducer/ProductReducer';
 import { debounce } from 'lodash';
-import { Card, Row, Col, Button, List, Pagination, AutoComplete } from 'antd';
+import { Card, Row, Col, Button, Pagination, AutoComplete } from 'antd';
 
 const Products = () => {
     const navigate = useNavigate();
@@ -19,8 +19,9 @@ const Products = () => {
     const [deviceId, setDeviceId] = useState<string>('');
     const userId = useSelector((state: RootState) => state.UserReducer.userId);
 
+    // Set itemsPerPage to 8 (2 hàng, mỗi hàng 4 ô)
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(3);
+    const [itemsPerPage, setItemsPerPage] = useState(8);
     const [searchTerm, setSearchTerm] = useState('');
 
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -182,7 +183,7 @@ const Products = () => {
                         <div className={styles.item_grid}>
                             <Row gutter={[16, 16]}>
                                 {Array.isArray(itemsToDisplay) && itemsToDisplay.map((item, index) => (
-                                    <Col xs={24} sm={12} md={8} key={index}>
+                                    <Col xs={24} sm={12} md={6} key={index}> {/* 2 hàng, mỗi hàng 4 ô */}
                                         <Card className={styles.card}>
                                             <div className={styles.image_container}>
                                                 <img src={item.thumbnail} alt={item.title} className={styles.image} />
@@ -218,121 +219,6 @@ const Products = () => {
                     </div>
 
                 </section>
-
-                {/* <section className={styles.container_kit}>
-                    <div className={styles.header}>
-                        <h2 className={styles.content_header}>
-                            Kit thực hành chuyên sâu
-                        </h2>
-                        <a href="/home/products/kit">
-                            <button type='button' className={styles.btn_header}>
-                                Xem thêm
-                            </button>
-                        </a>
-                    </div>
-
-                    <div className={styles.items}>
-                        <div className={styles.item}>
-                            <a href="/home/products/detail">
-                                <div className={styles.img_item}>
-                                    <img src={require("../../../assets/img/8051mcu_.webp")} alt="MCU 8051" />
-                                    <button
-                                        className={styles.view_more_btn}
-                                    // onClick={() => handleDetail("ProductId")}
-                                    >
-                                        Xem thêm
-                                    </button>
-                                </div>
-                                <div className={styles.desciption_item}>
-                                    <h3 className={styles.text_item}>
-                                        Kit ABCD
-                                    </h3>
-                                    <div className={styles.price_item}>
-                                        <strong>
-                                            600,000
-                                            <span>VND</span>
-                                        </strong>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <section className={styles.container_document}>
-                    <div className={styles.header}>
-                        <h2 className={styles.content_header}>
-                            Tài liệu thực hành
-                        </h2>
-                        <a href="/home/products/document">
-                            <button type='button' className={styles.btn_header}>
-                                Xem thêm
-                            </button>
-                        </a>
-                    </div>
-
-                    <div className={styles.items}>
-                        <div className={styles.item}>
-                            <a href="/home/products/document/ABCD">
-                                <div className={styles.img_item}>
-                                    <img src={require("../../../assets/img/document.webp")} alt="document" />
-                                    <button className={styles.view_more_btn}>Xem thêm</button>
-                                </div>
-                                <div className={styles.desciption_item}>
-                                    <h3 className={styles.text_item}>
-                                        Kit: ABCD
-                                    </h3>
-                                    <div className={styles.price_item}>
-                                        <strong>
-                                            600,000
-                                            <span>VND</span>
-                                        </strong>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div className={styles.item}>
-                            <a href="/home/products/document/ABCD">
-                                <div className={styles.img_item}>
-                                    <img src={require("../../../assets/img/document.webp")} alt="document" />
-                                    <button className={styles.view_more_btn}>Xem thêm</button>
-                                </div>
-                                <div className={styles.desciption_item}>
-                                    <h3 className={styles.text_item}>
-                                        Kit: abcde
-                                    </h3>
-                                    <div className={styles.price_item}>
-                                        <strong>
-                                            700,000
-                                            <span>VND</span>
-                                        </strong>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div className={styles.item}>
-                            <a href="/home/products/document/hsjjdd">
-                                <div className={styles.img_item}>
-                                    <img src={require("../../../assets/img/document.webp")} alt="document" />
-                                    <button className={styles.view_more_btn}>Xem thêm</button>
-                                </div>
-                                <div className={styles.desciption_item}>
-                                    <h3 className={styles.text_item}>
-                                        Kit: hsjjdd
-                                    </h3>
-                                    <div className={styles.price_item}>
-                                        <strong>
-                                            800,000
-                                            <span>VND</span>
-                                        </strong>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section> */}
             </div>
             <Footer />
         </Fragment >

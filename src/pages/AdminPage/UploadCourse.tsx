@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form, Input, Modal, Popconfirm, Table, Upload, UploadFile, notification } from 'antd';
+import { Button, Form, Input, Modal, Table, Upload, UploadFile, notification } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { DispatchType, RootState } from '../../redux/configStore';
-import { UploadOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, FolderAddOutlined, UploadOutlined } from '@ant-design/icons';
 import { createCourse, deleteCourse, fetchAllCourse, updateCourse } from '../../redux/ProductReducer/ProductReducer';
 
 interface UploadCourseProps {
@@ -91,6 +91,7 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
             });
         }
     };
+    
 
     const handleDelete = (id: string) => {
         dispatch(deleteCourse(id))
@@ -106,6 +107,21 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                     description: 'Failed to delete!',
                 });
             });
+    };
+
+    const showDeleteConfirm = (id: string) => {
+        Modal.confirm({
+            title: 'Bạn có chắc chắn muốn xóa bài học này không?',
+            okText: 'Yes',
+            okType: 'danger',
+            cancelText: 'No',
+            onOk() {
+                handleDelete(id);
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        });
     };
 
     const handlePageChange = (page: number) => {
@@ -139,6 +155,7 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                             <>
                                 <Button
                                     type="primary"
+                                    icon={<EditOutlined />}
                                     style={{ marginRight: '10px' }}
                                     onClick={() => {
                                         setEditingId(record.id);
@@ -161,17 +178,20 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                                     }}>Update</Button>
                                 <Button
                                     type="default"
+                                    icon={<FolderAddOutlined/>}
                                     style={{ marginRight: '10px' }}
-                                    onClick={() => handleAddLesson(record.id, record.title)}>Add Lesson</Button>
-                                <Popconfirm
-                                    title="Are you sure you want to delete this entry?"
-                                    onConfirm={() => handleDelete(String(record.id))}
-                                    onCancel={() => console.log('Cancelled delete for:', record.id)}
-                                    okText="Yes"
-                                    cancelText="No"
+                                    onClick={() => handleAddLesson(record.id, record.title)}
                                 >
-                                    <Button danger>Delete</Button>
-                                </Popconfirm>
+                                    Add Lesson
+                                </Button>
+                                <Button
+                                    danger
+                                    key="delete"
+                                    icon={<DeleteOutlined />}
+                                    onClick={() => showDeleteConfirm(String(record.id))}
+                                >
+                                    Xóa
+                                </Button>
                             </>
                         ),
                     },

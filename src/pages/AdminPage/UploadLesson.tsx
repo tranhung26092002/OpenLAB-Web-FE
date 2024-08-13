@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DispatchType, RootState } from '../../redux/configStore';
 import { addLessonToCourse, deleteLesson, getAllLessonOfCourse, Lesson, updateLesson } from '../../redux/LessonReducer/LessonReducer';
-import { Button, Modal, Input, List, Upload, Form, Popconfirm, UploadFile } from 'antd';
+import { Button, Modal, Input, List, Upload, Form, UploadFile } from 'antd';
 import { DeleteOutlined, EditOutlined, UploadOutlined } from '@ant-design/icons';
 import styles from './UploadLesson.module.scss';
 import { DOMAIN_VIDEO } from '../../../src/util/config';
@@ -48,7 +48,7 @@ const UploadLesson: React.FC<UploadLessonProps> = ({ courseId, titleCourse }) =>
     };
 
     const handleDeleteLesson = async (lessonId: number) => {
-        await dispatch(deleteLesson({ lessonId}));
+        await dispatch(deleteLesson({ lessonId }));
     };
 
     const showModal = (lesson?: Lesson) => {
@@ -76,7 +76,21 @@ const UploadLesson: React.FC<UploadLessonProps> = ({ courseId, titleCourse }) =>
             </video>
         );
     };
-    
+
+    const showDeleteConfirm = (id: number) => {
+        Modal.confirm({
+            title: 'Bạn có chắc chắn muốn xóa bài học này không?',
+            okText: 'Yes',
+            okType: 'danger',
+            cancelText: 'No',
+            onOk() {
+                handleDeleteLesson(id);
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        });
+    };
 
     return (
         <Fragment>
@@ -104,25 +118,22 @@ const UploadLesson: React.FC<UploadLessonProps> = ({ courseId, titleCourse }) =>
                         <List.Item
                             actions={[
                                 <Button
+                                    type="primary"
                                     key="edit"
                                     icon={<EditOutlined />}
                                     onClick={() => showModal(item)}
                                 >
                                     Sửa
                                 </Button>,
-                                <Popconfirm
-                                    title="Bạn có chắc chắn muốn xóa bài học này không?"
-                                    onConfirm={() => handleDeleteLesson(item.id)}
-                                    okText="Có"
-                                    cancelText="Không"
+
+                                <Button
+                                    danger
+                                    key="delete"
+                                    icon={<DeleteOutlined />}
+                                    onClick={() => showDeleteConfirm(item.id)}
                                 >
-                                    <Button
-                                        key="delete"
-                                        icon={<DeleteOutlined />}
-                                    >
-                                        Xóa
-                                    </Button>
-                                </Popconfirm>
+                                    Xóa
+                                </Button>
                             ]}
                         >
                             <List.Item.Meta

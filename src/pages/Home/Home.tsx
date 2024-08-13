@@ -58,7 +58,7 @@ export const Home = (props: Props) => {
                                 Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến các dịch vụ chất lượng, có giá trị thực tiễn cao!
                             </p>
                             <a className={styles.btn} href="/products">
-                                Các dịch vụ của chúng tôi
+                                Các dịch vụ chính
                             </a>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ export const Home = (props: Props) => {
                                     {/* <i className="fa-solid fa-building-columns"></i> */}
                                 </div>
                                 <div className={styles.feature_text}>
-                                    <h4>Nền tảng thực hành trực tuyến</h4>
+                                    <h4>Nền tảng thực hành số</h4>
                                     <p>Cung cấp các dịch vụ thực hành trực truyến AI/IoT</p>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@ export const Home = (props: Props) => {
                                     {/* <i className="fa-solid fa-layer-group"></i> */}
                                 </div>
                                 <div className={styles.feature_text}>
-                                    <h4>Thiết bị thực hành trực tuyến</h4>
+                                    <h4>Thiết bị thực hành thông minh</h4>
                                     <p>Cung cấp các bộ KIT thực hành trực tuyến AI/IoT</p>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@ export const Home = (props: Props) => {
                                     {/* <i className="fa-solid fa-chart-line"></i> */}
                                 </div>
                                 <div className={styles.feature_text}>
-                                    <h4>Trợ giảng số trực tuyến</h4>
+                                    <h4>Trợ giảng số AI</h4>
                                     <p>Cung cấp các dịch vụ Chatbot AI hỗ trợ thực hành trực tuyến 24/7</p>
                                 </div>
                             </div>

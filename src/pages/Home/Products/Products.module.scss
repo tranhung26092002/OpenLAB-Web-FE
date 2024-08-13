@@ -272,8 +272,8 @@
         margin-bottom: 20px;
 
         .header {
-            text-align: center; // Căn giữa văn bản cho màn hình nhỏ
-            margin-bottom: 1rem; // Khoảng cách dưới cho header
+            text-align: center;
+            margin-bottom: 1rem;
 
             .content_header {
                 font-weight: 700;
@@ -336,7 +336,8 @@
 
                 .search_bar {
                     display: flex;
-                    width: 300px; // Giảm chiều rộng của thanh tìm kiếm
+                    width: 100%;
+                    max-width: 300px;
                     align-items: center;
                 }
 
@@ -358,11 +359,14 @@
                 .ant-col {
                     display: flex;
                     justify-content: center;
+                    max-width: 100%;
+                    padding: 0 8px; // Thêm khoảng cách giữa các cột
                 }
 
                 .card {
                     margin-top: 16px;
                     width: 100%;
+                    max-width: 280px; // Đảm bảo card không quá lớn
                 }
 
                 .image_container {
@@ -423,11 +427,19 @@
                     .ant-col {
                         width: 50%;
                     }
+
+                    .card {
+                        max-width: 220px; // Giảm kích thước card trên màn hình nhỏ hơn
+                    }
                 }
 
                 @media (max-width: 768px) {
                     .ant-col {
                         width: 100%;
+                    }
+
+                    .card {
+                        max-width: 100%; // Card chiếm toàn bộ chiều rộng màn hình nhỏ
                     }
 
                     .description_item {
@@ -456,10 +468,9 @@
             }
         }
 
-
         .pagination-container {
             display: flex;
-            justify-content: center; // Căn giữa phần tử phân trang
+            justify-content: center;
             margin-top: 20px;
 
             .ant-pagination {
@@ -522,5 +533,4 @@
             }
         }
     }
-
 }

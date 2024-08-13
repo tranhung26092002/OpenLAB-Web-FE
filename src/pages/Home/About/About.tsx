@@ -48,7 +48,7 @@ const About = () => {
                         <li>Phát triển trợ giảng số AI</li>
                     </ol>
                     <h2>Profile OpenLAB</h2>
-                    <p><a href="#" target="_blank">Tham khảo Profile - Công ty Cổ phần OpenLAB</a></p>
+                    <p><a href="/" target="_blank">Tham khảo Profile - Công ty Cổ phần OpenLAB</a></p>
                 </div>
 
                 <div className={styles.giai_phap}>
