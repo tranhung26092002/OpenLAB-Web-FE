@@ -10,7 +10,7 @@
   justify-content: space-between;
   width: 100%;
   height: 140px;
-  padding: 20px 30px;
+  padding-top: 30px;
   border-bottom: 5px solid #dc3545;
   background-color: #fff;
 
@@ -27,6 +27,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
+    /* Ẩn .search_form và .cart khi chiều rộng nhỏ hơn 1400px */
     @media (max-width: 1400px) {
 
       .searchBar,
@@ -35,6 +36,7 @@
       }
     }
 
+    /* Hiển thị dropdownNavigation và ẩn navigation khi chiều rộng nhỏ hơn hoặc bằng 1199px */
     @media (max-width: 1199px) {
       .dropdownNavigation {
         display: flex;
@@ -45,6 +47,7 @@
       }
     }
 
+    /* Hiển thị navigation và ẩn dropdownNavigation khi chiều rộng lớn hơn hoặc bằng 1200px */
     @media (min-width: 1200px) {
       .dropdownNavigation {
         display: none;
@@ -61,14 +64,10 @@
       justify-content: flex-start;
 
       img {
-        width: 180px;
+        width: 250px;
+        /* Điều chỉnh kích thước theo nhu cầu */
         height: auto;
-      }
-
-      @media (max-width: 740px) {
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 15px;
+        /* Giữ tỷ lệ khung hình */
       }
     }
 
@@ -111,6 +110,7 @@
 
       .active {
         color: #dc3545;
+        /* Màu chữ khi liên kết được chọn */
       }
     }
 
@@ -118,7 +118,7 @@
       align-items: center;
       margin-left: auto;
       font-size: 1em;
-    
+
       .ant_dropdown_link {
         display: flex;
         align-items: center;
@@ -135,7 +135,7 @@
         &:focus {
           outline: none; /* Đảm bảo không có viền khi phần tử được focus */
         }
-    
+
         &:hover {
           color: #dc3545;
         }
@@ -173,6 +173,12 @@
         background-color: #dc3545;
         color: white;
         cursor: pointer;
+        color: white;
+        transition: background-color 0.3s ease;
+
+        i {
+          margin-right: 5px;
+        }
 
         &:hover {
           background-color: #b52a39;
@@ -252,13 +258,7 @@
     .logoRight {
       display: flex;
       align-items: center;
-      margin-left: 20px;
-
-      @media (max-width: 740px) {
-        justify-content: center;
-        width: 100%;
-        margin-top: 10px;
-      }
+      margin-left: 20px; // Khoảng cách từ giỏ hàng
 
       button {
         background-color: #dc3545;
