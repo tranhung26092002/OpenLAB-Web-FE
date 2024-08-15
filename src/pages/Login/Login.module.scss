@@ -34,7 +34,7 @@ body {
       bottom: 0;
       width: 50%; // Sử dụng 50% chiều rộng để căn sang trái
       max-width: 100%; // Đảm bảo không bị vượt quá kích thước của khung cha
-      height: auto;
+      height: 100%;
     }
 
     .bg_right {
@@ -43,7 +43,7 @@ body {
       bottom: 0;
       width: 50%; // Sử dụng 50% chiều rộng để căn sang phải
       max-width: 100%; // Đảm bảo không bị vượt quá kích thước của khung cha
-      height: auto;
+      height: 100%;
     }
 
     .login_container {

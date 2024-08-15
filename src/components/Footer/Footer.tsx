@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 import styles from './Footer.module.scss';
-
+import { Navigate, useNavigate } from 'react-router-dom';
+import { replace } from 'lodash';
 type Props = {};
 
 const Footer = (props: Props) => {
+    const navigate = useNavigate();
     return (
         <Fragment>
             <section className={styles.footer}>
@@ -27,7 +29,7 @@ const Footer = (props: Props) => {
                                     </li>
                                     <li>
                                         <i className="fa fa-envelope me-2"></i>
-                                        <a href="mailto:openlab@gmail.com">openlab@gmail.com</a>
+                                        <a href="mailto:openlab.user@gmail.com">openlab.user@gmail.com</a>
                                     </li>
                                     <li>
                                         <i className="fa fa-map-marker-alt me-2"></i>
@@ -36,7 +38,7 @@ const Footer = (props: Props) => {
                                             target="_blank"
                                             rel="noreferrer"
                                         >
-                                            68A/6 Ao Sen, Hà Đông, HN
+                                            68A/6 Ao Sen, Hà Đông, Hà Nội
                                         </a>
                                     </li>
                                 </ul>
@@ -46,10 +48,18 @@ const Footer = (props: Props) => {
                             <div className={styles.footer_widget}>
                                 <h5 className={styles.widget_title}>Khám phá</h5>
                                 <ul className={styles.list_unstyled}>
-                                    <li><a href="/About">Giới thiệu</a></li>
-                                    <li><a href="/Blog">Blog</a></li>
-                                    <li><a href="/Contact">Liên hệ</a></li>
-                                    <li><a href="">Hỗ trợ</a></li>
+                                    <li onClick={() => navigate('/about', { replace: true })}>
+                                        Giới thiệu
+                                    </li>
+                                    <li onClick={() => navigate('/blog', { replace: true })}>
+                                        Blog
+                                    </li>
+                                    <li onClick={() => navigate('/contact', { replace: true })}>
+                                        Liên lạc
+                                    </li>
+                                    <li onClick={() => navigate('/', { replace: true })}>
+                                        Hỗ trợ
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -57,10 +67,21 @@ const Footer = (props: Props) => {
                             <div className={styles.footer_widget}>
                                 <h5 className={styles.widget_title}>Sản phẩm</h5>
                                 <ul className={styles.list_unstyled}>
-                                    <li><a href="#">E-LAB</a></li>
-                                    <li><a href="#">E-KIT</a></li>
-                                    <li><a href="#">Trợ giảng số E-CHAT</a></li>
-                                    <li><a href="#">Tất cả sản phẩm</a></li>
+                                    <li onClick={() => navigate('/', { replace: true })}>
+                                        OpenLAB
+                                    </li>
+                                    <li onClick={() => navigate('/', { replace: true })}>
+                                        OpenKIT
+                                    </li>
+                                    <li onClick={() => navigate('/', { replace: true })}>
+                                        OpenCourse
+                                    </li>
+                                    <li onClick={() => navigate('/', { replace: true })}>
+                                        OpenChat
+                                    </li>
+                                    <li onClick={() => navigate('/products', { replace: true })}>
+                                        Tất cả sản phẩm
+                                    </li>
                                 </ul>
                             </div>
                         </div>

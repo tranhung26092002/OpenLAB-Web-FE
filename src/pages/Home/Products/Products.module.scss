@@ -366,61 +366,68 @@
                 .card {
                     margin-top: 16px;
                     width: 100%;
-                    max-width: 280px; // Đảm bảo card không quá lớn
-                }
-
-                .image_container {
-                    width: 100%;
-                    padding-top: 75%; // Tỷ lệ khung hình 4:3
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .image {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-                .description_item {
-                    .text_item {
-                        font-size: 1rem;
-                        font-weight: bold;
-                        margin: 0;
-                    }
-
-                    .price_item {
-                        margin-top: 0.5rem;
-                        font-size: 0.875rem;
-
-                        strong {
-                            font-size: 1rem;
-                        }
-
-                        span {
-                            font-size: 0.875rem;
-                        }
-                    }
-                }
-
-                button {
-                    margin-top: 0.5rem;
-                    padding: 0.5rem 1rem;
-                    font-size: 0.875rem;
-                    border-radius: 0.5rem;
-                    background-color: #f66b2d;
-                    color: white;
-                    border: none;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
+                    max-width: 300px; // Đảm bảo card không quá lớn
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); // Thêm đổ bóng để tạo hiệu ứng nổi
+                    transition: box-shadow 0.3s ease;
 
                     &:hover {
-                        background-color: #e25617;
+                        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); // Tăng độ đổ bóng khi hover
+                    }
+
+                    .image_container {
+                        width: 100%;
+                        padding-top: 75%; // Tỷ lệ khung hình 4:3
+                        position: relative;
+                        overflow: hidden;
+
+                        .image {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: auto;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .description_item {
+                        .text_item {
+                            font-size: 1rem;
+                            font-weight: bold;
+                            margin: 0;
+                        }
+
+                        .price_item {
+                            margin-top: 0.5rem;
+                            font-size: 0.875rem;
+
+                            strong {
+                                font-size: 1rem;
+                            }
+
+                            span {
+                                font-size: 0.875rem;
+                            }
+                        }
+                    }
+
+                    button {
+                        margin-top: 0.5rem;
+                        padding: 0.5rem 1rem;
+                        font-size: 0.875rem;
+                        border-radius: 0.5rem;
+                        background-color: #f66b2d;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: #e25617;
+                        }
                     }
                 }
+
 
                 // Responsive Styles
                 @media (max-width: 1050px) {

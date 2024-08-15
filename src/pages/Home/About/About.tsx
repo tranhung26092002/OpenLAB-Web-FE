@@ -9,19 +9,19 @@ const About = () => {
             name: "Phạm Văn Huấn",
             organization: "HỌC VIỆN AN NINH",
             feedback: "OpenLAB là một đối tác tin cậy, tận tâm, luôn luôn trau dồi để mang đến chất lượng sản phẩm tốt nhất tới người dùng.",
-            image: require('../../../assets/img/home/4.jpg'), // Add the appropriate image path
+            image: require('../../../assets/img/home/Chatbot.png'), // Add the appropriate image path
         },
         {
             name: "Đăng Khôi",
             organization: "THÁI BÌNH",
             feedback: "Với những công nghệ hiện đại, nắm bắt xu hướng thị trường, sản phẩm OpenLAB mang lại luôn giải quyết được những bài toán cấp bách trong lĩnh vực Đại học.",
-            image: require('../../../assets/img/home/4.jpg'), // Add the appropriate image path
+            image: require('../../../assets/img/home/Chatbot.png'), // Add the appropriate image path
         },
         {
             name: "Nguyễn Quang Thành",
             organization: "PTIT",
             feedback: "Các khóa học về IoT khá chất lượng, nhờ nó mà mình có 1 nền tảng vững chắc về IoT...",
-            image: require('../../../assets/img/home/4.jpg'), // Add the appropriate image path
+            image: require('../../../assets/img/home/Chatbot.png'), // Add the appropriate image path
         }
     ];
     return (
@@ -64,7 +64,16 @@ const About = () => {
                     </div>
                     <div className={styles.img_right}>
                         <span>
-                            <img src={require("../../../assets/img/home/8.jpg")} alt="about" />
+                            <img src={require("../../../assets/img/about/1.jpg")} alt="about" />
+                        </span>
+                        <span>
+                            <img src={require("../../../assets/img/about/2.jpg")} alt="about" />
+                        </span>
+                        <span>
+                            <img src={require("../../../assets/img/about/3.jpg")} alt="about" />
+                        </span>
+                        <span>
+                            <img src={require("../../../assets/img/about/4.jpg")} alt="about" />
                         </span>
                     </div>
                 </div>
