@@ -134,6 +134,36 @@ export const Home = (props: Props) => {
                     </div>
                 </div>
             </section>
+
+            <section className={styles.solution_padding}>
+                <div className={styles.container_project}>
+                    <div className={styles.content_left}>
+                        <h2>Các giải pháp tiên phong</h2>
+                        <p>Các gói giải pháp được lựa chọn riêng theo từng nhu cầu, quy mô. <br /> Tiêu chuẩn khẳng định vị thế tiên phong của OpenLAB</p>
+                        <ul>
+                            <li><i className="fas fa-check"></i> Giải pháp phòng Lab thông minh OpenLab</li>
+                            <li><i className="fas fa-check"></i> Hệ thống Kit thực hành thông minh OpenKit</li>
+                            <li><i className="fas fa-check"></i> Khóa học thực hành chuyên sâu OpenCourse</li>
+                            <li><i className="fas fa-check"></i> Giải pháp trợ giảng số AI OpenChat</li>
+                        </ul>
+                    </div>
+                    <div className={styles.img_right}>
+                        <span>
+                            <img src={require("../../assets/img/about/1.jpg")} alt="about" />
+                        </span>
+                        <span>
+                            <img src={require("../../assets/img/about/2.jpg")} alt="about" />
+                        </span>
+                        <span>
+                            <img src={require("../../assets/img/about/3.jpg")} alt="about" />
+                        </span>
+                        <span>
+                            <img src={require("../../assets/img/about/4.jpg")} alt="about" />
+                        </span>
+                    </div>
+                </div>
+            </section>
+
             <section className={styles.project_padding}>
                 <div className={styles.container_project}>
                     <div className={styles.content_project}>
@@ -146,29 +176,29 @@ export const Home = (props: Props) => {
                         <div className={styles.project_column}>
                             <div className={styles.project_header}>
                                 <span>
-                                    <img src={require("../../assets/img/home/5.jpg")} alt="project 1" />
+                                    <img src={require("../../assets/img/home/1.jpg")} alt="project 1" />
                                 </span>
                             </div>
                             <div className={styles.project_content}>
                                 <div className={styles.project_meta}>
-                                    <span className={styles.category}>App</span>
+                                    <span className={styles.category}>New</span>
 
                                     <span className={styles.label}>
                                         <i className="fas fa-signal me-2"></i>
                                         Có sẵn
                                     </span></div>
                                 <div className={styles.project_title}>
-                                    <a href="/products">OpenLab: Giải pháp phòng LAB thông minh</a>
+                                    <p>Lập trình nhúng IoT với ESP8266</p>
                                 </div>
                                 <div className={styles.project_meta_info}>
                                     <i className="far fa-quote-left me-2"></i>
                                     <p>
-                                        OpenLab cung cấp giải pháp toàn diện cho hệ thống phòng Lab thông minh, bao gồm các các bộ kit thực hành thông minh, phần mềm thực hành, và hub điều khiển trung tâm kết nối Kit với toàn bộ các thiết bị trong Lab như máy chiếu, Tivi, điều hòa, đèn điện,... tạo ra một hệ thống đồng bộ trên server...
+                                        OpenLAB cung cấp khóa học cơ bản về IoT với ESP8266
                                     </p>
                                 </div>
                                 <div className={styles.project_footer}>
                                     <div className="project-price"></div>
-                                    <button className={styles.btn} onClick={() => navigate('/products', { replace: true })}>
+                                    <button className={styles.btn} onClick={() => navigate('/products/detail?productId=17', { replace: true })}>
                                         Xem chi tiết
                                         <i className="fa fa-long-arrow-right"></i>
                                     </button>
@@ -179,29 +209,29 @@ export const Home = (props: Props) => {
                         <div className={styles.project_column}>
                             <div className={styles.project_header}>
                                 <span>
-                                    <img src={require("../../assets/img/home/8.jpg")} alt="project 2" />
+                                    <img src={require("../../assets/img/home/2.jpg")} alt="project 2" />
                                 </span>
                             </div>
                             <div className={styles.project_content}>
                                 <div className={styles.project_meta}>
-                                    <span className={styles.category}>App</span>
+                                    <span className={styles.category}>New</span>
 
                                     <span className={styles.label}>
                                         <i className="fas fa-signal me-2"></i>
                                         Có sẵn
                                     </span></div>
                                 <div className={styles.project_title}>
-                                    <a href="/products">OpenKit: Thiết bị thực hành thông minh</a>
+                                    <p>Lập trình nhúng IoT với Arduino</p>
                                 </div>
                                 <div className={styles.project_meta_info}>
                                     <i className="far fa-quote-left me-2"></i>
                                     <p>
-                                        OpenKit cung cấp hệ thống các bộ Kit thực hành thông minh AI/IoT cho các chuyên ngành như Lập trình nhúng IoT, Điện toán đám mây, Mạng cảm biến, ML, Phân tích dữ liệu...
+                                        OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino
                                     </p>
                                 </div>
                                 <div className={styles.project_footer}>
                                     <div className="project-price"></div>
-                                    <button className={styles.btn} onClick={() => navigate('/products', { replace: true })}>
+                                    <button className={styles.btn} onClick={() => navigate('/products/detail?productId=19', { replace: true })}>
                                         Xem chi tiết
                                         <i className="fa fa-long-arrow-right"></i>
                                     </button>
@@ -212,28 +242,28 @@ export const Home = (props: Props) => {
                         <div className={styles.project_column}>
                             <div className={styles.project_header}>
                                 <span>
-                                    <img src={require("../../assets/img/home/7.jpg")} alt="project 3" />
+                                    <img src={require("../../assets/img/home/3.jpg")} alt="project 3" />
                                 </span>
                             </div>
                             <div className={styles.project_content}>
                                 <div className={styles.project_meta}>
-                                    <span className={styles.category}>App</span>
+                                    <span className={styles.category}>New</span>
                                     <span className={styles.label}>
                                         <i className="fas fa-signal me-2"></i>
                                         Có sẵn
                                     </span></div>
                                 <div className={styles.project_title}>
-                                    <a href="/products">OpenCourse: Khóa học thực hành chuyên sâu</a>
+                                    <p>Lập trình nhúng IoT với STM32</p>
                                 </div>
                                 <div className={styles.project_meta_info}>
                                     <i className="far fa-quote-left me-2"></i>
                                     <p>
-                                        OpenCourse cung cấp các khóa học thực hành chuyên sâu cho nhiều loại Kit khác nhau như STM32, ARDUINO, ESP, Raspberry Pi,... Mỗi khóa học bao gồm tài liệu, video, code mẫu và trợ giảng số AI hỗ trợ thực hành 24/7.
+                                        OpenLAB cung cấp khóa học cơ bản lập trình nhúng IoT với STM32
                                     </p>
                                 </div>
                                 <div className={styles.project_footer}>
                                     <div className={styles.project_price}></div>
-                                    <button className={styles.btn} onClick={() => navigate('/products', { replace: true })}>
+                                    <button className={styles.btn} onClick={() => navigate('/products/detail?productId=18', { replace: true })}>
                                         Xem chi tiết
                                         <i className="fa fa-long-arrow-right"></i>
                                     </button>
@@ -243,28 +273,90 @@ export const Home = (props: Props) => {
                         <div className={styles.project_column}>
                             <div className={styles.project_header}>
                                 <span>
-                                    <img src={require("../../assets/img/home/6.jpg")} alt="project 3" />
+                                    <img src={require("../../assets/img/home/15.jpg")} alt="project 3" />
                                 </span>
                             </div>
                             <div className={styles.project_content}>
                                 <div className={styles.project_meta}>
-                                    <span className={styles.category}>App</span>
+                                    <span className={styles.category}>New</span>
                                     <span className={styles.label}>
                                         <i className="fas fa-signal me-2"></i>
                                         Có sẵn
                                     </span></div>
                                 <div className={styles.project_title}>
-                                    <a href="/products">OpenChat: Trợ giảng số AI hỗ trợ thực hành 24/7</a>
+                                    <p>Lập trình xe hơi tự hành với ESP32-CAM</p>
                                 </div>
                                 <div className={styles.project_meta_info}>
                                     <i className="far fa-quote-left me-2"></i>
                                     <p>
-                                        OpenChatcung cấp dịch vụ trợ giảng số AI, hỗ trợ chuyên sâu, đa dạng các nội dung thực hành theo yêu cầu của từng người dùng.
+                                        OpenLAB cung cấp khóa học lập trình xe hơi tự hành với ESP32-CAM
                                     </p>
                                 </div>
                                 <div className={styles.project_footer}>
                                     <div className={styles.project_price}></div>
-                                    <button className={styles.btn} onClick={() => navigate('/products', { replace: true })}>
+                                    <button className={styles.btn} onClick={() => navigate('/products/detail?productId=29', { replace: true })}>
+                                        Xem chi tiết
+                                        <i className="fa fa-long-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.project_column}>
+                            <div className={styles.project_header}>
+                                <span>
+                                    <img src={require("../../assets/img/home/26.jpg")} alt="project 3" />
+                                </span>
+                            </div>
+                            <div className={styles.project_content}>
+                                <div className={styles.project_meta}>
+                                    <span className={styles.category}>New</span>
+                                    <span className={styles.label}>
+                                        <i className="fas fa-signal me-2"></i>
+                                        Có sẵn
+                                    </span></div>
+                                <div className={styles.project_title}>
+                                    <p>Thực hành lập trình phát triển ChatBot AI</p>
+                                </div>
+                                <div className={styles.project_meta_info}>
+                                    <i className="far fa-quote-left me-2"></i>
+                                    <p>
+                                        OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI
+                                    </p>
+                                </div>
+                                <div className={styles.project_footer}>
+                                    <div className={styles.project_price}></div>
+                                    <button className={styles.btn} onClick={() => navigate('/products/detail?productId=42', { replace: true })}>
+                                        Xem chi tiết
+                                        <i className="fa fa-long-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.project_column}>
+                            <div className={styles.project_header}>
+                                <span>
+                                    <img src={require("../../assets/img/home/31.jpg")} alt="project 3" />
+                                </span>
+                            </div>
+                            <div className={styles.project_content}>
+                                <div className={styles.project_meta}>
+                                    <span className={styles.category}>New</span>
+                                    <span className={styles.label}>
+                                        <i className="fas fa-signal me-2"></i>
+                                        Có sẵn
+                                    </span></div>
+                                <div className={styles.project_title}>
+                                    <p>Thực hành lập trình nhúng IoT với ESP32</p>
+                                </div>
+                                <div className={styles.project_meta_info}>
+                                    <i className="far fa-quote-left me-2"></i>
+                                    <p>
+                                        OpenLAB cung cấp khóa học thực hành lâp trình nhúng IoT với ESP32
+                                    </p>
+                                </div>
+                                <div className={styles.project_footer}>
+                                    <div className={styles.project_price}></div>
+                                    <button className={styles.btn} onClick={() => navigate('/products/detail?productId=46', { replace: true })}>
                                         Xem chi tiết
                                         <i className="fa fa-long-arrow-right"></i>
                                     </button>
@@ -366,7 +458,9 @@ export const Home = (props: Props) => {
                         <div className={styles.content_contact}>
                             <h2 className={styles.header_content}>Liên hệ OpenLAB</h2>
                             <p className={styles.main_content}>Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần. Chúng tôi sẽ phản hồi trong thời gian sớm nhất!</p>
-                            <a className={styles.footer_content} href="/contact">Liên hệ</a>
+                            <button className={styles.footer_content} onClick={() => navigate('/contact', { replace: true })}>
+                                Liên hệ
+                            </button>
                         </div>
                     </div>
                 </div>

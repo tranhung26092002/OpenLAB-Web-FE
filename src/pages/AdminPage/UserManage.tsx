@@ -60,10 +60,10 @@ const UserManage = () => {
         setCurrentEditingUser(user);
         setIsEditModalVisible(true);
         form.setFieldsValue({
-            username: user.name,
+            name: user.name,
             email: user.email,
             password: '',
-            vaiTro: user.role,
+            role: user.role,
         });
     };
 
@@ -79,7 +79,7 @@ const UserManage = () => {
                 const updatedUserData = {
                     ...values,
                     id: currentEditingUser.id,
-                    vaiTro: parseInt(values.vaiTro),
+                    role: values.role,
                 };
 
                 console.log("Updating user:", updatedUserData);
@@ -160,9 +160,9 @@ const UserManage = () => {
         },
         {
             title: 'Vai trò',
-            dataIndex: 'vaiTro',
-            key: 'vaiTro',
-            render: (vaiTro: any) => (vaiTro === 1 ? 'ROLE_USER' : 'ROLE_ADMIN'),
+            dataIndex: 'role',
+            key: 'role',
+            render: (role: any) => (role === 1 ? 'ROLE_USER' : 'ROLE_ADMIN'),
         },
         {
             title: 'Actions',
@@ -191,7 +191,7 @@ const UserManage = () => {
             <Table dataSource={users} columns={columns} rowKey="id" />
             <Modal title="Add User" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <Form form={form} layout="vertical" name="userForm">
-                    <Form.Item name="username" label="User Name" rules={[{ required: true, message: 'Please input the username!' }]}>
+                    <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please input the name!' }]}>
                         <Input />
                     </Form.Item>
                     <Form.Item name="email" label="Email" rules={[{ required: true, message: 'Please input the email!' }]}>
@@ -200,10 +200,10 @@ const UserManage = () => {
                     <Form.Item name="password" label="Password" rules={[{ required: true, message: 'Please input the password!' }]}>
                         <Input.Password />
                     </Form.Item>
-                    <Form.Item name="vaiTro" label="Vai Trò" rules={[{ required: true, message: 'Please select a role!' }]}>
+                    <Form.Item name="role" label="Vai Trò" rules={[{ required: true, message: 'Please select a role!' }]}>
                         <Select placeholder="Select a role">
-                            <Option value="1">ROLE_USER</Option>
-                            <Option value="2">ROLE_ADMIN</Option>
+                            <Option value="customer">ROLE_USER</Option>
+                            <Option value="admin">ROLE_ADMIN</Option>
                         </Select>
                     </Form.Item>
                 </Form>
@@ -211,7 +211,7 @@ const UserManage = () => {
 
             <Modal title="Edit User" visible={isEditModalVisible} onOk={handleEditOk} onCancel={handleEditCancel}>
                 <Form form={form} layout="vertical" name="userEditForm">
-                    <Form.Item name="username" label="User Name" rules={[{ required: true }]}>
+                    <Form.Item name="name" label="Name" rules={[{ required: true }]}>
                         <Input />
                     </Form.Item>
                     <Form.Item name="email" label="Email" rules={[{ required: true }]}>
@@ -220,10 +220,10 @@ const UserManage = () => {
                     <Form.Item name="password" label="Password">
                         <Input.Password />
                     </Form.Item>
-                    <Form.Item name="vaiTro" label="Vai Trò" rules={[{ required: true }]}>
+                    <Form.Item name="role" label="Vai Trò" rules={[{ required: true }]}>
                         <Select>
-                            <Option value="1">ROLE_USER</Option>
-                            <Option value="2">ROLE_ADMIN</Option>
+                            <Option value="customer">ROLE_USER</Option>
+                            <Option value="admin">ROLE_ADMIN</Option>
                         </Select>
                     </Form.Item>
                 </Form>

@@ -9,9 +9,9 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 76px;
+  height: 90px;
   // padding-top: 30px;
-  border-bottom: 5px solid #dc3545;
+  border-bottom: 3px solid #dc3545;
   background-color: #fff;
   padding: 0 4px;
 
@@ -100,43 +100,42 @@
         &:hover {
           color: #dc3545;
         }
-
-        svg {}
       }
     }
 
     .searchBar {
+      // display: flex;
       align-items: center;
+      margin-right: 20px;
+      line-height: 20px;
 
-      .searchButton {
-        border: none;
-        background-color: white;
-        color: #dc3545;
-        height: 24px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .searchInput {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        transition: width 0.3s ease;
+
+        @media (max-width: 740px) {
+          width: 100%;
+        }
       }
 
-      .searchPopup {
-        position: absolute;
-        top: 50px; // Vị trí popup so với nút tìm kiếm
-        left: 0;
-        width: 300px;
-        padding: 10px;
-        background-color: #fff;
+      .searchButton {
+        padding: 8px 12px;
         border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 1000; // Đảm bảo popup hiển thị trên các phần tử khác
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background-color: #dc3545;
+        color: white;
+        cursor: pointer;
 
-        .searchInput {
-          width: 100%;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          font-size: 16px;
+        &:hover {
+          background-color: #b52a39;
+        }
+
+        .fa-search {
+          color: white;
         }
       }
     }
@@ -156,7 +155,7 @@
 
     .device {
       // display: none;
-      line-height: 12px;
+      line-height: 20px;
 
       button {
         background-color: #dc3545;
@@ -175,7 +174,7 @@
 
     .logoRight {
       align-items: center;
-      line-height: 12px;
+      line-height: 20px;
 
       button {
         background-color: #dc3545;
@@ -207,7 +206,7 @@
 
 /* Start of responsive*/
 /* PC */
-@media(min-width: 1024px) {
+@media(min-width: 1350px) {
   .dropdownNavigation {
     display: none;
   }
@@ -216,13 +215,15 @@
     display: flex;
     max-width: 650px;
   }
+  .searchBar{
+    .searchInput{
+      width: 100px;
+    }
+  }
 }
 
-/* Tablet & Mobile */
-@media(max-width: 1023px) {}
-
 /* Tablet */
-@media(max-width: 1023px) and (min-width: 900px) {
+@media(max-width: 1350px) and (min-width: 900px) {
   .dropdownNavigation {
     display: none;
   }
@@ -240,6 +241,12 @@
   .device {
     font-size: 13px;
   }
+
+  .searchBar{
+    .searchInput{
+      width: 50px;
+    }
+  }
 }
 
 /* Mobile */
@@ -252,7 +259,7 @@
   .dropdownNavigation {
     position: absolute;
     display: flex;
-    right: 100px;
+    right: 130px;
 
     i {
       font-size: 32px;

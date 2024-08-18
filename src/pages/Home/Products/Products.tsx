@@ -140,9 +140,9 @@ const Products = () => {
                             <h2 className={styles.text_content}>
                                 Flash sale
                             </h2>
-                            <a href="/sale">
+                            <button type='button' className={styles.btn_header} onClick={() => history.push('/sale')}>
                                 Xem thêm
-                            </a>
+                            </button>
                         </div>
 
                         <div className={styles.img_sale}>
@@ -158,11 +158,9 @@ const Products = () => {
                         <h2 className={styles.content_header}>
                             Khóa học lập trình nhúng IoT
                         </h2>
-                        <a href="/dashboard">
-                            <button type='button' className={styles.btn_header}>
-                                Xem thêm
-                            </button>
-                        </a>
+                        <button type='button' className={styles.btn_header} onClick={() => history.push('/dashboard')}>
+                            Xem thêm
+                        </button>
                     </div>
 
                     <div className={styles.items}>

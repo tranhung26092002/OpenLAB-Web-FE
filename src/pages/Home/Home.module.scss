@@ -153,7 +153,7 @@ p {
       gap: 20px;
 
       .feature_column {
-        flex: 0 1 250px;  // Đảm bảo cột không bị co lại dưới 250px
+        flex: 0 1 250px; // Đảm bảo cột không bị co lại dưới 250px
         max-width: 250px; // Giữ nguyên kích thước của cột
         height: 300px; // Chiều cao cố định
         margin-bottom: 20px;
@@ -201,6 +201,7 @@ p {
   @media (max-width: 992px) {
     .row_features {
       justify-content: space-between; // Căn đều các cột
+
       .feature_column {
         flex: 0 1 calc(50% - 20px); // Đảm bảo cột không bị co lại dưới 50%
         max-width: calc(50% - 20px);
@@ -212,9 +213,115 @@ p {
   @media (max-width: 576px) {
     .row_features {
       justify-content: center; // Căn giữa các cột
+
       .feature_column {
         flex: 0 1 100%; // Đảm bảo cột chiếm toàn bộ chiều rộng
         max-width: 100%;
+      }
+    }
+  }
+}
+
+// ----------------------------------------- Solution ------------------------------------
+
+.solution_padding {
+  padding: 60px 0;
+  background-color: #ffffff;
+
+  .container_project {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .content_left {
+      flex: 1;
+      max-width: 45%;
+      padding-right: 20px;
+
+      h2 {
+        font-size: 36px;
+        color: $secondary-color;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 16px;
+        color: #6c757d;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: 16px;
+          color: #003366;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+
+          i {
+            color: #00aaff;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .img_right {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      flex: 1;
+      max-width: 45%;
+
+      span {
+        display: block;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          display: block;
+        }
+
+        &:hover{
+          border-color: rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+      }
+    }
+  }
+
+  // Ẩn phần hình ảnh khi màn hình nhỏ
+  @media (max-width: 1024px) {
+    .container_project {
+      flex-direction: column; // Chuyển thành bố cục cột khi màn hình nhỏ
+      align-items: center; // Căn giữa các nội dung
+
+      .content_left {
+        max-width: 100%;
+        padding-right: 0;
+      }
+
+      .img_right {
+        display: none; // Ẩn phần hình ảnh khi màn hình nhỏ hơn 1024px
       }
     }
   }
@@ -238,7 +345,7 @@ p {
 
       .sub_heading {
         font-size: 36px;
-        color: #003366;
+        color: $secondary-color;
         margin-bottom: 10px;
         font-weight: 600;
       }
@@ -258,8 +365,8 @@ p {
       .project_column {
         background: #fff;
         border-radius: 8px;
-        width: 350px; // Chiều rộng cố định
-        height: 600px; // Chiều cao cố định
+        width: 330px; // Chiều rộng cố định
+        height: 550px; // Chiều cao cố định
         display: flex;
         flex-direction: column;
         transition: all 0.3s ease;
@@ -278,6 +385,7 @@ p {
 
           span {
             display: block;
+
             img {
               width: 100%;
               height: auto;
@@ -317,16 +425,12 @@ p {
           }
 
           .project_title {
-            a {
+            p {
               font-size: 20px;
               color: #003366;
               font-weight: 600;
-              text-decoration: none;
-
-              &:hover {
-                text-decoration: underline;
-              }
             }
+
             margin-bottom: 15px;
           }
 
@@ -334,6 +438,7 @@ p {
             i {
               color: #ccc;
             }
+
             p {
               font-size: 14px;
               color: #6c757d;
@@ -345,6 +450,7 @@ p {
               -webkit-line-clamp: 3; // Giới hạn số dòng hiển thị
               -webkit-box-orient: vertical;
             }
+
             margin-bottom: 20px;
           }
 
@@ -429,6 +535,7 @@ p {
 
       span {
         display: block;
+
         img {
           width: 100%;
           height: auto;
@@ -455,7 +562,7 @@ p {
           font-size: 35px; // Tăng kích thước font để tiêu đề nổi bật hơn
           line-height: 1.2;
           font-weight: 700;
-          color: #002244; // Sử dụng màu đậm hơn để tạo điểm nhấn
+          color: $secondary-color;
         }
 
         .heading {
@@ -511,7 +618,8 @@ p {
     .container_about {
       flex-direction: column;
 
-      .about_img, .about_content {
+      .about_img,
+      .about_content {
         max-width: 100%;
         margin-right: 0;
         padding-left: 0;
@@ -560,18 +668,18 @@ p {
       overflow: hidden;
       width: 100%;
       margin-top: 20px;
-    
+
       .owl_customer {
         position: relative;
         overflow: hidden;
         display: flex;
         justify-content: center;
-    
+
         .owl_stage {
           display: flex;
           transition: transform 0.5s ease;
           width: calc(100% * 6);
-    
+
           .img {
             flex: 0 0 33.33%;
             max-width: 33.33%;
@@ -579,7 +687,7 @@ p {
             box-sizing: border-box;
             display: flex;
             justify-content: center;
-    
+
             img {
               width: auto;
               height: 120px;
@@ -589,7 +697,7 @@ p {
               background-color: #fff;
               transition: transform 0.3s ease, box-shadow 0.3s ease; // Thêm hiệu ứng mượt mà
             }
-    
+
             &:hover img {
               transform: scale(1.1); // Zoom ảnh lên 10% khi hover
               box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Tăng độ đổ bóng khi hover
@@ -598,7 +706,7 @@ p {
         }
       }
     }
-    
+
   }
 }
 

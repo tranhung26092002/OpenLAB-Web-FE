@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import styles from './Header.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { DispatchType, RootState } from '../../redux/configStore';
@@ -13,36 +13,6 @@ const Header: React.FC = () => {
     const name = useSelector((state: RootState) => state.UserReducer.name);
     // const email = useSelector((state: RootState) => state.UserReducer.email);
     const isLogin = useSelector((state: RootState) => state.UserReducer.isAuthenticated);
-
-    const [isPopupVisible, setIsPopupVisible] = useState(false);
-    const inputRef = useRef<HTMLInputElement | null>(null);
-    const popupRef = useRef<HTMLDivElement | null>(null);
-
-    const handleSearchButtonClick = () => {
-        setIsPopupVisible(!isPopupVisible);
-        if (!isPopupVisible && inputRef.current) {
-            inputRef.current.focus(); // Tự động focus vào ô input khi popup hiển thị
-        }
-    };
-
-    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
-            setIsPopupVisible(false); // Ẩn popup khi nhấn Enter
-        }
-    };
-
-    const handleClickOutside = (event: MouseEvent) => {
-        if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
-            setIsPopupVisible(false); // Ẩn popup khi nhấp ra ngoài
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
 
     useEffect(() => {
 
@@ -163,20 +133,14 @@ const Header: React.FC = () => {
 
 
                     <div className={styles.searchBar}>
-                        <div className={styles.searchButton} onClick={handleSearchButtonClick}>
+                        <input
+                            type="text"
+                            placeholder="Tìm kiếm khoá học, kit, sách..."
+                            className={styles.searchInput}
+                        />
+                        <button className={styles.searchButton}>
                             <i className="fa fa-search"></i>
-                        </div>
-                        {isPopupVisible && (
-                            <div className={styles.searchPopup} ref={popupRef}>
-                                <input
-                                    ref={inputRef}
-                                    type="text"
-                                    placeholder="Tìm kiếm khoá học, kit, sách..."
-                                    className={styles.searchInput}
-                                    onKeyPress={handleKeyPress}
-                                />
-                            </div>
-                        )}
+                        </button>
                     </div>
 
                     <div className={styles.cart} onClick={() => history.push('/cart')}>
