@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import mqtt from 'mqtt';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -44,52 +44,6 @@ const OpenKitB: React.FC = () => {
     const [subscribedData, setSubscribedData] = useState('');
     const [errorMessage, setErrorMessage] = useState<string>('');
 
-    useEffect(() => {
-        if (client) {
-            client.on('connect', () => {
-                setConnectionStatus('Connected');
-            });
-
-            client.on('message', (topic, message) => {
-                try {
-                    const data = JSON.parse(message.toString());
-                    setSubscribedData(JSON.stringify(data, null, 2));
-
-                    const temperatureValue = parseFloat(data.temperature).toFixed(2);
-                    const humidityValue = parseFloat(data.humidity).toFixed(2);
-                    const gasValue = parseFloat(data.gas).toFixed(2);
-                    const lightValue = parseFloat(data.light).toFixed(2);
-                    const ledValue = data.led || 'off';
-
-                    setTemperature(parseFloat(temperatureValue));
-                    setHumidity(parseFloat(humidityValue));
-                    setGas(parseFloat(gasValue));
-                    setLight(parseFloat(lightValue));
-                    setLed(ledValue);
-
-                    updateTemperatureHistory(parseFloat(temperatureValue));
-                    updateHumidityHistory(parseFloat(humidityValue));
-                    updateGasHistory(parseFloat(gasValue));
-                    updateLightHistory(parseFloat(lightValue));
-
-                    const now = new Date().toLocaleTimeString();
-                    setTimestamps(prev => [...prev, now]);
-                } catch (error) {
-                    console.error('Error parsing JSON:', error);
-                }
-            });
-
-            client.on('error', (error) => {
-                console.error('Connection error: ', error);
-                setConnectionStatus('Disconnected');
-            });
-
-            return () => {
-                client.end();
-            };
-        }
-    }, [client]);
-
     const handleConnect = () => {
         if (!mqttHost || !mqttPort || !idKit || !mqttUser || !mqttPassword) {
             setErrorMessage('All fields are required.');
@@ -103,6 +57,45 @@ const OpenKitB: React.FC = () => {
             username: mqttUser,
             password: mqttPassword,
         });
+
+        mqttClient.on('connect', () => {
+            setConnectionStatus('Connected');
+        });
+
+        mqttClient.on('message', (topic, message) => {
+            try {
+                const data = JSON.parse(message.toString());
+                setSubscribedData(JSON.stringify(data, null, 2));
+
+                const temperatureValue = parseFloat(data.temperature).toFixed(2);
+                const humidityValue = parseFloat(data.humidity).toFixed(2);
+                const gasValue = parseFloat(data.gas).toFixed(2);
+                const lightValue = parseFloat(data.light).toFixed(2);
+                const ledValue = data.led || 'off';
+
+                setTemperature(parseFloat(temperatureValue));
+                setHumidity(parseFloat(humidityValue));
+                setGas(parseFloat(gasValue));
+                setLight(parseFloat(lightValue));
+                setLed(ledValue);
+
+                updateTemperatureHistory(parseFloat(temperatureValue));
+                updateHumidityHistory(parseFloat(humidityValue));
+                updateGasHistory(parseFloat(gasValue));
+                updateLightHistory(parseFloat(lightValue));
+
+                const now = new Date().toLocaleTimeString();
+                setTimestamps(prev => [...prev, now]);
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+            }
+        });
+
+        mqttClient.on('error', (error) => {
+            console.error('Connection error: ', error);
+            setConnectionStatus('Disconnected');
+        });
+
         setClient(mqttClient);
         setConnectionStatus('Connecting...');
         setErrorMessage('');
