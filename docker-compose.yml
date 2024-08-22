@@ -1,18 +1,21 @@
-version: '3.9'
-
+version: '3'
 services:
-  mosquitto:
-    container_name: mqtt
-    image: eclipse-mosquitto
-    restart: always
-    volumes:
-      - ./config:/mosquitto/config
-      - ./data:/mosquitto/data
-      - ./log:/mosquitto/log
+  openlab_fe:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - 1883:1883
-      - 9001:9001
-volumes:
-  config:
-  data:
-  log:
+      - "3000:3000"
+  
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+    depends_on:
+      - openlab_fe
