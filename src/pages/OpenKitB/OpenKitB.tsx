@@ -7,7 +7,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import MqttControls from './MqttControls/MqttControls';
 import Dashboard from './Dashboard/Dashboard';
-import DeviceControls from'./DeviceControls/DeviceControls';
+import DeviceControls from './DeviceControls/DeviceControls';
 
 const OpenKitB: React.FC = () => {
     // value
@@ -95,9 +95,11 @@ const OpenKitB: React.FC = () => {
             setErrorMessage('All fields are required.');
             return;
         }
-        
+
         setErrorMessage('');
+        const clientId = `mqttjs_${Math.random().toString(16).substr(2, 8)}`;
         const mqttClient = mqtt.connect(`wss://${mqttHost}:${mqttPort}/mqtt`, {
+            clientId: clientId,
             username: mqttUser,
             password: mqttPassword,
         });
@@ -241,7 +243,7 @@ const OpenKitB: React.FC = () => {
                             />
                         </TabPanel>
                         <TabPanel>
-                            <DeviceControls 
+                            <DeviceControls
                                 led={led}
                                 toggleLed={toggleLed}
                             />
