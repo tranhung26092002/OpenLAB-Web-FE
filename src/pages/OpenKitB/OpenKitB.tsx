@@ -110,7 +110,7 @@ const OpenKitB: React.FC = () => {
     };
 
     const handlePublish = () => {
-        if (client && mqttTopicPub && mqttMessage) {
+        if (client && connectionStatus === 'Connected' && mqttTopicPub && mqttMessage) {
             const message = JSON.stringify({ message: mqttMessage });
             client.publish(mqttTopicPub, message, { qos: 0, retain: false }, (error) => {
                 if (error) {
@@ -124,7 +124,7 @@ const OpenKitB: React.FC = () => {
     };
 
     const handleSubscribe = () => {
-        if (client && mqttTopicSub) {
+        if (client && connectionStatus === 'Connected' && mqttTopicSub) {
             client.subscribe(mqttTopicSub, { qos: 0 }, (error) => {
                 if (error) {
                     console.error('Subscribe error: ', error);
@@ -137,7 +137,7 @@ const OpenKitB: React.FC = () => {
     };
 
     const handleUnsubscribe = () => {
-        if (client && mqttTopicSub) {
+        if (client && connectionStatus === 'Connected' && mqttTopicSub) {
             client.unsubscribe(mqttTopicSub, (error) => {
                 if (error) {
                     console.error('Unsubscribe error: ', error);
@@ -166,7 +166,7 @@ const OpenKitB: React.FC = () => {
     };
 
     const toggleLed = () => {
-        if (client) {
+        if (client && connectionStatus === 'Connected') {
             const newLedState = led === 'off' ? 1 : 0;
             client.publish('client', JSON.stringify({ led: newLedState }));
             setLed(newLedState === 1 ? 'on' : 'off');
