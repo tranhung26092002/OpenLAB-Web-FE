@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* npx tailwindcss -i ./src/styles/tailwindcss/input.css -o ./src/styles/tailwindcss/output.css --watch */
+@layer base {
+    body {
+        @apply font-poppins;
+        @apply box-border;
+        @apply p-0;
+    }
+}
