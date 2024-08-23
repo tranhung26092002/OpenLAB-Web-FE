@@ -51,7 +51,7 @@ root.render(
         <Route path='/my-learning/detail' element={<AuthGuard><MyLearningDetailPage></MyLearningDetailPage></AuthGuard>}></Route>
         <Route path='/products/detail' element={<ProductsDetailPage></ProductsDetailPage>}></Route>
 
-        <Route path='/dashboard' element={<OpenKitBPage></OpenKitBPage>}></Route>
+        <Route path='openkit-b/dashboard' element={<OpenKitBPage></OpenKitBPage>}></Route>
 
         <Route path='*' element={<Navigate to="" />}></Route>
       </Routes>

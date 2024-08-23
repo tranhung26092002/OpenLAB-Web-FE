@@ -158,7 +158,7 @@ const Products = () => {
                         <h2 className={styles.content_header}>
                             Khóa học lập trình nhúng IoT
                         </h2>
-                        <button type='button' className={styles.btn_header} onClick={() => history.push('/dashboard')}>
+                        <button type='button' className={styles.btn_header} onClick={() => history.push('/openkit-b/dashboard')}>
                             Xem thêm
                         </button>
                     </div>
