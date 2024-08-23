@@ -7,7 +7,7 @@ import { addCourse } from '../../../redux/MyLearningReducer/MyLearningReducer';
 import { notification } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { DispatchType, RootState } from '../../../redux/configStore';
-import { history } from "../../../util/config";
+import { DOMAIN_VIDEO, history } from "../../../util/config";
 import { fetchAllCourse, searchCourse } from '../../../redux/ProductReducer/ProductReducer';
 import { debounce } from 'lodash';
 import { Card, Row, Col, Button, Pagination, AutoComplete } from 'antd';
@@ -184,7 +184,7 @@ const Products = () => {
                                     <Col xs={24} sm={12} md={6} key={index}> {/* 2 hàng, mỗi hàng 4 ô */}
                                         <Card className={styles.card}>
                                             <div className={styles.image_container}>
-                                                <img src={item.thumbnail} alt={item.title} className={styles.image} />
+                                                <img src={`${DOMAIN_VIDEO}/images/download/${item.thumbnail}`} alt={item.title} className={styles.image} />
                                             </div>
                                             <div className={styles.description_item}>
                                                 <h3 className={styles.text_item}>

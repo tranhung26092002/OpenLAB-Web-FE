@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DispatchType, RootState } from '../../redux/configStore';
 import { DeleteOutlined, EditOutlined, FolderAddOutlined, UploadOutlined } from '@ant-design/icons';
 import { createCourse, deleteCourse, fetchAllCourse, updateCourse } from '../../redux/ProductReducer/ProductReducer';
+import { DOMAIN_VIDEO } from '../../../src/util/config';
 
 interface UploadCourseProps {
     onAddLesson: (id: number, titleCourse: string) => void; // Nhận tham số id
@@ -144,7 +145,7 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                     {
                         title: 'Thumbnail', dataIndex: 'thumbnail', key: 'thumbnail',
                         render: (thumbnailUrl: string) => (
-                            <img src={thumbnailUrl} alt="Thumbnail" style={{ width: '80px', height: '80px' }} />
+                            <img src={`${DOMAIN_VIDEO}/images/download/${thumbnailUrl}`} alt="Thumbnail" style={{ width: '80px', height: '80px' }} />
                         )
                     },
                     { title: 'Title', dataIndex: 'title', key: 'title' },

@@ -7,7 +7,7 @@ import { DispatchType, RootState } from "../../../../redux/configStore";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseDetail } from "../../../../redux/ProductReducer/ProductReducer";
 import { DOMAIN_VIDEO } from '../../../../../src/util/config';
-import { BookOutlined, FileTextOutlined, PlayCircleOutlined, ReadOutlined, SolutionOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import { ReadOutlined } from "@ant-design/icons";
 
 
 const ProductsDetail = () => {
@@ -94,7 +94,7 @@ const ProductsDetail = () => {
                                 <video
                                     title="YouTube video player"
                                     controls
-                                    src={`${DOMAIN_VIDEO}/api/upload/video/${data.lessons[0].urlVideo}`}
+                                    src={`${DOMAIN_VIDEO}/upload/video/${data.lessons[0].urlVideo}`}
                                     style={{ border: '1px solid #ddd', borderRadius: '4px' }}
                                 >
                                     Your browser does not support the video tag.

@@ -9,6 +9,7 @@ import { deleteCourse, fetchAllMyProduct, searchMyProduct } from '../../../redux
 import Header from '../../../components/Header/Header';
 import Footer from '../../../components/Footer/Footer';
 import styles from './Mylearning.module.scss';
+import { DOMAIN_VIDEO } from '../../../../src/util/config';
 
 const MyLearning: React.FC = () => {
     const navigate = useNavigate();
@@ -93,7 +94,7 @@ const MyLearning: React.FC = () => {
                                     <Col xs={24} sm={12} md={8} key={index}>
                                         <Card className={styles.card}>
                                             <div className={styles.image_container}>
-                                                <img src={item.thumbnail} alt={item.title} className={styles.image} />
+                                                <img src={`${DOMAIN_VIDEO}/images/download/${item.thumbnail}`} alt={item.title} className={styles.image} />
                                             </div>
                                             <div className={styles.description_item}>
                                                 <h3 className={styles.text_item}>

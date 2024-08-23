@@ -7,7 +7,7 @@ import { DispatchType, RootState } from '../../../../redux/configStore';
 import { fetchMyProductDetail } from '../../../../redux/MyLearningReducer/MyLearningReducer';
 import { useLocation } from 'react-router-dom';
 import { DOMAIN_VIDEO } from '../../../../../src/util/config';
-import { BookOutlined, FileTextOutlined, PlayCircleOutlined, ReadOutlined, SolutionOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import { PlayCircleOutlined} from "@ant-design/icons";
 
 const MylearningDetailPage = () => {
     const location = useLocation();
@@ -64,7 +64,7 @@ const MylearningDetailPage = () => {
                             <video
                                 title="YouTube video player"
                                 controls
-                                src={`${DOMAIN_VIDEO}/api/upload/video/${videoUrl}`}
+                                src={`${DOMAIN_VIDEO}/upload/video/${videoUrl}`}
                                 style={{ border: '1px solid #ddd', borderRadius: '4px' }}
                             >
                                 Your browser does not support the video tag.
