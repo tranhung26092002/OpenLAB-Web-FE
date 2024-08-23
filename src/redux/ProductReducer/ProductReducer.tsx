@@ -125,14 +125,18 @@ export const updateCourse = createAsyncThunk(
     async ({ id, data: dataUpdate }: UpdatePayload, thunkAPI) => {
 
         const formData = new FormData();
-        formData.append('subId', dataUpdate.subId);
-        formData.append('title', dataUpdate.title);
-        formData.append('thumbnail', dataUpdate.thumbnail);
-        formData.append('createdBy', dataUpdate.createdBy);
-        formData.append('typeProduct', dataUpdate.typeProduct);
-        formData.append('isPublish', dataUpdate.isPublish ? 'true' : 'false');
-        formData.append('description', dataUpdate.description);
-        formData.append('originalPrice', dataUpdate.originalPrice.toString());
+
+        // Chỉ thêm vào FormData nếu trường đó có giá trị
+        if (dataUpdate.subId) formData.append('subId', dataUpdate.subId);
+        if (dataUpdate.title) formData.append('title', dataUpdate.title);
+        if (dataUpdate.thumbnail) formData.append('thumbnail', dataUpdate.thumbnail);
+        if (dataUpdate.createdBy) formData.append('createdBy', dataUpdate.createdBy);
+        if (dataUpdate.typeProduct) formData.append('typeProduct', dataUpdate.typeProduct);
+        if (typeof dataUpdate.isPublish !== 'undefined') {
+            formData.append('isPublish', dataUpdate.isPublish ? 'true' : 'false');
+        }
+        if (dataUpdate.description) formData.append('description', dataUpdate.description);
+        if (dataUpdate.originalPrice) formData.append('originalPrice', dataUpdate.originalPrice.toString());
 
         try {
             const response = await http.put(`/admin/course/update/${id}`, formData, {

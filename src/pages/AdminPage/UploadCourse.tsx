@@ -7,7 +7,7 @@ import { createCourse, deleteCourse, fetchAllCourse, updateCourse } from '../../
 import { DOMAIN_VIDEO } from '../../../src/util/config';
 
 interface UploadCourseProps {
-    onAddLesson: (id: number, titleCourse: string) => void; // Nhận tham số id
+    onAddLesson: (id: number, titleCourse: string) => void;
 }
 
 const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
@@ -44,32 +44,43 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
     const handleAddOrEdit = (values: any) => {
         const thumbnailFile = values.thumbnail && values.thumbnail[0] && values.thumbnail[0].originFileObj;
 
-        if (thumbnailFile) {
-            const data = {
-                subId: values.subId,
-                title: values.title,
-                thumbnail: thumbnailFile,
-                createdBy: values.createdBy,
-                typeProduct: values.typeProduct,
-                isPublish: values.isPublish,
-                description: values.description,
-                originalPrice: values.originalPrice
-            };
+        const data: any = {};
 
-            if (editingId) {
-                dispatch(updateCourse({ id: String(editingId), data: data }))
-                    .then(() => {
-                        notification.success({
-                            message: 'Success',
-                            description: 'Updated Successfully'
-                        });
-                    }).catch(() => {
-                        notification.error({
-                            message: 'Error',
-                            description: 'Failed to Update Course'
-                        });
+        if (editingId) {
+            // Cập nhật chỉ gửi những trường có giá trị
+            if (values.subId) data.subId = values.subId;
+            if (values.title) data.title = values.title;
+            if (thumbnailFile) data.thumbnail = thumbnailFile;
+            if (values.createdBy) data.createdBy = values.createdBy;
+            if (values.typeProduct) data.typeProduct = values.typeProduct;
+            if (typeof values.isPublish !== "undefined") data.isPublish = values.isPublish;
+            if (values.description) data.description = values.description;
+            if (values.originalPrice) data.originalPrice = values.originalPrice;
+            
+            dispatch(updateCourse({ id: String(editingId), data: data }))
+                .then(() => {
+                    notification.success({
+                        message: 'Success',
+                        description: 'Updated Successfully'
                     });
-            } else {
+                }).catch(() => {
+                    notification.error({
+                        message: 'Error',
+                        description: 'Failed to Update Course'
+                    });
+                });
+        } else {
+            // Thêm mới bắt buộc phải gửi đầy đủ các trường
+            if (thumbnailFile) {
+                data.subId = values.subId;
+                data.title = values.title;
+                data.thumbnail = thumbnailFile;
+                data.createdBy = values.createdBy;
+                data.typeProduct = values.typeProduct;
+                data.isPublish = values.isPublish;
+                data.description = values.description;
+                data.originalPrice = values.originalPrice;
+                
                 dispatch(createCourse(data))
                     .then(() => {
                         notification.success({
@@ -82,17 +93,17 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                             description: 'Failed to Create Course'
                         });
                     });
+            } else {
+                notification.error({
+                    message: 'Error',
+                    description: 'Please upload the thumbnail image'
+                });
+                return;
             }
-            setIsModalVisible(false);
-            form.resetFields();
-        } else {
-            notification.error({
-                message: 'Error',
-                description: 'Please upload the thumbnail image'
-            });
         }
+        setIsModalVisible(false);
+        form.resetFields();
     };
-    
 
     const handleDelete = (id: string) => {
         dispatch(deleteCourse(id))
@@ -137,7 +148,11 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
 
     return (
         <div>
-            <Button type="primary" onClick={() => setIsModalVisible(true)}>Add New</Button>
+            <Button type="primary" onClick={() => {
+                setEditingId(null);
+                setIsModalVisible(true);
+                form.resetFields();
+            }}>Add New</Button>
             <Table
                 dataSource={paginatedData.map(item => ({ ...item, key: item.id }))}
                 columns={[
@@ -221,21 +236,21 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                     <Form.Item
                         label="Sub ID"
                         name="subId"
-                        rules={[{ required: true, message: 'Please input the sub ID!' }]}
+                        rules={editingId ? [] : [{ required: true, message: 'Please input the sub ID!' }]}
                     >
                         <Input />
                     </Form.Item>
                     <Form.Item
                         label="Title"
                         name="title"
-                        rules={[{ required: true, message: 'Please input the title!' }]}
+                        rules={editingId ? [] : [{ required: true, message: 'Please input the title!' }]}
                     >
                         <Input />
                     </Form.Item>
                     <Form.Item
                         label="Thumbnail"
                         name="thumbnail"
-                        rules={[{ required: true, message: 'Please upload a thumbnail image!' }]}
+                        rules={editingId ? [] : [{ required: true, message: 'Please upload a thumbnail image!' }]}
                         valuePropName="fileList"
                         getValueFromEvent={normFile}
                     >
@@ -253,14 +268,14 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                     <Form.Item
                         label="Created By"
                         name="createdBy"
-                        rules={[{ required: true, message: 'Please input the creator!' }]}
+                        rules={editingId ? [] : [{ required: true, message: 'Please input the creator!' }]}
                     >
                         <Input />
                     </Form.Item>
                     <Form.Item
                         label="Type Product"
                         name="typeProduct"
-                        rules={[{ required: true, message: 'Please input the type of product!' }]}
+                        rules={editingId ? [] : [{ required: true, message: 'Please input the type of product!' }]}
                     >
                         <Input />
                     </Form.Item>
@@ -274,14 +289,14 @@ const UploadCourse: React.FC<UploadCourseProps> = ({ onAddLesson }) => {
                     <Form.Item
                         label="Description"
                         name="description"
-                        rules={[{ required: true, message: 'Please input the description!' }]}
+                        rules={editingId ? [] : [{ required: true, message: 'Please input the description!' }]}
                     >
                         <Input />
                     </Form.Item>
                     <Form.Item
                         label="Original Price"
                         name="originalPrice"
-                        rules={[{ required: true, message: 'Please input the original price!' }]}
+                        rules={editingId ? [] : [{ required: true, message: 'Please input the original price!' }]}
                     >
                         <Input type="number" />
                     </Form.Item>
