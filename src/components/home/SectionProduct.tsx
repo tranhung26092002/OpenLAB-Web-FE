@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import { settings } from "@utils/settingSlider";
 import { dataProduct } from "src/services/data";
 
+
+
 const SectionProduct = () => {
   return (
     <div className="body-product py-20 px-44 flex flex-col" data-aos="fade-up">
@@ -37,7 +39,7 @@ const SectionProduct = () => {
                       App
                     </div>
                     <div className="flex items-center gap-2">
-                      <FaSignal className="text-red-500" />{" "}
+                      <FaSignal className="text-red-500" />
                       <span className="text-xs font-normal">Có sẵn</span>
                     </div>
                   </div>

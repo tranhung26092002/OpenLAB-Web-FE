@@ -4,10 +4,9 @@ export const settings = {
     infinite: true,
     speed: 500,
     slidesToScroll: 1,
-
     autoplay: true,
     autoplaySpeed: 5000,
-    cssEase: "linear",
+
     pauseOnHover: true,
     pauseOnFocus: true,
     responsive: [

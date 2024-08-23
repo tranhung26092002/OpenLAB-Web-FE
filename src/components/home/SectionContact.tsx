@@ -1,7 +1,7 @@
 import imageContact from "@assets/image/contact/contact-image.webp";
 const SectionContact = () => {
   return (
-    <div className="body-section-contact flex justify-around items-start px-20 pb-10 ">
+    <div className="body-section-contact flex justify-around items-start px-20 py-20  ">
       <div className="content-section-contact flex justify-center items-center gap-6">
         <div>
           <img src={imageContact} alt="image-section-contact" />

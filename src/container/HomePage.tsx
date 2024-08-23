@@ -16,11 +16,11 @@ const HomePage = () => {
       <div className="container-section-services">
         <SectionServices />
       </div>
-      <div className="container-section-product">
-        <SectionProduct />
-      </div>
       <div className="container-section-solution">
         <SectionSolution isButton={true} />
+      </div>
+      <div className="container-section-product">
+        <SectionProduct />
       </div>
       <div className="container-section-about">
         <SectionAbout />

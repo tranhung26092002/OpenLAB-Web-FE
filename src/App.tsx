@@ -8,10 +8,12 @@ import GoToTopButton from "./components/custom/GoToTopButton";
 const LazyHomePage = lazy(() => import("@container/HomePage"));
 const LazyAboutPage = lazy(() => import("@container/AboutPage"));
 const LazyContactPage = lazy(() => import("@container/ContactPage"));
+const LazyBlogPage = lazy(() => import("@container/BlogPage"));
+const LazyPricesPage = lazy(() => import("@container/products/PricesPage"));
 const App = () => {
   useEffect(() => {
     AOS.init({
-      offset: 50,
+      offset: 200,
       duration: 700,
       easing: "ease-in",
       delay: 100,
@@ -63,6 +65,26 @@ const App = () => {
               </Suspense>
             }
           />
+          <Route
+            path="blog"
+            element={
+              <Suspense fallback={"Loading..."}>
+                <LazyBlogPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="product"
+          >
+            <Route
+              path="prices"
+              element={
+                <Suspense fallback={"Loading..."}>
+                  <LazyPricesPage />
+                </Suspense>
+              }
+            ></Route>
+          </Route>
         </Routes>
         <GoToTopButton
           showButton={showButton}

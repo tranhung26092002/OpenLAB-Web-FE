@@ -1,5 +1,6 @@
 import SectionFeedback from "src/components/about/SectionFeedback";
 import SectionStatiscal from "src/components/about/SectionStatiscal";
+import BannerPage from "src/components/custom/BannerPage";
 import SectionAbout from "src/components/home/SectionAbout";
 import SectionServices from "src/components/home/SectionServices";
 import SectionSolution from "src/components/home/SectionSolution";
@@ -7,6 +8,12 @@ import SectionSolution from "src/components/home/SectionSolution";
 const AboutPage = () => {
   return (
     <div className="container-about-page">
+      <BannerPage
+        header={"Giới thiệu công ty"}
+        homepage={"Trang chủ"}
+        name={"Giới thiệu"}
+      />
+
       <div className="px-24 pt-24 ">
         <h1 className="text-center text-3xl font-semibold leading-10">
           CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
@@ -26,13 +33,13 @@ const AboutPage = () => {
           thông minh AI/IoT, nền tảng thực hành trực tuyến, các khóa thực hành
           chuyên sâu, và trợ giảng số AI hỗ trợ thực hành trực tuyến 24/7.
         </p>
-
       </div>
+
       <SectionServices />
-      <SectionSolution/>
+      <SectionSolution />
       <SectionAbout />
       <SectionStatiscal />
-      <SectionFeedback/>
+      <SectionFeedback />
     </div>
   );
 };

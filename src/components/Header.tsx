@@ -98,13 +98,18 @@ const Header = () => {
                   Thiết bị phần cứng
                 </div>
                 <hr />
-                <div className="courses cursor-pointer pl-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
-                  Báo giá
-                </div>
+                <Link to={"/product/prices"}>
+                  <div className="courses cursor-pointer pl-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
+                    Báo giá
+                  </div>
+                </Link>
               </div>
             </Tooltip>
-            <span className="cursor-pointer hover:text-[#1464cc]">Blog</span>
-            <Link to ='/contact'>
+            <Link to="/blog">
+              <span className="cursor-pointer hover:text-[#1464cc]">Blog</span>
+            </Link>
+
+            <Link to="/contact">
               <span className="cursor-pointer hover:text-[#1464cc]">
                 Liên hệ
               </span>
