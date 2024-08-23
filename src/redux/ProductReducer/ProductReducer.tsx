@@ -158,7 +158,7 @@ export const deleteCourse = createAsyncThunk<string, string>(
 export const fetchAllCourse = createAsyncThunk(
     'course/fetchAll',
     async () => {
-        const response = await http.get('/api/course/all');
+        const response = await http.get('/course/all');
         return response.data.data;
     }
 );
@@ -166,7 +166,7 @@ export const fetchAllCourse = createAsyncThunk(
 export const fetchCoursePaginated = createAsyncThunk(
     'course/fetchPaginated',
     async (params: { page: number, size: number }) => {
-        const response = await http.get(`/api/course`, { params });
+        const response = await http.get(`/course`, { params });
         return response.data;
     }
 );
@@ -174,7 +174,7 @@ export const fetchCoursePaginated = createAsyncThunk(
 export const searchCourse = createAsyncThunk(
     'course/search',
     async (searchItem: string) => {
-        const response = await http.get(`/api/course/search?search=${encodeURIComponent(searchItem)}`);
+        const response = await http.get(`/course/search?search=${encodeURIComponent(searchItem)}`);
         return response.data;
     }
 );
@@ -182,7 +182,7 @@ export const searchCourse = createAsyncThunk(
 export const fetchCourseDetail = createAsyncThunk(
     'course/fetchDetail',
     async (id: number) => {
-        const response = await http.get(`/api/course/${id}`);
+        const response = await http.get(`/course/${id}`);
         return response.data;
     }
 )

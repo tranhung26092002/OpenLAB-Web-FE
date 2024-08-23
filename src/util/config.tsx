@@ -1,8 +1,8 @@
 import axios from "axios";
 import { createBrowserHistory } from "history";
 
-export const DOMAIN_VIDEO = "http://222.255.119.57:8081";
-export const DOMAIN = "http://222.255.119.57:8081";
+export const DOMAIN_VIDEO = "https://openlab.com.vn/api";
+export const DOMAIN = "https://openlab.com.vn/api";
 export const history = createBrowserHistory();
 
 export const ACCESS_TOKEN: string = 'accessToken';

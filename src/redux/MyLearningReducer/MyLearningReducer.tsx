@@ -73,7 +73,7 @@ const initialState: MyProductState = {
 export const fetchAllMyProduct = createAsyncThunk(
     'myProduct/fetchAll',
     async (userId: number | null) => {
-        const response = await http.get(`/api/user/${userId}/courses`);
+        const response = await http.get(`/user/${userId}/courses`);
         return response.data;
     }
 );
@@ -82,7 +82,7 @@ export const addCourse = createAsyncThunk(
     'myProduct/addCourse',
     async (data: { userId: number | null, deviceId: string }, thunkAPI) => {
         try {
-            const response = await http.post(`/api/user/${data.userId}/coursesById/${data.deviceId}`);
+            const response = await http.post(`/user/${data.userId}/coursesById/${data.deviceId}`);
             return response.data;
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message);
@@ -94,7 +94,7 @@ export const deleteCourse = createAsyncThunk(
     'myProduct/deleteCourse',
     async (data: { userId: number | null, courseId: number }, thunkAPI) => {
         try {
-            await http.delete(`/api/user/${data.userId}/courses/${data.courseId}`);
+            await http.delete(`/user/${data.userId}/courses/${data.courseId}`);
             return data.courseId;
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message);
@@ -106,7 +106,7 @@ export const deleteCourse = createAsyncThunk(
 export const fetchMyProductDetail = createAsyncThunk(
     'myProduct/fetchDetail',
     async (id: number) => {
-        const response = await http.get(`/api/course/${id}`);
+        const response = await http.get(`/course/${id}`);
         return response.data;
     }
 )
@@ -114,7 +114,7 @@ export const fetchMyProductDetail = createAsyncThunk(
 export const searchMyProduct = createAsyncThunk(
     'myProduct/search',
     async (searchItem: string) => {
-        const response = await http.get(`/api/course/search?search=${encodeURIComponent(searchItem)}`);
+        const response = await http.get(`/course/search?search=${encodeURIComponent(searchItem)}`);
         return response.data;
     }
 );

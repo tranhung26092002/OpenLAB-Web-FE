@@ -52,7 +52,7 @@ const OpenKitB: React.FC = () => {
 
         setErrorMessage('');
         const clientId = `mqttjs_${Math.random().toString(16).substr(2, 8)}`;
-        const mqttClient = mqtt.connect(`ws://${mqttHost}:${mqttPort}/mqtt`, {
+        const mqttClient = mqtt.connect(`wss://${mqttHost}:${mqttPort}`, {
             clientId: clientId,
             username: mqttUser,
             password: mqttPassword,

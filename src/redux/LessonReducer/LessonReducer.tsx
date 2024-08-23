@@ -25,7 +25,7 @@ const initialListState: LessonListState = {
 export const fetchAllLesson = createAsyncThunk(
     'lesson/fetchAllLesson',
     async () => {
-        const response = await http.get('/api/lesson/all');
+        const response = await http.get('/lesson/all');
         return response.data.data;
     }
 );
@@ -34,7 +34,7 @@ export const getAllLessonOfCourse = createAsyncThunk(
     'lesson/getAllLessonOfCourse',
     async (courseId: number, thunkAPI) => {
         try {
-            const response = await http.get(`/api/lesson/all/${courseId}`);
+            const response = await http.get(`/lesson/all/${courseId}`);
             return response.data.data;
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.response.data.message);
