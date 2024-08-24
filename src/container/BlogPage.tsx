@@ -22,16 +22,16 @@ const BlogPage = () => {
               >
                 <div className="w-full h-36 border-2 border-green-700 rounded"></div>
                 <div className="flex justify-between items-center mt-5">
-                  <span className="flex gap-2 items-center ">
-                    <FaRegUser /> {item.role}
-                  </span>
+                  <div className="flex gap-2 items-center ">
+                    <FaRegUser /> <span>{item.role}</span>
+                  </div>
                   <span className="flex gap-2 items-center">
                     <IoCalendar />
                     {item.date}
                   </span>
                 </div>
                 <div className="py-4">
-                  <p className="text-xl font-medium">{item.title}</p>
+                  <p className="text-lg font-medium">{item.title}</p>
                 </div>
                 <div>
                   <p className="font-light">{item.content}</p>

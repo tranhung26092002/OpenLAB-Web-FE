@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import Header from "./components/Header";
 import SectionFooter from "./components/SectionFooter";
 import GoToTopButton from "./components/custom/GoToTopButton";
+import NavContact from "./components/custom/NavContact";
 const LazyHomePage = lazy(() => import("@container/HomePage"));
 const LazyAboutPage = lazy(() => import("@container/AboutPage"));
 const LazyContactPage = lazy(() => import("@container/ContactPage"));
@@ -14,7 +15,7 @@ const App = () => {
   useEffect(() => {
     AOS.init({
       offset: 200,
-      duration: 700,
+      duration: 600,
       easing: "ease-in",
       delay: 100,
       once: true,
@@ -39,6 +40,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        <NavContact/>
         <Header />
         <Routes>
           <Route

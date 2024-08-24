@@ -4,47 +4,14 @@ import "./Header.scss";
 import { Tooltip } from "react-tooltip";
 import flagVN from "@assets/icon/vietnam_flags.png";
 import flagEN from "@assets/icon/united-states_flags.png";
-import { GrMail } from "react-icons/gr";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillGoogleCircle } from "react-icons/ai";
-import { IoLogoGithub } from "react-icons/io5";
-import { FaInstagramSquare } from "react-icons/fa";
-import { useEffect, useState } from "react";
+
+
 import { Link } from "react-router-dom";
 const Header = () => {
-  const [showNavContact, setNavContact] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        setNavContact(true);
-      } else {
-        setNavContact(false);
-      }
-    });
-  }, []);
   return (
     <div className="body-header flex flex-col  shadow-xl sticky top-0 z-10">
-      <div
-        className={
-          showNavContact
-            ? "hidden"
-            : "flex justify-between items-center px-14 py-3"
-        }
-      >
-        <div className="flex">
-          <span className="flex gap-1 items-center">
-            <GrMail />
-            openlabptit@gmail.com
-          </span>
-        </div>
-        <div className="flex  gap-2 items-center">
-          <FaFacebook className="cursor-pointer" />
-          <AiFillGoogleCircle className="cursor-pointer" />
-          <IoLogoGithub className="cursor-pointer" />
-          <FaInstagramSquare className="cursor-pointer" />
-        </div>
-      </div>
+     
       <div className="flex bg-blue-50 justify-around py-3 ">
         <div className="content-left w-[65%]  flex justify-end  items-center h-full gap-3">
           <div className="logo flex flex-col justify-center items-center w-4/12 h-[75px] ">
@@ -61,7 +28,7 @@ const Header = () => {
           </div>
           <div
             className="w-8/12  text-lg font-medium flex justify-between items-center "
-            data-aos="zoom-out"
+            data-aos="zoom-in"
           >
             <Link to="/">
               <span className="cursor-pointer hover:text-[#1464cc] flex justify-between items-center">

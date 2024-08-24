@@ -114,14 +114,14 @@ type blogProps = {
 
 export const dataBlog: blogProps[] = [
   {
-    role: "admin",
+    role: "Admin",
     date: "4 Thg 10, 2022",
     title: "Digital Retail: Ngành Bán lẻ trong cơn bão Chuyển đổi số",
     content:
       "Trong các ngành khác nhau, có lẽ Ngành bán lẻ là ngành mà sự hiện diện vật chất (physical) còn nhiều nhất và vì vậy còn nhiều hoài nghi về tác động của cơn lốc...",
   },
   {
-    role: "admin",
+    role: "Admin",
     date: "4 Thg 10, 2022",
     title:
       "Hackathon cho các sáng kiến đổi mới xã hội từ công nghệ - Social Innovation Hackathon",
@@ -129,7 +129,7 @@ export const dataBlog: blogProps[] = [
       "Hackathon được biết đến là cuộc đua sáng tạo, nơi mà những người dành tình yêu cho công nghệ có thể tự tin tỏa sáng, thể hiện năng lực bản thân bằng những ý",
   },
   {
-    role: "admin",
+    role: "Admin",
     date: "4 Thg 10, 2022",
     title:
       "[Trends Forecast] Gartner tiết lộ 10 xu hướng công nghệ chiến lược hàng đầu năm",
@@ -137,7 +137,7 @@ export const dataBlog: blogProps[] = [
       "Gartner đã tiết lộ 10 xu hướng công nghệ chiến lược hàng đầu cho năm 2023, tập trung vào ba chủ đề: tối ưu hóa, mở rộng quy mô và tái định hình doanh nghiệp.",
   },
   {
-    role: "admin",
+    role: "Admin",
     date: "6 Thg 10, 2022",
     title: "Blockchain Marketing là gì? Những điều cần biết về Blockchain",
     content:
