@@ -45,11 +45,11 @@ const Header = () => {
           <FaInstagramSquare className="cursor-pointer" />
         </div>
       </div>
-      <div className="flex  h-[75px]  bg-blue-50 justify-around ">
-        <div className="content-left w-[60%]  flex justify-around items-center h-full">
-          <div className="logo flex flex-col justify-center items-center w-3/12 h-[75px] ">
+      <div className="flex bg-blue-50 justify-around py-3 ">
+        <div className="content-left w-[65%]  flex justify-end  items-center h-full gap-3">
+          <div className="logo flex flex-col justify-center items-center w-4/12 h-[75px] ">
             <span
-              className="text-3xl font-semibold text-center text-[#e3334c] text-shadow-lg"
+              className="text-5xl font-semibold text-center text-[#D32F2F] text-shadow-lg"
               style={{
                 textShadow:
                   "rgb(220, 170, 25) 3px 0px 0px, rgba(0, 0, 0, 0) 4px -1px 10px, rgba(0, 0, 0, 0) 16px 1px 2px, rgba(115, 86, 86, 0) 22px 18px 30px",
@@ -57,7 +57,7 @@ const Header = () => {
             >
               OPEN LAB
             </span>
-            <span className="text-[#e3334c]">AI/IOT as a service</span>
+            <span className="text-[#D32F2F] text-center ">AI/IOT as a service</span>
           </div>
           <div
             className="w-8/12  text-lg font-medium flex justify-between items-center "
@@ -116,7 +116,7 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <div className="content-right w-[35%]  flex items-center text-lg font-medium pl-5 justify-end gap-6">
+        <div className="content-right w-[30%]  flex items-center text-lg font-medium pl-5 justify-end gap-6">
           <div className=" flex items-center justify-end gap-6  ">
             <button className="text-sm mx-auto py-2 px-6 hover:border-2 border-2 border-transparent hover:border-white text-white hover:opacity-70  bg-[#6FA471] rounded-md  ">
               Đăng kí

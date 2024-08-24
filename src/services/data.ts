@@ -10,10 +10,6 @@ import vmuLogo from "@assets/logo/partner/vmu.png";
 import isvnu from "@assets/logo/partner/is-vnu.png";
 import uottLogo from "@assets/logo/partner/university-of-transport technology.png";
 import imic from "@assets/logo/partner/imic.png";
-import practiceService from "@assets/image/service-image/Practice_service.png";
-import deviceProviderService from "@assets/image/service-image/KIT_provider_service.png";
-import courseService from "@assets/image/service-image/Course_service.png";
-import aiService from "@assets/image/service-image/Chatbot_service.png";
 
 type productType = {
   image: string;
@@ -81,35 +77,6 @@ export const dataPartners: dataPartner[] = [
   },
 ];
 
-type itemService = {
-  title: string;
-  description: string;
-  image?: string;
-};
-export const dataServices: itemService[] = [
-  {
-    title: "Nền tảng thực hành số",
-    description: "Cung cấp các dịch vụ thực hành trực truyến AI/IoT",
-    image: practiceService,
-  },
-  {
-    title: "Thiết bị thực hành thông minh",
-    description: "Cung cấp các bộ KIT thực hành trực tuyến AI/IoT",
-    image: deviceProviderService,
-  },
-  {
-    title: "Khóa học thực hành trực tuyến",
-    description:
-      "Cung cấp các khóa học thực hành trực tuyến AI/IoT chuyên sâu, thực chiến dự án",
-    image: courseService,
-  },
-  {
-    title: "Trợ giảng số AI",
-    description:
-      "Cung cấp các dịch vụ Chatbot AI hỗ trợ thực hành trực tuyến 24/7",
-    image: aiService,
-  },
-];
 
 type feedback = {
   name: string;
@@ -184,30 +151,24 @@ type pricesProps = {
 };
 
 export const dataSolutionPrices: pricesProps[] = [
-  { solution: "OpenLab: Giải pháp phòng Lab thông minh", price: "48.000.000" },
-  { solution: "OpenChat: Giải pháp trợ giảng số AI", price: "40.000.000" },
+  { solution: "LabLink: Trục liên thông dữ liệu", price: "80.000.000" },
+  { solution: "E-Exam: Giải Pháp thi trực tuyến ", price: "40.000.000" },
   { solution: "E-Lab: Giải pháp thực hành từ xa", price: "80.000.000" },
   { solution: "E-Chip: Giải pháp quản lý thiết bị số", price: "48.000.000" },
-  { solution: "E-Exam: Giải Pháp thi trực tuyến ", price: "40.000.000" },
-  { solution: "LabLink: Trục liên thông dữ liệu", price: "80.000.000" },
+  { solution: "OpenChat: Giải pháp trợ giảng số AI", price: "40.000.000" },
+  { solution: "OpenLab: Giải pháp phòng Lab thông minh", price: "48.000.000" },
 ];
 
 export const dataDevicesPrices: pricesProps[] = [
-  { solution: "OpenKit-A: Kít thực hành thông minh IoT", price: "18.000.000" },
   { solution: "OpenKit-B: Kít thực hành IoT cơ bản", price: "1.450.000" },
   { solution: "OpenKit-O: Kít thực hành IoT mở rộng", price: "8.000.000" },
-  {
-    solution: "OpenKit-WSN: Kít thực hành mạng cảm biến thông minh",
-    price: "12.000.000",
-  },
-  {
-    solution: "OpenKit-C: Kít thực hành lập trình nhúng C",
-    price: "12.000.000",
-  },
+  { solution: "OpenKit-A: Kít thực hành thông minh IoT", price: "18.000.000" },
+  { solution: "OpenKit-C: Kít thực hành lập trình nhúng C", price: "12.000.000", },
+  { solution: "OpenKit-WSN: Kít thực hành mạng cảm biến thông minh", price: "12.000.000", },
 ];
 
 export const dataCoursePrices: pricesProps[] = [
+  { solution: "Khoá học thực hành AI cơ bản", price: "2.400.000" },
   { solution: "Khoá học thực hành IoT cơ bản", price: "1.800.000" },
   { solution: "Khoá học thực hành IoT nâng cao", price: "2.800.000" },
-  { solution: "Khoá học thực hành AI cơ bản", price: "2.400.000" },
 ];

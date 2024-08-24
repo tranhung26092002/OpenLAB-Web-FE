@@ -3,9 +3,9 @@ import "./SectionBanner.scss";
 
 const SectionBanner = () => {
   return (
-    <div className="body  flex justify-start flex-col items-center bg-banner_homepage  w-full h-[550px] bg-cover bg-no-repeat bg-center py-[70px]">
+    <div className="body flex justify-center flex-col items-center bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% w-full h-[550px] bg-cover bg-no-repeat bg-center py-[70px]">
       <div className="flex flex-col justify-center">
-        <span
+        {/* <span
           data-aos="zoom-out"
           className="text-7xl font-semibold text-center text-[#e3334c] text-shadow-lg mb-[62px]"
           style={{
@@ -14,7 +14,7 @@ const SectionBanner = () => {
           }}
         >
           OPEN LAB
-        </span>
+        </span> */}
 
         <div className="flex flex-col gap-3">
           <span
@@ -40,8 +40,8 @@ const SectionBanner = () => {
         data-aos="zoom-in" 
       
       >
-        <button className="btn-content px-7 py-3 bg-red-400 rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be] ">
-          <span>Các dịch vụ chính</span>
+        <button className="btn-content px-7 py-3 bg-[#AA3232] rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be] ">
+          <span>Các giải pháp tiên phong</span>
           <div className="icon-btn-services">
             <FaArrowRight className=" text-lg text-white" />
           </div>

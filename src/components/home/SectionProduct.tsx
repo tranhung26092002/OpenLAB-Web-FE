@@ -22,7 +22,7 @@ const SectionProduct = () => {
         <Slider {...settings}>
           {dataProduct.map((item, index) => {
             return (
-              <div className="my-5 ">
+              <div className="my-5 mx-1 ">
                 <div
                   key={index}
                   className=" flex flex-col relative cursor-pointer w-[310px] h-[614px] rounded-xl px-6 shadow-md  py-6 item-center hover:shadow-2xl"

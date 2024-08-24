@@ -4,7 +4,7 @@ import { MdPhone } from "react-icons/md";
 import { IoIosPaperPlane } from "react-icons/io";
 const ContactForm = () => {
   return (
-    <div className="px-24 flex gap-6 pb-24">
+    <div className="px-28 flex gap-6 pb-24">
       <div
         className="px-8 shadow-lg w-1/3 rounded-md flex gap-5 py-6 flex-col"
         data-aos="fade-right"
@@ -30,7 +30,7 @@ const ContactForm = () => {
           Tầng 2, Tòa New Skyline Văn Quán, Hà Đông, HN
         </span>
       </div>
-      <div className="flex flex-col gap-3 w-2/3  " data-aos="fade-left">
+      <div className="flex flex-col gap-3 w-2/3 pl-8 " data-aos="fade-left">
         <div className="flex justify-start gap-5">
           <input
             type="text"
@@ -65,7 +65,7 @@ const ContactForm = () => {
             placeholder="Tin nhắn của bạn"
           ></textarea>
         </div>
-        <button className="w-full rounded h-14 bg-[#f14D5D] text-white flex justify-center items-center gap-2 hover:transition-colors hover:duration-200 hover:ease-in hover:bg-[#120f2d]">
+        <button className="w-full rounded py-3 bg-[#f83145] text-white flex justify-center items-center gap-2 hover:transition-colors hover:duration-200 hover:ease-in hover:bg-[#120f2d]">
           <IoIosPaperPlane /> Gửi đi
         </button>
       </div>

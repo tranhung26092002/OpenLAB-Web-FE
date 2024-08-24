@@ -12,7 +12,7 @@ const SectionContact = () => {
             Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần. Chúng tôi sẽ phản
             hồi trong thời gian sớm nhất!
           </p>
-          <button className="py-2 text-white px-5 bg-red-300 rounded">Liên hệ</button>
+          <button className="py-2 text-white px-6 bg-[#D32F2F] hover:transition-colors hover:duration-200 hover:ease-out hover:bg-[#1513be] cursor-pointer rounded">Liên hệ</button>
         </div>
       </div>
     </div>

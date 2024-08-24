@@ -24,6 +24,7 @@ const SectionFooter = () => {
               <MdPhone className="text-lg" />
               (+84) 85 660 6961
             </span>
+
             <span className="flex gap-1 cursor-pointer hover:text-white items-center">
               <GrMail className="text-lg" />
               openlabptit@gmail.com
@@ -44,7 +45,7 @@ const SectionFooter = () => {
               ></iframe>
             </div>
           </div>
-          <div className="w-[17%] text-sm flex flex-col font-light text-[#9eb7c0] gap-3">
+          <div className="w-[14%] text-sm flex flex-col font-light text-[#9eb7c0] gap-3">
             <span className="text-lg font-semibold text-white mb-2">
               Khám phá
             </span>
@@ -53,16 +54,16 @@ const SectionFooter = () => {
             <span className="cursor-pointer hover:text-white">Hỗ trợ</span>
             <span className="cursor-pointer hover:text-white">Liên hệ</span>
           </div>
-          <div className="w-[17%] text-sm flex flex-col font-light text-[#9eb7c0] gap-3">
+          <div className="w-[21%] text-sm flex flex-col font-light text-[#9eb7c0] gap-3">
             <span className="text-lg font-semibold text-white mb-2">
               Sản phẩm
             </span>
-            <span className="cursor-pointer hover:text-white">Đại học số</span>
+            <span className="cursor-pointer hover:text-white">Trợ giảng số AI</span>
             <span className="cursor-pointer hover:text-white">
-              Super App Slink
+            Thiết bị thực hành thông minh
             </span>
             <span className="cursor-pointer hover:text-white">
-              Hệ thống Blockchain
+            Khóa học thực hành trực tuyến
             </span>
             <span className="cursor-pointer hover:text-white">
               Tất cả sản phẩm

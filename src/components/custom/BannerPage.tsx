@@ -9,7 +9,7 @@ const BannerPage = ({ header, homepage, name }: contentBannerProps) => {
       <div className="flex justify-center items-center flex-col">
         <h1 className="text-3xl font-semibold mb-4">{header}</h1>
         <span className="flex gap-1 text-lg">
-          <span className="text-red-500 font-semibold cursor-pointer">{homepage}</span> / <span>{name}</span>
+          <span className="text-[#D32F2F] font-semibold cursor-pointer">{homepage}</span> / <span>{name}</span>
         </span>
       </div>
     </div>
