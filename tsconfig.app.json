@@ -17,7 +17,8 @@
     "paths": {
       "@container/*": ["src/container/*"],
       "@assets/*": ["src/assets/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@components/*":["src/components/*"]
     },
     /* Linting */
     "strict": true,

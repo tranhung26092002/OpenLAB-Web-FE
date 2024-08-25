@@ -6,11 +6,15 @@ import Header from "./components/Header";
 import SectionFooter from "./components/SectionFooter";
 import GoToTopButton from "./components/custom/GoToTopButton";
 import NavContact from "./components/custom/NavContact";
+
 const LazyHomePage = lazy(() => import("@container/HomePage"));
 const LazyAboutPage = lazy(() => import("@container/AboutPage"));
 const LazyContactPage = lazy(() => import("@container/ContactPage"));
 const LazyBlogPage = lazy(() => import("@container/BlogPage"));
 const LazyPricesPage = lazy(() => import("@container/products/PricesPage"));
+const LazyOpenKitBPage = lazy(
+  () => import("@container/openkit/kitb/OpenKitBPage")
+);
 const App = () => {
   useEffect(() => {
     AOS.init({
@@ -25,13 +29,17 @@ const App = () => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.scrollY > 300) {
         setShowButton(true);
       } else {
         setShowButton(false);
       }
-    });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   // const PrivateRoute = ({ children }: RouteProps) => {
   //   const isLogin = useSelector((state: RootState) => state.auth.isLogin);
@@ -40,7 +48,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <NavContact/>
+        <NavContact />
         <Header />
         <Routes>
           <Route
@@ -75,9 +83,7 @@ const App = () => {
               </Suspense>
             }
           />
-          <Route
-            path="product"
-          >
+          <Route path="product">
             <Route
               path="prices"
               element={
@@ -87,6 +93,15 @@ const App = () => {
               }
             ></Route>
           </Route>
+
+          <Route
+            path="openkit-b"
+            element={
+              <Suspense fallback={"Loading..."}>
+                <LazyOpenKitBPage />
+              </Suspense>
+            }
+          ></Route>
         </Routes>
         <GoToTopButton
           showButton={showButton}
