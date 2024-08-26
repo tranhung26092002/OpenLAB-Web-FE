@@ -6,7 +6,7 @@ const Esp = () => {
       <img
         alt="stm32-image"
         src={espImage}
-        className="w-60 h-28 object-cover object-center"
+        className="w-52 h-20 object-fill object-center"
       />
     </div>
   );

@@ -5,7 +5,7 @@ const Relay = () => {
       <img
         src={realyImage}
         alt="realy-image"
-        className="object-cover  object-center scale-125"
+        className="object-cover object-center w-20 h-20" 
       />
     </div>
   );

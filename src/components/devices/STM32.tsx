@@ -6,7 +6,7 @@ const STM32Sensor = () => {
       <img
         alt="stm32-image"
         src={STM32Icon}
-        className="w-60 h-24 object-contain object-center"
+        className="w-52 h-20 object-fill  object-center"
       />
     </div>
   );

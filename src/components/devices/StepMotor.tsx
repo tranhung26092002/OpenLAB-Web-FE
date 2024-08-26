@@ -24,7 +24,7 @@ const StepMotor = () => {
       </div>
       <img
         src={stepmotoImage}
-        className="w-28 h-28 object-contain object-center"
+        className="w-20 h-20 object-contain object-center"
       />
     </div>
   );

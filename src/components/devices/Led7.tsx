@@ -5,7 +5,7 @@ const Led7 = () => {
       <img
         src={led7}
         alt="LED_7_Thanh"
-        className="object-contain object-center h-28"
+        className="object-fill object-center h-20"
       />
     </div>
   );

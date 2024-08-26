@@ -5,13 +5,10 @@ import { Tooltip } from "react-tooltip";
 import flagVN from "@assets/icon/vietnam_flags.png";
 import flagEN from "@assets/icon/united-states_flags.png";
 
-
 import { Link } from "react-router-dom";
 const Header = () => {
-
   return (
     <div className="body-header flex flex-col  shadow-xl sticky top-0 z-10">
-     
       <div className="flex bg-blue-50 justify-around py-3 ">
         <div className="content-left w-[65%]  flex justify-end  items-center h-full gap-3">
           <div className="logo flex flex-col justify-center items-center w-4/12 h-[75px] ">
@@ -24,7 +21,9 @@ const Header = () => {
             >
               OPEN LAB
             </span>
-            <span className="text-[#D32F2F] text-center ">AI/IOT as a service</span>
+            <span className="text-[#D32F2F] text-center ">
+              AI/IOT as a service
+            </span>
           </div>
           <div
             className="w-8/12  text-lg font-medium flex justify-between items-center "
@@ -85,9 +84,12 @@ const Header = () => {
         </div>
         <div className="content-right w-[30%]  flex items-center text-lg font-medium pl-5 justify-end gap-6">
           <div className=" flex items-center justify-end gap-6  ">
-            <button className="text-sm mx-auto py-2 px-6 hover:border-2 border-2 border-transparent hover:border-white text-white hover:opacity-70  bg-[#6FA471] rounded-md  ">
-              Đăng kí
-            </button>
+            <Link to={'/login'}>
+              <button className="text-sm mx-auto py-2 px-6 hover:border-2 border-2 border-transparent hover:border-white text-white hover:opacity-70  bg-[#6FA471] rounded-md  ">
+                Đăng kí
+              </button>
+            </Link>
+
             <button className="text-sm  py-2 px-6 bg-[#1464cc] rounded-md hover:border-2 border-2 border-transparent hover:border-white hover:opacity-80 text-white">
               Đăng nhập
             </button>

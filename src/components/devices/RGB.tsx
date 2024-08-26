@@ -5,7 +5,7 @@ const RGBdevice = () => {
       <img
         alt="image-rgb"
         src={RGBIcon}
-        className="object-contain object-center w-20 h-28"
+        className="object-contain object-center h-20"
       />
     </div>
   );
