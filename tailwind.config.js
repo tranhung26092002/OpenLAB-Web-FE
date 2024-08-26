@@ -9,6 +9,7 @@ export default {
       },
       fontFamily: {
         poppins: ['"Poppins", sans-serif'],
+        changa: ['"Changa", sans-serif'],
       },
       container: {
         center: true,
