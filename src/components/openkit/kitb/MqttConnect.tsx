@@ -134,7 +134,7 @@ const MqttConnect = ({
   return (
     <div>
       <div className="flex flex-col ">
-        <h2 className=" text-center">MQTT Controls</h2>
+        <h2 className=" text-center text-2xl font-medium">MQTT Controls</h2>
         <div className=" flex items-center justify-around p-16 gap-4">
           <div className="flex flex-col px-6 py-4 rounded-md bg-white w-1/3  gap-4">
             <div className=" flex justify-between items-center">

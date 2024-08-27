@@ -116,20 +116,22 @@
 // };
 
 // export default App;
-import { lazy, Suspense, useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import GoToTopButton from './components/custom/GoToTopButton';
-import MainLayout from './MainLayout';
-
-const LazyHomePage = lazy(() => import('@container/HomePage'));
-const LazyAboutPage = lazy(() => import('@container/AboutPage'));
-const LazyContactPage = lazy(() => import('@container/ContactPage'));
-const LazyBlogPage = lazy(() => import('@container/BlogPage'));
-const LazyPricesPage = lazy(() => import('@container/products/PricesPage'));
-const LazyOpenKitBPage = lazy(() => import('@container/openkit/kitb/OpenKitBPage'));
-const LazyLoginPage = lazy(() => import('@container/LoginPage')); 
+import { lazy, Suspense, useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import GoToTopButton from "./components/custom/GoToTopButton";
+import MainLayout from "./MainLayout";
+import FallbackLoading from "@container/FallbackLoading";
+const LazyHomePage = lazy(() => import("@container/HomePage"));
+const LazyAboutPage = lazy(() => import("@container/AboutPage"));
+const LazyContactPage = lazy(() => import("@container/ContactPage"));
+const LazyBlogPage = lazy(() => import("@container/BlogPage"));
+const LazyPricesPage = lazy(() => import("@container/products/PricesPage"));
+const LazyOpenKitBPage = lazy(
+  () => import("@container/openkit/kitb/OpenKitBPage")
+);
+const LazyLoginPage = lazy(() => import("@container/LoginPage"));
 // const LazySignUpPage = lazy(() => import('@container/SignUpPage'));
 
 const App = () => {
@@ -137,7 +139,7 @@ const App = () => {
     AOS.init({
       offset: 200,
       duration: 600,
-      easing: 'ease-in',
+      easing: "ease-in",
       delay: 100,
       once: true,
     });
@@ -154,9 +156,9 @@ const App = () => {
         setShowButton(false);
       }
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -166,17 +168,18 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Suspense fallback={"Loading..."}>
+            <Suspense fallback={<FallbackLoading />}>
               <MainLayout>
                 <LazyHomePage />
               </MainLayout>
             </Suspense>
           }
         />
+      
         <Route
           path="about"
           element={
-            <Suspense fallback={"Loading..."}>
+            <Suspense fallback={<FallbackLoading />}>
               <MainLayout>
                 <LazyAboutPage />
               </MainLayout>
@@ -186,7 +189,7 @@ const App = () => {
         <Route
           path="contact"
           element={
-            <Suspense fallback={"Loading..."}>
+            <Suspense fallback={<FallbackLoading />}>
               <MainLayout>
                 <LazyContactPage />
               </MainLayout>
@@ -196,7 +199,7 @@ const App = () => {
         <Route
           path="blog"
           element={
-            <Suspense fallback={"Loading..."}>
+            <Suspense fallback={<FallbackLoading />}>
               <MainLayout>
                 <LazyBlogPage />
               </MainLayout>
@@ -207,7 +210,7 @@ const App = () => {
           <Route
             path="prices"
             element={
-              <Suspense fallback={"Loading..."}>
+              <Suspense fallback={<FallbackLoading />}>
                 <MainLayout>
                   <LazyPricesPage />
                 </MainLayout>
@@ -218,7 +221,7 @@ const App = () => {
         <Route
           path="openkit-b"
           element={
-            <Suspense fallback={"Loading..."}>
+            <Suspense fallback={<FallbackLoading />}>
               <MainLayout>
                 <LazyOpenKitBPage />
               </MainLayout>
@@ -228,7 +231,7 @@ const App = () => {
         <Route
           path="login"
           element={
-            <Suspense fallback={"Loading..."}>
+            <Suspense fallback={<FallbackLoading />}>
               <LazyLoginPage />
             </Suspense>
           }
@@ -245,7 +248,7 @@ const App = () => {
       <GoToTopButton
         showButton={showButton}
         onClick={() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         }}
       />
     </BrowserRouter>

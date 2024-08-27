@@ -6,8 +6,8 @@ import RGB from "@components/devices/RGB";
 import StepMotor from "@components/devices/StepMotor";
 const InputSensor = () => {
   return (
-    <div className="flex flex-col items-center justify-start gap-4 p-4 border-2 border-dashed border-gray-500 rounded ">
-      <div className="flex ">
+    <div className="flex flex-col items-center justify-around gap-4 p-4 border-2 border-dashed border-gray-500 rounded h-full ">
+      <div className="flex w-full justify-between ">
         <div className="flex  flex-col items-center justify-center ">
           <span className="font-semibold text-xl">DHT11</span>
           <Led7 />

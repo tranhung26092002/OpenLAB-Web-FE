@@ -5,8 +5,6 @@ import Slider from "react-slick";
 import { settings } from "@utils/settingSlider";
 import { dataProduct } from "src/services/data";
 
-
-
 const SectionProduct = () => {
   return (
     <div className="body-product py-20 px-44 flex flex-col" data-aos="fade-up">

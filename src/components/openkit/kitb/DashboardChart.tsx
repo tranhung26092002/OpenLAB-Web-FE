@@ -6,12 +6,12 @@ type DashboardChartProps = {
 };
 const DashboardChart = ({ dataX, dataY, value }: DashboardChartProps) => {
   return (
-    <div className="w-full shadow-xl rounded px-6 py-6 bg-white">
+    <div className="w-full ">
       <div className="flex flex-col w-full ">
         <div>
           <div></div>
         </div>
-        <div className=" bg-red-500  w-full">
+        <div className=" w-full">
           <Plot
             data={[
               {

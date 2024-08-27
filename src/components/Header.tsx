@@ -84,14 +84,14 @@ const Header = () => {
         </div>
         <div className="content-right w-[30%]  flex items-center text-lg font-medium pl-5 justify-end gap-6">
           <div className=" flex items-center justify-end gap-6  ">
-            <Link to={'/login'}>
-              <button className="text-sm mx-auto py-2 px-6 hover:border-2 border-2 border-transparent hover:border-white text-white hover:opacity-70  bg-[#6FA471] rounded-md  ">
-                Đăng kí
+            <Link to={"/login"}>
+              <button className="text-sm bg-[#1464cc] mx-auto py-2 px-6 hover:border-2 border-2 border-transparent hover:border-white text-white hover:opacity-70 rounded-md">
+                Đăng nhập
               </button>
             </Link>
 
-            <button className="text-sm  py-2 px-6 bg-[#1464cc] rounded-md hover:border-2 border-2 border-transparent hover:border-white hover:opacity-80 text-white">
-              Đăng nhập
+            <button className="text-sm py-2 px-6 rounded-md hover:border-2 border-2 border-transparent hover:border-white hover:opacity-80 text-white bg-[#6FA471]">
+              Đăng kí
             </button>
           </div>
           <div className="flag-container w-[46px] h-[46px]">
