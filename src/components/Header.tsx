@@ -12,18 +12,20 @@ const Header = () => {
       <div className="flex bg-blue-50 justify-around py-3 ">
         <div className="content-left w-[65%]  flex justify-end  items-center h-full gap-3">
           <div className="logo flex flex-col justify-center items-center w-4/12 h-[75px] ">
-            <span
-              className="text-5xl font-semibold text-center text-[#D32F2F] text-shadow-lg"
-              style={{
-                textShadow:
-                  "rgb(220, 170, 25) 3px 0px 0px, rgba(0, 0, 0, 0) 4px -1px 10px, rgba(0, 0, 0, 0) 16px 1px 2px, rgba(115, 86, 86, 0) 22px 18px 30px",
-              }}
-            >
-              OPEN LAB
-            </span>
-            <span className="text-[#D32F2F] text-center ">
-              AI/IOT as a service
-            </span>
+            <Link to={"/"} className="cursor-pointer flex flex-col">
+              <span
+                className="text-5xl font-semibold text-center text-[#D32F2F] text-shadow-lg"
+                style={{
+                  textShadow:
+                    "rgb(220, 170, 25) 3px 0px 0px, rgba(0, 0, 0, 0) 4px -1px 10px, rgba(0, 0, 0, 0) 16px 1px 2px, rgba(115, 86, 86, 0) 22px 18px 30px",
+                }}
+              >
+                OPEN LAB
+              </span>
+              <span className="text-[#D32F2F] text-center ">
+                AI/IOT as a service
+              </span>
+            </Link>
           </div>
           <div
             className="w-8/12  text-lg font-medium flex justify-between items-center "
@@ -55,7 +57,7 @@ const Header = () => {
               delayHide={100}
               events={["click"]}
             >
-              <div className="option-product text-base bg-white font-normal text-black">
+              <div className="option-product text-base bg-white rounded py-1 px-0 font-normal text-black">
                 <div className="courses hover:bg-[#1464cc] hover:text-white rounded-sm cursor-pointer pl-2 py-0.5">
                   Khóa học
                 </div>
