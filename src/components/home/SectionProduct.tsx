@@ -22,13 +22,13 @@ const SectionProduct = () => {
             return (
               <div className="my-5 mx-1 " key={index}>
                 <div
-                  className=" flex flex-col relative cursor-pointer w-[310px] h-[614px] rounded-xl px-6 shadow-md  py-6 item-center hover:shadow-2xl"
+                  className=" flex flex-col relative cursor-pointer w-[350px] h-[614px] rounded-xl px-6 shadow-md  py-6 item-center hover:shadow-2xl"
                 >
                   <div className="mb-5 flex justify-center">
                     <img
                       src={item.image}
                       alt="image-product-section"
-                      className="w-64 h-48 object-center object-contain border-[#8AD9E4] border-2 rounded bg-red-200"
+                      className="w-full h-48 object-center object-cover border-[#8AD9E4] border-2 rounded bg-red-200"
                     />
                   </div>
                   <div className="flex justify-between items-center mb-3 ">

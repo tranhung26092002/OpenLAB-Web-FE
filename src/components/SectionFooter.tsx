@@ -3,6 +3,10 @@ import { MdPhone } from "react-icons/md";
 import { GrMail } from "react-icons/gr";
 import { IoLocation } from "react-icons/io5";
 import { LuCopyright } from "react-icons/lu";
+import { SiShopee } from "react-icons/si";
+import { FaFacebookSquare } from "react-icons/fa";
+import { AiFillTikTok } from "react-icons/ai";
+import logoZalo from "@assets/logo/contact/Icon_of_Zalo.svg";
 const SectionFooter = () => {
   return (
     <div className="body-section-footer bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% px-20 py-14 border-t-2 border-[#48d6e9]">
@@ -10,28 +14,35 @@ const SectionFooter = () => {
         <div className="flex text-white justify-around px-5 gap-8">
           <div className="w-[30%] pr-5">
             <Logo className="text-5xl" />
-            <p className=" mt-12 text-base font-medium text-white">
-              Nền tảng thực hành số và Dịch dụ AI/IoT giá rẻ cho chuyển đổi số
-              giáo dục. Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến
-              các dịch vụ chất lượng, có giá trị thực tiễn cao!
-            </p>
+            <div className="flex flex-col gap-8">
+              <p  className=" mt-3 text-base font-normal text-white">
+                Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông
+                minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ
+                trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ
+                chuyển đổi số giáo dục theo yêu cầu.
+              </p>
+              <p>
+                Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến các
+                dịch vụ chất lượng, có giá trị thực tiễn cao!
+              </p>
+            </div>
           </div>
-          <div className="w-[36%]  flex flex-col gap-3 mt-12 text-base font-medium text-white">
+          <div className="w-[28%]  flex flex-col gap-3  text-base font-normal text-white">
             <span className="text-lg font-semibold text-white mb-2">
               ĐỊA CHỈ
             </span>
             <span className="flex gap-1 cursor-pointer hover:text-white items-center">
               <MdPhone className="text-lg" />
-              (+84) 85 660 6961
+              (+84) 86 574 6698
             </span>
 
             <span className="flex gap-1 cursor-pointer hover:text-white items-center">
               <GrMail className="text-lg" />
-              openlabptit@gmail.com
+              openlab.user@gmail.com
             </span>
             <span className="flex gap-1 cursor-pointer hover:text-white items-center">
               <IoLocation className="text-lg" />
-              Tầng 2, Tòa New Skyline Văn Quán, Hà Đông, HN
+              68B-6 Ao Sen, Hà Đông, HN
             </span>
             <div className="flex mt-7">
               <iframe
@@ -45,7 +56,7 @@ const SectionFooter = () => {
               ></iframe>
             </div>
           </div>
-          <div className="w-[14%] text-sm flex flex-col font-light text-[#9eb7c0] gap-3">
+          <div className="w-[10%]  flex flex-col text-base font-normal text-white gap-3">
             <span className="text-lg font-semibold text-white mb-2">
               Khám phá
             </span>
@@ -53,31 +64,71 @@ const SectionFooter = () => {
             <span className="cursor-pointer hover:text-white">Blog</span>
             <span className="cursor-pointer hover:text-white">Hỗ trợ</span>
             <span className="cursor-pointer hover:text-white">Liên hệ</span>
+            <span className="cursor-pointer hover:text-white">Báo giá</span>
+            <span className="cursor-pointer hover:text-white">Khóa học</span>
           </div>
-          <div className="w-[21%] text-sm flex flex-col font-light text-[#9eb7c0] gap-3">
+          <div className="w-[25%]  flex flex-col text-base font-medium text-white gap-3">
             <span className="text-lg font-semibold text-white mb-2">
               Sản phẩm
             </span>
-            <span className="cursor-pointer hover:text-white">
-              Trợ giảng số AI
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Giải pháp Lab thông minh:
+              <span className="font-semibold">OpenLab</span>
             </span>
-            <span className="cursor-pointer hover:text-white">
-              Thiết bị thực hành thông minh
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Giải pháp Trợ giảng số thông minh:
+              <span className="font-semibold">OpenChat</span>
             </span>
-            <span className="cursor-pointer hover:text-white">
-              Khóa học thực hành trực tuyến
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Trục liên thông dữ liệu:
+              <span className="font-semibold">LabLink</span>
             </span>
-            <span className="cursor-pointer hover:text-white">
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Giải pháp Thực hành từ xa:
+              <span className="font-semibold">E-Lab</span>
+            </span>
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Giải pháp Quản lý thiết bị số:
+              <span className="font-semibold">E-Chip</span>
+            </span>
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Giải pháp thi online:
+              <span className="font-semibold">E-Exam</span>
+            </span>
+            <span className="cursor-pointer hover:text-white font-normal">
               Tất cả sản phẩm
             </span>
           </div>
         </div>
-        <div className="pt-16 text-[#9eb7c0] text-sm flex">
-          <span className="flex items-center gap-1 text-center">
+        <div className="pt-16 text-[#9eb7c0] text-sm flex justify-between items-center px-5">
+          <span className="flex items-center gap-1 text-center text-sm font-normal text-white">
             <LuCopyright />
-            <span>2024 Bản quyền thuộc về</span>
-            <span className="font-semibold text-white">Open LAB</span>
+            <span className="text-sm font-normal text-white">
+              2024 Bản quyền thuộc về
+            </span>
+            <span className=" text-base font-semibold text-white">
+              Open LAB
+            </span>
           </span>
+
+          <div className="flex justify-center items-center text-4xl px-3 py-2 rounded  gap-7">
+            <div className="bg-white rounded-md">
+              <FaFacebookSquare className="text-[#1877f2]" />
+            </div>
+            <div className="bg-white rounded-md">
+              <AiFillTikTok className="text-black" />
+            </div>
+            <div>
+              <img
+                src={logoZalo}
+                alt="logo-Zalo"
+                className="w-9 h-9 object-contain object-center"
+              />
+            </div>
+            <div className="bg-white rounded-md px-1 py-1 ">
+              <SiShopee className="text-[#fd5621] text-3xl" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

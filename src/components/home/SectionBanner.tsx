@@ -1,5 +1,5 @@
 import { FaArrowRight } from "react-icons/fa6";
-import "./SectionBanner.scss";
+
 
 const SectionBanner = () => {
   return (

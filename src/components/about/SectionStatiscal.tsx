@@ -5,7 +5,7 @@ const SectionStatiscal = () => {
         className=" flex justify-around rounded-xl items-center bg-[#1a2a45] py-14 px-10 text-white"  
       >
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">23</span>
+          <span className="text-5xl font-semibold">18</span>
           <span className="font-light">Sản phẩm</span>
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -13,7 +13,7 @@ const SectionStatiscal = () => {
           <span className="font-light">Đối tác</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">6999+</span>
+          <span className="text-5xl font-semibold">1268+</span>
           <span className="font-light">Khách hàng</span>
         </div>
         <div className="flex flex-col items-center justify-center">

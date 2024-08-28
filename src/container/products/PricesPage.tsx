@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BannerPage from "src/components/custom/BannerPage";
+import { FaArrowRight } from "react-icons/fa6";
 import {
   dataCoursePrices,
   dataDevicesPrices,
@@ -57,7 +58,6 @@ const PricesPage = () => {
             </div>
           </div>
         </div>
-
         <div className="w-full mt-16">
           <ul className=" flex flex-col  justify-between">
             <li className="bg-red-50 py-3 border-b-2 border-blue-200 ">
@@ -123,6 +123,19 @@ const PricesPage = () => {
               );
             })}
           </ul>
+        </div>
+        <div
+          className="btn-container flex items-start mt-8  w-full"
+          // data-aos="zoom-in"
+        >
+          <button className="btn-content px-7 py-3 bg-[#AA3232] rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be]  ">
+            <span className=" text-xl text-white">
+             Báo giá tất cả sản phẩm
+            </span>
+            <div className="icon-btn-services">
+              <FaArrowRight className=" text-xl text-white" />
+            </div>
+          </button>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import ESP8266Product from "@assets/image/product/lt-esp8266.jpg";
 import STM32Product from "@assets/image/product/lt-stm32.jpg";
 import ESP32CAMProduct from "@assets/image/product/lt-esp32cam.jpg";
 import ChatBotAIProduct from "@assets/image/product/lt-chatbotAi.jpg";
-import ESP32Product from "@assets/image/product/lt-esp32cam.jpg";
+import ESP32Product from "@assets/image/product/ltiot-esp32.jpg";
 import funixLogo from "@assets/logo/partner/funix.png";
 import itplusLogo from "@assets/logo/partner/ItPlus.png";
 import vmuLogo from "@assets/logo/partner/vmu.png";
@@ -18,36 +18,37 @@ type productType = {
 };
 export const dataProduct: productType[] = [
   {
-    image: ESP8266Product,
-    nameProduct: "Lập trình nhúng IoT với ESP8266",
-    description: "OpenLAB cung cấp khóa học cơ bản về IoT với ESP8266",
-  },
-  {
     image: ArduinoProduct,
-    nameProduct: "Lập trình nhúng IoT với Arduino",
+    nameProduct: "THỰC HÀNH HỆ THỐNG IoT",
     description:
       "OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino",
   },
   {
+    image: ESP8266Product,
+    nameProduct: "THỰC HÀNH MẠNG DI ĐỘNG 5G",
+    description: "OpenLAB cung cấp khóa học cơ bản về IoT với ESP8266",
+  },
+  {
+    image: ChatBotAIProduct,
+    nameProduct: "THỰC HÀNH CHATBOT AI",
+    description: " OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI",
+  },
+  {
     image: STM32Product,
-    nameProduct: "Lập trình nhúng IoT với STM32",
+    nameProduct: "THỰC HÀNH PHÂN TÍCH DỮ LIỆU",
     description:
       "OpenLAB cung cấp khóa học cơ bản lập trình nhúng IoT với STM32",
   },
   {
     image: ESP32CAMProduct,
-    nameProduct: "Lập trình xe hơi tự hành với ESP32-CAM",
+    nameProduct: "THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY",
     description:
       "OpenLAB cung cấp khóa học lập trình xe hơi tự hành với ESP32-CAM",
   },
-  {
-    image: ChatBotAIProduct,
-    nameProduct: "Thực hành lập trình phát triển ChatBot AI",
-    description: " OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI",
-  },
+
   {
     image: ESP32Product,
-    nameProduct: "Thực hành lập trình nhúng IoT với ESP32",
+    nameProduct: "THỰC HÀNH ROBOTICS",
     description:
       "OpenLAB cung cấp khóa học thực hành lâp trình nhúng IoT với ESP32",
   },
@@ -178,7 +179,6 @@ export const dataCoursePrices: pricesProps[] = [
   { solution: "Khoá học thực hành IoT nâng cao", price: "2.800.000" },
 ];
 
-
-export const handleLogin = async(email:string, password:string)=>{
-  return await axiosPublic.post("/api/auth/login",{email, password});
-}
+export const handleLogin = async (email: string, password: string) => {
+  return await axiosPublic.post("/api/auth/login", { email, password });
+};

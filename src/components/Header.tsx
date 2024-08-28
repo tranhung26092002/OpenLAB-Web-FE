@@ -1,10 +1,7 @@
 // import logoHeader from "@assets/logo/logo_header.png";
 import { FaAngleDown } from "react-icons/fa6";
-import "./Header.scss";
 import { Tooltip } from "react-tooltip";
-import flagVN from "@assets/icon/vietnam_flags.png";
-import flagEN from "@assets/icon/united-states_flags.png";
-
+import './Header.scss'
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
@@ -96,37 +93,6 @@ const Header = () => {
               Đăng kí
             </button>
           </div>
-          <div className="flag-container w-[46px] h-[46px]">
-            <img
-              alt="VN-Flag"
-              src={flagVN}
-              className="object-cove cursor-pointer"
-              data-tooltip-id="option-language"
-            />
-          </div>
-
-          <Tooltip id="option-language" place="bottom-end" clickable>
-            <div className="container-option flex bg-white">
-              <div className="content-option flex flex-col text-black text-sm">
-                <div className="cursor-pointer flex items-center  px-2 hover:bg-[#d2d3d4] gap-4 hover:text-white rounded-sm">
-                  <img
-                    alt="flag-en"
-                    src={flagEN}
-                    className="object-cove cursor-pointer w-[40px] h-[40px]"
-                  />
-                  <span>English</span>
-                </div>
-                <div className="cursor-pointer flex items-center px-2 hover:bg-[#d2d3d4] gap-4 hover:text-white rounded-sm ">
-                  <img
-                    alt="flag-vn"
-                    src={flagVN}
-                    className="object-cove cursor-pointer w-[40px] h-[40px]"
-                  />
-                  <span>Tiếng Việt</span>
-                </div>
-              </div>
-            </div>
-          </Tooltip>
         </div>
       </div>
     </div>
