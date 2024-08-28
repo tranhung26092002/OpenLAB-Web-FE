@@ -4,9 +4,8 @@ import practiceService from "@assets/image/service-image/Practice_service.png";
 import deviceProviderService from "@assets/image/service-image/KIT_provider_service.png";
 import courseService from "@assets/image/service-image/Course_service.png";
 import aiService from "@assets/image/service-image/Chatbot_service.png";
-import { FaChartLine } from "react-icons/fa6";
 import { ReactNode } from "react";
-
+import { FaCubes } from "react-icons/fa";
 type itemService = {
   title: string;
   description: string;
@@ -39,7 +38,7 @@ export const dataServices: itemService[] = [
     title: "Phần mềm CĐS Giáo dục",
     description:
       "Tư vấn giải pháp & phát triển phần chuyển đổi số giáo dục theo yêu cầu",
-    image: <FaChartLine />,
+    image: <FaCubes />,
   },
 ];
 
@@ -71,11 +70,8 @@ const SectionServices = () => {
           <Slider {...setting}>
             {dataServices.map((item, index) => {
               return (
-                <div className="my-5 mx-2 ">
-                  <div
-                    key={index}
-                    className=" flex flex-col relative justify-start gap-4 items-center rounded-xl  w-[270px] h-[250px] pt-9 shadow-xl cursor-pointer hover:scale-105"
-                  >
+                <div className="my-5 mx-2 " key={index}>
+                  <div className=" flex flex-col relative justify-start gap-4 items-center rounded-xl  w-[270px] h-[250px] pt-9 shadow-xl cursor-pointer hover:scale-105">
                     <div className="w-[50px] h-[50px]">
                       {typeof item.image === "string" ? (
                         <img
@@ -84,7 +80,7 @@ const SectionServices = () => {
                           className="object-contain rounded object-center"
                         />
                       ) : (
-                        <FaChartLine className="text-red-600 text-5xl" />
+                        <FaCubes className="text-[#bc0707] text-5xl" />
                       )}
                     </div>
                     <span className="text-base font-semibold">

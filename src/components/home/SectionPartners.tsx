@@ -30,8 +30,8 @@ const SectionPartners = () => {
           <Slider {...setting}>
             {dataPartners.map((item, index) => {
               return (
-                <div className="my-4">
-                  <div key={index}>
+                <div className="my-4" key={index}>
+                  <div >
                     <div className="flex justify-center items-center">
                       <img
                         src={item.image}

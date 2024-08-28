@@ -3,7 +3,7 @@ import "./SectionBanner.scss";
 
 const SectionBanner = () => {
   return (
-    <div className="body flex justify-center flex-col items-center bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% w-full h-[550px] bg-cover bg-no-repeat bg-center py-[70px]">
+    <div className="body flex justify-center flex-col items-center bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% w-full h-[550px] bg-cover bg-no-repeat bg-center py-[50px]">
       <div className="flex flex-col justify-center">
         {/* <span
           data-aos="zoom-out"
@@ -19,31 +19,32 @@ const SectionBanner = () => {
         <div className="flex flex-col gap-3">
           <span
             data-aos="fade-right"
-            className="text-4xl font-semibold text-center text-white"
+            className="text-5xl font-semibold text-center text-white"
           >
-            Nền tảng thực hành số và
+            Nền tảng thực hành số
           </span>
           <span
-            data-aos="fade-right" 
-            className="text-4xl font-semibold text-center text-white"
+            data-aos="fade-right"
+            className="text-5xl font-semibold text-center text-white mt-2"
           >
             Dịch dụ AI/IoT giá rẻ cho chuyển đổi số giáo dục
           </span>
         </div>
 
-        <p  data-aos="fade-left" data-aos-delay="400"className="text-lg font-semibold text-center text-white mt-4 mb-14">
+        <p
+          data-aos="fade-left"
+          data-aos-delay="400"
+          className="text-lg font-semibold text-center text-white mt-8 mb-10"
+        >
           Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến các dịch vụ
           chất lượng, có giá trị thực tiễn cao!
         </p>
       </div>
-      <div className="btn-container flex items-center"
-        data-aos="zoom-in" 
-      
-      >
+      <div className="btn-container flex items-center mt-4" data-aos="zoom-in">
         <button className="btn-content px-7 py-3 bg-[#AA3232] rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be] ">
-          <span>Các giải pháp tiên phong</span>
+          <span className=" text-xl text-white">Các giải pháp tiên phong</span>
           <div className="icon-btn-services">
-            <FaArrowRight className=" text-lg text-white" />
+            <FaArrowRight className=" text-xl text-white" />
           </div>
         </button>
       </div>

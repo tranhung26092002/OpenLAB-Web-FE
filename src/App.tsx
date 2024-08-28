@@ -68,6 +68,16 @@ const App = () => {
             </Suspense>
           }
         />
+         <Route
+          path="loading"
+          element={
+            <Suspense fallback={<FallbackLoading />}>
+              <MainLayout>
+                <FallbackLoading />
+              </MainLayout>
+            </Suspense>
+          }
+        />
         <Route
           path="contact"
           element={

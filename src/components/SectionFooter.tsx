@@ -5,18 +5,18 @@ import { IoLocation } from "react-icons/io5";
 import { LuCopyright } from "react-icons/lu";
 const SectionFooter = () => {
   return (
-    <div className="body-section-footer bg-[#120f2d] px-20 py-14 border-t-2 border-[#48d6e9]">
+    <div className="body-section-footer bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% px-20 py-14 border-t-2 border-[#48d6e9]">
       <div className="content-section-footer">
         <div className="flex text-white justify-around px-5 gap-8">
           <div className="w-[30%] pr-5">
             <Logo className="text-5xl" />
-            <p className=" mt-12 text-sm font-light text-[#9eb7c0]">
+            <p className=" mt-12 text-base font-medium text-white">
               Nền tảng thực hành số và Dịch dụ AI/IoT giá rẻ cho chuyển đổi số
               giáo dục. Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến
               các dịch vụ chất lượng, có giá trị thực tiễn cao!
             </p>
           </div>
-          <div className="w-[36%]  flex flex-col  text-sm font-light text-[#9eb7c0] gap-3">
+          <div className="w-[36%]  flex flex-col gap-3 mt-12 text-base font-medium text-white">
             <span className="text-lg font-semibold text-white mb-2">
               ĐỊA CHỈ
             </span>
@@ -58,12 +58,14 @@ const SectionFooter = () => {
             <span className="text-lg font-semibold text-white mb-2">
               Sản phẩm
             </span>
-            <span className="cursor-pointer hover:text-white">Trợ giảng số AI</span>
             <span className="cursor-pointer hover:text-white">
-            Thiết bị thực hành thông minh
+              Trợ giảng số AI
             </span>
             <span className="cursor-pointer hover:text-white">
-            Khóa học thực hành trực tuyến
+              Thiết bị thực hành thông minh
+            </span>
+            <span className="cursor-pointer hover:text-white">
+              Khóa học thực hành trực tuyến
             </span>
             <span className="cursor-pointer hover:text-white">
               Tất cả sản phẩm

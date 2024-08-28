@@ -10,7 +10,7 @@ import vmuLogo from "@assets/logo/partner/vmu.png";
 import isvnu from "@assets/logo/partner/is-vnu.png";
 import uottLogo from "@assets/logo/partner/university-of-transport technology.png";
 import imic from "@assets/logo/partner/imic.png";
-
+import axiosPublic from "@utils/axiosConfig";
 type productType = {
   image: string;
   nameProduct: string;
@@ -76,7 +76,6 @@ export const dataPartners: dataPartner[] = [
     image: imic,
   },
 ];
-
 
 type feedback = {
   name: string;
@@ -163,8 +162,14 @@ export const dataDevicesPrices: pricesProps[] = [
   { solution: "OpenKit-B: Kít thực hành IoT cơ bản", price: "1.450.000" },
   { solution: "OpenKit-O: Kít thực hành IoT mở rộng", price: "8.000.000" },
   { solution: "OpenKit-A: Kít thực hành thông minh IoT", price: "18.000.000" },
-  { solution: "OpenKit-C: Kít thực hành lập trình nhúng C", price: "12.000.000", },
-  { solution: "OpenKit-WSN: Kít thực hành mạng cảm biến thông minh", price: "12.000.000", },
+  {
+    solution: "OpenKit-C: Kít thực hành lập trình nhúng C",
+    price: "12.000.000",
+  },
+  {
+    solution: "OpenKit-WSN: Kít thực hành mạng cảm biến thông minh",
+    price: "12.000.000",
+  },
 ];
 
 export const dataCoursePrices: pricesProps[] = [
@@ -172,3 +177,8 @@ export const dataCoursePrices: pricesProps[] = [
   { solution: "Khoá học thực hành IoT cơ bản", price: "1.800.000" },
   { solution: "Khoá học thực hành IoT nâng cao", price: "2.800.000" },
 ];
+
+
+export const handleLogin = async(email:string, password:string)=>{
+  return await axiosPublic.post("/api/auth/login",{email, password});
+}

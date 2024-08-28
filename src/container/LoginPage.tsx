@@ -1,11 +1,26 @@
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
+import { handleLogin } from "@services/data";
+import { FormEvent, useState } from "react";
+type event = FormEvent<HTMLFormElement>;
 const LoginPage = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const handleLoginUser = async (e: event) => {
+    e.preventDefault();
+    console.log("Sending to request!", email, password);
+    const res = await handleLogin(email, password);
+    console.log("check response: ", res);
+  };
   return (
     <div className="bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% flex justify-center items-center w-screen h-screen">
       <div className="flex flex-col px-6 py-6 shadow-xl bg-white rounded-md">
-        <form className="flex flex-col gap-3">
+        <form
+          className="flex flex-col gap-3"
+          action="POST"
+          onSubmit={(e) => handleLoginUser(e)}
+        >
           <div className="flex flex-col">
             <span className="text-center text-xl font-semibold">Đăng nhập</span>
             <span className="font-light">Hoàn thiện thông tin để tiếp tục</span>
@@ -17,6 +32,7 @@ const LoginPage = () => {
                 type="text"
                 name="email"
                 id="email"
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-[#eee] px-3 py-2 rounded focus:bg-white"
               />
             </div>
@@ -26,12 +42,13 @@ const LoginPage = () => {
                 type="password"
                 name="password"
                 id="password"
+                onChange={(e) => setPassword(e.target.value)}
                 className="bg-[#eee] px-3 py-2 rounded focus:bg-white"
               />
             </div>
           </div>
           <div className=" flex justify-between items-center">
-            <div className="flex gap-1 items-center">
+            {/* <div className="flex gap-1 items-center">
               <input
                 type="checkbox"
                 name="remeber-password"
@@ -40,10 +57,10 @@ const LoginPage = () => {
               <label htmlFor="remeber-password" className="text-xs font-medium">
                 Nhớ mật khẩu
               </label>
-            </div>
+            </div> */}
             <span className="text-xs font-medium">Quên mật khẩu</span>
           </div>
-          <button className="py-2 bg-blue-700 rounded text-white">
+          <button className="py-2 bg-blue-700 rounded text-white" type="submit">
             Đăng nhập
           </button>
           <div className=" text-center">
@@ -55,7 +72,8 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="text-xs font-medium">
-            <span>Bạn chưa có tài khoản?</span> <span className="font-semibold">Đăng kí ngay</span>
+            <span>Bạn chưa có tài khoản?</span>{" "}
+            <span className="font-semibold">Đăng kí ngay</span>
           </div>
         </form>
       </div>

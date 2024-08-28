@@ -17,13 +17,13 @@ const Header = () => {
                 className="text-5xl font-semibold text-center text-[#D32F2F] text-shadow-lg"
                 style={{
                   textShadow:
-                    "rgb(220, 170, 25) 3px 0px 0px, rgba(0, 0, 0, 0) 4px -1px 10px, rgba(0, 0, 0, 0) 16px 1px 2px, rgba(115, 86, 86, 0) 22px 18px 30px",
+                    "rgb(106 109 129) 3px 0px 0px, rgba(0, 0, 0, 0) 4px -1px 10px, rgba(0, 0, 0, 0) 16px 1px 2px, rgba(115, 86, 86, 0) 22px 18px 30px",
                 }}
               >
-                OPEN LAB
+                OpenLAB
               </span>
-              <span className="text-[#D32F2F] text-center ">
-                AI/IOT as a service
+              <span className="text-[#D32F2F] text-center font-medium ">
+                AI/IoT as a service
               </span>
             </Link>
           </div>
