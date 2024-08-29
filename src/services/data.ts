@@ -11,6 +11,9 @@ import isvnu from "@assets/logo/partner/is-vnu.png";
 import uottLogo from "@assets/logo/partner/university-of-transport technology.png";
 import imic from "@assets/logo/partner/imic.png";
 import axiosPublic from "@utils/axiosConfig";
+import img1BenefitProduct from '@assets/image/detail-product/Tat_ca_tren_1_diem_cham_fdd50fe132.jpeg'
+import img2BenefitProduct from '@assets/image/detail-product/Toi_uu_quy_trinh_cu_b8392a59ed.jpeg'
+import img3BenefitProduct from '@assets/image/detail-product/online_product_presentation_with_project_team_vector_id1054541696_bec8c46918.jpeg'
 type productType = {
   image: string;
   nameProduct: string;
@@ -182,3 +185,28 @@ export const dataCoursePrices: pricesProps[] = [
 export const handleLogin = async (email: string, password: string) => {
   return await axiosPublic.post("/api/auth/login", { email, password });
 };
+
+
+export type dataBenefitProduct = {
+  image: string;
+  label: string;
+  detail: string;
+};
+
+export const dataBenefitProducts: dataBenefitProduct[] = [
+  {
+    image: img1BenefitProduct,
+    label: "Tất cả trên 1 điểm chạm",
+    detail: 'Dịch vụ một cửa, Cây tiến trình học tập, Học liệu, Tin tức, Thời khóa biểu, ... tất cả được tập trung trên 1 ứng dụng duy nhất'
+  },
+  {
+    image: img2BenefitProduct,
+    label: "Tối ưu những quy trình cũ",
+    detail: 'Truyền tải tin tức, thông báo, điểm số, sử dụng dịch vụ hành chính, ... tất cả đều được thực hiện qua smartphone mọi lúc mọi nơi'
+  },
+  {
+    image: img3BenefitProduct,
+    label: 'Liên thông toàn bộ dữ liệu',
+    detail: 'Cập nhật toàn bộ thông tin từ nhà trường đến với sinh viên, cán bộ/giảng viên một cách nhanh và chính xác nhất'
+  }
+]

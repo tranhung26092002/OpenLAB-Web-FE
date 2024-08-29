@@ -6,12 +6,13 @@ import courseService from "@assets/image/service-image/Course_service.png";
 import aiService from "@assets/image/service-image/Chatbot_service.png";
 import { ReactNode } from "react";
 import { FaCubes } from "react-icons/fa";
-type itemService = {
+type itemServiceProps = {
   title: string;
   description: string;
   image?: string | ReactNode;
 };
-export const dataServices: itemService[] = [
+
+const dataServices: itemServiceProps[] = [
   {
     title: "Nền tảng thực hành số",
     description: "Cung cấp các dịch vụ thực hành trực truyến AI/IoT",

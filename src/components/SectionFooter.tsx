@@ -15,15 +15,11 @@ const SectionFooter = () => {
           <div className="w-[30%] pr-5">
             <Logo className="text-5xl" />
             <div className="flex flex-col gap-8">
-              <p  className=" mt-3 text-base font-normal text-white">
+              <p className=" mt-3 text-base font-normal text-white">
                 Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông
                 minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ
                 trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ
                 chuyển đổi số giáo dục theo yêu cầu.
-              </p>
-              <p>
-                Chúng tôi nỗ lực làm việc để hiểu khách hàng và mang đến các
-                dịch vụ chất lượng, có giá trị thực tiễn cao!
               </p>
             </div>
           </div>
@@ -72,28 +68,29 @@ const SectionFooter = () => {
               Sản phẩm
             </span>
             <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-              Giải pháp Lab thông minh:
+              Lab thông minh:
               <span className="font-semibold">OpenLab</span>
             </span>
+           
             <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-              Giải pháp Trợ giảng số thông minh:
-              <span className="font-semibold">OpenChat</span>
+              Thực hành từ xa:
+              <span className="font-semibold">E-Lab</span>
+            </span>
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Quản lý thiết bị số:
+              <span className="font-semibold">E-Chip</span>
+            </span>
+            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+              Thi online:
+              <span className="font-semibold">E-Exam</span>
             </span>
             <span className="cursor-pointer hover:text-white font-normal flex gap-1">
               Trục liên thông dữ liệu:
               <span className="font-semibold">LabLink</span>
             </span>
             <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-              Giải pháp Thực hành từ xa:
-              <span className="font-semibold">E-Lab</span>
-            </span>
-            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-              Giải pháp Quản lý thiết bị số:
-              <span className="font-semibold">E-Chip</span>
-            </span>
-            <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-              Giải pháp thi online:
-              <span className="font-semibold">E-Exam</span>
+              Trợ giảng số thông minh:
+              <span className="font-semibold">OpenChat</span>
             </span>
             <span className="cursor-pointer hover:text-white font-normal">
               Tất cả sản phẩm

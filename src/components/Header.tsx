@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="body-header flex flex-col  shadow-xl sticky top-0 z-10">
       <div className="flex bg-blue-50 justify-around py-3 ">
-        <div className="content-left w-[65%]  flex justify-end  items-center h-full gap-3">
+        <div className="content-left w-[70%]  flex justify-end  items-center h-full gap-3">
           <div className="logo flex flex-col justify-center items-center w-4/12 h-[75px] ">
             <Link to={"/"} className="cursor-pointer flex flex-col">
               <span
@@ -25,7 +25,7 @@ const Header = () => {
             </Link>
           </div>
           <div
-            className="w-8/12  text-lg font-medium flex justify-between items-center "
+            className="w-8/12  text-lg font-medium flex justify-around items-center "
             data-aos="zoom-in"
           >
             <Link to="/">
@@ -68,6 +68,12 @@ const Header = () => {
                     Báo giá
                   </div>
                 </Link>
+                <hr />
+                <Link to={"/product"}>
+                  <div className="courses cursor-pointer pl-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
+                  Tất cả sản phẩm
+                  </div>
+                </Link>
               </div>
             </Tooltip>
             <Link to="/blog">
@@ -81,7 +87,7 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <div className="content-right w-[30%]  flex items-center text-lg font-medium pl-5 justify-end gap-6">
+        <div className="content-right w-[25%]  flex items-center text-lg font-medium pl-5 justify-end gap-6">
           <div className=" flex items-center justify-end gap-6  ">
             <Link to={"/login"}>
               <button className="text-sm bg-[#1464cc] mx-auto py-2 px-6 hover:border-2 border-2 border-transparent hover:border-white text-white hover:opacity-70 rounded-md">
