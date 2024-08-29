@@ -57,7 +57,7 @@ const App = () => {
             </Suspense>
           }
         />
-      
+
         <Route
           path="about"
           element={
@@ -68,7 +68,7 @@ const App = () => {
             </Suspense>
           }
         />
-         <Route
+        <Route
           path="loading"
           element={
             <Suspense fallback={<FallbackLoading />}>
@@ -111,7 +111,7 @@ const App = () => {
           />
         </Route>
         <Route
-          path="openkit-b"
+          path="openkit-b/dashboard"
           element={
             <Suspense fallback={<FallbackLoading />}>
               <MainLayout>
