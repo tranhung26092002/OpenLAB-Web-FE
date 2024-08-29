@@ -61,7 +61,7 @@ const MqttConnect = ({
           }
         });
 
-        mqttClient.on("message", (topic, message) => {
+        mqttClient.on("message", (message) => {
           try {
             const data = JSON.parse(message.toString());
             console.log("check message: ", data);
