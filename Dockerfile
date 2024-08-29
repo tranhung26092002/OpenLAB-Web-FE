@@ -13,7 +13,7 @@ RUN npm install
 # Sao chép toàn bộ mã nguồn vào container
 COPY . .
 
-# Mở cổng 80 để phục vụ ứng dụng
+# Mở cổng 3000 để phục vụ ứng dụng
 EXPOSE 3000
 
 # Khởi động node
