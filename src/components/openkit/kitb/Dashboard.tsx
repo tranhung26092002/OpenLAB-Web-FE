@@ -72,8 +72,8 @@ const Dashboard = ({
 
           <DashboardChart
             dataX={timestamps}
-            dataY={temperatureHistory}
-            value={temperature}
+            dataY={humidityHistory}
+            value={humidity}
           />
         </div>
         <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
@@ -91,8 +91,8 @@ const Dashboard = ({
 
           <DashboardChart
             dataX={timestamps}
-            dataY={temperatureHistory}
-            value={temperature}
+            dataY={gasHistory}
+            value={gas}
           />
         </div>
         <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
@@ -110,8 +110,8 @@ const Dashboard = ({
 
           <DashboardChart
             dataX={timestamps}
-            dataY={temperatureHistory}
-            value={temperature}
+            dataY={lightHistory}
+            value={light}
           />
         </div>
       </div>

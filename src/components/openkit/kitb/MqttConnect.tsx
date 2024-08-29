@@ -25,21 +25,22 @@ const MqttConnect = ({
   const [mqttidKit, setIdKit] = useState("abc");
   const [mqttUser, setMqttUser] = useState("admin");
   const [mqttPassword, setMqttPassword] = useState("admin");
-  // const [mqttTopicPub, setMqttTopicPub] = useState("");
-  // const [mqttMessage, setMqttMessage] = useState("");
+  const [mqttTopicPub, setMqttTopicPub] = useState("");
+  const [mqttMessage, setMqttMessage] = useState("");
   const [mqttTopicSub, setMqttTopicSub] = useState("sensor");
   const [subscribedData, setSubscribedData] = useState("");
   const [client, setClient] = useState<mqtt.MqttClient | null>(null);
   const [subscribeStatus, setSubscribeStatus] = useState<string>("");
-  //const [publishStatus, setPublishStatus] = useState<string>("");
+  const [publishStatus, setPublishStatus] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleConnect = async () => {
-    // if (!mqttHost || !mqttPort || !mqttidKit || !mqttUser || !mqttPassword) {
-    //   setErrorMessage("Missing required parameter!.");
-    //   return;
-    // }
+    if (!mqttHost || !mqttPort || !mqttidKit || !mqttUser || !mqttPassword) {
+      setErrorMessage("Missing required parameter!.");
+      return;
+    }
 
-    // setErrorMessage("");
+    setErrorMessage("");
     const clientId = `mqttjs_${cryptoRandomString({ length: 10 })}`;
     try {
       const mqttClient = mqtt.connect(
@@ -82,7 +83,6 @@ const MqttConnect = ({
 
             const now = new Date().toLocaleTimeString();
             setTimestamps((prev) => [...prev, now]);
-           
           } catch (error) {
             console.error("Error parsing JSON:", error);
           }
@@ -103,6 +103,18 @@ const MqttConnect = ({
     // setConnectionStatus("Connecting...");
     // setErrorMessage("");
   };
+
+  const handleDisconnect = () => {
+    if (client) {
+      client.end();
+      console.log("Disconnectting...");
+      setSubscribeStatus("");
+      setSubscribedData("");
+      setClient(null);
+      setConnectStatus(false);
+    }
+  };
+
   const handleSubscribe = () => {
     try {
       if (client && client.connected) {
@@ -120,14 +132,35 @@ const MqttConnect = ({
     }
   };
 
-  const handleDisconnect = () => {
-    if (client) {
-      client.end();
-      console.log("Disconnectting...");
-      setSubscribeStatus("");
-      setSubscribedData("");
-      setClient(null);
-      setConnectStatus(false);
+  const handleUnsubscribe = () => {
+    if (client && connectStatus === true && mqttTopicSub) {
+      client.unsubscribe(mqttTopicSub, (error) => {
+        if (error) {
+          console.error("Unsubscribe error: ", error);
+        } else {
+          setSubscribedData("");
+          setSubscribeStatus("Unsubscribe Successful");
+        }
+      });
+    }
+  };
+
+  const handlePublish = () => {
+    if (client && connectStatus === true && mqttTopicPub && mqttMessage) {
+      const message = JSON.stringify({ mqttidKit: mqttMessage });
+      client.publish(
+        mqttTopicPub,
+        message,
+        { qos: 0, retain: false },
+        (error) => {
+          if (error) {
+            console.error("Publish error: ", error);
+            setPublishStatus("Publish Failed");
+          } else {
+            setPublishStatus("Publish Successful");
+          }
+        }
+      );
     }
   };
 
@@ -144,11 +177,19 @@ const MqttConnect = ({
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
                 placeholder="Enter ID-Kit"
                 id="id-kit"
+                onChange={(e) => {
+                  setIdKit(e.target.value);
+                }}
               />
             </div>
             <div className=" flex justify-between items-center">
               <label>Protocol:</label>
-              <select className="bg-[#eee] px-2 rounded-sm  py-2">
+              <select
+                className="bg-[#eee] px-2 rounded-sm  py-2"
+                onChange={(e) => {
+                  setMqttProtocol(e.target.value);
+                }}
+              >
                 <option value="mqtt://">mqtt://</option>
                 <option value="mqtts://">mqtts://</option>
                 <option value="ws://">ws://</option>
@@ -161,6 +202,9 @@ const MqttConnect = ({
                 type="text"
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
                 placeholder="Enter host address"
+                onChange={(e) => {
+                  setMqttHost(e.target.value);
+                }}
               />
             </div>
             <div className=" flex justify-between items-center">
@@ -169,6 +213,9 @@ const MqttConnect = ({
                 type="text"
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
                 placeholder="Enter port"
+                onChange={(e) => {
+                  setMqttPort(e.target.value);
+                }}
               />
             </div>
             <div className=" flex justify-between items-center">
@@ -177,6 +224,9 @@ const MqttConnect = ({
                 type="text"
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%] "
                 placeholder="Enter username"
+                onChange={(e) => {
+                  setMqttUser(e.target.value);
+                }}
               />
             </div>
             <div className=" flex justify-between items-center">
@@ -185,6 +235,9 @@ const MqttConnect = ({
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
                 type="password"
                 placeholder="Enter password"
+                onChange={(e) => {
+                  setMqttPassword(e.target.value);
+                }}
               />
             </div>
             <div className=" flex justify-around items-center">
@@ -206,6 +259,7 @@ const MqttConnect = ({
             ) : (
               <p className="text-red-600 text-center">Đang ngắt nối</p>
             )}
+            {errorMessage && <p>{errorMessage}</p>}
           </div>
 
           <div className=" bg-yellow-50 flex rounded-md flex-col gap-4 px-6 py-4 w-1/3 ">
@@ -217,6 +271,9 @@ const MqttConnect = ({
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[60%]"
                 placeholder="Enter topic"
                 defaultValue={mqttTopicSub}
+                onChange={(e) => {
+                  setMqttTopicSub(e.target.value);
+                }}
               />
             </div>
             <div className=" flex items-center justify-between">
@@ -235,7 +292,10 @@ const MqttConnect = ({
               >
                 Subscribe
               </button>
-              <button className="px-3 py-2 bg-yellow-400 text-white rounded">
+              <button
+                className="px-3 py-2 bg-yellow-400 text-white rounded"
+                onClick={handleUnsubscribe}
+              >
                 Unsubscribe
               </button>
             </div>
@@ -252,6 +312,9 @@ const MqttConnect = ({
                 type="text"
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white "
                 placeholder="Enter topic"
+                onChange={(e) => {
+                  setMqttTopicPub(e.target.value);
+                }}
               />
             </div>
             <div className="flex items-center justify-between w-full">
@@ -259,15 +322,21 @@ const MqttConnect = ({
               <input
                 type="text"
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white "
-                // value={mqttMessage}
-                // onChange={(e) => setMqttMessage(e.target.value)}
+                onChange={(e) => {
+                  setMqttMessage(e.target.value);
+                }}
                 placeholder="Enter message"
               />
             </div>
-            <button className="w-full py-3 rounded bg-green-500 text-white">
+            <button
+              className="w-full py-3 rounded bg-green-500 text-white"
+              onClick={handlePublish}
+            >
               Publish
             </button>
-            <div>{/* <p>{publishStatus}</p> */}</div>
+            <div>
+              <p>{publishStatus}</p>
+            </div>
           </div>
         </div>
       </div>
