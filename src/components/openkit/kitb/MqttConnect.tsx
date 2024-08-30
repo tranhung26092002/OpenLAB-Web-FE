@@ -63,17 +63,21 @@ const MqttConnect = ({
         mqttClient.on("message", (topic, message) => {
           try {
             const data = JSON.parse(message.toString());
-            console.log("check message: ", data);
-
-            setSubscribedData(JSON.stringify(data, null, 3));
 
             const temperatureValue = data.temperature.toFixed(2);
-            console.log(typeof temperatureValue, temperatureValue);
             const humidityValue = data.humidity.toFixed(2);
             const gasValue = data.gas.toFixed(2);
-            const lightValue = data.light.toFixed(2);
-            // const ledValue = data.led || "off";
+            const lightValue = (data.light ?? 0).toFixed(2);
+            setSubscribedData(JSON.stringify(data, null, 3));
 
+            console.log(
+              "check data: ",
+              temperatureValue,
+              humidityValue,
+              gasValue,
+              lightValue
+            );
+            console.log("check message: ", data);
             setTemperature(temperatureValue);
             setHumidity(humidityValue);
             setGas(gasValue);
@@ -82,7 +86,6 @@ const MqttConnect = ({
 
             const now = new Date().toLocaleTimeString();
             setTimestamps((prev) => [...prev, now]);
-           
           } catch (error) {
             console.error("Error parsing JSON:", error);
           }

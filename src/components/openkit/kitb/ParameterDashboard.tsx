@@ -5,8 +5,8 @@ type ParameterDashboardProps = {
   nameDevice: string;
   icon1?: ReactNode;
   icon2?: ReactNode;
-  value1: string;
-  value2?: string;
+  value1: string | number;
+  value2?: string | number;
   id: string;
 };
 
@@ -23,7 +23,7 @@ const ParameterDashboard = ({
       <div>{device}</div>
       <div className="flex flex-col items-start">
         <span className="font-semibold">{nameDevice}</span>
-        
+
         <div className="flex items-center gap-1">
           <span>{icon1}</span>
           <span>{value1}</span>
