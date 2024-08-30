@@ -13,7 +13,7 @@ const BlogPage = () => {
         />
       </div>
       <div className="px-24 pt-24 flex gap-7">
-        <div className="w-2/3  flex justify-end items-start gap-6 flex-wrap">
+        <div className="w-2/3  flex justify-end items-start gap-5 flex-wrap">
           {dataBlog.map((item, index) => {
             return (
               <div
@@ -79,10 +79,19 @@ const BlogPage = () => {
             <span className="text-xl font-medium">Danh mục</span>
             <div className="py-6 flex flex-col gap-2 items-end">
               <div className="py-2 bg-[#eee] px-4 rounded w-[94%] hover:transition-all hover:duration-200 hover:ease-in hover:w-[100%] cursor-pointer">
-                Blockchain
+                Công nghệ IoT
               </div>
               <div className="py-2 bg-[#eee] px-4 rounded w-[94%] hover:transition-all hover:duration-200 hover:ease-in hover:w-[100%] cursor-pointer">
-                E-University
+                Công nghệ AI
+              </div>
+              <div className="py-2 bg-[#eee] px-4 rounded w-[94%] hover:transition-all hover:duration-200 hover:ease-in hover:w-[100%] cursor-pointer">
+                Công nghệ 5G
+              </div>
+              <div className="py-2 bg-[#eee] px-4 rounded w-[94%] hover:transition-all hover:duration-200 hover:ease-in hover:w-[100%] cursor-pointer">
+                Công nghệ Big Data
+              </div>
+              <div className="py-2 bg-[#eee] px-4 rounded w-[94%] hover:transition-all hover:duration-200 hover:ease-in hover:w-[100%] cursor-pointer">
+                Công nghệ Blockchain
               </div>
             </div>
           </div>

@@ -13,13 +13,15 @@ const LazyPricesPage = lazy(() => import("@container/products/PricesPage"));
 const LazyOpenKitBPage = lazy(
   () => import("@container/openkit/kitb/OpenKitBPage")
 );
+const LazyAllProduct = lazy(()=> import('@container/products/AllProduct'))
 const LazyLoginPage = lazy(() => import("@container/LoginPage"));
+const LazyDetailProduct = lazy(()=> import('@container/products/DetailProduct'))
 // const LazySignUpPage = lazy(() => import('@container/SignUpPage'));
 
 const App = () => {
   useEffect(() => {
     AOS.init({
-      offset: 200,
+      offset: 100,
       duration: 600,
       easing: "ease-in",
       delay: 100,
@@ -105,6 +107,26 @@ const App = () => {
               <Suspense fallback={<FallbackLoading />}>
                 <MainLayout>
                   <LazyPricesPage />
+                </MainLayout>
+              </Suspense>
+            }
+          />
+          <Route
+            path=":slug"
+            element={
+              <Suspense fallback={<FallbackLoading />}>
+                <MainLayout>
+                  <LazyDetailProduct />
+                </MainLayout>
+              </Suspense>
+            }
+          />
+              <Route
+            index
+            element={
+              <Suspense fallback={<FallbackLoading />}>
+                <MainLayout>
+                  <LazyAllProduct />
                 </MainLayout>
               </Suspense>
             }

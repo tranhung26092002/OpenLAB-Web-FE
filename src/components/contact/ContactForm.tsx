@@ -17,18 +17,19 @@ const ContactForm = () => {
 
         <span className="flex gap-3 cursor-pointer hover:text-white items-center">
           <GrMail className="text-lg" />
-          openlabptit@gmail.com
+          openlab.user@gmail.com
         </span>
         <hr />
         <span className="flex gap-3 cursor-pointer hover:text-white items-center">
           <MdPhone className="text-lg" />
-          (+84) 85 660 6961
+          (+84) 86 574 6698
         </span>
         <hr />
         <span className="flex gap-3 cursor-pointer hover:text-white items-center">
           <IoLocation className="text-xl" />
-          Tầng 2, Tòa New Skyline Văn Quán, Hà Đông, HN
+          68B-6 Ao Sen, Hà Đông, HN
         </span>
+        <hr />
       </div>
       <div className="flex flex-col gap-3 w-2/3 pl-8 " data-aos="fade-left">
         <div className="flex justify-start gap-5">

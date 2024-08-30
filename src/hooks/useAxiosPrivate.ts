@@ -35,7 +35,6 @@
 //                         return axiosPrivate(prevRequest);
 //                     }
 //                 }
-
 //                 return Promise.reject(error)
 //             }
 //         )
@@ -44,7 +43,6 @@
 //             axiosPrivate.interceptors.response.eject(responseIntercept);
 //         }
 //     }, [user, refresh,isLogin,dispatch])
-
 //     return axiosPrivate;
 // }
 // export default useAxiosPrivate;
