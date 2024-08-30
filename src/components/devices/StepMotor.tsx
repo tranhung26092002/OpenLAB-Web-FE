@@ -26,6 +26,7 @@ const StepMotor = () => {
         src={stepmotoImage}
         className="w-20 h-20 object-contain object-center"
       />
+      
     </div>
   );
 };

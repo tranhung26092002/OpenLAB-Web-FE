@@ -5,6 +5,10 @@ import ParameterDashboard from "./ParameterDashboard";
 import DHT11Sensor from "@components/devices/DHT11";
 import { FaThermometerHalf } from "react-icons/fa";
 import { IoSnowSharp } from "react-icons/io5";
+import MQ02Sensor from "@components/devices/MQ02";
+import { GiGasPump } from "react-icons/gi";
+import MHSensor from "@components/devices/MH";
+import { LuSunMedium } from "react-icons/lu";
 type DashboardProps = {
   temperature: number;
   humidity: number;
@@ -42,7 +46,7 @@ const Dashboard = ({
           <div className="w-full">
             <ParameterDashboard
               device={<DHT11Sensor />}
-              id='dht4'
+              id="dht4"
               nameDevice={"DHT11"}
               value1={"27*C"}
               value2={"70%"}
@@ -79,13 +83,11 @@ const Dashboard = ({
         <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
           <div className="w-full">
             <ParameterDashboard
-              device={<DHT11Sensor />}
-              id='dht1'
-              nameDevice={"DHT11"}
-              value1={"27*C"}
-              value2={"70%"}
-              icon1={<FaThermometerHalf />}
-              icon2={<IoSnowSharp />}
+              device={<MQ02Sensor />}
+              id="mq2"
+              nameDevice={"MQ02"}
+              value1={"2700"}
+              icon1={<GiGasPump />}
             />
           </div>
 
@@ -98,13 +100,11 @@ const Dashboard = ({
         <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
           <div className="w-full">
             <ParameterDashboard
-              device={<DHT11Sensor />}
-              id="dht2"
-              nameDevice={"DHT11"}
-              value1={"27*C"}
-              value2={"70%"}
-              icon1={<FaThermometerHalf />}
-              icon2={<IoSnowSharp />}
+              device={<MHSensor />}
+              id="mh"
+              nameDevice={"MH"}
+              value1={"274"}
+              icon1={<LuSunMedium />}
             />
           </div>
 

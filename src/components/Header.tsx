@@ -1,7 +1,7 @@
 // import logoHeader from "@assets/logo/logo_header.png";
 import { FaAngleDown } from "react-icons/fa6";
 import { Tooltip } from "react-tooltip";
-import './Header.scss'
+import "./Header.scss";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
@@ -46,6 +46,7 @@ const Header = () => {
             >
               Sản phẩm <FaAngleDown className="text-xs  icon-product" />
             </span>
+
             <Tooltip
               id="my-product"
               clickable
@@ -56,12 +57,18 @@ const Header = () => {
             >
               <div className="option-product text-base bg-white rounded py-1 px-0 font-normal text-black">
                 <div className="courses hover:bg-[#1464cc] hover:text-white rounded-sm cursor-pointer pl-2 py-0.5">
-                  Khóa học
+                  Giải pháp/Dịch vụ
                 </div>
                 <hr />
                 <div className="courses hover:bg-[#1464cc] hover:text-white rounded-sm cursor-pointer px-2 py-0.5">
-                  Thiết bị phần cứng
+                  Thiết bị/Kít
                 </div>
+                <hr />
+                <Link to={"/product/prices"}>
+                  <div className="courses cursor-pointer px-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
+                    Khoá học thực hành
+                  </div>
+                </Link>
                 <hr />
                 <Link to={"/product/prices"}>
                   <div className="courses cursor-pointer pl-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
@@ -71,7 +78,7 @@ const Header = () => {
                 <hr />
                 <Link to={"/product"}>
                   <div className="courses cursor-pointer pl-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
-                  Tất cả sản phẩm
+                    Tất cả sản phẩm
                   </div>
                 </Link>
               </div>
@@ -87,17 +94,13 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <div className="content-right w-[25%]  flex items-center text-lg font-medium pl-5 justify-end gap-6">
-          <div className=" flex items-center justify-end gap-6  ">
+        <div className="content-right w-[25%]  flex items-center text-lg font-medium pl-5 justify-center gap-6">
+          <div className=" flex items-center justify-start gap-6  ">
             <Link to={"/login"}>
-              <button className="text-sm bg-[#1464cc] mx-auto py-2 px-6 hover:border-2 border-2 border-transparent hover:border-white text-white hover:opacity-70 rounded-md">
-                Đăng nhập
+              <button className="px-5 py-2 rounded text-white bg-[#D32F2F] hover:transition-colors hover:duration-200 hover:ease-out hover:bg-[#1513be] shadow-2xl shadow-[#7A9598]">
+                Đăng ký khoá học
               </button>
             </Link>
-
-            <button className="text-sm py-2 px-6 rounded-md hover:border-2 border-2 border-transparent hover:border-white hover:opacity-80 text-white bg-[#6FA471]">
-              Đăng kí
-            </button>
           </div>
         </div>
       </div>
