@@ -2,7 +2,8 @@ import { GrMail } from "react-icons/gr";
 import { Tooltip } from "react-tooltip";
 import flagVN from "@assets/icon/vietnam_flags.png";
 import flagEN from "@assets/icon/united-states_flags.png";
-import './NavContact.scss'
+import { FaCaretDown } from "react-icons/fa";
+import "./NavContact.scss";
 const NavContact = () => {
   return (
     <div className="flex justify-between items-center px-14 py-3 bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% text-white">
@@ -13,13 +14,16 @@ const NavContact = () => {
         </span>
       </div>
       <div className="flex  gap-2 items-center">
-        <div className="flag-container w-[46px] h-[46px]">
-          <img
-            alt="VN-Flag"
-            src={flagVN}
-            className="object-cove cursor-pointer"
-            data-tooltip-id="option-language"
-          />
+        <div className="flag-container w-[46px] h-[46px] flex gap-2 justify-center items-center">
+          <div>
+            <img
+              alt="VN-Flag"
+              src={flagVN}
+              className="object-cove cursor-pointer"
+              data-tooltip-id="option-language"
+            />
+          </div>
+          <FaCaretDown />
         </div>
 
         <Tooltip id="option-language" place="bottom-end" clickable>
@@ -31,7 +35,7 @@ const NavContact = () => {
                   src={flagEN}
                   className="object-cove cursor-pointer w-[40px] h-[40px]"
                 />
-                <span>English</span>
+                <span>English (US)</span>
               </div>
               <div className="cursor-pointer flex items-center px-2 hover:bg-[#d2d3d4] gap-4 hover:text-white rounded-sm ">
                 <img

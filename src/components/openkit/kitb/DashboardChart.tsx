@@ -3,8 +3,14 @@ type DashboardChartProps = {
   dataX: string[];
   dataY: number[];
   value: number;
+  nameChart: string;
 };
-const DashboardChart = ({ dataX, dataY, value }: DashboardChartProps) => {
+const DashboardChart = ({
+  dataX,
+  dataY,
+  value,
+  nameChart,
+}: DashboardChartProps) => {
   return (
     <div className="w-full ">
       <div className="flex flex-col w-full ">
@@ -23,7 +29,7 @@ const DashboardChart = ({ dataX, dataY, value }: DashboardChartProps) => {
               },
             ]}
             layout={{
-              title: "Temperature History",
+              title: `${nameChart} History`,
               yaxis: { range: [0, Math.max(...dataY, 10)] },
             }}
             style={{
@@ -56,7 +62,7 @@ const DashboardChart = ({ dataX, dataY, value }: DashboardChartProps) => {
                 },
               },
             ]}
-            layout={{ title: "Temperature Gauge" }}
+            layout={{ title: `${nameChart} Gauge` }}
             style={{
               width: "100%",
               height: "240px",

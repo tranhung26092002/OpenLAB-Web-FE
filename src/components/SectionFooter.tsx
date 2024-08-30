@@ -42,7 +42,7 @@ const SectionFooter = () => {
             </span>
             <div className="flex mt-7">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.2925132859236!2d105.78486297438583!3d20.980908489422067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1724311113266!5m2!1svi!2s"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3725.28029825021!2d105.78630017525153!3d20.98139838940363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zNjhhLzYgUGjhu5EgQW8gU2VuLCBN4buZIExhbywgSMOgIMSQw7RuZywgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1724994267750!5m2!1svi!2s"
                 width="300"
                 height="160"
                 style={{ borderWidth: "none", borderRadius: "6px" }}
@@ -71,7 +71,7 @@ const SectionFooter = () => {
               Lab thông minh:
               <span className="font-semibold">OpenLab</span>
             </span>
-           
+
             <span className="cursor-pointer hover:text-white font-normal flex gap-1">
               Thực hành từ xa:
               <span className="font-semibold">E-Lab</span>
@@ -89,7 +89,7 @@ const SectionFooter = () => {
               <span className="font-semibold">LabLink</span>
             </span>
             <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-              Trợ giảng số thông minh:
+              Trợ giảng số AI:
               <span className="font-semibold">OpenChat</span>
             </span>
             <span className="cursor-pointer hover:text-white font-normal">

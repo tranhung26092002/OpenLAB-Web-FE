@@ -27,7 +27,7 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
             </li>
             <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg">
               <IoCheckmarkCircle className="text-blue-600" />
-              Giải pháp Trợ giảng số thông minh:
+              Giải pháp Trợ giảng số AI:
               <span className="font-semibold">OpenChat</span>
             </li>
             <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg">

@@ -38,7 +38,7 @@ const dataServices: itemServiceProps[] = [
   {
     title: "Phần mềm CĐS Giáo dục",
     description:
-      "Tư vấn giải pháp & phát triển phần chuyển đổi số giáo dục theo yêu cầu",
+      "Tư vấn giải pháp & phát triển phần mềm chuyển đổi số giáo dục theo yêu cầu",
     image: <FaCubes />,
   },
 ];
@@ -58,7 +58,7 @@ const setting = {
 };
 const SectionServices = () => {
   return (
-    <div className="body-service py-20  px-24  ">
+    <div className="body-service py-20  px-16 ">
       <div className="content-service text-center">
         <span className="text-4xl font-semibold leading-10 mb-2 block">
           Các dịch vụ chính
