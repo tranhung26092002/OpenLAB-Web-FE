@@ -78,7 +78,7 @@ const Dashboard = ({
           <DashboardChart
             dataX={timestamps}
             dataY={humidityHistory}
-            value={temperature}
+            value={humidity}
             nameChart="Humidy"
           />
         </div>
@@ -96,7 +96,7 @@ const Dashboard = ({
           <DashboardChart
             dataX={timestamps}
             dataY={gasHistory}
-            value={temperature}
+            value={gas}
             nameChart="Gas"
           />
         </div>
@@ -114,7 +114,7 @@ const Dashboard = ({
           <DashboardChart
             dataX={timestamps}
             dataY={lightHistory}
-            value={temperature}
+            value={light}
             nameChart="Light"
           />
         </div>
