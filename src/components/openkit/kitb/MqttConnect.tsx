@@ -41,6 +41,10 @@ const MqttConnect = ({
       setErrorMessage("Missing required parameter!");
       return;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> e7304d27ba91dadd10c235e81e150201978db8c2
     setErrorMessage("");
 
     const clientId = `mqttjs_${cryptoRandomString({ length: 10 })}`;
@@ -58,10 +62,8 @@ const MqttConnect = ({
         setClient(mqttClient);
 
         mqttClient.on("connect", () => {
-          if (mqttClient.connected) {
-            setConnectStatus(true);
-            console.log("Connectting...");
-          }
+          setConnectStatus(true);
+          console.log("Connected");
         });
 
         mqttClient.on("message", (_topic, message) => {
@@ -71,11 +73,13 @@ const MqttConnect = ({
 
             setSubscribedData(JSON.stringify(data, null, 2));
 
+<<<<<<< HEAD
             const temperatureValue = (data.temperature ?? "N/A").toFixed(2);
             console.log(typeof temperatureValue, temperatureValue);
             const humidityValue = (data.humidity ?? "N/A").toFixed(2);
             const gasValue = (data.gas ?? "N/A").toFixed(2);
             const lightValue = (data.light ?? "N/A").toFixed(2);
+
 
             setTemperature(temperatureValue);
             setHumidity(humidityValue);
@@ -161,8 +165,15 @@ const MqttConnect = ({
   };
 
   useEffect(() => {
+<<<<<<< HEAD
     handleDisconnect();
   });
+=======
+    return () => {
+      handleDisconnect();
+    };
+  }, []);
+>>>>>>> e7304d27ba91dadd10c235e81e150201978db8c2
 
   return (
     <div>

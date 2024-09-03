@@ -23,6 +23,7 @@ const ParameterDashboard = ({
       <div>{device}</div>
       <div className="flex flex-col items-start">
         <span className="font-semibold">{nameDevice}</span>
+
         <div className="flex items-center gap-1">
           <span>{icon1}</span>
           <span>{value1}</span>
