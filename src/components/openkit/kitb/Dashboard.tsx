@@ -49,9 +49,7 @@ const Dashboard = ({
               id="dht4"
               nameDevice={"DHT11"}
               value1={temperature}
-              value2={humidity}
               icon1={<FaThermometerHalf />}
-              icon2={<IoSnowSharp />}
             />
           </div>
 
@@ -68,17 +66,15 @@ const Dashboard = ({
               device={<DHT11Sensor />}
               id="dht3"
               nameDevice={"DHT11"}
-              value1={temperature}
-              value2={humidity}
-              icon1={<FaThermometerHalf />}
-              icon2={<IoSnowSharp />}
+              value1={humidity}
+              icon1={<IoSnowSharp />}
             />
           </div>
 
           <DashboardChart
             dataX={timestamps}
             dataY={humidityHistory}
-            value={temperature}
+            value={humidity}
             nameChart="Humidy"
           />
         </div>
@@ -96,7 +92,7 @@ const Dashboard = ({
           <DashboardChart
             dataX={timestamps}
             dataY={gasHistory}
-            value={temperature}
+            value={gas}
             nameChart="Gas"
           />
         </div>
@@ -114,25 +110,11 @@ const Dashboard = ({
           <DashboardChart
             dataX={timestamps}
             dataY={lightHistory}
-            value={temperature}
+            value={light}
             nameChart="Light"
           />
         </div>
       </div>
-      {/* <div className="flex items-center justify-between  w-full ">
-        <div className="w-[23%] flex items-center justify-center ">
-          <DashboardChart />
-        </div>
-        <div className="w-[23%] flex items-center justify-center ">
-          <DashboardChart />
-        </div>
-        <div className="w-[23%] flex items-center justify-center">
-          <DashboardChart />
-        </div>
-        <div className="w-[23%] flex items-center justify-center">
-          <DashboardChart />
-        </div>
-      </div> */}
     </div>
   );
 };
