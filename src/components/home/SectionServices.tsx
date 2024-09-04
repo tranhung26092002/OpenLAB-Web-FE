@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { settings } from "@utils/settingSlider";
 import practiceService from "@assets/image/service-image/Practice_service.png";
 import deviceProviderService from "@assets/image/service-image/KIT_provider_service.png";
-import courseService from "@assets/image/service-image/Course_service.png";
+import courseService from "@assets/image/service-image/Course_service.jpg";
 import aiService from "@assets/image/service-image/Chatbot_service.png";
 import { ReactNode } from "react";
 import { FaCubes } from "react-icons/fa";

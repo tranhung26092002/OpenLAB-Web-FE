@@ -1,3 +1,4 @@
+import SectionActivityInsite from "@components/about/SectionActivityInsite";
 import SectionFeedback from "src/components/about/SectionFeedback";
 import SectionIntrol from "src/components/about/SectionIntrol";
 import SectionStatiscal from "src/components/about/SectionStatiscal";
@@ -19,7 +20,9 @@ const AboutPage = () => {
 
       <SectionServices />
       <SectionSolution />
+
       <SectionAbout />
+      <SectionActivityInsite />
       <SectionStatiscal />
       <SectionFeedback />
     </div>

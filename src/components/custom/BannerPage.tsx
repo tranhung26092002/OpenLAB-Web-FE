@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type contentBannerProps = {
   header: string;
   homepage: string;
@@ -11,13 +13,15 @@ const BannerPage = ({
   connectStatus,
 }: contentBannerProps) => {
   return (
-    <div className="bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% w-full  py-24 text-white">
-      <div className="flex justify-center items-center flex-col">
+    <div className="w-full   text-white flex justify-center items-center">
+      <div className="flex justify-center items-center flex-col bg-banner_homepage object-center bg-no-repeat h-72 object-fill w-[80%] bg-red-300">
         <h1 className="text-3xl font-semibold mb-4">{header}</h1>
         <span className="flex gap-1 text-lg">
-          <span className="text-[#D32F2F] font-semibold cursor-pointer">
-            {homepage}
-          </span>
+          <Link to={"/"}>
+            <span className="text-[#D32F2F] font-semibold cursor-pointer">
+              {homepage}
+            </span>
+          </Link>
           /{" "}
           <div className="flex gap-2 items-center">
             <span>{name}</span>

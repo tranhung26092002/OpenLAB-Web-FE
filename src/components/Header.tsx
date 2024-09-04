@@ -84,9 +84,46 @@ const Header = () => {
               </div>
             </Tooltip>
             <Link to="/blog">
-              <span className="cursor-pointer hover:text-[#1464cc]">Blog</span>
+              <span className="cursor-pointer hover:text-[#1464cc] flex items-center gap-0.5"   data-tooltip-id="my-blog">
+                Blog <FaAngleDown className="text-xs  icon-product" />
+              </span>
             </Link>
-
+            <Tooltip
+              id="my-blog"
+              clickable
+              variant="light"
+              place="bottom-end"
+              delayHide={100}
+              events={["click"]}
+            >
+              <div className="option-blog text-base bg-white rounded py-1 px-0 font-normal text-black">
+                <div className="courses hover:bg-[#1464cc] hover:text-white rounded-sm cursor-pointer pl-2 py-0.5">
+                Công nghệ IoT
+                </div>
+                <hr />
+                <div className="courses hover:bg-[#1464cc] hover:text-white rounded-sm cursor-pointer px-2 py-0.5">
+                Công nghệ AI
+                </div>
+                <hr />
+                <Link to={"/product/prices"}>
+                  <div className="courses cursor-pointer px-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
+                  Công nghệ 5G
+                  </div>
+                </Link>
+                <hr />
+                <Link to={"/product/prices"}>
+                  <div className="courses cursor-pointer pl-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
+                  Công nghệ Big Data
+                  </div>
+                </Link>
+                <hr />
+                <Link to={"/product"}>
+                  <div className="courses cursor-pointer px-2 hover:bg-[#1464cc] hover:text-white rounded-sm py-0.5">
+                  Công nghệ Blockchain
+                  </div>
+                </Link>
+              </div>
+            </Tooltip>
             <Link to="/contact">
               <span className="cursor-pointer hover:text-[#1464cc]">
                 Liên hệ

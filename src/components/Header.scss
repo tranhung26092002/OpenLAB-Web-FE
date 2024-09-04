@@ -7,7 +7,19 @@
     .option-product {
         background-color: white;
         border-radius   : 4px;
-        padding         : 5px 0px;
+        
+    }
+}
+
+#my-blog {
+    background-color: transparent;
+    z-index         : 2;
+    opacity         : 1;
+
+    .option-blog {
+        background-color: white;
+        border-radius   : 4px;
+        
     }
 }
 
