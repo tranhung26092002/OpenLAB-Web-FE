@@ -2,6 +2,7 @@ import SectionActivityInsite from "@components/about/SectionActivityInsite";
 import SectionFeedback from "src/components/about/SectionFeedback";
 import SectionIntrol from "src/components/about/SectionIntrol";
 import SectionStatiscal from "src/components/about/SectionStatiscal";
+
 import BannerPage from "src/components/custom/BannerPage";
 import SectionAbout from "src/components/home/SectionAbout";
 import SectionServices from "src/components/home/SectionServices";
@@ -15,15 +16,15 @@ const AboutPage = () => {
         homepage={"Trang chủ"}
         name={"Giới thiệu"}
       />
-
+      <SectionStatiscal />
       <SectionIntrol />
 
       <SectionServices />
       <SectionSolution />
 
-      <SectionAbout />
       <SectionActivityInsite />
-      <SectionStatiscal />
+      <SectionAbout />
+
       <SectionFeedback />
     </div>
   );

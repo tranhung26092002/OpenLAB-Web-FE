@@ -16,13 +16,24 @@ import img2BenefitProduct from "@assets/image/detail-product/Toi_uu_quy_trinh_cu
 import img3BenefitProduct from "@assets/image/detail-product/online_product_presentation_with_project_team_vector_id1054541696_bec8c46918.jpeg";
 import imgactivity2 from "@assets/image/about/activity_insite/1d4fea17ac2e0b70523f.jpg";
 import imgactivity1 from "@assets/image/about/activity_insite/295e1773544af314aa5b.jpg";
-import imgactivity3 from '@assets/image/about/activity_insite/e79d352f39169e48c707.jpg'
-import imgactivity8 from '@assets/image/about/activity_insite/0fb13a10cb296c773538.jpg'
-
+import imgactivity3 from "@assets/image/about/activity_insite/e79d352f39169e48c707.jpg";
+import imgactivity8 from "@assets/image/about/activity_insite/0fb13a10cb296c773538.jpg";
 import imgactivity4 from "@assets/image/about/activity_insite/8a22d63e960731596816.jpg";
 import imgactivity5 from "@assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
 
-type productType = {
+import imageSolution1 from "@assets/image/solution/solution1.jpg";
+import imageSolution2 from "@assets/image/solution/solution2.jpg";
+import imageSolution3 from "@assets/image/solution/solution3.jpg";
+import imageSolution4 from "@assets/image/solution/solution4.jpg";
+import imageSolution6 from "@assets/image/solution/solution5.jpg";
+import imageSolution5 from "@assets/image/solution/solution6.jpg";
+
+import imagekitb from "@assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
+import imagesmart from "@assets/image/kit-device/5881145d3b989cc6c589.jpg";
+import imageC from "@assets/image/kit-device/97203ac8160db153e81c.jpg";
+import smartnetwork from '@assets/image/kit-device/d0d56d0b43cee490bddf.jpg'
+import hubcenter from '@assets/image/kit-device/c67c96025dc7fa99a3d6.jpg'
+export type productType = {
   image: string;
   nameProduct: string;
   description: string;
@@ -182,12 +193,21 @@ export const dataDevicesPrices: pricesProps[] = [
     solution: "OpenKit-WSN: Kít thực hành mạng cảm biến thông minh",
     price: "12.000.000",
   },
+  {
+    solution: "Lab Hub: Thiết bị điều khiển trung tâm phòng lab",
+    price: "15.000.000",
+  },
 ];
 
 export const dataCoursePrices: pricesProps[] = [
   { solution: "Khoá học thực hành AI cơ bản", price: "2.400.000" },
   { solution: "Khoá học thực hành IoT cơ bản", price: "1.800.000" },
   { solution: "Khoá học thực hành IoT nâng cao", price: "2.800.000" },
+  { solution: "Khoá học thực hành mạng di động 5G", price: "2.800.000" },
+  { solution: "Khoá học thực hành ChatBot AI", price: "2.800.000" },
+  { solution: "Khoá học thực hành phân tích dữ liệu", price: "2.800.000" },
+  { solution: "Khoá học thực hành điện toán đám mây", price: "2.800.000" },
+  { solution: "Khoá học thực hành Robotic", price: "2.800.000" },
 ];
 
 export const handleLogin = async (email: string, password: string) => {
@@ -232,5 +252,81 @@ export const dataActivityInsite: activityInsiteImage[] = [
   { image: imgactivity8 },
   { image: imgactivity4 },
   { image: imgactivity5 },
- 
+];
+export const dataKit: productType[] = [
+  {
+    image: imagekitb,
+    nameProduct: "OpenKit-B: Kít thực hành IoT cơ bản",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imagesmart,
+    nameProduct: "OpenKit-O: Kít thực hành IoT mở rộng",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imagesmart,
+    nameProduct: "OpenKit-A: Kít thực hành thông minh IoT",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imageC,
+    nameProduct: "OpenKit-C: Kít thực hành lập trình nhúng C",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: smartnetwork,
+    nameProduct: "OpenKit-WSN: Kít thực hành mạng cảm biến thông minh",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: hubcenter,
+    nameProduct: "Lab Hub: Thiết bị điều khiển trung tâm phòng lab",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+];
+
+export const dataSolution: productType[] = [
+  {
+    image: imageSolution1,
+    nameProduct: "Giải pháp Lab thông minh: OpenLab",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imageSolution2,
+    nameProduct: "Giải pháp Trợ giảng số AI: OpenChat",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imageSolution3,
+    nameProduct: "Trục liên thông dữ liệu: LabLink",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imageSolution4,
+    nameProduct: "Giải pháp Thực hành từ xa: E-Lab",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imageSolution5,
+    nameProduct: "Giải pháp Quản lý thiết bị số: E-Chip",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
+  {
+    image: imageSolution6,
+    nameProduct: "Giải pháp thi online: E-Exam",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+  },
 ];

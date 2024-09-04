@@ -20,7 +20,7 @@ const setting = {
 
 const SectionFeedback = () => {
   return (
-    <div className="px-20 bg-[#f4f7fc] py-32">
+    <div className="px-20 bg-white py-32">
       <div className="flex flex-col text-center">
         <span className="text-3xl font-semibold">Thông tin phản ánh</span>
         <span className="font-light mb-16">Các khách hàng, đối tác nói gì khi làm việc với chúng tôi</span>
@@ -29,7 +29,7 @@ const SectionFeedback = () => {
             {dataFeedback.map((item, index) => {
               return (
                 <div className="my-3">
-                  <div key={index} className="bg-white px-7 py-10 mx-4 shadow-lg rounded-md h-72 flex justify-around flex-col">
+                  <div key={index} className="bg-[#eee] px-7 py-10 mx-4 shadow-lg rounded-md h-72 flex justify-around flex-col">
                     <LuQuote className="text-3xl text-red-300 mb-5"/>
                     <p className="text-start pr-3 mb-2">{item.feedback}</p>
                     <div className=" flex items-center gap-3">

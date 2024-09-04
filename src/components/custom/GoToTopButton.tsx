@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import { BiSolidArrowToTop } from "react-icons/bi";
+import { FaAngleUp } from "react-icons/fa6";
 type topBtnProps = {
     showButton: boolean,
     onClick:MouseEventHandler<HTMLButtonElement> | undefined
@@ -8,7 +8,7 @@ const GoToTopButton = ({showButton,onClick}:topBtnProps) => {
   return (
     <div
       className="container-btn-right flex flex-col fixed right-0 bottom-11 w-[49px] rounded-tl-sm rounded-bl-sm 
-  overflow-hidden bg-[#f6f4f4] items-end hover:duration-300 delay-150 hover:transition-all hover:w-36 "
+  overflow-hidden bg-[#080541] items-end hover:duration-300 delay-150 hover:transition-all hover:w-36 "
     >
       <button
         className={
@@ -19,7 +19,7 @@ const GoToTopButton = ({showButton,onClick}:topBtnProps) => {
         onClick={onClick}
       >
         <div>Đầu trang</div>
-        <BiSolidArrowToTop className="text-[25px] font-light opacity-85" />
+        <FaAngleUp  className="text-[25px] font-light opacity-85 text-white" />
       </button>
     </div>
   );

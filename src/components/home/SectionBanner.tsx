@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const SectionBanner = () => {
   return (
-    <div className="body flex justify-center flex-col items-center w-full bg-[#1112c4]">
+    <div className="body flex justify-center flex-col items-center w-full bg-[#080541]">
       <div className=" flex justify-center flex-col items-center bg-banner_homepage h-[560px] w-[70%] bg-cover bg-no-repeat bg-center bg-[#1112c4]">
         <div className="flex flex-col justify-center">
           <div className="flex flex-col gap-3">

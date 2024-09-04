@@ -5,7 +5,6 @@ import flagEN from "@assets/icon/united-states_flags.png";
 import { FaCaretDown } from "react-icons/fa";
 import "./NavContact.scss";
 const NavContact = () => {
-
  
   return (
     <div className="flex justify-between items-center px-14 py-1 bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% text-white">

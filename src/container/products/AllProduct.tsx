@@ -1,6 +1,9 @@
 import BannerPage from "@components/custom/BannerPage";
-import ProductDescription from "@components/product/ProductDescription";
+import SectionAllProduct from "@components/product/all-product/SectionAllProduct";
 import { dataProduct } from "@services/data";
+import { dataSolution } from "@services/data";
+import { dataKit } from "@services/data";
+
 const AllProduct = () => {
   return (
     <div>
@@ -11,7 +14,7 @@ const AllProduct = () => {
       />
       <div className="px-24 py-16 ">
         <div className=" flex justify-between">
-          <span>Hiển thị {dataProduct.length} sản phẩm</span>
+          <span>Hiển thị 6 sản phẩm</span>
           <input
             type="search"
             name=""
@@ -20,22 +23,12 @@ const AllProduct = () => {
             className="px-4 py-2 placeholder:text-sm bg-[#eee] rounded"
           />
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-7 py-10">
-          {dataProduct.map((item, index) => {
-            return (
-              <div data-aos="fade-up">
-                <ProductDescription
-                  id={index}
-                  key={index}
-                  srcImg={item.image}
-                  typeApp={"App"}
-                  nameProduct={item.nameProduct}
-                  description={item.description}
-                />
-              </div>
-            );
-          })}
-        </div>
+        <SectionAllProduct
+          title={"Các giải pháp tại OpenLab"}
+          data={dataSolution}
+        />
+        <SectionAllProduct title={"Các thiết bị phần cứng"} data={dataKit} />
+        <SectionAllProduct title={"Khóa học tại OpenLab"} data={dataProduct} />
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const ProductDescription = ({
         <img
           src={srcImg}
           alt="image-product-section"
-          className="w-full h-48 object-center object-cover border-[#8AD9E4] border-2 rounded bg-red-200"
+          className="w-full h-48 object-center object-fill border-[#8AD9E4] border-2 rounded bg-red-200"
         />
       </div>
       <div className="flex justify-between items-center mb-3 ">

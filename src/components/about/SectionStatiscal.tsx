@@ -1,8 +1,8 @@
 const SectionStatiscal = () => {
   return (
-    <div className="px-20 pb-20"  data-aos="slide-up">
+    <div className="px-20 bg-[#eee]">
       <div
-        className=" flex justify-around rounded-xl items-center bg-[#1a2a45] py-14 px-10 text-white"  
+        className=" flex justify-around rounded-xl items-center py-6 px-10 "  
       >
         <div className="flex flex-col items-center justify-center">
           <span className="text-5xl font-semibold">18</span>

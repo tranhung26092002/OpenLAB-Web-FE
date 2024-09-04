@@ -13,8 +13,8 @@ const BannerPage = ({
   connectStatus,
 }: contentBannerProps) => {
   return (
-    <div className="w-full   text-white flex justify-center items-center">
-      <div className="flex justify-center items-center flex-col bg-banner_homepage object-center bg-no-repeat h-72 object-fill w-[80%] bg-red-300">
+    <div className="w-full text-white flex justify-center items-center bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100%">
+      <div className="flex justify-center items-center flex-col  object-center bg-no-repeat h-72 object-fill w-[80%] ">
         <h1 className="text-3xl font-semibold mb-4">{header}</h1>
         <span className="flex gap-1 text-lg">
           <Link to={"/"}>
