@@ -52,7 +52,6 @@ const MqttConnect = ({
         `${mqttProtocol}${mqttHost}:${mqttPort}/mqtt`,
         {
           clientId,
-          clientId,
           username: mqttUser,
           password: mqttPassword,
         }
