@@ -49,9 +49,9 @@ const MqttConnect = ({
     const clientId = `mqttjs_${cryptoRandomString({ length: 10 })}`;
     try {
       const mqttClient = mqtt.connect(
-        `${mqttProtocol}${mqttHost}:${mqttPort}/mqtt`,
+        `${mqttProtocol}${mqttHost}:${mqttPort}`,
         {
-          clientId,
+          clientId: clientId,
           username: mqttUser,
           password: mqttPassword,
         }
@@ -93,17 +93,14 @@ const MqttConnect = ({
 
         mqttClient.on("error", (error) => {
           console.error("Connection error:", error);
-          console.error("Connection error:", error);
           setConnectStatus(false);
           setClient(null);
         });
       } else {
-        setErrorMessage("Failed to create MQTT client.");
+        setClient(null);
         setErrorMessage("Failed to create MQTT client.");
       }
     } catch (error) {
-      setErrorMessage(`Connection failed: ${error}`);
-      console.log("Error connecting:", error);
       setErrorMessage(`Connection failed: ${error}`);
       console.log("Error connecting:", error);
     }
@@ -112,7 +109,6 @@ const MqttConnect = ({
   const handleDisconnect = () => {
     if (client) {
       client.end();
-      console.log("Disconnected");
       console.log("Disconnected");
       setSubscribeStatus("");
       setSubscribedData("");
@@ -168,8 +164,10 @@ const MqttConnect = ({
   };
 
   useEffect(() => {
-    handleDisconnect();
-  });
+    return () => {
+      handleDisconnect();
+    };
+  }, []);  
 
   return (
     <div>
