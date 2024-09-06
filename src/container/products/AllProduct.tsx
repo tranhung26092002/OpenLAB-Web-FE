@@ -12,7 +12,7 @@ const AllProduct = () => {
         homepage={"Trang chủ"}
         name={"Sản phẩm"}
       />
-      <div className="px-24 py-16 ">
+      <div className="px-24 py-16 lg:px-14 sm:px-14 xs:px-10">
         <div className=" flex justify-between">
           <span>Hiển thị 6 sản phẩm</span>
           <input
@@ -24,11 +24,11 @@ const AllProduct = () => {
           />
         </div>
         <SectionAllProduct
-          title={"Các giải pháp tại OpenLab"}
+          title={"Các giải pháp/Dịch vụ"}
           data={dataSolution}
         />
-        <SectionAllProduct title={"Các thiết bị phần cứng"} data={dataKit} />
-        <SectionAllProduct title={"Khóa học tại OpenLab"} data={dataProduct} />
+        <SectionAllProduct title={"Các thiết bị/Kít"} data={dataKit} />
+        <SectionAllProduct title={"Các khóa học thực hành"} data={dataProduct} />
       </div>
     </div>
   );

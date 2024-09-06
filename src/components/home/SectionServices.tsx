@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { settings } from "@utils/settingSlider";
 import practiceService from "@assets/image/service-image/Practice_service.png";
 import deviceProviderService from "@assets/image/service-image/KIT_provider_service.png";
-import courseService from "@assets/image/service-image/Course_service.jpg";
+import courseService from "@assets/image/service-image/mcu.png";
 import aiService from "@assets/image/service-image/Chatbot_service.png";
 import { ReactNode } from "react";
 import { FaCubes } from "react-icons/fa";
@@ -45,6 +45,7 @@ const dataServices: itemServiceProps[] = [
 
 const setting = {
   ...settings,
+
   responsive: [
     {
       breakpoint: 10000,
@@ -54,31 +55,55 @@ const setting = {
         infinite: true,
       },
     },
+    {
+      breakpoint: 1284,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 870,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
   ],
 };
 const SectionServices = () => {
   return (
     <div className="body-service py-20  px-16 ">
       <div className="content-service text-center">
-        <span className="text-4xl font-semibold leading-10 mb-2 block">
+        <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Các dịch vụ chính
         </span>
-        <p className="text-base font-light ">
+        <p className="text-base ">
           Các dịch vụ chính OpenLAB đang tập trung phát triển và cung cấp cho
           khách hàng
         </p>
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" className="sm:px-16">
           <Slider {...setting}>
             {dataServices.map((item, index) => {
               return (
-                <div className="my-5 mx-2 " key={index}>
-                  <div className=" flex flex-col relative justify-start gap-4 items-center rounded-xl  w-[270px] h-[250px] pt-9 shadow-xl cursor-pointer hover:scale-105">
-                    <div className="w-[50px] h-[50px]">
+                <div className="my-5 mx-2" key={index}>
+                  <div className=" flex flex-col relative justify-start gap-4 sm:w-[84%] w-[92%] items-center rounded-xl px-3
+                  h-[250px] pt-9 shadow-xl cursor-pointer hover:scale-105">
+                    <div className="w-[55px] h-[55px]">
                       {typeof item.image === "string" ? (
                         <img
                           src={item.image}
                           alt="image-service"
-                          className="object-contain rounded object-center"
+                          className="object-cover rounded object-center"
                         />
                       ) : (
                         <FaCubes className="text-[#bc0707] text-5xl" />

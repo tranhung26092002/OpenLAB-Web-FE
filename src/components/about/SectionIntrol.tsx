@@ -2,9 +2,11 @@ import videoAbout from "@assets/video/about.mp4";
 const SectionIntrol = ()=>{
   // linear-gradient(90deg, rgba(121,41,165,1) 0%, rgba(121,41,165,1) 46%, rgba(121,41,165,1) 100%);
   return (
-    <div className="px-28 py-20 flex gap-16 bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100%  ">
-      <div className="w-2/3  pl-20 pr-36 text-white">
-        <h1 className="text-center text-3xl font-semibold leading-10">
+    <div className="px-28 lg:px-16 py-20 flex gap-16 sm:gap-10 bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100%  
+    sm:flex-col  xs:flex-col xs:px-16 xs:py-16
+    ">
+      <div className="w-2/3 sm:w-full xs:w-full pl-20 pr-36 text-white lg:px-0 sm:px-0 xs:px-0">
+        <h1 className="text-center text-3xl font-semibold leading-10 xs:text-2xl">
           CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
         </h1>
         <p className="text-justify my-4 indent-8">
@@ -23,7 +25,7 @@ const SectionIntrol = ()=>{
           chuyên sâu, và trợ giảng số AI hỗ trợ thực hành trực tuyến 24/7.
         </p>
       </div>
-      <div className="w-1/3 flex flex-col">
+      <div className="w-1/3 flex flex-col lg:justify-center sm:justify-center sm:items-center xs:justify-center xs:items-center sm:w-full xs:w-full">
         <video
           loop
           muted
@@ -31,7 +33,7 @@ const SectionIntrol = ()=>{
           controls
           autoPlay
           src={videoAbout}
-          className="rounded"
+          className="rounded sm:w-[70%] xs:w-[74%]"
         />
         <span className="text-center font-semibold text-white py-8">
           Video giới thiệu công ty

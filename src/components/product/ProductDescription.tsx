@@ -17,7 +17,7 @@ const ProductDescription = ({
   id,
 }: ProductDescriptionProps) => {
   return (
-    <div className=" flex flex-col relative cursor-pointer w-[350px] h-[614px] rounded-xl px-6 shadow-md  py-6 item-center hover:shadow-2xl">
+    <div className=" flex flex-col relative cursor-pointer w-[93%] xs:w-[87%]  h-[614px] rounded-xl px-4 shadow-md  py-6 item-center hover:shadow-2xl">
       <div className="mb-5 flex justify-center">
         <img
           src={srcImg}

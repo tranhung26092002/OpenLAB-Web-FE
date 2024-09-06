@@ -1,24 +1,24 @@
 const SectionStatiscal = () => {
   return (
-    <div className="px-20 bg-[#eee]">
+    <div className="px-20 bg-[#eee] sm:px-14 xs:px-7">
       <div
-        className=" flex justify-around rounded-xl items-center py-6 px-10 "  
+        className=" flex justify-around rounded-xl items-center py-6 px-10 xs:px-0 "  
       >
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">18</span>
-          <span className="font-light">Sản phẩm</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-3xl">18</span>
+          <span className="">Sản phẩm</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">9</span>
-          <span className="font-light">Đối tác</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-3xl">9</span>
+          <span className="">Đối tác</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">1268+</span>
-          <span className="font-light">Khách hàng</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-3xl">1268+</span>
+          <span className="">Khách hàng</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">100%</span>
-          <span className="font-light">Hài lòng</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-3xl">100%</span>
+          <span className="">Hài lòng</span>
         </div>
       </div>
     </div>

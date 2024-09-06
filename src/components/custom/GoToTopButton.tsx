@@ -8,7 +8,7 @@ const GoToTopButton = ({showButton,onClick}:topBtnProps) => {
   return (
     <div
       className="container-btn-right flex flex-col fixed right-0 bottom-11 w-[49px] rounded-tl-sm rounded-bl-sm 
-  overflow-hidden bg-[#080541] items-end hover:duration-300 delay-150 hover:transition-all hover:w-36 "
+  overflow-hidden bg-[#080541] items-end hover:duration-300 delay-150 hover:transition-all hover:w-36 z-50"
     >
       <button
         className={

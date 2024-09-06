@@ -15,17 +15,17 @@ const ContactForm = () => {
           hồi trong thời gian sớm nhất!
         </p>
 
-        <span className="flex gap-3 cursor-pointer hover:text-white items-center">
+        <span className="flex gap-3 cursor-pointer hover:text-[#1464cc] items-center">
           <GrMail className="text-lg" />
           openlab.user@gmail.com
         </span>
         <hr />
-        <span className="flex gap-3 cursor-pointer hover:text-white items-center">
+        <span className="flex gap-3 cursor-pointer hover:text-[#1464cc] items-center">
           <MdPhone className="text-lg" />
           (+84) 86 574 6698
         </span>
         <hr />
-        <span className="flex gap-3 cursor-pointer hover:text-white items-center">
+        <span className="flex gap-3 cursor-pointer hover:text-[#1464cc] items-center">
           <IoLocation className="text-xl" />
           68B-6 Ao Sen, Hà Đông, HN
         </span>

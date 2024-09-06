@@ -3,19 +3,58 @@ import Slider from "react-slick";
 import { settings } from "@utils/settingSlider";
 import { dataProduct } from "@services/data";
 
+
+const setting = {
+  ...settings,
+
+  responsive: [
+    {
+      breakpoint: 10000,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 1284,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 695,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
 const SectionProduct = () => {
   return (
-    <div className="body-product py-20 px-44 flex flex-col" data-aos="fade-up">
+    <div className="body-product py-20 px-28 flex flex-col sm:px-16" data-aos="fade-up">
       <div className="content-top text-center">
-        <span className="text-4xl font-semibold leading-10 mb-2 block">
+        <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Sản phẩm phổ biến
         </span>
-        <p className="mt-2 font-normal text-sm mb-8 ">
+        <p className="mt-2 font-normal text-base mb-8 ">
           Các sản phẩm tiêu biểu của chúng tôi
         </p>
       </div>
       <div className="content-product">
-        <Slider {...settings}>
+        <Slider {...setting}>
           {dataProduct.map((item, index) => {
             return (
               <div className="my-5 mx-1 " key={index}>

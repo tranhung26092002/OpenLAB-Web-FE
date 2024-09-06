@@ -1,11 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
+
 export default {
   content: ["./src/**/*.{html,js,ts,tsx,jsx}"],
   theme: {
+    screens: {
+      xs: { max: "695px" },
+      sm: { min: "696px", max: "1023px" },
+      lg: { min: "1024px", max: "1279px" },
+      xl: { min: "1280px", max: "1535px" },
+      "2xl": { min: "1536px" },
+    },
     extend: {
       backgroundImage: {
-        banner_homepage: "url('@assets/background/banner_homepage.jpg')",
+        banner_homepage: "url('@assets/background/nonbg-01.png')",
       },
       fontFamily: {
         poppins: ['"Poppins", sans-serif'],

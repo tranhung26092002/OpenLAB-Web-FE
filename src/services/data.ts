@@ -123,7 +123,7 @@ export const dataFeedback: feedback[] = [
     name: "Đăng Khôi",
     location: "THÁI BÌNH",
     feedback:
-      "Với những công nghệ hiện đại, nắm bắt xu hướng thị trường, sản phẩm OpenLAB mang lại luôn giải quyết được những bài toán cấp bách trong lĩnh vực Đại học.",
+      "Với những công nghệ hiện đại, sản phẩm OpenLAB mang lại luôn giải quyết được những bài toán cấp bách trong lĩnh vực Đại học.",
   },
 ];
 
@@ -258,75 +258,75 @@ export const dataKit: productType[] = [
     image: imagekitb,
     nameProduct: "OpenKit-B: Kít thực hành IoT cơ bản",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imagesmart,
     nameProduct: "OpenKit-O: Kít thực hành IoT mở rộng",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imagesmart,
     nameProduct: "OpenKit-A: Kít thực hành thông minh IoT",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imageC,
     nameProduct: "OpenKit-C: Kít thực hành lập trình nhúng C",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: smartnetwork,
     nameProduct: "OpenKit-WSN: Kít thực hành mạng cảm biến thông minh",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: hubcenter,
     nameProduct: "Lab Hub: Thiết bị điều khiển trung tâm phòng lab",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
 ];
-
+//Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.
 export const dataSolution: productType[] = [
   {
     image: imageSolution1,
     nameProduct: "Giải pháp Lab thông minh: OpenLab",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imageSolution2,
     nameProduct: "Giải pháp Trợ giảng số AI: OpenChat",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imageSolution3,
     nameProduct: "Trục liên thông dữ liệu: LabLink",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imageSolution4,
     nameProduct: "Giải pháp Thực hành từ xa: E-Lab",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imageSolution5,
     nameProduct: "Giải pháp Quản lý thiết bị số: E-Chip",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
     image: imageSolution6,
     nameProduct: "Giải pháp thi online: E-Exam",
     description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
 ];

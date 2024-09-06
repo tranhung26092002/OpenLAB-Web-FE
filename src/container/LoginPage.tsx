@@ -3,8 +3,8 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { handleLogin } from "@services/data";
 import { FormEvent, useState } from "react";
-import imageleft from "@assets/image/login/0a76d34eeb704c2e1561.jpg";
-import aiService from "@assets/image/service-image/Chatbot_service.png";
+import CloudKey from "@components/custom/CloudKey";
+import aiService from "@assets/image/login/Chatbot_service.png";
 type event = FormEvent<HTMLFormElement>;
 const LoginPage = () => {
   const [email, setEmail] = useState<string>("");
@@ -17,12 +17,8 @@ const LoginPage = () => {
   };
   return (
     <div className=" flex justify-center items-center w-screen h-screen px-20 bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100%">
-      <div className="h-full flex justify-center py-28 w-1/3">
-        <img
-          src={imageleft}
-          alt="cloud-image"
-          className="w-80 object-cover object-center h-80"
-        />
+      <div className="h-full flex justify-start py-20 w-1/3 ">
+        <CloudKey/>
       </div>
       <div className="flex  px-8 py-6 shadow-xl bg-white rounded-md w-1/4 justify-center">
         <form
@@ -56,7 +52,7 @@ const LoginPage = () => {
               />
             </div>
           </div>
-          <div className=" flex justify-between items-center">
+          <div className=" flex justify-end items-center  w-full">
             {/* <div className="flex gap-1 items-center">
               <input
                 type="checkbox"
@@ -67,17 +63,22 @@ const LoginPage = () => {
                 Nhớ mật khẩu
               </label>
             </div> */}
-            <span className="text-xs font-medium text-end">Quên mật khẩu</span>
+            <span className="text-xs font-medium text-end  ">
+              Quên mật khẩu
+            </span>
           </div>
-          <button className="py-2 bg-blue-700 rounded text-white w-full" type="submit">
+          <button
+            className="py-2 bg-blue-700 rounded text-white w-full"
+            type="submit"
+          >
             Đăng nhập
           </button>
           <div className=" text-center  w-full">
             <span className="">Đăng nhập bằng</span>
             <div className="flex text-3xl px-12 pt-4 justify-around">
               <FaFacebook className="text-[#1877f2] text-4xl" />
-              <FcGoogle className="text-4xl"/>
-              <FaGithub className="text-4xl"/>
+              <FcGoogle className="text-4xl" />
+              <FaGithub className="text-4xl" />
             </div>
           </div>
           <div className="text-sm font-medium">
@@ -86,11 +87,11 @@ const LoginPage = () => {
           </div>
         </form>
       </div>
-      <div className="h-full flex justify-center items-end py-28 w-1/3">
+      <div className="h-full flex justify-end items-end py-28 w-1/3">
         <img
           src={aiService}
           alt="cloud-image"
-          className="w-72 object-cover object-center h-72"
+          className="w-56 object-cover object-center h-56"
         />
       </div>
     </div>
