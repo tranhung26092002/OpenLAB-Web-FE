@@ -11,21 +11,20 @@ const SectionFooter = () => {
   return (
     <div className="body-section-footer bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% px-20 py-14 border-t-2 border-[#48d6e9] lg:px-10 xs:px-10">
       <div className="content-section-footer">
-        <div className="flex text-white justify-around px-5 lg:px-0 sm:flex-col sm:gap-8 xs:flex-col xs:gap-6">
-          <div className="flex w-[62%] justify-between lg:w-[56%] sm:w-full xs:w-full xs:flex-col">
-            <div className="w-[49%] pr-5 flex flex-col justify-between lg:w-[56%] lg:pr-2 xs:w-full">
+        <div className="flex text-white justify-around px-5 lg:px-0 sm:flex-col sm:gap-8 xs:flex-col xs:gap-6 xs:px-0">
+          <div className="flex w-[62%] justify-between lg:w-[56%] sm:w-full xs:w-full xs:flex-col xs:gap-6">
+            <div className="w-[49%] flex flex-col justify-between lg:w-[56%] lg:pr-2 xs:w-full">
               <div>
                 <Logo color="white" />
                 <div className="flex flex-col gap-8">
                   <p className=" mt-3 lg:text-sm text-base font-normal text-white flex flex-col">
-                    <span className="uppercase font-semibold ">
+                    <span className="uppercase font-semibold xs:text-sm xs:mb-3">
                       Công ty cổ phần công nghệ OpenLab
                     </span>
-                    <span className="xs:hidden">
-                      Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành
-                      thông minh, khóa học thực hành chuyên sâu, dịch vụ trợ
-                      giảng số AI hỗ trợ thực hành 24/7 và phát triển các giải
-                      pháp phần mềm phục vụ chuyển đổi số giáo dục theo yêu cầu.
+                    <span className="text-sm text-justify">
+                      Đơn vị phát triển những giải pháp toàn diện nhằm
+                      nâng cao chất lượng của công tác thí nghiệm thực hành
+                      trong các trường Đại học
                     </span>
                   </p>
                 </div>
@@ -42,7 +41,7 @@ const SectionFooter = () => {
               </span>
             </div>
             <div className="w-[48%]  flex flex-col gap-3  text-base font-normal text-white lg:w-[40%] xs:w-full">
-              <span className="text-lg font-semibold text-white mb-2 lg:text-sm">
+              <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
                 ĐỊA CHỈ
               </span>
               <span className="flex gap-1 cursor-pointer hover:text-white items-center lg:text-sm">
@@ -71,53 +70,56 @@ const SectionFooter = () => {
               </div>
             </div>
           </div>
-          <div className="flex w-[38%] justify-between lg:w-[42%] sm:w-full xs:w-full  xs:flex-row-reverse xs:justify-between xs:gap-1">
-            <div className="w-[24%]  flex flex-col text-base font-normal text-white gap-3 lg:text-sm ">
-              <span className="text-lg font-semibold text-white mb-2 lg:text-sm">
+          <div className="flex w-[38%] justify-between lg:w-[42%] sm:w-full xs:w-full  xs:flex-col xs:justify-between xs:gap-6">
+            <div className="w-[24%]  flex flex-col text-base font-normal text-white gap-3 lg:text-sm xs:w-full xs:flex-col">
+              <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
                 Khám phá
               </span>
-              <span className="cursor-pointer hover:text-white">
-                Giới thiệu
-              </span>
-              <span className="cursor-pointer hover:text-white">Blog</span>
-              <span className="cursor-pointer hover:text-white">Hỗ trợ</span>
-              <span className="cursor-pointer hover:text-white">Liên hệ</span>
-              <span className="cursor-pointer hover:text-white">Báo giá</span>
-              <span className="cursor-pointer hover:text-white">Khóa học</span>
+              <div className="xs:flex w-full">
+                <div className="flex flex-col xs:w-1/2 gap-2 w-full">
+                  <span className="cursor-pointer hover:text-white">
+                    Giới thiệu
+                  </span>
+                  <span className="cursor-pointer hover:text-white">Blog</span>
+                  <span className="cursor-pointer hover:text-white">
+                    Hỗ trợ
+                  </span>
+                </div>
+                <div className="flex flex-col xs:w-1/2 gap-2 w-full">
+                  <span className="cursor-pointer hover:text-white">
+                    Liên hệ
+                  </span>
+                  <span className="cursor-pointer hover:text-white">
+                    Báo giá
+                  </span>
+                  <span className="cursor-pointer hover:text-white">
+                    Khóa học
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="w-[73%] flex flex-col justify-between lg:text-sm text-base font-medium text-white ">
+            <div className="w-[73%] flex flex-col justify-between lg:text-sm text-base font-medium text-white xs:w-full xs:gap-6 ">
               <div className="gap-3 flex flex-col">
-                <span className="text-lg font-semibold text-white mb-2 lg:text-sm">
-                  Sản phẩm
+                <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
+                  Dịch vụ
                 </span>
                 <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-                  Nền tảng thực hành số:
-                  <span className="font-semibold">OpenLab</span>
+                  Nền tảng thực hành số
                 </span>
                 <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-                  Trợ giảng số AI:
-                  <span className="font-semibold">OpenChat</span>
-                </span>
-
-                <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-                  Quản lý thiết bị số:
-                  <span className="font-semibold">E-Chip</span>
+                  Phần mềm CĐS Giáo dục
                 </span>
                 <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-                  Kit thực hành thông minh:
-                  <span className="font-semibold">OpenKit</span>
+                  Trợ giảng số AI
                 </span>
-
                 <span className="cursor-pointer hover:text-white font-normal flex gap-1">
-                  Trục liên thông dữ liệu:
-                  <span className="font-semibold">LabLink</span>
+                  Thiết bị thực hành thông minh
                 </span>
-
-                <span className="cursor-pointer hover:text-white font-normal">
-                  Tất cả sản phẩm
+                <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+                  Khóa học thực hành trực tuyến
                 </span>
               </div>
-              <div className="flex justify-end items-center text-4xl rounded sm:hidden gap-7 lg:pr-8 lg:mt-6 xs:hidden">
+              <div className="flex justify-end items-center text-4xl rounded sm:hidden gap-7 lg:pr-8 lg:mt-6 xs:px-8 xs xs:justify-around">
                 <div className="bg-white rounded-md">
                   <FaFacebookSquare className="text-[#1877f2]" />
                 </div>

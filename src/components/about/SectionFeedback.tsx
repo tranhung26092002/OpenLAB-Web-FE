@@ -40,7 +40,7 @@ const SectionFeedback = () => {
     <div className="px-20 bg-white py-32 sm:px-10 lg:px-10 xs:px-10 xs:py-14">
       <div className="flex flex-col text-center">
         <span className="text-3xl font-semibold sm:text-2xl">Thông tin phản ánh</span>
-        <span className="t mb-16 sm:mb-8 xs:mb-10">Các khách hàng, đối tác nói gì khi làm việc với chúng tôi</span>
+        <span className=" mb-16 sm:mb-8 xs:mb-10  ">Các khách hàng, đối tác nói gì khi làm việc với chúng tôi</span>
         <div>
           <Slider {...setting}>
             {dataFeedback.map((item, index) => {
@@ -48,7 +48,7 @@ const SectionFeedback = () => {
                 <div className="my-3 " key={index}>
                   <div  className="bg-[#eee] px-7 py-10 sm:py-4 xs:py-4 xs:px-3 w-[95%] mx-1 shadow-lg rounded-md h-72 xs:h-64 sm:px-4 flex justify-around flex-col">
                     <LuQuote className="text-3xl text-red-300 mb-5 sm:text-x xs:text-xl lg:text-2xl"/>
-                    <p className="text-start pr-3 xs:pr-0 mb-2 xs:text-sm">{item.feedback}</p>
+                    <p className="text-start pr-3 xs:pr-0 mb-2 xs:text-sm xs:text-justify">{item.feedback}</p>
                     <div className=" flex items-center gap-3">
                       <div className="rounded-full bg-[#eee] px-3 py-3">
                         <FaUser />

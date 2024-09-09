@@ -607,6 +607,18 @@ body {
   top: 5rem;
 }
 
+.top-1\/2 {
+  top: 50%;
+}
+
+.right-1 {
+  right: 0.25rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -643,11 +655,6 @@ body {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-}
-
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
 }
 
 .mb-10 {
@@ -728,10 +735,6 @@ body {
 
 .mt-\[1px\] {
   margin-top: 1px;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
 }
 
 .block {
@@ -970,6 +973,10 @@ body {
   width: 23%;
 }
 
+.w-\[24\%\] {
+  width: 24%;
+}
+
 .w-\[25\%\] {
   width: 25%;
 }
@@ -984,10 +991,6 @@ body {
 
 .w-\[31\%\] {
   width: 31%;
-}
-
-.w-\[35\%\] {
-  width: 35%;
 }
 
 .w-\[38\%\] {
@@ -1046,6 +1049,10 @@ body {
   width: 70%;
 }
 
+.w-\[73\%\] {
+  width: 73%;
+}
+
 .w-\[80\%\] {
   width: 80%;
 }
@@ -1079,6 +1086,15 @@ body {
   width: 100vw;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
+.translate-y-\[-50\%\] {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .rotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1096,6 +1112,10 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-auto {
+  cursor: auto;
 }
 
 .flex-col {
@@ -1438,11 +1458,6 @@ body {
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-
 .bg-red-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 242 242 / var(--tw-bg-opacity));
@@ -1476,6 +1491,11 @@ body {
 .bg-yellow-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .bg-banner_homepage {
@@ -1855,8 +1875,16 @@ body {
   padding-top: 2px;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-justify {
@@ -1873,6 +1901,22 @@ body {
 
 .indent-8 {
   text-indent: 2rem;
+}
+
+.indent-7 {
+  text-indent: 1.75rem;
+}
+
+.indent-6 {
+  text-indent: 1.5rem;
+}
+
+.indent-5 {
+  text-indent: 1.25rem;
+}
+
+.indent-3 {
+  text-indent: 0.75rem;
 }
 
 .font-changa {
@@ -2039,6 +2083,11 @@ body {
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -2111,6 +2160,10 @@ body {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .text-shadow-lg {
@@ -2332,14 +2385,6 @@ body {
     margin-top: 0.5rem;
   }
 
-  .xs\:mt-4 {
-    margin-top: 1rem;
-  }
-
-  .xs\:mt-6 {
-    margin-top: 1.5rem;
-  }
-
   .xs\:mt-8 {
     margin-top: 2rem;
   }
@@ -2360,60 +2405,28 @@ body {
     display: none;
   }
 
-  .xs\:h-64 {
-    height: 16rem;
-  }
-
-  .xs\:h-\[450px\] {
-    height: 450px;
-  }
-
-  .xs\:h-screen {
-    height: 100vh;
-  }
-
-  .xs\:h-5 {
-    height: 1.25rem;
-  }
-
-  .xs\:h-52 {
-    height: 13rem;
-  }
-
-  .xs\:h-56 {
-    height: 14rem;
+  .xs\:h-40 {
+    height: 10rem;
   }
 
   .xs\:h-48 {
     height: 12rem;
   }
 
-  .xs\:h-4 {
-    height: 1rem;
+  .xs\:h-56 {
+    height: 14rem;
   }
 
-  .xs\:h-44 {
-    height: 11rem;
+  .xs\:h-64 {
+    height: 16rem;
   }
 
-  .xs\:h-40 {
-    height: 10rem;
+  .xs\:h-\[400px\] {
+    height: 400px;
   }
 
-  .xs\:h-7 {
-    height: 1.75rem;
-  }
-
-  .xs\:h-72 {
-    height: 18rem;
-  }
-
-  .xs\:h-6 {
-    height: 1.5rem;
-  }
-
-  .xs\:h-60 {
-    height: 15rem;
+  .xs\:h-screen {
+    height: 100vh;
   }
 
   .xs\:w-0 {
@@ -2448,8 +2461,8 @@ body {
     width: 100%;
   }
 
-  .xs\:flex-row {
-    flex-direction: row;
+  .xs\:w-1\/2 {
+    width: 50%;
   }
 
   .xs\:flex-col {
@@ -2509,6 +2522,10 @@ body {
     background-color: rgb(8 5 68 / var(--tw-bg-opacity));
   }
 
+  .xs\:bg-contain {
+    background-size: contain;
+  }
+
   .xs\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -2537,6 +2554,11 @@ body {
   .xs\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .xs\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .xs\:py-0 {
@@ -2574,11 +2596,6 @@ body {
     padding-bottom: 1.5rem;
   }
 
-  .xs\:px-1 {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-  }
-
   .xs\:pl-0 {
     padding-left: 0px;
   }
@@ -2614,11 +2631,6 @@ body {
   .xs\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-
-  .xs\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .xs\:text-4xl {
@@ -3039,10 +3051,5 @@ body {
 
   .\32xl\:w-\[40\%\] {
     width: 40%;
-  }
-
-  .\32xl\:px-32 {
-    padding-left: 8rem;
-    padding-right: 8rem;
   }
 }

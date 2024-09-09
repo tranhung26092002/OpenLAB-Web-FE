@@ -95,7 +95,7 @@ const Header = () => {
               delayHide={100}
               // events={["click"]}
             >
-              <div className="option-product text-base bg-[#1464cc] rounded  px-0 font-normal text-black flex  gap-4 flex-col">
+              <div className="option-product text-base bg-[#1464cc] rounded shadow-xl px-5 py-5 font-normal text-black flex  gap-4 flex-col">
                 <div className="flex gap-4">
                   <div className="courses  rounded-sm cursor-pointer pl-2 py-0.5 flex flex-col gap-4">
                     <span className=" hover:text-[#1464cc] font-semibold">
@@ -122,9 +122,11 @@ const Header = () => {
                       </span>
                     </div>
                   </div>
-                 
+
                   <div className="courses  rounded-sm cursor-pointer px-2 py-0.5 flex flex-col gap-4">
-                    <span className=" hover:text-[#1464cc] font-semibold">Thiết bị/Kít</span>
+                    <span className=" hover:text-[#1464cc] font-semibold">
+                      Thiết bị/Kít
+                    </span>
                     <div className=" flex flex-col gap-4">
                       <span className=" hover:text-[#1464cc]">
                         Kít thực hành IoT mở rộng
@@ -143,7 +145,7 @@ const Header = () => {
                       </span>
                     </div>
                   </div>
-                 
+
                   <Link to={"/product/prices"}>
                     <div className="courses cursor-pointer px-2  rounded-sm py-0.5 gap-4 flex flex-col">
                       <span className=" hover:text-[#1464cc] font-semibold">
@@ -151,43 +153,51 @@ const Header = () => {
                       </span>
                       <div className=" flex flex-col gap-4">
                         <span className=" hover:text-[#1464cc]">
-                          THỰC HÀNH HỆ THỐNG IoT
+                          Thực hành hệ thống IoT
                         </span>
                         <span className=" hover:text-[#1464cc]">
-                          THỰC HÀNH MẠNG DI ĐỘNG 5G
+                          Thực hành mạng di động 5G
                         </span>
                         <span className=" hover:text-[#1464cc]">
-                          THỰC HÀNH CHATBOT AI
+                          Thực hành ChatBot AI
                         </span>
                         <span className=" hover:text-[#1464cc]">
-                          THỰC HÀNH PHÂN TÍCH DỮ LIỆU
+                          Thực hành phân tích dữ liệu
                         </span>
                         <span className=" hover:text-[#1464cc]">
-                          THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY
+                          Thực hành điện toán đám mây
                         </span>
                         <span className=" hover:text-[#1464cc]">
-                          THỰC HÀNH ROBOTICS
+                          Thực hành ROBOTICS
                         </span>
                       </div>
                     </div>
                   </Link>
                   <hr />
                   <Link to={"/product/prices"}>
-                    <div className="courses cursor-pointer pl-2  hover:text-[#1464cc] rounded-sm py-0.5 gap-4 flex flex-col">
+                    <div className="courses cursor-pointer pl-2   rounded-sm py-0.5 gap-4 flex flex-col">
                       <span className="font-semibold">Báo giá</span>
                       <div className=" flex flex-col gap-4">
-                        <span>Giải pháp/Phần mềm</span>
-                        <span>Phần cứng/Kít thực hành thông minh</span>
-                        <span>Khoá học thực hành</span>
-                        <span>Báo giá tất cả sản phẩm</span>
+                        <span className="hover:text-[#1464cc]">
+                          Giải pháp/Phần mềm
+                        </span>
+                        <span className="hover:text-[#1464cc]">
+                          Phần cứng/Kít thực hành thông minh
+                        </span>
+                        <span className="hover:text-[#1464cc]">
+                          Khoá học thực hành
+                        </span>
+                        <span className="hover:text-[#1464cc]">
+                          Báo giá tất cả sản phẩm
+                        </span>
                       </div>
                     </div>
                   </Link>
                   <hr />
                 </div>
-                <div className="bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% flex justify-center py-3">
-                  <Link to={"/product"} className="w-full flex justify-center">
-                    <div className="courses cursor-pointer   hover:text-[#1464cc] rounded-sm  text-white text-xl">
+                <div className="bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% flex justify-center rounded-md   ">
+                  <Link to={"/product"} className="w-full flex justify-center hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out">
+                    <div className="courses cursor-pointer  rounded-sm  text-white text-xl ">
                       Tất cả sản phẩm
                     </div>
                   </Link>
@@ -211,7 +221,7 @@ const Header = () => {
               variant="light"
               place="bottom-end"
               delayHide={100}
-            //  events={["click"]}
+              //  events={["click"]}
             >
               <div className="option-blog text-base  py-1 px-0 font-normal text-black opacity-100">
                 <div className="courses  hover:text-[#1464cc] rounded-sm cursor-pointer pl-2 py-0.5">

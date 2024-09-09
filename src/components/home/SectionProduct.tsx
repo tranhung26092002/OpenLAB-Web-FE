@@ -49,7 +49,7 @@ const SectionProduct = () => {
         <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Sản phẩm phổ biến
         </span>
-        <p className="mt-2 font-normal text-base mb-8 ">
+        <p className="mt-2 font-normal text-base mb-8 xs:mb-4 ">
           Các sản phẩm tiêu biểu của chúng tôi
         </p>
       </div>

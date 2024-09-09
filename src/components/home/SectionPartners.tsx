@@ -47,7 +47,7 @@ const SectionPartners = () => {
     >
       <div className="content-section-partners flex flex-col text-center">
         <span className="text-3xl font-semibold">Đối tác</span>
-        <p className="mb-16">Các đơn vị đang hợp tác cùng chúng tôi</p>
+        <p className="mb-16 xs:mb-10">Các đơn vị đang hợp tác cùng chúng tôi</p>
 
         <div className="shadow-lg rounded-lg">
           <Slider {...setting}>

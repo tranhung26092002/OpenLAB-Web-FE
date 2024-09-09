@@ -41,7 +41,7 @@ const SectionActivityInsite = () => {
         <span className="font-semibold  text-3xl xs:text-2xl">
           Hình ảnh  tại công ty
         </span>
-        <span className="font-light mb-16 sm:mb-10 xs:mb-8">
+        <span className=" mb-16 sm:mb-10 xs:mb-8">
           Một số hình ảnh thực tế về OpenLab
         </span>
       </div>

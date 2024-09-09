@@ -257,6 +257,7 @@ export const dataKit: productType[] = [
   {
     image: imagekitb,
     nameProduct: "OpenKit-B: Kít thực hành IoT cơ bản",
+    
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },

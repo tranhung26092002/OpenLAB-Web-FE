@@ -3,6 +3,8 @@ import { FaSignal } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import { FaStarHalfAlt } from "react-icons/fa";
+
 import { FaUsers } from "react-icons/fa";
 type ProductDescriptionProps = {
   srcImg: string;
@@ -19,8 +21,8 @@ const ProductDescription = ({
   id,
 }: ProductDescriptionProps) => {
   return (
-    <div className=" flex flex-col relative cursor-pointer w-[93%] xs:w-[95%]  h-[480px] rounded-xl px-4 shadow-md  py-6 item-center hover:shadow-2xl xs:mt-4 sm:mt-4 ">
-      <div className="mb-5 flex justify-center  relative hover:scale-105 hover:transition-all ease-in duration-200">
+    <div className=" flex flex-col relative cursor-pointer w-[93%] xs:w-[95%]  h-[480px] rounded-xl px-4 py-4 shadow-md  item-center hover:shadow-2xl  sm:mt-4 ">
+      <div className="mb-5 flex justify-center relative hover:scale-105 hover:transition-all ease-in duration-200">
         <img
           src={srcImg}
           alt="image-product-section"
@@ -43,7 +45,7 @@ const ProductDescription = ({
           <FaStar className="text-yellow-500" />
           <FaStar className="text-yellow-500" />
           <FaStar className="text-yellow-500" />
-          <FaStar className="" />
+          <FaStarHalfAlt className="text-yellow-500" />
         </div>
         <div className="flex items-center gap-2">
           <FaSignal className="text-red-500" />
@@ -62,13 +64,12 @@ const ProductDescription = ({
           </span>
         </div>
       </div>
-      <div className="text-center h-[200px] ">
+      <div className="text-center  ">
         <span className="text-[#081140] text-lg font-semibold ">
           {nameProduct}
         </span>
-        <p className="text-base flex gap-[2px]">
-          <BiSolidQuoteAltLeft className="text-5xl font-semibold" />
-          <span className="mt-3"> {description}</span>
+        <p className="text-base  gap-[2px] text-justify  block  ">
+          {description}
         </p>
       </div>
     </div>

@@ -4,10 +4,6 @@ const colors = require('tailwindcss/colors')
 export default {
   content: ["./src/**/*.{html,js,ts,tsx,jsx}"],
   theme: {
-    colors: {
-      ...colors,
-      "rgb-4": "rgba(238, 227, 232, 0.7)",
-    },
     screens: {
       xs: { max: "575px" },
       sm: { min: "576px", max: "1023px" },
@@ -16,6 +12,9 @@ export default {
       "2xl": { min: "1536px" },
     },
     extend: {
+      colors: {
+        "rgb-4": "rgba(238, 227, 232, 0.7)",
+      },
       backgroundImage: {
         banner_homepage: "url('@assets/background/nonbg-01.png')",
         section_page: "url('@assets/background/Remove-bg.png')",
