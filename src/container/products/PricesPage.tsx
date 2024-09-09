@@ -18,7 +18,7 @@ const PricesPage = () => {
           name={"Báo giá Hệ thống Đại học số"}
         />
       </div>
-      <div className="px-28 flex flex-col justify-center  items-center py-24">
+      <div className="px-28 flex flex-col justify-center  items-center py-24 sm:px-10">
         <h1 className="text-4xl font-semibold text-center">Bảng báo giá</h1>
         <div className="bg-[#eee] rounded-lg w-[272px] flex justify-center items-center py-2 mt-16 ">
           <input
@@ -43,17 +43,17 @@ const PricesPage = () => {
           />
         </div>
         <div className=" w-full flex justify-end">
-          <div className="flex justify-between mt-16 w-[40%] ">
-            <div className="flex flex-col items-center py-8 hover:bg-[#eee] rounded-md px-10">
+          <div className="flex justify-between mt-16 2xl:w-[40%] xl:w-[40%]">
+            <div className="flex flex-col items-center py-8 hover:bg-[#eee] rounded-md px-10 sm:px-4 sm:py-4">
               <span className="text-xl font-medium">Giá thuê/năm</span>
               <button className="py-3 px-10 bg-[#f14D5D] rounded-md text-white">
-                Liên hệ
+                <div className=" w-14">Liên hệ</div>
               </button>
             </div>
-            <div className="flex flex-col items-center py-8 bg-[#eee] px-10 rounded-md">
+            <div className="flex flex-col items-center py-8 bg-[#eee] px-10 rounded-md sm:px-4 sm:py-4">
               <span className="text-xl font-medium">Tùy chỉnh</span>
               <button className="py-3 px-10 bg-[#f14D5D] rounded-md text-white">
-                Liên hệ
+                <div className=" w-14">Liên hệ</div>
               </button>
             </div>
           </div>
@@ -65,7 +65,7 @@ const PricesPage = () => {
                 <span className="text-lg font-semibold">
                   Giải pháp/Phần mềm
                 </span>
-                <span className="font-light">Chi phí thiết lập hệ thống </span>
+                <span className="">Chi phí thiết lập hệ thống </span>
               </div>
             </li>
             {dataSolutionPrices.map((item, index) => {
@@ -74,8 +74,8 @@ const PricesPage = () => {
                   key={index}
                   className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8"
                 >
-                  <div className="flex gap-48 justify-between  w-full">
-                    <span className="w-[43%]">{item.solution}</span>
+                  <div className="flex  justify-between  w-full">
+                    <span className="w-[57%]">{item.solution}</span>
                     <div className="w-[40%] flex items-center  justify-between ">
                       <span className="w-40 text-center">{item.price}</span>
                       <span className="w-40 text-center">Liên hệ</span>
@@ -93,8 +93,8 @@ const PricesPage = () => {
                   key={index}
                   className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8"
                 >
-                  <div className="flex gap-48 justify-between  w-full">
-                    <span className="w-[43%]">{item.solution}</span>
+                  <div className="flex  justify-between  w-full">
+                    <span className="w-[57%]">{item.solution}</span>
                     <div className="w-[40%] flex items-center  justify-between ">
                       <span className="w-40 text-center">{item.price}</span>
                       <span className="w-40 text-center">Liên hệ</span>
@@ -112,8 +112,8 @@ const PricesPage = () => {
                   key={index}
                   className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8"
                 >
-                  <div className="flex gap-48 justify-between  w-full">
-                    <span className="w-[43%]">{item.solution}</span>
+                  <div className="flex justify-between  w-full">
+                    <span className="w-[57%]">{item.solution}</span>
                     <div className="w-[40%] flex items-center  justify-between ">
                       <span className="w-40 text-center">{item.price}</span>
                       <span className="w-40 text-center">Liên hệ</span>
@@ -129,9 +129,7 @@ const PricesPage = () => {
           // data-aos="zoom-in"
         >
           <button className="btn-content px-7 py-3 bg-[#AA3232] rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be]  ">
-            <span className=" text-xl text-white">
-             Báo giá tất cả sản phẩm
-            </span>
+            <span className=" text-xl text-white">Báo giá tất cả sản phẩm</span>
             <div className="icon-btn-services">
               <FaArrowRight className=" text-xl text-white" />
             </div>

@@ -726,6 +726,10 @@ body {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -1065,6 +1069,18 @@ body {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-\[53\%\] {
+  width: 53%;
+}
+
+.w-\[57\%\] {
+  width: 57%;
 }
 
 .rotate-180 {
@@ -2315,12 +2331,12 @@ body {
     height: 100vh;
   }
 
-  .xs\:w-1\/3 {
-    width: 33.333333%;
+  .xs\:w-0 {
+    width: 0px;
   }
 
-  .xs\:w-2 {
-    width: 0.5rem;
+  .xs\:w-1\/3 {
+    width: 33.333333%;
   }
 
   .xs\:w-2\/3 {
@@ -2341,10 +2357,6 @@ body {
 
   .xs\:w-full {
     width: 100%;
-  }
-
-  .xs\:w-0 {
-    width: 0px;
   }
 
   .xs\:flex-row-reverse {
@@ -2630,10 +2642,6 @@ body {
     width: 100%;
   }
 
-  .sm\:w-2 {
-    width: 0.5rem;
-  }
-
   .sm\:flex-col {
     flex-direction: column;
   }
@@ -2750,6 +2758,11 @@ body {
     padding-bottom: 1rem;
   }
 
+  .sm\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
   .sm\:pl-3 {
     padding-left: 0.75rem;
   }
@@ -2785,10 +2798,6 @@ body {
   .sm\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
-  .sm\:opacity-0 {
-    opacity: 0;
   }
 
   .sm\:opacity-100 {
@@ -2897,6 +2906,10 @@ body {
     display: none;
   }
 
+  .xl\:w-\[40\%\] {
+    width: 40%;
+  }
+
   .xl\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -2906,5 +2919,9 @@ body {
 @media (min-width: 1536px) {
   .\32xl\:hidden {
     display: none;
+  }
+
+  .\32xl\:w-\[40\%\] {
+    width: 40%;
   }
 }

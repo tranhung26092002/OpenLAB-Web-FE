@@ -1,11 +1,10 @@
 import axios from 'axios';
 const axiosPublic = axios.create({
     baseURL: 'https://openlab.com.vn',
-    withCredentials: true
 })
 
 export const axiosPrivate = axios.create({
-    baseURL: '',
+    baseURL: 'https://openlab.com.vn',
     withCredentials: true,
     headers: { "Content-Type": "application/json" },
 })

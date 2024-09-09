@@ -1,12 +1,13 @@
-import SectionBanner from "src/components/home/SectionBanner";
-import SectionServices from "src/components/home/SectionServices";
-import SectionSolution from "src/components/home/SectionSolution";
-import SectionProduct from "src/components/home/SectionProduct";
-import SectionAbout from "src/components/home/SectionAbout";
-import SectionPartners from "src/components/home/SectionPartners";
-import SectionContact from "src/components/home/SectionContact";
+import SectionBanner from "@components/home/SectionBanner";
+import SectionServices from "@components/home/SectionServices";
+import SectionSolution from "@components/home/SectionSolution";
+import SectionProduct from "@components/home/SectionProduct";
+import SectionAbout from "@components/home/SectionAbout";
+import SectionPartners from "@components/home/SectionPartners";
+import SectionContact from "@components/home/SectionContact";
 
 const HomePage = () => {
+ 
   return (
     <section className="container-homepage flex flex-col relative">
       <div className="container-section-banner">
