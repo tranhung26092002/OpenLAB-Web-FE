@@ -44,7 +44,7 @@ const setting = {
 
 const SectionProduct = () => {
   return (
-    <div className="body-product py-20 px-28 flex flex-col sm:px-16" data-aos="fade-up">
+    <div className="body-product py-20 px-28 flex flex-col sm:px-16 xs:px-10 xs:py-14" data-aos="fade-up">
       <div className="content-top text-center">
         <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Sản phẩm phổ biến
@@ -60,7 +60,7 @@ const SectionProduct = () => {
               <div className="my-5 mx-1 " key={index}>
                 <ProductDescription
                   srcImg={item.image}
-                  typeApp={"App"}
+                  typeApp={"COURSE"}
                   nameProduct={item.nameProduct}
                   description={item.description}
                 />

@@ -14,9 +14,9 @@ const Logo = ({ color }: logoProps) => {
       >
         OpenLAB
       </span>
-      <span className="font-medium mx-10" style={{ color: color }}>
+      {/* <span className="font-medium mx-10 xs:hidden" style={{ color: color }}>
         AI/IoT as a service
-      </span>
+      </span> */}
     </div>
   );
 };

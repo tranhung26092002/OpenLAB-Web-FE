@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import { settings } from "@utils/settingSlider";
 import practiceService from "@assets/image/service-image/Practice_service.png";
-import deviceProviderService from "@assets/image/service-image/KIT_provider_service.png";
-import courseService from "@assets/image/service-image/mcu.png";
+import deviceProviderService from "@assets/image/service-image/mcu.png";
+import courseService from "@assets/image/service-image/1.png";
 import aiService from "@assets/image/service-image/Chatbot_service.png";
 import { ReactNode } from "react";
 import { FaCubes } from "react-icons/fa";
@@ -82,12 +82,12 @@ const setting = {
 };
 const SectionServices = () => {
   return (
-    <div className="body-service py-20  px-16 ">
+    <div className="body-service py-20  px-16 xs:px-10 xs:py-14">
       <div className="content-service text-center">
         <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Các dịch vụ chính
         </span>
-        <p className="text-base ">
+        <p className="text-base  text-justify ">
           Các dịch vụ chính OpenLAB đang tập trung phát triển và cung cấp cho
           khách hàng
         </p>
@@ -112,7 +112,7 @@ const SectionServices = () => {
                     <span className="text-base font-semibold">
                       {item.title}
                     </span>
-                    <p className="text-sm px-7 font-normal">
+                    <p className="text-sm px-7 font-normal text-justify">
                       {item.description}
                     </p>
                   </div>

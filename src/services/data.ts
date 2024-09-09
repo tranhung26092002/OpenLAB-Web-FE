@@ -25,7 +25,7 @@ import imageSolution1 from "@assets/image/solution/solution1.jpg";
 import imageSolution2 from "@assets/image/solution/solution2.jpg";
 import imageSolution3 from "@assets/image/solution/solution3.jpg";
 import imageSolution4 from "@assets/image/solution/solution4.jpg";
-import imageSolution6 from "@assets/image/solution/solution5.jpg";
+
 import imageSolution5 from "@assets/image/solution/solution6.jpg";
 
 import imagekitb from "@assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
@@ -43,7 +43,7 @@ export const dataProduct: productType[] = [
     image: ArduinoProduct,
     nameProduct: "THỰC HÀNH HỆ THỐNG IoT",
     description:
-      "OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino",
+      "OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino, OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino",
   },
   {
     image: ESP8266Product,
@@ -324,7 +324,7 @@ export const dataSolution: productType[] = [
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
-    image: imageSolution6,
+    image: imageSolution4,
     nameProduct: "Giải pháp thi online: E-Exam",
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",

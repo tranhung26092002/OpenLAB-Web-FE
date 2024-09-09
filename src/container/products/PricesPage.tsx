@@ -13,14 +13,14 @@ const PricesPage = () => {
     <div>
       <div>
         <BannerPage
-          header={"Báo giá"}
+          header={"Báo Giá"}
           homepage={"Trang chủ"}
           name={"Báo giá Hệ thống Đại học số"}
         />
       </div>
-      <div className="px-28 flex flex-col justify-center  items-center py-24 sm:px-10">
-        <h1 className="text-4xl font-semibold text-center">Bảng báo giá</h1>
-        <div className="bg-[#eee] rounded-lg w-[272px] flex justify-center items-center py-2 mt-16 ">
+      <div className="px-28 flex flex-col justify-center  items-center py-24 sm:px-10 xs:px-10 xs:py-14">
+        <h1 className="text-4xl font-semibold text-center xs:text-2xl">Bảng báo giá</h1>
+        <div className="bg-[#eee] rounded-lg w-[272px] flex justify-center items-center py-2 mt-16 xs:mt-10 ">
           <input
             type="button"
             value="On Premise"
@@ -42,23 +42,23 @@ const PricesPage = () => {
             }
           />
         </div>
-        <div className=" w-full flex justify-end">
-          <div className="flex justify-between mt-16 2xl:w-[40%] xl:w-[40%]">
+        <div className=" w-full flex justify-end   mt-16 xs:mt-8">
+          <div className="flex justify-between  2xl:w-[40%] xl:w-[40%] xs:flex-col  xs:w-full ">
             <div className="flex flex-col items-center py-8 hover:bg-[#eee] rounded-md px-10 sm:px-4 sm:py-4">
               <span className="text-xl font-medium">Giá thuê/năm</span>
-              <button className="py-3 px-10 bg-[#f14D5D] rounded-md text-white">
-                <div className=" w-14">Liên hệ</div>
+              <button className="py-3 px-10 bg-[#f14D5D] rounded-md text-white xs:hidden">
+                <div className=" w-14 ">Liên hệ</div>
               </button>
             </div>
             <div className="flex flex-col items-center py-8 bg-[#eee] px-10 rounded-md sm:px-4 sm:py-4">
               <span className="text-xl font-medium">Tùy chỉnh</span>
-              <button className="py-3 px-10 bg-[#f14D5D] rounded-md text-white">
-                <div className=" w-14">Liên hệ</div>
+              <button className="py-3 px-10 bg-[#f14D5D] rounded-md text-white xs:w-full xs:mt-2">
+                <div className=" w-14 xs:w-full">Liên hệ</div>
               </button>
             </div>
           </div>
         </div>
-        <div className="w-full mt-16">
+        <div className="w-full mt-16 ">
           <ul className=" flex flex-col  justify-between">
             <li className="bg-red-50 py-3 border-b-2 border-blue-200 ">
               <div className=" flex flex-col  items-center">
@@ -72,13 +72,13 @@ const PricesPage = () => {
               return (
                 <li
                   key={index}
-                  className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8"
+                  className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8 xs:pl-2"
                 >
                   <div className="flex  justify-between  w-full">
-                    <span className="w-[57%]">{item.solution}</span>
-                    <div className="w-[40%] flex items-center  justify-between ">
-                      <span className="w-40 text-center">{item.price}</span>
-                      <span className="w-40 text-center">Liên hệ</span>
+                    <span className="w-[57%] xs:text-sm xs:w-[70%]  xs-w[60%]">{item.solution}</span>
+                    <div className="w-[40%] flex items-center  justify-between xs:w-[25%] ">
+                      <span className="w-40 text-center xs:text-sm">{item.price}</span>
+                      <span className="w-40 text-center xs:text-sm xs:hidden">Liên hệ</span>
                     </div>
                   </div>
                 </li>
@@ -91,13 +91,13 @@ const PricesPage = () => {
               return (
                 <li
                   key={index}
-                  className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8"
+                  className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8 xs:pl-2"
                 >
                   <div className="flex  justify-between  w-full">
-                    <span className="w-[57%]">{item.solution}</span>
-                    <div className="w-[40%] flex items-center  justify-between ">
-                      <span className="w-40 text-center">{item.price}</span>
-                      <span className="w-40 text-center">Liên hệ</span>
+                    <span className="w-[57%] xs:text-sm xs:w-[70%]  xs-w[60%]">{item.solution}</span>
+                    <div className="w-[40%] flex items-center  justify-between xs:w-[25%] ">
+                      <span className="w-40 text-center xs:text-sm">{item.price}</span>
+                      <span className="w-40 text-center xs:text-sm xs:hidden">Liên hệ</span>
                     </div>
                   </div>
                 </li>
@@ -110,13 +110,13 @@ const PricesPage = () => {
               return (
                 <li
                   key={index}
-                  className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8"
+                  className="py-3 border-b-2 border-blue-200 w-full  cursor-pointer hover:bg-[#eee] pl-8 xs:pl-2"
                 >
                   <div className="flex justify-between  w-full">
-                    <span className="w-[57%]">{item.solution}</span>
-                    <div className="w-[40%] flex items-center  justify-between ">
-                      <span className="w-40 text-center">{item.price}</span>
-                      <span className="w-40 text-center">Liên hệ</span>
+                    <span className="w-[57%] xs:text-sm xs:w-[70%] ">{item.solution}</span>
+                    <div className="w-[40%] flex items-center  justify-between xs:w-[25%]  ">
+                      <span className="w-40 text-center xs:text-sm">{item.price}</span>
+                      <span className="w-40 text-center xs:text-sm xs:hidden">Liên hệ</span>
                     </div>
                   </div>
                 </li>

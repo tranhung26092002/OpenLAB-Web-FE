@@ -12,7 +12,7 @@ const AboutPage = () => {
   return (
     <div className="container-about-page">
       <BannerPage
-        header={"Giới thiệu công ty"}
+        header={"Giới Thiệu Công Ty"}
         homepage={"Trang chủ"}
         name={"Giới thiệu"}
       />

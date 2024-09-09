@@ -8,19 +8,19 @@ const AllProduct = () => {
   return (
     <div>
       <BannerPage
-        header={"Tất cả sản phẩm"}
+        header={"Tất Cả Sản Phẩm"}
         homepage={"Trang chủ"}
         name={"Sản phẩm"}
       />
-      <div className="px-24 py-16 lg:px-14 sm:px-14 xs:px-10">
+      <div className="px-24 py-16 lg:px-14 sm:px-10 xs:px-10">
         <div className=" flex justify-between">
-          <span>Hiển thị 6 sản phẩm</span>
+          <span className="xs:hidden">Hiển thị 6 sản phẩm</span>
           <input
             type="search"
             name=""
             id=""
             placeholder="Tìm kiếm sản phẩm"
-            className="px-4 py-2 placeholder:text-sm bg-[#eee] rounded"
+            className="px-4 py-2 placeholder:text-sm bg-[#eee] rounded xs:w-full"
           />
         </div>
         <SectionAllProduct

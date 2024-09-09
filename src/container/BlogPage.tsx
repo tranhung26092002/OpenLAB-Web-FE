@@ -2,6 +2,7 @@ import BannerPage from "src/components/custom/BannerPage";
 import { dataBlog } from "src/services/data";
 import { FaRegUser } from "react-icons/fa";
 import { IoCalendar } from "react-icons/io5";
+
 const BlogPage = () => {
   return (
     <div className="pb-24">
@@ -12,13 +13,13 @@ const BlogPage = () => {
           name={"Tất cả bài viết"}
         />
       </div>
-      <div className="px-24 pt-24 flex gap-7">
-        <div className="w-2/3  flex justify-end items-start gap-5 flex-wrap">
+      <div className="px-24 pt-24 flex gap-7 xs:px-10 xs:pt-14 xs:flex-col" >
+        <div className="w-2/3  flex justify-end items-start gap-5 flex-wrap xs:flex-col xs:w-full">
           {dataBlog.map((item, index) => {
             return (
               <div
                 key={index}
-                className="shadow-xl w-[40%] px-6 py-6 rounded-md h-[520px]"
+                className="shadow-xl w-[40%] px-6 py-6 rounded-md h-[520px] xs:w-full"
               >
                 <div className="w-full h-36 border-2 border-green-700 rounded"></div>
                 <div className="flex justify-between items-center mt-5">
@@ -40,7 +41,7 @@ const BlogPage = () => {
             );
           })}
         </div>
-        <div className=" flex flex-col gap-8 w-[31%] justify-start items-start">
+        <div className=" flex flex-col gap-8 w-[31%] justify-start items-start xs:w-full">
           <div className="px-7 py-7 bg-white rounded border-dotted border-black border-[1px] w-full justify-center flex">
             <input
               type="search"
@@ -54,7 +55,7 @@ const BlogPage = () => {
           <div className="px-7 py-7 bg-white rounded border-dotted border-black border-[1px] ">
             <span className="text-xl font-medium">Mới nhất</span>
 
-            <div className="pt-16">
+            <div className="pt-16 xs:pt-10">
               {dataBlog.map((item, index) => {
                 return (
                   <div
