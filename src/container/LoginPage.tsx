@@ -20,7 +20,7 @@ const LoginPage = () => {
       <div className="h-full flex justify-start py-20 w-1/3 ">
         <CloudKey/>
       </div>
-      <div className="flex  px-8 py-6 shadow-xl bg-white rounded-md w-1/4 justify-center">
+      <div className="flex  px-6 py-6 shadow-xl bg-white rounded-md w-1/4 justify-center">
         <form
           className="flex flex-col gap-3 w-full items-center   "
           action="POST"
@@ -28,7 +28,7 @@ const LoginPage = () => {
         >
           <div className="flex flex-col text-center">
             <span className=" text-xl font-semibold">Đăng nhập</span>
-            <span className="font-light">Hoàn thiện thông tin để tiếp tục</span>
+            <span className="">Hoàn thiện thông tin để tiếp tục</span>
           </div>
           <div className="flex flex-col gap-1 w-full">
             <div className="flex flex-col">
@@ -81,7 +81,7 @@ const LoginPage = () => {
               <FaGithub className="text-4xl" />
             </div>
           </div>
-          <div className="text-sm font-medium">
+          <div className="text-sm font-medium w-full text-center">
             <span>Bạn chưa có tài khoản?</span>{" "}
             <span className="font-semibold">Đăng kí ngay</span>
           </div>

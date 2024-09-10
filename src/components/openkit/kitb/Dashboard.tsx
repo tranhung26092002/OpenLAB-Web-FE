@@ -14,15 +14,9 @@ type DashboardProps = {
   humidity: number;
   gas: number;
   light: number;
-
 };
 
-const Dashboard = ({
-  temperature,
-  light,
-  gas,
-  humidity,
-}: DashboardProps) => {
+const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
   // console.log("check timestamp", timestamps);
   const [temperatureHistory, setTemperatureHistory] = useState<number[]>([]);
   const [humidityHistory, setHumidityHistory] = useState<number[]>([]);
@@ -31,28 +25,35 @@ const Dashboard = ({
   const [timestamps, setTimestamps] = useState<string[]>([]);
   useEffect(() => {
     const now = new Date().toLocaleTimeString();
+    console.log("check render");
+    // console.log(temperatureHistory);
 
-    if (temperatureHistory.length >= 10) {
-      setTemperatureHistory(temperatureHistory.slice(1));
-    }
-    if (humidityHistory.length >= 10) {
-      setHumidityHistory(humidityHistory.slice(1))
-    }
-    if (gasHistory.length >= 10) {
-      setGasHistory(gasHistory.slice(1))
-    }
-    if (lightHistory.length >= 10) {
-      setLightHistory(lightHistory.slice(1))
-    }
-    if (timestamps.length >= 10) {
-      setTimestamps(timestamps.slice(1));
-    }
+    setTimestamps((prev) => {
+      const newTimestamps = [...prev, now];
+      return newTimestamps.length >= 10
+        ? newTimestamps.slice(1)
+        : newTimestamps;
+    });
 
-    setTimestamps((prev) => [...prev, now]);
-    setTemperatureHistory((prev) => [...prev, temperature]);
-    setHumidityHistory((prev) => [...prev, humidity]);
-    setGasHistory((prev) => [...prev, gas]);
-    setLightHistory((prev) => [...prev, light]);
+    setTemperatureHistory((prev) => {
+      const newHistory = [...prev, temperature];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
+
+    setHumidityHistory((prev) => {
+      const newHistory = [...prev, humidity];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
+
+    setGasHistory((prev) => {
+      const newHistory = [...prev, gas];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
+
+    setLightHistory((prev) => {
+      const newHistory = [...prev, light];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
   }, [temperature, light, gas, humidity]);
 
   return (

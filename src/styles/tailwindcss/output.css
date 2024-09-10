@@ -1450,6 +1450,11 @@ body {
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+}
+
 .bg-red-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 242 242 / var(--tw-bg-opacity));
@@ -2046,11 +2051,6 @@ body {
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
-.text-yellow-600 {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
-}
-
 .opacity-0 {
   opacity: 0;
 }
@@ -2468,12 +2468,12 @@ body {
     gap: 0px;
   }
 
-  .xs\:gap-6 {
-    gap: 1.5rem;
-  }
-
   .xs\:gap-1 {
     gap: 0.25rem;
+  }
+
+  .xs\:gap-6 {
+    gap: 1.5rem;
   }
 
   .xs\:border-b-\[1px\] {
@@ -2503,9 +2503,9 @@ body {
     padding-right: 2.5rem;
   }
 
-  .xs\:px-14 {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+  .xs\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .xs\:px-3 {
@@ -2561,11 +2561,6 @@ body {
   .xs\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-  }
-
-  .xs\:px-2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 
   .xs\:pl-0 {
