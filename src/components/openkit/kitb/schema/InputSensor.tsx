@@ -7,7 +7,10 @@ import StepMotor from "@components/devices/StepMotor";
 import Switch from "react-switch";
 import { SyntheticEvent, useState } from "react";
 type event = MouseEvent | SyntheticEvent<MouseEvent | KeyboardEvent, Event>;
-const InputSensor = () => {
+type InputSensorProps = {
+  led?: string | number
+}
+const InputSensor = ({ led }: InputSensorProps) => {
   const [isOn, setOn] = useState(false);
 
   const handleChange = (checked: boolean, e: event, id: string) => {
@@ -18,7 +21,7 @@ const InputSensor = () => {
     <div className="flex flex-col items-center justify-around gap-4 p-4 border-2 border-dashed border-gray-500 rounded h-full ">
       <div className="flex w-full justify-between ">
         <div className="flex  flex-col items-center justify-center ">
-          <span className="font-semibold text-xl">DHT11</span>
+          <span className="font-semibold text-xl">Led 7 đoạn</span>
           <Led7 />
         </div>
 
@@ -35,7 +38,7 @@ const InputSensor = () => {
         <div className="flex flex-col items-center gap-4  justify-around ">
           <div className="h-28 flex items-center flex-col justify-between">
             <span className="font-semibold text-xl">Light</span>
-            <Light />
+            <Light led={led} />
           </div>
           <div className="flex  flex-col items-center justify-center gap-4 ">
             <span className="font-semibold text-xl">Relay</span>

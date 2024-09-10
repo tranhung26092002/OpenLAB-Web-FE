@@ -14,9 +14,6 @@ const DashboardChart = ({
   return (
     <div className="w-full ">
       <div className="flex flex-col w-full ">
-        <div>
-          <div></div>
-        </div>
         <div className=" w-full">
           <Plot
             data={[
@@ -35,7 +32,6 @@ const DashboardChart = ({
             style={{
               width: "100%",
               height: "240px",
-              backgroundColor: "red",
             }}
           />
         </div>

@@ -13,9 +13,9 @@ const LazyPricesPage = lazy(() => import("@container/products/PricesPage"));
 const LazyOpenKitBPage = lazy(
   () => import("@container/openkit/kitb/OpenKitBPage")
 );
-const LazyAllProduct = lazy(()=> import('@container/products/AllProduct'))
+const LazyAllProduct = lazy(() => import('@container/products/AllProduct'))
 const LazyLoginPage = lazy(() => import("@container/LoginPage"));
-const LazyDetailProduct = lazy(()=> import('@container/products/DetailProduct'))
+const LazyDetailProduct = lazy(() => import('@container/products/DetailProduct'))
 // const LazySignUpPage = lazy(() => import('@container/SignUpPage'));
 
 const App = () => {
@@ -40,7 +40,7 @@ const App = () => {
         setShowButton(false);
       }
     };
-    window.addEventListener("scroll", handleScroll, );
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -59,7 +59,6 @@ const App = () => {
             </Suspense>
           }
         />
-      
         <Route
           path="about"
           element={
@@ -70,7 +69,7 @@ const App = () => {
             </Suspense>
           }
         />
-         <Route
+        <Route
           path="loading"
           element={
             <Suspense fallback={<FallbackLoading />}>
@@ -121,7 +120,7 @@ const App = () => {
               </Suspense>
             }
           />
-              <Route
+          <Route
             index
             element={
               <Suspense fallback={<FallbackLoading />}>
