@@ -13,9 +13,19 @@ const OpenKitBPage = () => {
   return (
     <div>
       <div className=" flex justify-center flex-col">
+        <BannerPage
+          header={"OpenKit B"}
+          homepage={"Home Page"}
           name={"Connect Status:"}
+          connectStatus={connectStatus ? "Connected" : "Disconnected"}
         />
-        <SchemaKitb temperature={temperature} light={light} gas={gas} humidity={humidity} led={led}/>
+        <SchemaKitb
+          temperature={temperature}
+          light={light}
+          gas={gas}
+          humidity={humidity}
+          led={led}
+        />
         <MqttConnect
           setTemperature={setTemperature}
           setHumidity={setHumidity}
@@ -30,7 +40,6 @@ const OpenKitBPage = () => {
           humidity={humidity}
           gas={gas}
           light={light}
-
         />
       </div>
     </div>
