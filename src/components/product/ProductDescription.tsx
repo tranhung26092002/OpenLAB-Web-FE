@@ -1,4 +1,4 @@
-import { BiSolidQuoteAltLeft } from "react-icons/bi";
+
 import { FaSignal } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";

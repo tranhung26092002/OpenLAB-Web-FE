@@ -7,7 +7,6 @@ import SectionPartners from "@components/home/SectionPartners";
 import SectionContact from "@components/home/SectionContact";
 
 const HomePage = () => {
- 
   return (
     <section className="container-homepage flex flex-col relative">
       <div className="container-section-banner">
