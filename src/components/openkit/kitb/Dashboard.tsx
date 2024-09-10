@@ -14,7 +14,7 @@ type DashboardProps = {
   humidity: number;
   gas: number;
   light: number;
-  timestamps: string[];
+
 };
 
 const Dashboard = ({
@@ -22,15 +22,33 @@ const Dashboard = ({
   light,
   gas,
   humidity,
-  timestamps,
 }: DashboardProps) => {
-  console.log(temperature, light, gas, humidity, timestamps);
+  // console.log("check timestamp", timestamps);
   const [temperatureHistory, setTemperatureHistory] = useState<number[]>([]);
   const [humidityHistory, setHumidityHistory] = useState<number[]>([]);
   const [gasHistory, setGasHistory] = useState<number[]>([]);
   const [lightHistory, setLightHistory] = useState<number[]>([]);
-
+  const [timestamps, setTimestamps] = useState<string[]>([]);
   useEffect(() => {
+    const now = new Date().toLocaleTimeString();
+
+    if (temperatureHistory.length >= 10) {
+      setTemperatureHistory(temperatureHistory.slice(1));
+    }
+    if (humidityHistory.length >= 10) {
+      setHumidityHistory(humidityHistory.slice(1))
+    }
+    if (gasHistory.length >= 10) {
+      setGasHistory(gasHistory.slice(1))
+    }
+    if (lightHistory.length >= 10) {
+      setLightHistory(lightHistory.slice(1))
+    }
+    if (timestamps.length >= 10) {
+      setTimestamps(timestamps.slice(1));
+    }
+
+    setTimestamps((prev) => [...prev, now]);
     setTemperatureHistory((prev) => [...prev, temperature]);
     setHumidityHistory((prev) => [...prev, humidity]);
     setGasHistory((prev) => [...prev, gas]);
@@ -39,8 +57,7 @@ const Dashboard = ({
 
   return (
     <div className="flex flex-col w-full px-16 items-center py-10 gap-10">
-      <h1 className="text-center font-semibold  text-2xl">Dashboard</h1>
-   
+      <h1 className="text-center font-semibold  text-4xl">Dashboard</h1>
       <div className="flex items-center justify-between  w-full ">
         <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
           <div className="w-full">
