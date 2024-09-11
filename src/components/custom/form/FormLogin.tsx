@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
-import InputPassword from "../element/InputPassword";
+import InputPassword from "@components/custom/element/InputPassword";
 const FormLogin = () => {
   const formik = useFormik({
     initialValues: {
