@@ -1,6 +1,6 @@
 import Keybroad from "@components/devices/Keybroad";
 import LCD from "@components/devices/LCD";
-import Switch from "@components/devices/Switch";
+import Button from "@components/devices/Button";
 type DisplayLcdProps = {
   temperature: string | number,
   light: string | number,
@@ -23,11 +23,11 @@ const DisplayLcd = ({ temperature, light, gas, humidity }: DisplayLcdProps) => {
         <div className="flex justify-around  w-full">
           <div>
             <span className="font-semibold text-xl">SW1</span>
-            <Switch />
+            <Button />
           </div>
           <div>
             <span className="font-semibold text-xl">SW2</span>
-            <Switch />
+            <Button />
           </div>
         </div>
         <div className=" flex flex-col items-center justify-center gap-2">

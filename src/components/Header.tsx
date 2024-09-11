@@ -86,7 +86,7 @@ const Header = () => {
                 <FaAngleDown className="text-xs  icon-product " />
               </div>
             </span>
-            <hr />
+
             <Tooltip
               id="my-product"
               clickable
@@ -196,19 +196,24 @@ const Header = () => {
                   <hr />
                 </div>
                 <div className="bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% flex justify-center rounded-md  xs:hidden ">
-                  <Link to={"/product"} className="w-full flex justify-center hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out">
+                  <Link
+                    to={"/product"}
+                    className="w-full flex justify-center hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out"
+                  >
                     <div className="courses cursor-pointer  rounded-sm  text-white text-xl ">
                       Tất cả sản phẩm
                     </div>
                   </Link>
                 </div>
-               
-                  <Link to={"/product"} className="w-full xs:flex  pl-2 hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out hidden ">
-                    <div className="courses cursor-pointer  rounded-sm font-semibold">
-                      Tất cả sản phẩm
-                    </div>
-                  </Link>
-               
+
+                <Link
+                  to={"/product"}
+                  className="w-full xs:flex  pl-2 hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out hidden "
+                >
+                  <div className="courses cursor-pointer  rounded-sm font-semibold">
+                    Tất cả sản phẩm
+                  </div>
+                </Link>
               </div>
             </Tooltip>
             <Link to="/blog" className=" sm:w-full xs:w-full">

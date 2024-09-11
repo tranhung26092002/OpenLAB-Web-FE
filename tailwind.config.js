@@ -1,8 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 export default {
-  content: ["./src/**/*.{html,js,ts,tsx,jsx}"],
+  content: [
+    "./src/components/**/*.{js,ts,tsx,jsx}",
+    "./src/container/**/*.{js,ts,tsx,jsx}",
+  ],
   theme: {
     screens: {
       xs: { max: "575px" },
@@ -30,23 +33,6 @@ export default {
         },
       },
     },
-    textShadow: {
-      sm: "1px 1px 2px #B3B3B3",
-      DEFAULT: "2px 2px 4px #B3B3B3",
-      lg: "4px 4px 8px #B3B3B3",
-      xl: "4px 4px 16px #B3B3B3",
-    },
   },
-  plugins: [
-    plugin(function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          "text-shadow": (value) => ({
-            textShadow: value,
-          }),
-        },
-        { values: theme("textShadow") }
-      );
-    }),
-  ],
+  plugins: [],
 };
