@@ -1,24 +1,24 @@
 const SectionStatiscal = () => {
   return (
-    <div className="px-20 pb-20"  data-aos="slide-up">
+    <div className="px-20 bg-[#eee] sm:px-14 xs:px-5">
       <div
-        className=" flex justify-around rounded-xl items-center bg-[#1a2a45] py-14 px-10 text-white"  
+        className=" flex justify-around rounded-xl items-center py-6 px-10 xs:px-0 "  
       >
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">18</span>
-          <span className="font-light">Sản phẩm</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-2xl">18</span>
+          <span className="">Sản phẩm</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">9</span>
-          <span className="font-light">Đối tác</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-2xl">9</span>
+          <span className="">Đối tác</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">1268+</span>
-          <span className="font-light">Khách hàng</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-2xl">1268+</span>
+          <span className="">Khách hàng</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-5xl font-semibold">100%</span>
-          <span className="font-light">Hài lòng</span>
+          <span className="text-5xl font-semibold sm:text-4xl xs:text-2xl">100%</span>
+          <span className="">Hài lòng</span>
         </div>
       </div>
     </div>

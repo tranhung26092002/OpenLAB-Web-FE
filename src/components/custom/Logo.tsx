@@ -1,21 +1,22 @@
 type logoProps = {
-  className: string | undefined;
+  color: string | undefined;
 };
-const Logo = ({ className }: logoProps) => {
+const Logo = ({ color }: logoProps) => {
   return (
     <div className="flex flex-col ">
       <span
-        className={` ${className}  font-semibold text-white text-5xl text-shadow-lg`}
+        className={`  font-semibold  text-5xl text-shadow-lg`}
         style={{
+          color: color,
           textShadow:
             "rgb(106 109 129) 3px 0px 0px, rgba(0, 0, 0, 0) 4px -1px 10px, rgba(0, 0, 0, 0) 16px 1px 2px, rgba(115, 86, 86, 0) 22px 18px 30px",
         }}
       >
         OpenLAB
       </span>
-      <span className="text-white font-medium mx-10">
+      {/* <span className="font-medium mx-10 xs:hidden" style={{ color: color }}>
         AI/IoT as a service
-      </span>
+      </span> */}
     </div>
   );
 };
