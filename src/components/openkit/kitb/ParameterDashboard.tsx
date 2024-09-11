@@ -19,7 +19,7 @@ const ParameterDashboard = ({
   value2,
 }: ParameterDashboardProps) => {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 h-[113px]">
       <div>{device}</div>
       <div className="flex flex-col items-start">
         <span className="font-semibold">{nameDevice}</span>

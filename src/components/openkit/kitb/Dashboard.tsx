@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DashboardChart from "./DashboardChart";
-import SchemaKitb from "./schema/SchemaKitb";
+
 import ParameterDashboard from "./ParameterDashboard";
 import DHT11Sensor from "@components/devices/DHT11";
 import { FaThermometerHalf } from "react-icons/fa";
@@ -14,33 +14,51 @@ type DashboardProps = {
   humidity: number;
   gas: number;
   light: number;
-  timestamps: string[];
 };
 
-const Dashboard = ({
-  temperature,
-  light,
-  gas,
-  humidity,
-  timestamps,
-}: DashboardProps) => {
-  console.log(temperature, light, gas, humidity, timestamps);
+const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
+  // console.log("check timestamp", timestamps);
   const [temperatureHistory, setTemperatureHistory] = useState<number[]>([]);
   const [humidityHistory, setHumidityHistory] = useState<number[]>([]);
   const [gasHistory, setGasHistory] = useState<number[]>([]);
   const [lightHistory, setLightHistory] = useState<number[]>([]);
-
+  const [timestamps, setTimestamps] = useState<string[]>([]);
   useEffect(() => {
-    setTemperatureHistory((prev) => [...prev, temperature]);
-    setHumidityHistory((prev) => [...prev, humidity]);
-    setGasHistory((prev) => [...prev, gas]);
-    setLightHistory((prev) => [...prev, light]);
+    const now = new Date().toLocaleTimeString();
+    console.log("check render");
+    // console.log(temperatureHistory);
+
+    setTimestamps((prev) => {
+      const newTimestamps = [...prev, now];
+      return newTimestamps.length >= 10
+        ? newTimestamps.slice(1)
+        : newTimestamps;
+    });
+
+    setTemperatureHistory((prev) => {
+      const newHistory = [...prev, temperature];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
+
+    setHumidityHistory((prev) => {
+      const newHistory = [...prev, humidity];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
+
+    setGasHistory((prev) => {
+      const newHistory = [...prev, gas];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
+
+    setLightHistory((prev) => {
+      const newHistory = [...prev, light];
+      return newHistory.length >= 10 ? newHistory.slice(1) : newHistory;
+    });
   }, [temperature, light, gas, humidity]);
 
   return (
     <div className="flex flex-col w-full px-16 items-center py-10 gap-10">
-      <h1 className="text-center font-semibold  text-2xl">Dashboard</h1>
-      <SchemaKitb />
+      <h1 className="text-center font-semibold  text-4xl">Dashboard</h1>
       <div className="flex items-center justify-between  w-full ">
         <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
           <div className="w-full">

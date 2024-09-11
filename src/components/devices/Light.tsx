@@ -1,8 +1,11 @@
 import { RiLightbulbFlashFill } from "react-icons/ri";
-const Light = () => {
+type LightProps = {
+  led?: string | number
+}
+const Light = ({ led }: LightProps) => {
   return (
     <div className="Light-container">
-      <RiLightbulbFlashFill className="text-7xl"/>
+      {led === 1 ? <RiLightbulbFlashFill className="text-7xl text-yellow-500" /> : <RiLightbulbFlashFill className="text-7xl" />}
     </div>
   );
 };

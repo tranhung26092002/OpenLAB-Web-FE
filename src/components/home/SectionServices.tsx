@@ -87,7 +87,7 @@ const SectionServices = () => {
         <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Các dịch vụ chính
         </span>
-        <p className="text-base  text-justify ">
+        <p className="text-base text-center xs:text-justify ">
           Các dịch vụ chính OpenLAB đang tập trung phát triển và cung cấp cho
           khách hàng
         </p>

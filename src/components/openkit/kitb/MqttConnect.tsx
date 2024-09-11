@@ -1,5 +1,4 @@
-import { Dispatch, SetStateAction, useState, useEffect } from "react";
-
+import { Dispatch, SetStateAction, useState } from "react";
 import cryptoRandomString from "crypto-random-string";
 import mqtt from "mqtt";
 
@@ -9,7 +8,7 @@ type MqttConnectProps = {
   setHumidity: Dispatch<SetStateAction<number>>;
   setTemperature: Dispatch<SetStateAction<number>>;
   setConnectStatus: Dispatch<SetStateAction<boolean>>;
-  setTimestamps: Dispatch<SetStateAction<string[]>>;
+  setLed: Dispatch<SetStateAction<number>>;
   connectStatus: boolean;
 };
 
@@ -19,20 +18,19 @@ const MqttConnect = ({
   setHumidity,
   setLight,
   setConnectStatus,
-  setTimestamps,
+  setLed,
   connectStatus,
 }: MqttConnectProps) => {
-  const [mqttProtocol, setMqttProtocol] = useState("wss://");
+
   const [mqttHost, setMqttHost] = useState("openlab.com.vn");
   const [mqttPort, setMqttPort] = useState("8884");
-  const [mqttIdKit, setIdKit] = useState("abc");
 
-  const [mqttUser, setMqttUser] = useState("admin");
-  const [mqttPassword, setMqttPassword] = useState("admin");
+  const [mqttUser, setMqttUser] = useState("");
+  const [mqttPassword, setMqttPassword] = useState("");
   const [mqttTopicPub, setMqttTopicPub] = useState("");
   const [mqttMessage, setMqttMessage] = useState("");
 
-  const [mqttTopicSub, setMqttTopicSub] = useState("sensor");
+  const [mqttTopicSub, setMqttTopicSub] = useState("");
   const [subscribedData, setSubscribedData] = useState("");
   const [client, setClient] = useState<mqtt.MqttClient | null>(null);
   const [subscribeStatus, setSubscribeStatus] = useState<string>("");
@@ -40,21 +38,22 @@ const MqttConnect = ({
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleConnect = async () => {
-    if (!mqttHost || !mqttPort || !mqttIdKit || !mqttUser || !mqttPassword) {
+    if (!mqttHost || !mqttPort || !mqttUser || !mqttPassword) {
       setErrorMessage("Missing required parameter!");
       return;
     }
     setErrorMessage("");
-
-    const clientId = `mqttjs_${cryptoRandomString({ length: 10 })}`;
+    const id = cryptoRandomString({ length: 10 })
+    const clientId = `mqttjs_${id}`;
     try {
       const mqttClient = mqtt.connect(
-        `${mqttProtocol}${mqttHost}:${mqttPort}`,
+        `wss://${mqttHost}:${mqttPort}/mqtt`,
         {
-          clientId: clientId,
+          clientId,
           username: mqttUser,
           password: mqttPassword,
         }
+
       );
 
       if (mqttClient) {
@@ -64,28 +63,29 @@ const MqttConnect = ({
           if (mqttClient.connected) {
             setConnectStatus(true);
             console.log("Connected");
+            setMqttTopicSub(`${mqttUser}/`)
+            setMqttTopicPub(`${mqttUser}/`)
           }
         });
 
         mqttClient.on("message", (_topic, message) => {
           try {
             const data = JSON.parse(message.toString());
-            console.log("check message: ", data);
             const temperatureValue = (data.temperature ?? "N/A").toFixed(2);
             const humidityValue = (data.humidity ?? "N/A").toFixed(2);
             const gasValue = (data.gas ?? "N/A").toFixed(2);
             const lightValue = (data.light ?? "N/A").toFixed(2);
-
-            console.log("Received message: ", data);
+            const ledValue = (data.led ?? "N/A");
+            console.log("Received message: ", ledValue);
             setSubscribedData(JSON.stringify(data, null, 2));
 
             setTemperature(temperatureValue);
             setHumidity(humidityValue);
             setGas(gasValue);
             setLight(lightValue);
-
-            const now = new Date().toLocaleTimeString();
-            setTimestamps((prev) => [...prev, now]);
+            setLed(ledValue)
+            // const now = new Date().toLocaleTimeString();
+            // setTimestamps((prev) => [...prev, now]);
           } catch (error) {
             console.error("Error parsing JSON:", error);
           }
@@ -97,10 +97,10 @@ const MqttConnect = ({
           setClient(null);
         });
       } else {
-        setClient(null);
         setErrorMessage("Failed to create MQTT client.");
       }
     } catch (error) {
+
       setErrorMessage(`Connection failed: ${error}`);
       console.log("Error connecting:", error);
     }
@@ -109,6 +109,8 @@ const MqttConnect = ({
   const handleDisconnect = () => {
     if (client) {
       client.end();
+      setMqttTopicSub("");
+      setMqttTopicPub("");
       console.log("Disconnected");
       setSubscribeStatus("");
       setSubscribedData("");
@@ -146,7 +148,7 @@ const MqttConnect = ({
 
   const handlePublish = () => {
     if (client && connectStatus && mqttTopicPub && mqttMessage) {
-      const message = JSON.stringify({ mqttIdKit: mqttMessage });
+      const message = JSON.stringify({ mqttMessage });
       client.publish(
         mqttTopicPub,
         message,
@@ -163,45 +165,35 @@ const MqttConnect = ({
     }
   };
 
-  useEffect(() => {
-    return () => {
-      handleDisconnect();
-    };
-  }, []);  
 
   return (
     <div>
-      <div className="flex flex-col">
-        <h2 className="text-center text-2xl font-medium">MQTT Controls</h2>
-        <div className="flex items-center justify-around p-16 gap-4">
+      <div className="flex flex-col bg-[#eee] p-16  ">
+        <h2 className="text-center text-4xl font-semibold py-4">MQTT Controls</h2>
+        <div className="flex items-center justify-around  gap-4">
           <div className="flex flex-col px-6 py-4 rounded-md bg-white w-1/3 gap-4">
-            <h1 className="text-center font-medium">Connect</h1>
+            <h1 className="text-center font-semibold text-xl">Connect</h1>
 
             <div className="flex justify-between items-center">
-              <label htmlFor="id-kit">ID-KIT:</label>
+              <label>ID-KIT:</label>
               <input
+                value={mqttUser}
                 type="text"
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
-                placeholder="Enter ID-Kit"
-                id="id-kit"
-                value={mqttIdKit}
-                onChange={(e) => setIdKit(e.target.value)}
+                placeholder="Enter username"
+                onChange={(e) => setMqttUser(e.target.value)}
               />
             </div>
 
             <div className="flex justify-between items-center">
-              <label>Protocol:</label>
-
-              <select
-                value={mqttProtocol}
-                className="bg-[#eee] px-2 rounded-sm py-2"
-                onChange={(e) => setMqttProtocol(e.target.value)}
-              >
-                <option value="mqtt://">mqtt://</option>
-                <option value="mqtts://">mqtts://</option>
-                <option value="ws://">ws://</option>
-                <option value="wss://">wss://</option>
-              </select>
+              <label>Password:</label>
+              <input
+                type="password"
+                value={mqttPassword}
+                className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
+                placeholder="Enter password"
+                onChange={(e) => setMqttPassword(e.target.value)}
+              />
             </div>
 
             <div className="flex justify-between items-center">
@@ -223,28 +215,6 @@ const MqttConnect = ({
                 className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
                 placeholder="Enter port"
                 onChange={(e) => setMqttPort(e.target.value)}
-              />
-            </div>
-
-            <div className="flex justify-between items-center">
-              <label>Username:</label>
-              <input
-                value={mqttUser}
-                type="text"
-                className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
-                placeholder="Enter username"
-                onChange={(e) => setMqttUser(e.target.value)}
-              />
-            </div>
-
-            <div className="flex justify-between items-center">
-              <label>Password:</label>
-              <input
-                type="password"
-                value={mqttPassword}
-                className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[65%]"
-                placeholder="Enter password"
-                onChange={(e) => setMqttPassword(e.target.value)}
               />
             </div>
 
@@ -272,8 +242,8 @@ const MqttConnect = ({
             )}
           </div>
 
-          <div className="bg-yellow-50 flex rounded-md flex-col gap-4 px-6 py-4 w-1/3">
-            <h1 className="text-center font-medium">Subscriber</h1>
+          <div className="bg-yellow-50 flex rounded-md flex-col gap-4 px-6 py-4 w-1/3 h-96">
+            <h1 className="text-center font-semibold text-xl">Subcribe</h1>
             <div className="flex justify-between items-center">
               <label>Topic:</label>
               <input
@@ -289,8 +259,9 @@ const MqttConnect = ({
               <h3>Data</h3>
               <textarea
                 name="message"
+                minLength={142}
                 readOnly
-                className="w-[60%] h-20"
+                className="w-[60%] h-36"
                 value={subscribedData}
               />
             </div>
@@ -315,24 +286,25 @@ const MqttConnect = ({
             </div>
           </div>
 
-          <div className="bg-blue-100 rounded-md flex items-center flex-col gap-5 px-5 py-4 w-1/3">
-            <h1 className="text-center font-medium">Publisher</h1>
+          <div className="bg-blue-100 rounded-md flex items-center flex-col gap-5 px-5 py-4 w-1/3 h-96" >
+            <h1 className="text-center font-semibold text-xl">Publish</h1>
             <div className="flex items-center justify-between w-full">
               <label>Topic:</label>
               <input
                 value={mqttTopicPub}
                 type="text"
-                className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white"
+                className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white w-[60%]"
                 placeholder="Enter topic"
                 onChange={(e) => setMqttTopicPub(e.target.value)}
               />
             </div>
             <div className="flex items-center justify-between w-full">
               <label>Message:</label>
-              <input
+              <textarea
+                name="message"
+                minLength={142}
                 value={mqttMessage}
-                type="text"
-                className="px-3 py-2 rounded-sm bg-[#eee] focus:bg-white"
+                className="w-[60%] h-36 px-3 py-2"
                 placeholder="Enter message"
                 onChange={(e) => setMqttMessage(e.target.value)}
               />

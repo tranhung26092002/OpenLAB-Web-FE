@@ -60,7 +60,7 @@ const ProductDescription = ({
         <div className="flex gap-2 items-center ">
           <FaUsers className="mt-[1px]" />
           <span className=" font-semibold text-sm text-end">
-            1236 người sử dụng
+            1236
           </span>
         </div>
       </div>
