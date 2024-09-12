@@ -10,6 +10,8 @@ type MqttConnectProps = {
   setConnectStatus: Dispatch<SetStateAction<boolean>>;
   setLed: Dispatch<SetStateAction<number>>;
   connectStatus: boolean;
+  setMqttClient: Dispatch<SetStateAction<mqtt.MqttClient | null>>; // Thêm prop mới
+  setMqttTopic: Dispatch<SetStateAction<string>>;
 };
 
 const MqttConnect = ({
@@ -20,8 +22,9 @@ const MqttConnect = ({
   setConnectStatus,
   setLed,
   connectStatus,
+  setMqttClient,
+  setMqttTopic,
 }: MqttConnectProps) => {
-
   const [mqttHost, setMqttHost] = useState("openlab.com.vn");
   const [mqttPort, setMqttPort] = useState("8884");
 
@@ -43,49 +46,71 @@ const MqttConnect = ({
       return;
     }
     setErrorMessage("");
-    const id = cryptoRandomString({ length: 10 })
+    const id = cryptoRandomString({ length: 10 });
     const clientId = `mqttjs_${id}`;
     try {
-      const mqttClient = mqtt.connect(
-        `wss://${mqttHost}:${mqttPort}/mqtt`,
-        {
-          clientId,
-          username: mqttUser,
-          password: mqttPassword,
-        }
-
-      );
+      const mqttClient = mqtt.connect(`wss://${mqttHost}:${mqttPort}/mqtt`, {
+        clientId,
+        username: mqttUser,
+        password: mqttPassword,
+      });
 
       if (mqttClient) {
         setClient(mqttClient);
+        setMqttClient(mqttClient); // Truyền client lên cấp cao hơn
 
         mqttClient.on("connect", () => {
           if (mqttClient.connected) {
             setConnectStatus(true);
             console.log("Connected");
-            setMqttTopicSub(`${mqttUser}/`)
-            setMqttTopicPub(`${mqttUser}/`)
+            setMqttTopicSub(`${mqttUser}/`);
+            setMqttTopicPub(`${mqttUser}/`);
+            setMqttTopic(`${mqttUser}`);
           }
         });
 
         mqttClient.on("message", (_topic, message) => {
           try {
             const data = JSON.parse(message.toString());
-            const temperatureValue = (data.temperature ?? "N/A").toFixed(2);
-            const humidityValue = (data.humidity ?? "N/A").toFixed(2);
-            const gasValue = (data.gas ?? "N/A").toFixed(2);
-            const lightValue = (data.light ?? "N/A").toFixed(2);
-            const ledValue = (data.led ?? "N/A");
-            console.log("Received message: ", ledValue);
+            console.log("Received message: ", data);
             setSubscribedData(JSON.stringify(data, null, 2));
+
+            const temperatureValue =
+              typeof data.temperature === "number"
+                ? data.temperature.toFixed(2)
+                : "N/A";
+            const humidityValue =
+              typeof data.humidity === "number"
+                ? data.humidity.toFixed(2)
+                : "N/A";
+            const gasValue =
+              typeof data.gas === "number" ? data.gas.toFixed(2) : "N/A";
+            const lightValue =
+              typeof data.light === "number" ? data.light.toFixed(2) : "N/A";
+            const ledValue = data.led ?? "N/A";
 
             setTemperature(temperatureValue);
             setHumidity(humidityValue);
             setGas(gasValue);
             setLight(lightValue);
-            setLed(ledValue)
-            // const now = new Date().toLocaleTimeString();
-            // setTimestamps((prev) => [...prev, now]);
+            setLed(ledValue);
+
+            // // Kiểm tra dữ liệu trước khi gán giá trị cho các state
+            // if (data.temperature && typeof data.temperature === "number") {
+            //   setTemperature(data.temperature);
+            // }
+            // if (data.humidity && typeof data.humidity === "number") {
+            //   setHumidity(data.humidity);
+            // }
+            // if (data.gas && typeof data.gas === "number") {
+            //   setGas(data.gas);
+            // }
+            // if (data.light && typeof data.light === "number") {
+            //   setLight(data.light);
+            // }
+            // if (data.led && typeof data.led === "number") {
+            //   setLed(data.led);
+            // }
           } catch (error) {
             console.error("Error parsing JSON:", error);
           }
@@ -100,7 +125,6 @@ const MqttConnect = ({
         setErrorMessage("Failed to create MQTT client.");
       }
     } catch (error) {
-
       setErrorMessage(`Connection failed: ${error}`);
       console.log("Error connecting:", error);
     }
@@ -111,6 +135,7 @@ const MqttConnect = ({
       client.end();
       setMqttTopicSub("");
       setMqttTopicPub("");
+      setMqttTopic("");
       console.log("Disconnected");
       setSubscribeStatus("");
       setSubscribedData("");
@@ -148,28 +173,37 @@ const MqttConnect = ({
 
   const handlePublish = () => {
     if (client && connectStatus && mqttTopicPub && mqttMessage) {
-      const message = JSON.stringify({ mqttMessage });
-      client.publish(
-        mqttTopicPub,
-        message,
-        { qos: 0, retain: false },
-        (error) => {
-          if (error) {
-            console.error("Publish error:", error);
-            setPublishStatus("Publish failed");
-          } else {
-            setPublishStatus("Publish successful");
+      try {
+        // Chuyển đổi chuỗi nhập vào từ textarea thành JSON object
+        const parsedMessage = JSON.parse(mqttMessage);
+        const message = JSON.stringify(parsedMessage); // chuyển thành chuỗi JSON hợp lệ
+
+        client.publish(
+          mqttTopicPub,
+          message,
+          { qos: 0, retain: false },
+          (error) => {
+            if (error) {
+              console.error("Publish error:", error);
+              setPublishStatus("Publish failed");
+            } else {
+              setPublishStatus("Publish successful");
+            }
           }
-        }
-      );
+        );
+      } catch (error) {
+        console.error("Invalid JSON:", error);
+        setPublishStatus("Invalid JSON format");
+      }
     }
   };
-
 
   return (
     <div>
       <div className="flex flex-col bg-[#eee] p-16  ">
-        <h2 className="text-center text-4xl font-semibold py-4">MQTT Controls</h2>
+        <h2 className="text-center text-4xl font-semibold py-4">
+          MQTT Controls
+        </h2>
         <div className="flex items-center justify-around  gap-4">
           <div className="flex flex-col px-6 py-4 rounded-md bg-white w-1/3 gap-4">
             <h1 className="text-center font-semibold text-xl">Connect</h1>
@@ -286,7 +320,7 @@ const MqttConnect = ({
             </div>
           </div>
 
-          <div className="bg-blue-100 rounded-md flex items-center flex-col gap-5 px-5 py-4 w-1/3 h-96" >
+          <div className="bg-blue-100 rounded-md flex items-center flex-col gap-5 px-5 py-4 w-1/3 h-96">
             <h1 className="text-center font-semibold text-xl">Publish</h1>
             <div className="flex items-center justify-between w-full">
               <label>Topic:</label>
