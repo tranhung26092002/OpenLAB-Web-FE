@@ -1,6 +1,6 @@
 import Slider from "react-slick";
-import { settings } from "@utils/settingSlider";
-import { dataActivityInsite } from "src/services/data";
+import { settings } from "@/config/settingSlider";
+import { dataActivityInsite } from "@/services/data";
 
 const setting = {
   ...settings,
@@ -28,7 +28,7 @@ const setting = {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots:true
+        dots: true,
       },
     },
   ],
@@ -39,7 +39,7 @@ const SectionActivityInsite = () => {
     <div className="px-24 py-16 flex flex-col lg:px-16 xs:px-10 xs:py-14">
       <div className="text-center flex flex-col">
         <span className="font-semibold  text-3xl xs:text-2xl">
-          Hình ảnh  tại công ty
+          Hình ảnh tại công ty
         </span>
         <span className=" mb-16 sm:mb-10 xs:mb-8">
           Một số hình ảnh thực tế về OpenLab
@@ -48,7 +48,7 @@ const SectionActivityInsite = () => {
       <Slider {...setting}>
         {dataActivityInsite.map((item, index) => {
           return (
-            <div className="my-3" key={index}>
+            <div className="my-3 mx-2" key={index}>
               <div className="bg-white px-4 py-4 xs:mx-2 shadow-lg rounded-md  flex justify-around flex-co items-center w-[95%] ">
                 <img
                   src={item.image}

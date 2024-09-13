@@ -1,5 +1,5 @@
-import BannerPage from "src/components/custom/BannerPage";
-import { dataBlog } from "src/services/data";
+import BannerPage from "@/components/custom/BannerPage";
+import { dataBlog } from "@/services/data";
 import { FaRegUser } from "react-icons/fa";
 import { IoCalendar } from "react-icons/io5";
 

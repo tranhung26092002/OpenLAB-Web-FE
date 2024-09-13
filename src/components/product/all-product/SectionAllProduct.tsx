@@ -1,6 +1,6 @@
-import ProductDescription from "@components/product/ProductDescription";
+import ProductDescription from "@/components/product/ProductDescription";
 
-import { productType } from "@services/data";
+import { productType } from "@/services/data";
 type sectionAllProductProp = {
   title: string;
   data: productType[];
@@ -13,7 +13,11 @@ const SectionAllProduct = ({ title, data }: sectionAllProductProp) => {
       <div className="flex flex-wrap justify-center items-center py-10 px-10 xs:px-0 sm:px-0 sm:py-0 xs:py-0">
         {data.map((item, index) => {
           return (
-            <div data-aos="fade-up" key={index} className="w-[30%] sm:w-[48%] xs:w-[95%] xs:mb-4 mb-6">
+            <div
+              data-aos="fade-up"
+              key={index}
+              className="w-[30%] sm:w-[48%] xs:w-[95%] xs:mb-4 mb-6"
+            >
               <ProductDescription
                 id={index}
                 srcImg={item.image}

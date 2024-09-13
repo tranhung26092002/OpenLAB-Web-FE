@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import { ProgressBar } from "react-loader-spinner";
-import loadingRight from "@assets/image/loading/loading0.png";
-import loadingLeft from "@assets/image/loading/loading.jpg";
+import loadingRight from "@/assets/image/loading/loading0.png";
+import loadingLeft from "@/assets/image/loading/loading.jpg";
 import { BiAnalyse } from "react-icons/bi";
 const FallbackLoading = () => {
   return (

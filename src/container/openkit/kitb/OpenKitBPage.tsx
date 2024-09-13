@@ -1,8 +1,8 @@
-import BannerPage from "@components/custom/BannerPage";
-import MqttConnect from "@components/openkit/kitb/MqttConnect";
-import Dashboard from "@components/openkit/kitb/Dashboard";
+import BannerPage from "@/components/custom/BannerPage";
+import MqttConnect from "@/components/openkit/kitb/MqttConnect";
+import Dashboard from "@/components/openkit/kitb/Dashboard";
 import { useState } from "react";
-import SchemaKitb from "@components/openkit/kitb/schema/SchemaKitb";
+import SchemaKitb from "@/components/openkit/kitb/schema/SchemaKitb";
 const OpenKitBPage = () => {
   const [temperature, setTemperature] = useState(0);
   const [humidity, setHumidity] = useState(0);

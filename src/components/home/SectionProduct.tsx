@@ -1,8 +1,7 @@
-import ProductDescription from "@components/product/ProductDescription";
+import ProductDescription from "@/components/product/ProductDescription";
 import Slider from "react-slick";
-import { settings } from "@utils/settingSlider";
-import { dataProduct } from "@services/data";
-
+import { settings } from "@/config/settingSlider";
+import { dataProduct } from "@/services/data";
 
 const setting = {
   ...settings,
@@ -44,7 +43,10 @@ const setting = {
 
 const SectionProduct = () => {
   return (
-    <div className="body-product py-20 px-28 flex flex-col sm:px-16 xs:px-10 xs:py-14" data-aos="fade-up">
+    <div
+      className="body-product py-16 px-28 flex flex-col sm:px-16 xs:px-10 xs:py-14"
+      data-aos="fade-up"
+    >
       <div className="content-top text-center">
         <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Sản phẩm phổ biến

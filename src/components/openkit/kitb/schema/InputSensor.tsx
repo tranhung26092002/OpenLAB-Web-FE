@@ -1,16 +1,15 @@
-import Buzzer from "@components/devices/Buzzer";
-import Led7 from "@components/devices/Led7";
-import Light from "@components/devices/Light";
-import Relay from "@components/devices/Relay";
-import RGB from "@components/devices/RGB";
-import StepMotor from "@components/devices/StepMotor";
-import SwitchCustom from "@components/devices/SwitchCustom";
+import Buzzer from "@/components/devices/Buzzer";
+import Led7 from "@/components/devices/Led7";
+import Light from "@/components/devices/Light";
+import Relay from "@/components/devices/Relay";
+import RGB from "@/components/devices/RGB";
+import StepMotor from "@/components/devices/StepMotor";
+import SwitchCustom from "@/components/devices/SwitchCustom";
 
 type InputSensorProps = {
   led?: string | number;
 };
 const InputSensor = ({ led }: InputSensorProps) => {
- 
   return (
     <div className="flex flex-col items-center justify-around gap-4 p-4 border-2 border-dashed border-gray-500 rounded h-full ">
       <div className="flex w-full justify-between ">
@@ -38,13 +37,13 @@ const InputSensor = ({ led }: InputSensorProps) => {
             <span className="font-semibold text-xl">Relay</span>
             <Relay />
           </div>
-          <SwitchCustom id={'led'} />
+          <SwitchCustom id={"led"} />
         </div>
         <div className=" flex justify-center items-center h-full">
           <div className="flex  flex-col items-center justify-between h-full">
             <span className="font-semibold text-xl">StepMotor</span>
             <StepMotor />
-            <SwitchCustom id={'StepMotor'} />
+            <SwitchCustom id={"StepMotor"} />
           </div>
         </div>
       </div>

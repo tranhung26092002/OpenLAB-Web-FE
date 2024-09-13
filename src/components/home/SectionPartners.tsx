@@ -1,6 +1,6 @@
 import Slider from "react-slick";
-import { settings } from "@utils/settingSlider";
-import { dataPartners } from "src/services/data";
+import { settings } from "@/config/settingSlider";
+import { dataPartners } from "@/services/data";
 const setting = {
   ...settings,
   dots: false,
@@ -16,7 +16,7 @@ const setting = {
     {
       breakpoint: 1184,
       settings: {
-        slidesToShow:4,
+        slidesToShow: 4,
         slidesToScroll: 1,
         initialSlide: 2,
       },
@@ -42,7 +42,7 @@ const setting = {
 const SectionPartners = () => {
   return (
     <div
-      className="body-section-partners px-44 pb-10 pt-12 xs:px-10 "
+      className="body-section-partners px-44 py-16 xs:px-10 "
       data-aos="fade-up"
     >
       <div className="content-section-partners flex flex-col text-center">
@@ -54,7 +54,7 @@ const SectionPartners = () => {
             {dataPartners.map((item, index) => {
               return (
                 <div className="my-4" key={index}>
-                  <div >
+                  <div>
                     <div className="flex justify-center items-center">
                       <img
                         src={item.image}

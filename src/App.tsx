@@ -4,19 +4,21 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import GoToTopButton from "./components/custom/GoToTopButton";
 import MainLayout from "./MainLayout";
-import FallbackLoading from "@container/FallbackLoading";
-const LazyHomePage = lazy(() => import("@container/HomePage"));
-const LazyAboutPage = lazy(() => import("@container/AboutPage"));
-const LazyContactPage = lazy(() => import("@container/ContactPage"));
-const LazyBlogPage = lazy(() => import("@container/BlogPage"));
-const LazyPricesPage = lazy(() => import("@container/products/PricesPage"));
+import FallbackLoading from "@/container/FallbackLoading";
+const LazyHomePage = lazy(() => import("@/container/HomePage"));
+const LazyAboutPage = lazy(() => import("@/container/AboutPage"));
+const LazyContactPage = lazy(() => import("@/container/ContactPage"));
+const LazyBlogPage = lazy(() => import("@/container/BlogPage"));
+const LazyPricesPage = lazy(() => import("@/container/products/PricesPage"));
 const LazyOpenKitBPage = lazy(
-  () => import("@container/openkit/kitb/OpenKitBPage")
+  () => import("@/container/openkit/kitb/OpenKitBPage")
 );
-const LazyAllProduct = lazy(() => import('@container/products/AllProduct'))
-const LazyLoginPage = lazy(() => import("@container/LoginPage"));
-const LazyDetailProduct = lazy(() => import('@container/products/DetailProduct'))
-// const LazySignUpPage = lazy(() => import('@container/SignUpPage'));
+const LazyAllProduct = lazy(() => import("@/container/products/AllProduct"));
+const LazyLoginPage = lazy(() => import("@/container/LoginPage"));
+const LazyDetailProduct = lazy(
+  () => import("@/container/products/DetailProduct")
+);
+// const LazySignUpPage = lazy(() => import('@/container/SignUpPage'));
 
 const App = () => {
   useEffect(() => {

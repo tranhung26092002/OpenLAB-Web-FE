@@ -1,4 +1,6 @@
-import {dataBenefitProduct} from "@services/data";
+import { Button } from "@/components/ui/button";
+import { dataBenefitProduct } from "@/services/data";
+import { ReloadIcon } from "@radix-ui/react-icons";
 type SectionBenefitProductProps = {
   title?: string;
   description?: string;
@@ -25,6 +27,10 @@ const SectionBenefitProduct = ({
             );
           })}
         </div>
+        <Button className="bg-yellow-600">
+          <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+          Please wait
+        </Button>
       </div>
     </div>
   );

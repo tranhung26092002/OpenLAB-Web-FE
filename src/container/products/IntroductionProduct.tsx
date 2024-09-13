@@ -1,5 +1,5 @@
-import SectionBenefitProduct from "@components/product/detail-product/SectionBenefitProduct";
-import {dataBenefitProducts} from '@services/data'
+import SectionBenefitProduct from "@/components/product/detail-product/SectionBenefitProduct";
+import { dataBenefitProducts } from "@/services/data";
 const IntroductionProduct = () => {
   return (
     <div>

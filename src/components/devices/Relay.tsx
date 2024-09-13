@@ -1,4 +1,4 @@
-import realyImage from "@assets/device-imge/relay.jpg";
+import realyImage from "@/assets/device-imge/relay.jpg";
 const Relay = () => {
   return (
     <div>

@@ -1,4 +1,4 @@
-// import logoHeader from "@assets/logo/logo_header.png";
+
 import { FaAngleDown } from "react-icons/fa6";
 import { Tooltip } from "react-tooltip";
 import "./Header.scss";
@@ -244,19 +244,19 @@ const Header = () => {
                   Công nghệ AI
                 </div>
                 <hr />
-                <Link to={"/product/prices"}>
+                <Link to={"#"}>
                   <div className="courses cursor-pointer px-2  hover:text-[#1464cc] rounded-sm py-0.5">
                     Công nghệ 5G
                   </div>
                 </Link>
                 <hr />
-                <Link to={"/product/prices"}>
+                <Link to={"#"}>
                   <div className="courses cursor-pointer pl-2  hover:text-[#1464cc] rounded-sm py-0.5">
                     Công nghệ Big Data
                   </div>
                 </Link>
                 <hr />
-                <Link to={"/product"}>
+                <Link to={"#"}>
                   <div className="courses cursor-pointer px-2  hover:text-[#1464cc] rounded-sm py-0.5">
                     Công nghệ Blockchain
                   </div>

@@ -6,7 +6,7 @@ import { LuCopyright } from "react-icons/lu";
 import { SiShopee } from "react-icons/si";
 import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
-import logoZalo from "@assets/logo/contact/Icon_of_Zalo.svg";
+import logoZalo from "@/assets/logo/contact/Icon_of_Zalo.svg";
 const SectionFooter = () => {
   return (
     <div className="body-section-footer bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% px-20 py-14 border-t-2 border-[#48d6e9] lg:px-10 xs:px-10">
@@ -22,9 +22,9 @@ const SectionFooter = () => {
                       Công ty cổ phần công nghệ OpenLab
                     </span>
                     <span className="text-sm text-justify">
-                      Đơn vị phát triển những giải pháp toàn diện nhằm
-                      nâng cao chất lượng của công tác thí nghiệm thực hành
-                      trong các trường Đại học
+                      Đơn vị phát triển những giải pháp toàn diện nhằm nâng cao
+                      chất lượng của công tác thí nghiệm thực hành trong các
+                      trường Đại học
                     </span>
                   </p>
                 </div>
@@ -75,7 +75,7 @@ const SectionFooter = () => {
               <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
                 Khám phá
               </span>
-              <div className="xs:flex w-full">
+              <div className="xs:flex-row w-full gap-2 flex flex-col">
                 <div className="flex flex-col xs:w-1/2 gap-2 w-full">
                   <span className="cursor-pointer hover:text-white">
                     Giới thiệu

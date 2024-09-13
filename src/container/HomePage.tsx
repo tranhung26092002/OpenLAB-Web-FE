@@ -1,10 +1,10 @@
-import SectionBanner from "@components/home/SectionBanner";
-import SectionServices from "@components/home/SectionServices";
-import SectionSolution from "@components/home/SectionSolution";
-import SectionProduct from "@components/home/SectionProduct";
-import SectionAbout from "@components/home/SectionAbout";
-import SectionPartners from "@components/home/SectionPartners";
-import SectionContact from "@components/home/SectionContact";
+import SectionBanner from "@/components/home/SectionBanner";
+import SectionServices from "@/components/home/SectionServices";
+import SectionSolution from "@/components/home/SectionSolution";
+import SectionProduct from "@/components/home/SectionProduct";
+import SectionAbout from "@/components/home/SectionAbout";
+import SectionPartners from "@/components/home/SectionPartners";
+import SectionContact from "@/components/home/SectionContact";
 
 const HomePage = () => {
   return (

@@ -1,4 +1,4 @@
-import PIRicon from "@assets/device-imge/PIR.png";
+import PIRicon from "@/assets/device-imge/PIR.png";
 const PIRSensor = () => {
   return (
     <div>

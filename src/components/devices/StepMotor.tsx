@@ -1,6 +1,6 @@
 import { BsFan } from "react-icons/bs";
 import { HiPlusCircle } from "react-icons/hi";
-import stepmotoImage from "@assets/device-imge/step-motor.png";
+import stepmotoImage from "@/assets/device-imge/step-motor.png";
 const StepMotor = () => {
   return (
     <div className=" flex flex-col items-center gap-5">
@@ -26,7 +26,6 @@ const StepMotor = () => {
         src={stepmotoImage}
         className="w-20 h-20 object-contain object-center"
       />
-      
     </div>
   );
 };

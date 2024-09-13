@@ -1,4 +1,4 @@
-import STM32Icon from "@assets/device-imge/stm32.png";
+import STM32Icon from "@/assets/device-imge/stm32.png";
 
 const STM32Sensor = () => {
   return (

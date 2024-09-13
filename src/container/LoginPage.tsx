@@ -1,9 +1,9 @@
-// import { handleLogin } from "@services/data";
+// import { handleLogin } from "@/services/data";
 import { useState } from "react";
-import CloudKey from "@components/custom/CloudKey";
-import aiService from "@assets/image/login/Chatbot_service.png";
-import FormLogin from "@components/custom/form/FormLogin";
-import FormSignUp from "@components/custom/form/FormSignUp";
+import CloudKey from "@/components/custom/CloudKey";
+import aiService from "@/assets/image/login/Chatbot_service.png";
+import FormLogin from "@/components/custom/form/FormLogin";
+import FormSignUp from "@/components/custom/form/FormSignUp";
 
 const LoginPage = () => {
   const [isSignUp, setIsSignUp] = useState(false);

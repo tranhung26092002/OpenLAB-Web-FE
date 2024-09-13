@@ -1,12 +1,12 @@
-import Keybroad from "@components/devices/Keybroad";
-import LCD from "@components/devices/LCD";
-import Button from "@components/devices/Button";
+import Keybroad from "@/components/devices/Keybroad";
+import LCD from "@/components/devices/LCD";
+import Button from "@/components/devices/Button";
 type DisplayLcdProps = {
-  temperature: string | number,
-  light: string | number,
-  gas: string | number,
-  humidity: string | number,
-}
+  temperature: string | number;
+  light: string | number;
+  gas: string | number;
+  humidity: string | number;
+};
 const DisplayLcd = ({ temperature, light, gas, humidity }: DisplayLcdProps) => {
   return (
     <div className=" flex flex-col items-center justify-around gap-2  p-4 border-2 border-dashed border-gray-500 rounded h-full">
@@ -16,7 +16,8 @@ const DisplayLcd = ({ temperature, light, gas, humidity }: DisplayLcdProps) => {
           temperature={temperature}
           humidity={humidity}
           gas={gas}
-          light={light} />
+          light={light}
+        />
       </div>
       <hr />
       <div className="flex flex-col items-center justify-center gap-2 w-full">

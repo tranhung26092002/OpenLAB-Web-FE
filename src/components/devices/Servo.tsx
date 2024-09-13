@@ -1,4 +1,4 @@
-import servoImage from "@assets/device-imge/Servo.jpg";
+import servoImage from "@/assets/device-imge/Servo.jpg";
 
 const Servo = () => {
   return (

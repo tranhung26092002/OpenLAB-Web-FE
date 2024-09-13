@@ -1,4 +1,4 @@
-import arduinoIcon from '@assets/device-imge/Arduino.png'
+import arduinoIcon from '@/assets/device-imge/Arduino.png'
 
 const Arduino = () => {
     return (

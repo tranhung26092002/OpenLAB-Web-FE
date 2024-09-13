@@ -1,9 +1,9 @@
 import Slider from "react-slick";
-import { settings } from "@utils/settingSlider";
-import practiceService from "@assets/image/service-image/Practice_service.png";
-import deviceProviderService from "@assets/image/service-image/mcu.png";
-import courseService from "@assets/image/service-image/1.png";
-import aiService from "@assets/image/service-image/Chatbot_service.png";
+import { settings } from "@/config/settingSlider";
+import practiceService from "@/assets/image/service-image/Practice_service.png";
+import deviceProviderService from "@/assets/image/service-image/mcu.png";
+import courseService from "@/assets/image/service-image/1.png";
+import aiService from "@/assets/image/service-image/Chatbot_service.png";
 import { ReactNode } from "react";
 import { FaCubes } from "react-icons/fa";
 type itemServiceProps = {
@@ -82,7 +82,7 @@ const setting = {
 };
 const SectionServices = () => {
   return (
-    <div className="body-service py-20  px-16 xs:px-10 xs:py-14">
+    <div className="body-service py-16  px-16 xs:px-10 xs:py-14">
       <div className="content-service text-center">
         <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Các dịch vụ chính
@@ -96,8 +96,10 @@ const SectionServices = () => {
             {dataServices.map((item, index) => {
               return (
                 <div className="my-5 mx-2" key={index}>
-                  <div className=" flex flex-col relative justify-start gap-4 sm:w-[84%] w-[92%] items-center rounded-xl px-3
-                  h-[250px] pt-9 shadow-xl cursor-pointer hover:scale-105">
+                  <div
+                    className=" flex flex-col relative justify-start gap-4 sm:w-[84%] w-[92%] items-center rounded-xl px-3
+                  h-[250px] pt-9 shadow-xl cursor-pointer hover:scale-105"
+                  >
                     <div className="w-[55px] h-[55px]">
                       {typeof item.image === "string" ? (
                         <img

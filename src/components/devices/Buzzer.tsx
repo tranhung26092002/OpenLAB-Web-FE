@@ -1,4 +1,4 @@
-import buzzer from "@assets/device-imge/Buzzer.png";
+import buzzer from "@/assets/device-imge/Buzzer.png";
 const Buzzer = () => {
   return (
     <div>

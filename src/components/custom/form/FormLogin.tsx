@@ -3,7 +3,9 @@ import * as Yup from "yup";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
-import InputPassword from "@components/custom/element/InputPassword";
+import InputPassword from "@/components/custom/element/InputPassword";
+import { handleLogin } from "@/services/data";
+import { REGEX } from "@/config/constant";
 const FormLogin = () => {
   const formik = useFormik({
     initialValues: {
@@ -15,12 +17,18 @@ const FormLogin = () => {
         .email("Invalid Email")
         .required("Email không được để trống"),
       password: Yup.string()
-        .min(8, "Your password must be at least 8 character!")
+        .min(2, "Your password must be at least 8 character!")
         .max(29, "Your password must be under 29 character!")
+        // .matches(
+        //   REGEX,
+        //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+        // )
         .required("Mật khẩu không được để trống"),
     }),
     onSubmit: async ({ email, password }) => {
       console.log("Sending to request!", email, password);
+      const res = await handleLogin(email, password);
+      console.log(res);
     },
   });
 

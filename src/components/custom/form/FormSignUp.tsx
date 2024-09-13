@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import InputPassword from "@components/custom/element/InputPassword";
+import InputPassword from "@/components/custom/element/InputPassword";
 const FormSignUp = () => {
   const formik = useFormik({
     initialValues: {

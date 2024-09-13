@@ -1,38 +1,39 @@
-import ArduinoProduct from "@assets/image/product/lt-arduino.jpg";
-import ESP8266Product from "@assets/image/product/lt-esp8266.jpg";
-import STM32Product from "@assets/image/product/lt-stm32.jpg";
-import ESP32CAMProduct from "@assets/image/product/lt-esp32cam.jpg";
-import ChatBotAIProduct from "@assets/image/product/lt-chatbotAi.jpg";
-import ESP32Product from "@assets/image/product/ltiot-esp32.jpg";
-import funixLogo from "@assets/logo/partner/funix.png";
-import itplusLogo from "@assets/logo/partner/ItPlus.png";
-import vmuLogo from "@assets/logo/partner/vmu.png";
-import isvnu from "@assets/logo/partner/is-vnu.png";
-import uottLogo from "@assets/logo/partner/university-of-transport technology.png";
-import imic from "@assets/logo/partner/imic.png";
-import axiosPublic from "@utils/axiosConfig";
-import img1BenefitProduct from "@assets/image/detail-product/Tat_ca_tren_1_diem_cham_fdd50fe132.jpeg";
-import img2BenefitProduct from "@assets/image/detail-product/Toi_uu_quy_trinh_cu_b8392a59ed.jpeg";
-import img3BenefitProduct from "@assets/image/detail-product/online_product_presentation_with_project_team_vector_id1054541696_bec8c46918.jpeg";
-import imgactivity2 from "@assets/image/about/activity_insite/1d4fea17ac2e0b70523f.jpg";
-import imgactivity1 from "@assets/image/about/activity_insite/295e1773544af314aa5b.jpg";
-import imgactivity3 from "@assets/image/about/activity_insite/e79d352f39169e48c707.jpg";
-import imgactivity8 from "@assets/image/about/activity_insite/0fb13a10cb296c773538.jpg";
-import imgactivity4 from "@assets/image/about/activity_insite/8a22d63e960731596816.jpg";
-import imgactivity5 from "@assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
+import ArduinoProduct from "@/assets/image/product/lt-arduino.jpg";
+import ESP8266Product from "@/assets/image/product/lt-esp8266.jpg";
+import STM32Product from "@/assets/image/product/lt-stm32.jpg";
+import ESP32CAMProduct from "@/assets/image/product/lt-esp32cam.jpg";
+import ChatBotAIProduct from "@/assets/image/product/lt-chatbotAi.jpg";
+import ESP32Product from "@/assets/image/product/ltiot-esp32.jpg";
+import funixLogo from "@/assets/logo/partner/funix.png";
+import itplusLogo from "@/assets/logo/partner/ItPlus.png";
+import vmuLogo from "@/assets/logo/partner/vmu.png";
+import isvnu from "@/assets/logo/partner/is-vnu.png";
+import uottLogo from "@/assets/logo/partner/university-of-transport technology.png";
+import imic from "@/assets/logo/partner/imic.png";
 
-import imageSolution1 from "@assets/image/solution/solution1.jpg";
-import imageSolution2 from "@assets/image/solution/solution2.jpg";
-import imageSolution3 from "@assets/image/solution/solution3.jpg";
-import imageSolution4 from "@assets/image/solution/solution4.jpg";
+import img1BenefitProduct from "@/assets/image/detail-product/Tat_ca_tren_1_diem_cham_fdd50fe132.jpeg";
+import img2BenefitProduct from "@/assets/image/detail-product/Toi_uu_quy_trinh_cu_b8392a59ed.jpeg";
+import img3BenefitProduct from "@/assets/image/detail-product/online_product_presentation_with_project_team_vector_id1054541696_bec8c46918.jpeg";
+import imgactivity2 from "@/assets/image/about/activity_insite/1d4fea17ac2e0b70523f.jpg";
+import imgactivity1 from "@/assets/image/about/activity_insite/295e1773544af314aa5b.jpg";
+import imgactivity3 from "@/assets/image/about/activity_insite/e79d352f39169e48c707.jpg";
+import imgactivity8 from "@/assets/image/about/activity_insite/0fb13a10cb296c773538.jpg";
+import imgactivity4 from "@/assets/image/about/activity_insite/8a22d63e960731596816.jpg";
+import imgactivity5 from "@/assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
 
-import imageSolution5 from "@assets/image/solution/solution6.jpg";
+import imageSolution1 from "@/assets/image/solution/solution1.jpg";
+import imageSolution2 from "@/assets/image/solution/solution2.jpg";
+import imageSolution3 from "@/assets/image/solution/solution3.jpg";
+import imageSolution4 from "@/assets/image/solution/solution4.jpg";
 
-import imagekitb from "@assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
-import imagesmart from "@assets/image/kit-device/5881145d3b989cc6c589.jpg";
-import imageC from "@assets/image/kit-device/97203ac8160db153e81c.jpg";
-import smartnetwork from '@assets/image/kit-device/d0d56d0b43cee490bddf.jpg'
-import hubcenter from '@assets/image/kit-device/c67c96025dc7fa99a3d6.jpg'
+import imageSolution5 from "@/assets/image/solution/solution6.jpg";
+
+import imagekitb from "@/assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
+import imagesmart from "@/assets/image/kit-device/5881145d3b989cc6c589.jpg";
+import imageC from "@/assets/image/kit-device/97203ac8160db153e81c.jpg";
+import smartnetwork from '@/assets/image/kit-device/d0d56d0b43cee490bddf.jpg'
+import hubcenter from '@/assets/image/kit-device/c67c96025dc7fa99a3d6.jpg'
+import axiosPublic from "@/config/axiosConfig";
 export type productType = {
   image: string;
   nameProduct: string;
@@ -257,7 +258,7 @@ export const dataKit: productType[] = [
   {
     image: imagekitb,
     nameProduct: "OpenKit-B: Kít thực hành IoT cơ bản",
-    
+
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },

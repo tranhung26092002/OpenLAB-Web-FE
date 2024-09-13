@@ -1,8 +1,8 @@
-import BannerPage from "@components/custom/BannerPage";
-import SectionAllProduct from "@components/product/all-product/SectionAllProduct";
-import { dataProduct } from "@services/data";
-import { dataSolution } from "@services/data";
-import { dataKit } from "@services/data";
+import BannerPage from "@/components/custom/BannerPage";
+import SectionAllProduct from "@/components/product/all-product/SectionAllProduct";
+import { dataProduct } from "@/services/data";
+import { dataSolution } from "@/services/data";
+import { dataKit } from "@/services/data";
 import { IoIosSearch } from "react-icons/io";
 const AllProduct = () => {
   return (
@@ -23,7 +23,7 @@ const AllProduct = () => {
               placeholder="Tìm kiếm sản phẩm"
               className="px-4 py-2 placeholder:text-sm bg-[#eee] rounded xs:w-full"
             />
-            <IoIosSearch className="absolute top-1/2 right-2 translate-y-[-50%] cursor-pointer"/>
+            <IoIosSearch className="absolute top-1/2 right-2 translate-y-[-50%] cursor-pointer" />
           </div>
         </div>
         <SectionAllProduct

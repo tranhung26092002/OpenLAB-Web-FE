@@ -1,4 +1,4 @@
-import fanImage from "@assets/device-imge/fan.jpg";
+import fanImage from "@/assets/device-imge/fan.jpg";
 const Fan = () => {
   return (
     <div>

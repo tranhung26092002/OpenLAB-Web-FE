@@ -1,4 +1,4 @@
-import DHTImage from "@assets/device-imge/DHT11.jpg";
+import DHTImage from "@/assets/device-imge/DHT11.jpg";
 
 const DHT11Sensor = () => {
   return (

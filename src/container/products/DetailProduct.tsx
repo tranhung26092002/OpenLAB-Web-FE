@@ -1,4 +1,4 @@
-import BannerProduct from "@components/product/BannerProduct";
+import BannerProduct from "@/components/product/BannerProduct";
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import IntroductionProduct from "./IntroductionProduct";

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import BannerPage from "src/components/custom/BannerPage";
+import BannerPage from "@/components/custom/BannerPage";
 import { FaArrowRight } from "react-icons/fa6";
 import {
   dataCoursePrices,
   dataDevicesPrices,
   dataSolutionPrices,
-} from "src/services/data";
+} from "@/services/data";
 
 const PricesPage = () => {
   const [isActive, setActive] = useState(true);

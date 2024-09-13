@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import DashboardChart from "./DashboardChart";
 
 import ParameterDashboard from "./ParameterDashboard";
-import DHT11Sensor from "@components/devices/DHT11";
+import DHT11Sensor from "@/components/devices/DHT11";
 import { FaThermometerHalf } from "react-icons/fa";
 import { IoSnowSharp } from "react-icons/io5";
-import MQ02Sensor from "@components/devices/MQ02";
+import MQ02Sensor from "@/components/devices/MQ02";
 import { GiGasPump } from "react-icons/gi";
-import MHSensor from "@components/devices/MH";
+import MHSensor from "@/components/devices/MH";
 import { LuSunMedium } from "react-icons/lu";
 type DashboardProps = {
   temperature: number;
@@ -25,8 +25,6 @@ const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
   const [timestamps, setTimestamps] = useState<string[]>([]);
   useEffect(() => {
     const now = new Date().toLocaleTimeString();
-    console.log("check render");
-    // console.log(temperatureHistory);
 
     setTimestamps((prev) => {
       const newTimestamps = [...prev, now];

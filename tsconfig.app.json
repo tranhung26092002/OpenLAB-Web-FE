@@ -15,12 +15,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@container/*": ["src/container/*"],
-      "@assets/*": ["src/assets/*"],
-      "@utils/*": ["src/utils/*"],
-      "@components/*": ["src/components/*"],
-      "@stores/*": ["src/stores/*"],
-      "@services/*": ["src/services/*"]
+      "@/*": ["./src/*"]
     },
     /* Linting */
     "strict": true,
@@ -28,5 +23,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

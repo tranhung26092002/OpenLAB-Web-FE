@@ -1,4 +1,4 @@
-import MHicon from "@assets/device-imge/MH.png";
+import MHicon from "@/assets/device-imge/MH.png";
 
 const MHSensor = () => {
   return (

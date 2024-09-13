@@ -1,16 +1,16 @@
 import { IoCheckmarkCircle } from "react-icons/io5";
-import imageSolution1 from "@assets/image/solution/solution1.jpg";
-import imageSolution2 from "@assets/image/solution/solution2.jpg";
-import imageSolution3 from "@assets/image/solution/solution3.jpg";
-import imageSolution4 from "@assets/image/solution/solution4.jpg";
-import imageIphone from '@assets/image/solution/iPhone-2.png'
+import imageSolution1 from "@/assets/image/solution/solution1.jpg";
+import imageSolution2 from "@/assets/image/solution/solution2.jpg";
+import imageSolution3 from "@/assets/image/solution/solution3.jpg";
+import imageSolution4 from "@/assets/image/solution/solution4.jpg";
+import imageIphone from "@/assets/image/solution/iPhone-2.png";
 type sectionSolutionProp = {
   isButton?: boolean;
 };
 
 const SectionSolution = ({ isButton }: sectionSolutionProp) => {
   return (
-    <div className="body-section-solution py-16 px-28 bg-[#f4f7fc] sm:px-16 lg:px-20 xs:px-4 xs:py-14" >
+    <div className="body-section-solution py-16 px-28 bg-[#f4f7fc] sm:px-16 lg:px-20 xs:px-4 xs:py-14">
       <div className="content-section-solution  sm:flex-col xs:flex-col text-center flex justify-between gap-4 sm:gap-16 items-center">
         <div
           className="content-left sm:w-full xs:w-full text-start sm:text-center  w-[65%]"

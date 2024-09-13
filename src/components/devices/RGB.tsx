@@ -1,4 +1,4 @@
-import RGBIcon from "@assets/device-imge/RGB.png";
+import RGBIcon from "@/assets/device-imge/RGB.png";
 const RGBdevice = () => {
   return (
     <div>

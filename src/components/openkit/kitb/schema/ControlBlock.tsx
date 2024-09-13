@@ -1,6 +1,6 @@
-import Arduino from "@components/devices/Arduino";
-import Esp from "@components/devices/ESP";
-import STM32 from "@components/devices/STM32";
+import Arduino from "@/components/devices/Arduino";
+import Esp from "@/components/devices/ESP";
+import STM32 from "@/components/devices/STM32";
 
 const ControlBlock = () => {
   return (

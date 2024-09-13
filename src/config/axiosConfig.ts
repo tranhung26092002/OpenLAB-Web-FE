@@ -10,7 +10,7 @@ export const axiosPrivate = axios.create({
 })
 
 axiosPublic.interceptors.response.use(
-    (response) => response.data,
+    (response) => {return response.data},
     (error) => { return Promise.reject(error) }
 )
 

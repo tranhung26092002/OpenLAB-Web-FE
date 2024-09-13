@@ -1,4 +1,4 @@
-import led7 from "@assets/device-imge/LED_7_Thanh.jpg";
+import led7 from "@/assets/device-imge/LED_7_Thanh.jpg";
 const Led7 = () => {
   return (
     <div>

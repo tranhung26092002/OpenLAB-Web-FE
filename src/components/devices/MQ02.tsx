@@ -1,4 +1,4 @@
-import Mq02 from "@assets/device-imge/MQ2.png";
+import Mq02 from "@/assets/device-imge/MQ2.png";
 
 const MQ02Sensor = () => {
   return (

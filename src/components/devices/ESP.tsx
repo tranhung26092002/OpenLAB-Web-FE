@@ -1,4 +1,4 @@
-import espImage from "@assets/device-imge/ESP.jpg";
+import espImage from "@/assets/device-imge/ESP.jpg";
 
 const Esp = () => {
   return (

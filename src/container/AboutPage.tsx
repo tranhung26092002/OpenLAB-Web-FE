@@ -1,12 +1,12 @@
-import SectionActivityInsite from "@components/about/SectionActivityInsite";
-import SectionFeedback from "src/components/about/SectionFeedback";
-import SectionIntrol from "src/components/about/SectionIntrol";
-import SectionStatiscal from "src/components/about/SectionStatiscal";
+import SectionActivityInsite from "@/components/about/SectionActivityInsite";
+import SectionFeedback from "@/components/about/SectionFeedback";
+import SectionIntrol from "@/components/about/SectionIntrol";
+import SectionStatiscal from "@/components/about/SectionStatiscal";
 
-import BannerPage from "src/components/custom/BannerPage";
-import SectionAbout from "src/components/home/SectionAbout";
-import SectionServices from "src/components/home/SectionServices";
-import SectionSolution from "src/components/home/SectionSolution";
+import BannerPage from "@/components/custom/BannerPage";
+import SectionAbout from "@/components/home/SectionAbout";
+import SectionServices from "@/components/home/SectionServices";
+import SectionSolution from "@/components/home/SectionSolution";
 
 const AboutPage = () => {
   return (
