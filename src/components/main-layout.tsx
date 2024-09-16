@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "~/components/header/Header";
+import Footer from "~/components/footer/Footer";
 export default function MainLayout({
   children,
   authPage,
@@ -8,10 +9,10 @@ export default function MainLayout({
   authPage: boolean;
 }>) {
   return (
-    <div >
-      {!authPage && <Header/>}
+    <>
+      {!authPage && <Header />}
       {children}
-      {!authPage && <p>Footer</p>}
-    </div>
+      {!authPage && <Footer />}
+    </>
   );
 }

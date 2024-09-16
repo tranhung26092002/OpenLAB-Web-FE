@@ -10,30 +10,29 @@ const config: Config = {
 	theme: {
 		screens: {
 			xs: {
-				max: "575px",
+			  max: "575px",
 			},
 			sm: {
-				min: "576px",
-				max: "976px",
+			  min: "576px",
+			  max: "776px",
 			},
 			lg: {
-				min: "977px",
-				max: "1276px",
+			  min: "777px",
+			  max: "1247px",
 			},
 			xl: {
-				min: "1278px",
-				max: "1576px",
+			  min: "1248px",
+			  max: "1576px",
 			},
 			"2xl": {
-				min: "1577px",
+			  min: "1577px",
 			},
-		},
+		  },
 		extend: {
 			fontFamily: {
 				sans: ["var(--font-geist-sans)"],
 				mono: ["var(--font-geist-mono)"],
 			},
-
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

@@ -98,7 +98,7 @@ export default function OptionProduct() {
       </div>
       <div className="bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% flex justify-center rounded-md  xs:hidden ">
         <Link
-          href={"/product"}
+          href={"/all-products"}
           className="w-full flex justify-center hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out"
         >
           <div className="courses cursor-pointer  rounded-sm  text-white text-xl ">
@@ -108,7 +108,7 @@ export default function OptionProduct() {
       </div>
 
       <Link
-        href={"/product"}
+        href={"/all-products"}
         className="w-full xs:flex  pl-2 hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out hidden "
       >
         <div className="courses cursor-pointer  rounded-sm font-semibold">
