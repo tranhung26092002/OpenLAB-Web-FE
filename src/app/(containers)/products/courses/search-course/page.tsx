@@ -19,8 +19,8 @@ export default function SearchCourse() {
           name={"Tìm kiếm khóa học"}
         />
         <div className="flex px-16 gap-4 py-10 bg-[#eee]">
-          <div className=" bg-orange-400 w-1/3 flex justify-center gap-5 py-10 rounded-2xl ">
-            <div className=" w-1/2 flex flex-col ">
+          <div className=" bg-orange-400 w-[35%] flex justify-center gap-5 py-10 rounded-2xl ">
+            <div className=" w-[60%] flex flex-col ">
               <label htmlFor="search-course " className="text-white">
                 Nhập thông tin để tìm kiếm khóa học
               </label>
@@ -37,7 +37,7 @@ export default function SearchCourse() {
               </button>
             </div>
           </div>
-          <div className="w-2/3">
+          <div className="w-[65%]">
             <Image
               src={imageSale}
               alt="image-Sale"

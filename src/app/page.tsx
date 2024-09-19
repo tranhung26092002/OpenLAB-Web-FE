@@ -1,36 +1,41 @@
 import MainLayout from "~/components/main-layout";
-import SectionBanner from "~/components/home/SectionBanner";
-import SectionAbout from "~/components/home/SectionAbout";
-import SectionContact from "~/components/home/SectionContact";
-import SectionPartners from "~/components/home/SectionPartners";
-import SectionProduct from "~/components/home/SectionProduct";
-import SectionServices from "~/components/home/SectionServices";
-import SectionSolution from "~/components/home/SectionSolution";
+
+//test
+import {
+  LazySectionAbout,
+  LazySectionSolution,
+  LazySectionProduct,
+  LazySectionPartners,
+  LazySectionContact,
+  LazySectionBanner,LazySectionServices
+} from "~/configs/LazySection";
+//valid
+
 export default function Home() {
   return (
     <div className="w-screen min-h-screen max-w-full ">
       <MainLayout authPage={false}>
         <div className="container-section-banner">
-          <SectionBanner />
+          <LazySectionBanner />
         </div>
 
         <div className="container-section-services">
-          <SectionServices />
+          <LazySectionServices />
         </div>
         <div className="container-section-solution">
-          <SectionSolution isButton={true} />
+          <LazySectionSolution isButton={true} />
         </div>
         <div className="container-section-product">
-          <SectionProduct />
+          <LazySectionProduct />
         </div>
         <div className="container-section-about">
-          <SectionAbout />
+          <LazySectionAbout />
         </div>
         <div className="container-section-partners">
-          <SectionPartners />
+          <LazySectionPartners />
         </div>
         <div className="container-section-contact">
-          <SectionContact />
+          <LazySectionContact />
         </div>
       </MainLayout>
     </div>

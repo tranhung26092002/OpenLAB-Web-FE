@@ -3,11 +3,10 @@ const SectionIntrol = () => {
   return (
     <div
       className="px-28 lg:px-16 py-20 flex gap-16 sm:gap-10 bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100%  
-    sm:flex-col  xs:flex-col xs:px-10 xs:py-14
-    "
+    sm:flex-col  xs:flex-col xs:px-10 xs:py-14"
     >
-      <div className="w-2/3 sm:w-full xs:w-full pl-20 pr-36 text-white lg:px-0 sm:px-0 xs:px-0">
-        <h1 className="text-center text-3xl font-semibold leading-10 xs:text-2xl">
+      <div className="w-2/3 sm:w-full xs:w-full pl-20 pr-36 text-white lg:px-0 sm:px-0 xs:px-0 xl:pr-28">
+        <h1 className="text-center text-3xl font-semibold leading-10 xs:text-2xl xl:text-2xl">
           CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
         </h1>
         <p className="text-justify my-4 indent-8">

@@ -1,8 +1,9 @@
 import buzzer from "~/assets/device-imge/Buzzer.png";
+import Image from 'next/image'
 const Buzzer = () => {
   return (
     <div>
-      <img src={buzzer} className=" h-20 object-contain object-center" />
+      <Image src={buzzer} className=" h-20 object-cover object-center w-20" alt="buzzer" />
     </div>
   );
 };

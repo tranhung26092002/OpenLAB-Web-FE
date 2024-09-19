@@ -63,9 +63,10 @@ const SectionProduct = () => {
               <div className="my-5 mx-1 " key={index}>
                 <ProductDescription
                   srcImg={item.image}
-                  typeApp={"COURSE"}
+                  type={"COURSE"}
                   nameProduct={item.nameProduct}
                   description={item.description}
+                  id={index}
                 />
               </div>
             );

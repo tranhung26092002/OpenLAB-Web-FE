@@ -9,7 +9,7 @@ type SchemaKitbProps = {
   gas: string | number;
   humidity: string | number;
   led?: string | number;
-  onSwitchChange: (id: string, state: boolean) => void; // Thêm prop mới
+  onSwitchChange: (id: string, state: boolean) => void; 
 };
 
 const SchemaKitb = ({ temperature, light, gas, humidity, led, onSwitchChange }: SchemaKitbProps) => {

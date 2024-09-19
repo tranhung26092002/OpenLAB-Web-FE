@@ -1,3 +1,5 @@
+"use client";
+
 import { Dispatch, SetStateAction, useState } from "react";
 import cryptoRandomString from "crypto-random-string";
 import mqtt from "mqtt";

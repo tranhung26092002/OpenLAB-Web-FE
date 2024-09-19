@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import { RegisterBody, RegisterBodyType } from "~/types/auth/AuthType";
+import Link from "next/link";
 import {
   Form,
   FormControl,
@@ -29,15 +30,22 @@ export default function RegisterForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 w-[30%] bg-white h-fit px-5 py-4 rounded-md"
+      >
+        <div className="flex flex-col text-center">
+          <span className=" text-xl font-semibold">Đăng nhập</span>
+          <span className="">Hoàn thiện thông tin để tiếp tục</span>
+        </div>
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>FullName</FormLabel>
+              <FormLabel>Họ và tên</FormLabel>
               <FormControl>
-                <Input placeholder="FullName" {...field} />
+                <Input placeholder="Nhập họ và tên" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -48,9 +56,9 @@ export default function RegisterForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Tên tài khoản</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} />
+                <Input placeholder="Nhập tên tài khoản" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -61,9 +69,9 @@ export default function RegisterForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Mật khẩu</FormLabel>
               <FormControl>
-                <Input placeholder="Password" {...field} />
+                <Input placeholder="Nhập mật khẩu" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -74,15 +82,23 @@ export default function RegisterForm() {
           name="confirmPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Confirm Password</FormLabel>
+              <FormLabel>Nhập lại mật khẩu</FormLabel>
               <FormControl>
-                <Input placeholder="Confirm Password" {...field} />
+                <Input placeholder="Nhập lại mật khẩu" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className="bg-blue-700 w-full">
+          Đăng kí
+        </Button>
+        <div className="text-sm font-medium w-full text-center">
+          <span>Quay lại đăng nhập?</span>
+          <Link href="/login">
+            <span className="font-semibold cursor-pointer">Đăng nhập ngay</span>
+          </Link>
+        </div>
       </form>
     </Form>
   );

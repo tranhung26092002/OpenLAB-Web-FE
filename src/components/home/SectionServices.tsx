@@ -83,7 +83,7 @@ const setting = {
   ],
 };
 const SectionServices = () => {
-  console.log(practiceService);
+  //console.log(practiceService);
 
   return (
     <div className="body-service py-16  px-16 xs:px-10 xs:py-14">

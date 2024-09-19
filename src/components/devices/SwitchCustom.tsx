@@ -1,3 +1,4 @@
+"use client";
 import Switch from "react-switch";
 import { useState } from "react";
 
@@ -19,8 +20,12 @@ const SwitchCustom = ({ id, onSwitchChange }: SwitchCustomProps) => {
       checked={isOn}
       id={id}
       onChange={handleChange}
-      checkedIcon={<p className="text-white pr-1 pt-[2px] text-end font-medium">ON</p>}
-      uncheckedIcon={<p className="text-white pl-1 pt-[2px] text-start font-medium">OFF</p>}
+      checkedIcon={
+        <p className="text-white pr-1 pt-[2px] text-end font-medium">ON</p>
+      }
+      uncheckedIcon={
+        <p className="text-white pl-1 pt-[2px] text-start font-medium">OFF</p>
+      }
       width={70}
     />
   );

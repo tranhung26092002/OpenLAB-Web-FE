@@ -1,6 +1,6 @@
+"use client";
 import { useEffect, useState } from "react";
 import DashboardChart from "./DashboardChart";
-
 import ParameterDashboard from "./ParameterDashboard";
 import DHT11Sensor from "~/components/devices/DHT11";
 import { FaThermometerHalf } from "react-icons/fa";
@@ -25,7 +25,6 @@ const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
   const [timestamps, setTimestamps] = useState<string[]>([]);
   useEffect(() => {
     const now = new Date().toLocaleTimeString();
-
     setTimestamps((prev) => {
       const newTimestamps = [...prev, now];
       return newTimestamps.length >= 10

@@ -91,7 +91,7 @@ export default function LeftContentHeader() {
                 </div>
               </span>
             </TooltipTrigger>
-            <TooltipContent className="px-0 py-0 ">
+            <TooltipContent className="px-0 py-0 bg-white">
               <OptionProduct />
             </TooltipContent>
           </Tooltip>
@@ -112,7 +112,7 @@ export default function LeftContentHeader() {
                 </span>
               </Link>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-white">
               <OptionBlog />
             </TooltipContent>
           </Tooltip>

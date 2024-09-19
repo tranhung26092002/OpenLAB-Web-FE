@@ -1,8 +1,9 @@
 import fanImage from "~/assets/device-imge/fan.jpg";
+import Image from 'next/image'
 const Fan = () => {
   return (
     <div>
-      <img
+      <Image
         src={fanImage}
         alt="fan-Image"
         className="w-44 h-44 object-cover object-center"
