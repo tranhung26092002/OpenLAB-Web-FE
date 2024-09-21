@@ -13,8 +13,11 @@ RUN npm install
 # Sao chép toàn bộ mã nguồn vào container
 COPY . .
 
+# Chạy lệnh build
+RUN npm run build
+
 # Mở cổng 3000 để phục vụ ứng dụng
 EXPOSE 3000
 
 # Khởi động node
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
