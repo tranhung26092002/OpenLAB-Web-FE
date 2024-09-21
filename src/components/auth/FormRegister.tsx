@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import { RegisterBody, RegisterBodyType } from "~/types/auth/AuthType";
-import Link from "next/link";
+
 import {
   Form,
   FormControl,
@@ -32,7 +32,7 @@ export default function RegisterForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 w-[30%] bg-white h-fit px-5 py-4 rounded-md"
+        className="space-y-4  bg-white h-fit px-5 py-4 rounded-md"
       >
         <div className="flex flex-col text-center">
           <span className=" text-xl font-semibold">Đăng nhập</span>
@@ -95,9 +95,7 @@ export default function RegisterForm() {
         </Button>
         <div className="text-sm font-medium w-full text-center">
           <span>Quay lại đăng nhập?</span>
-          <Link href="/login">
-            <span className="font-semibold cursor-pointer">Đăng nhập ngay</span>
-          </Link>
+          <span className="font-semibold ">Đăng nhập ngay</span>
         </div>
       </form>
     </Form>

@@ -2,7 +2,7 @@ import MainLayout from "~/components/main-layout";
 import ContactForm from "~/components/contact/ContactForm";
 export default function ContactPage() {
   return (
-    <MainLayout authPage={false}>
+    <MainLayout>
       <div>
         <div className="mb-24">
           <iframe

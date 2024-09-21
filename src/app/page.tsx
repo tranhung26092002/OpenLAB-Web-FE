@@ -1,6 +1,4 @@
 import MainLayout from "~/components/main-layout";
-
-//test
 import {
   LazySectionAbout,
   LazySectionSolution,
@@ -9,12 +7,12 @@ import {
   LazySectionContact,
   LazySectionBanner,LazySectionServices
 } from "~/configs/LazySection";
-//valid
+
 
 export default function Home() {
   return (
     <div className="w-screen min-h-screen max-w-full ">
-      <MainLayout authPage={false}>
+      <MainLayout >
         <div className="container-section-banner">
           <LazySectionBanner />
         </div>

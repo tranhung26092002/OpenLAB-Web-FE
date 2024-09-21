@@ -10,7 +10,7 @@ import {
 
 const AboutPage = () => {
   return (
-    <MainLayout authPage={false}>
+    <MainLayout >
       <div className="container-about-page">
         <LazyBannerPage
           header={"Giới Thiệu Công Ty"}

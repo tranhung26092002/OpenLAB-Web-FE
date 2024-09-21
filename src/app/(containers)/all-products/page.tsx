@@ -7,7 +7,7 @@ import SectionAllCourse from "~/components/products/all-products/SectionAllCours
 import MainLayout from "~/components/main-layout";
 export default function page() {
   return (
-    <MainLayout authPage={false}>
+    <MainLayout >
       <div>
         <BannerPage
           header={"Tất Cả Sản Phẩm"}

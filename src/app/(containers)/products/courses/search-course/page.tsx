@@ -1,5 +1,5 @@
 import React from "react";
-import imageSale from "~/assets/image/product/sales.jpg";
+import imageSale from "~/assets/image/product/sales.jpeg";
 import {
   courseInforCloud,
   courseInforDataAnalyst,
@@ -11,7 +11,7 @@ import Image from "next/image";
 import MainLayout from "~/components/main-layout";
 export default function SearchCourse() {
   return (
-    <MainLayout authPage={false}>
+    <MainLayout >
       <div>
         <BannerPage
           header={"Tìm kiếm khóa học"}

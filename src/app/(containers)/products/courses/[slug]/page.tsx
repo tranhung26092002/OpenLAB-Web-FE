@@ -31,7 +31,7 @@ const contentNav: unitCourse[] = [
 ];
 export default function CoursePage() {
   return (
-    <MainLayout authPage={false}>
+    <MainLayout >
       <div className=" flex min-h-screen">
         <div className="flex items-center justify-center w-full">
           <LayoutCarousel

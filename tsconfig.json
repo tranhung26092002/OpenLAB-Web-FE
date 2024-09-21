@@ -18,15 +18,16 @@
       }
     ],
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+     
     }
   },
   "include": [
+    "video.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "pages/_document.js"
-, "src/components/products/courses/(private-course)/AccordionExtra"  ],
+    ],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,7 @@
 import { Button } from "~/components/ui/button";
 import { dataBenefitProduct } from "~/services/data";
 import { ReloadIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
 type SectionBenefitProductProps = {
   title?: string;
   description?: string;
@@ -20,7 +21,7 @@ const SectionBenefitProduct = ({
           {data.map((item, index) => {
             return (
               <div className="flex flex-col" key={index}>
-                <img src={item.image} alt="image-benefit-product" />
+                <Image src={item.image} alt="image-benefit-product" />
                 <span>{item.label}</span>
                 <p>{item.detail}</p>
               </div>

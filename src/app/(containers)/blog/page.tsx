@@ -6,7 +6,7 @@ import MainLayout from "~/components/main-layout";
 
 export default function BlogPage() {
   return (
-    <MainLayout authPage={false}>
+    <MainLayout >
       <div className="pb-24">
         <div>
           <BannerPage

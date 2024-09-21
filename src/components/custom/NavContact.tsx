@@ -1,9 +1,14 @@
 import { GrMail } from "react-icons/gr";
-import { Tooltip } from "react-tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "~/components/ui/tooltip";
 import flagVN from "~/assets/icon/vietnam_flags.png";
 import flagEN from "~/assets/icon/united-states_flags.png";
 import { FaCaretDown } from "react-icons/fa";
-import "./NavContact.scss";
+import Image from "next/image";
 const NavContact = () => {
   return (
     <div
@@ -18,40 +23,45 @@ const NavContact = () => {
         </span>
       </div>
       <div className="flex  gap-2 items-center">
-        <div className="flag-container w-[46px] h-[46px] flex gap-2 justify-center items-center">
-          <div>
-            <img
-              alt="VN-Flag"
-              src={flagVN}
-              className="object-cove cursor-pointer"
-              data-tooltip-id="option-language"
-            />
-          </div>
-          <FaCaretDown />
-        </div>
-
-        <Tooltip id="option-language" place="bottom-end" clickable>
-          <div className="container-option flex bg-white">
-            <div className="content-option flex flex-col text-black text-sm">
-              <div className="cursor-pointer flex items-center  px-2 hover:bg-[#d2d3d4] gap-4 hover:text-white rounded-sm">
-                <img
-                  alt="flag-en"
-                  src={flagEN}
-                  className="object-cove cursor-pointer w-[40px] h-[40px]"
-                />
-                <span>English (US)</span>
+        <TooltipProvider delayDuration={100}>
+          <Tooltip>
+            <TooltipTrigger className="xs:w-full sm:w-full">
+              <div className="flag-container w-[46px] h-[46px] flex gap-2 justify-center items-center">
+                <div>
+                  <Image
+                    alt="VN-Flag"
+                    src={flagVN}
+                    className="object-cove cursor-pointer"
+                    data-tooltip-id="option-language"
+                  />
+                </div>
+                <FaCaretDown />
               </div>
-              <div className="cursor-pointer flex items-center px-2 hover:bg-[#d2d3d4] gap-4 hover:text-white rounded-sm ">
-                <img
-                  alt="flag-vn"
-                  src={flagVN}
-                  className="object-cove cursor-pointer w-[40px] h-[40px]"
-                />
-                <span>Tiếng Việt</span>
+            </TooltipTrigger>
+            <TooltipContent className="bg-white">
+              <div className="container-option flex bg-white">
+                <div className="content-option flex flex-col text-black text-sm">
+                  <div className="cursor-pointer flex items-center  px-2 hover:bg-[#d2d3d4] gap-4 hover:text-white rounded-sm">
+                    <Image
+                      alt="flag-en"
+                      src={flagEN}
+                      className="object-cove cursor-pointer w-[40px] h-[40px]"
+                    />
+                    <span>English (US)</span>
+                  </div>
+                  <div className="cursor-pointer flex items-center px-2 hover:bg-[#d2d3d4] gap-4 hover:text-white rounded-sm ">
+                    <Image
+                      alt="flag-vn"
+                      src={flagVN}
+                      className="object-cove cursor-pointer w-[40px] h-[40px]"
+                    />
+                    <span>Tiếng Việt</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </Tooltip>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
     </div>
   );

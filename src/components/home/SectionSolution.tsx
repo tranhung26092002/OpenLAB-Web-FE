@@ -1,8 +1,8 @@
 'use client'
 import { IoCheckmarkCircle } from "react-icons/io5";
-import imageSolution1 from "~/assets/image/solution/solution1.jpg";
-import imageSolution2 from "~/assets/image/solution/solution2.jpg";
-import imageSolution3 from "~/assets/image/solution/solution3.jpg";
+import imageSolution1 from "~/assets/image/solution/solution1.jpeg";
+import imageSolution2 from "~/assets/image/solution/solution2.jpeg";
+import imageSolution3 from "~/assets/image/solution/solution3.jpeg";
 import imageSolution4 from "~/assets/image/solution/solution4.jpg";
 import imageIphone from "~/assets/image/solution/iPhone-2.png";
 import Image from "next/image";

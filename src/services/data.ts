@@ -1,9 +1,9 @@
-import ArduinoProduct from "~/assets/image/product/lt-arduino.jpg";
-import ESP8266Product from "~/assets/image/product/lt-esp8266.jpg";
-import STM32Product from "~/assets/image/product/lt-stm32.jpg";
-import ESP32CAMProduct from "~/assets/image/product/lt-esp32cam.jpg";
-import ChatBotAIProduct from "~/assets/image/product/lt-chatbotAi.jpg";
-import ESP32Product from "~/assets/image/product/ltiot-esp32.jpg";
+import ArduinoProduct from "~/assets/image/product/lt-arduino.jpeg";
+import ESP8266Product from "~/assets/image/product/lt-esp8266.jpeg";
+import STM32Product from "~/assets/image/product/lt-stm32.jpeg";
+import ESP32CAMProduct from "~/assets/image/product/lt-esp32cam.jpeg";
+import ChatBotAIProduct from "~/assets/image/product/lt-chatbotAi.jpeg";
+import ESP32Product from "~/assets/image/product/ltiot-esp32.jpeg";
 import funixLogo from "~/assets/logo/partner/funix.png";
 import itplusLogo from "~/assets/logo/partner/ItPlus.png";
 import vmuLogo from "~/assets/logo/partner/vmu.png";
@@ -21,9 +21,9 @@ import imgactivity8 from "~/assets/image/about/activity_insite/0fb13a10cb296c773
 import imgactivity4 from "~/assets/image/about/activity_insite/8a22d63e960731596816.jpg";
 import imgactivity5 from "~/assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
 
-import imageSolution1 from "~/assets/image/solution/solution1.jpg";
-import imageSolution2 from "~/assets/image/solution/solution2.jpg";
-import imageSolution3 from "~/assets/image/solution/solution3.jpg";
+import imageSolution1 from "~/assets/image/solution/solution1.jpeg";
+import imageSolution2 from "~/assets/image/solution/solution2.jpeg";
+import imageSolution3 from "~/assets/image/solution/solution3.jpeg";
 import imageSolution4 from "~/assets/image/solution/solution4.jpg";
 
 import imageSolution5 from "~/assets/image/solution/solution6.jpg";
@@ -57,7 +57,7 @@ import ESP8266vsDrone from "~/assets/image/product/course/drone-uav/a086cfb87c04
 
 import STM32vsSIM800 from "~/assets/image/product/course/ltiot/0ea2897c41c0e69ebfd1.jpg";
 import EEGvsArduino from "~/assets/image/product/course/ltiot/3e762463eedf498110ce.jpg";
-import ltnIOtvsArduino from "~/assets/image/product/course/ltiot/7bd69332548ef3d0aa9f.jpg";
+//import ltnIOtvsArduino from "~/assets/image/product/course/ltiot/7bd69332548ef3d0aa9f.jpeg";
 import IotvsESP32 from "~/assets/image/product/course/ltiot/025ce29e5122f67caf33.jpg";
 import ESP32CAM from "~/assets/image/product/course/ltiot/27aa03a7cc1b6b45320a.jpg";
 import ltGithub from "~/assets/image/product/course/ltiot/56bf3d82f43e53600a2f.jpg";
@@ -66,8 +66,8 @@ import LTAvsPID from "~/assets/image/product/course/ltiot/667f42c1f67d5123086c.j
 import RFvsESP8266 from "~/assets/image/product/course/ltiot/83323259fae55dbb04f4.jpg";
 import ECGvsArduino from "~/assets/image/product/course/ltiot/b3ae871b4da7eaf9b3b6 (2).jpg";
 import smarthomevsESP32CAM from "~/assets/image/product/course/ltiot/e8f74895872920777938.jpg";
-import MLvsESP32CAM from "~/assets/image/product/course/ltiot/ef4e7b03b1bf16e14fae.jpg";
-import IOTvsSTM32 from "~/assets/image/product/course/ltiot/f17df15135ed92b3cbfc.jpg";
+// import MLvsESP32CAM from "~/assets/image/product/course/ltiot/ef4e7b03b1bf16e14fae.jpeg";
+//import IOTvsSTM32 from "~/assets/image/product/course/ltiot/f17df15135ed92b3cbfc.jpeg";
 import designIotCircuit from "~/assets/image/product/course/ltiot/fb542a76e7ca409419db (1).jpg";
 import { StaticImageData } from "next/image";
 
@@ -159,7 +159,7 @@ export const courseInforDronevsUav: courseInforProps[] = [
 export const courseInforLTN: courseInforProps[] = [
   { image: STM32vsSIM800, nameCourse: "Thực hành lập trình STM32+SIM800", price: "500.000" },
   { image: EEGvsArduino, nameCourse: "Thực hành tín hiệu EEG với Arduino", price: "500.000" },
-  { image: ltnIOtvsArduino, nameCourse: "Thực hành lập trình nhúng Iot với Arduino cơ bản + nâng cao", price: "500.000" },
+//  { image: ltnIOtvsArduino, nameCourse: "Thực hành lập trình nhúng Iot với Arduino cơ bản + nâng cao", price: "500.000" },
   { image: IotvsESP32, nameCourse: "Thực hành lập trình nhúng Iot với ESP32", price: "500.000" },
   { image: ESP32CAM, nameCourse: "Thực hành xe tự hành với ESP 32 CAM", price: "500.000" },
   { image: ltGithub, nameCourse: "Thực hành lập trình với GitHub", price: "500.000" },
@@ -168,10 +168,10 @@ export const courseInforLTN: courseInforProps[] = [
   { image: RFvsESP8266, nameCourse: "Thực hành lập trình remote RF với ESP 8266", price: "500.000" },
   { image: ECGvsArduino, nameCourse: "Phân tích tín hiệu ECG với Arduino", price: "500.000" },
   { image: smarthomevsESP32CAM, nameCourse: "Lập trình smart home với ESP32CAM", price: "500.000" },
-  { image: MLvsESP32CAM, nameCourse: "Object Detection(ML) với ESP32CAM", price: "500.000" },
-  { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
+  // { image: MLvsESP32CAM, nameCourse: "Object Detection(ML) với ESP32CAM", price: "500.000" },
+ // { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
   { image: designIotCircuit, nameCourse: "Thực hành thiết kế mạch IoT", price: "500.000" },
-  { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
+ // { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
   { image: designIotCircuit, nameCourse: "Thực hành thiết kế mạch IoT", price: "500.000" },
 ]
 export type productType = {

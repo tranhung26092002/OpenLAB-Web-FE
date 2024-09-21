@@ -6,7 +6,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { LoginBody, LoginBodyType } from "~/types/auth/AuthType";
-import Link from "next/link";
+
 import {
   Form,
   FormControl,
@@ -33,7 +33,7 @@ export default function LoginForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 w-[30%] bg-white h-fit px-5 py-4 rounded-md"
+        className="space-y-4  bg-white h-fit px-5 py-4 rounded-md"
       >
         <div className="flex flex-col text-center">
           <span className=" text-xl font-semibold">Đăng nhập</span>
@@ -81,9 +81,8 @@ export default function LoginForm() {
         </div>
         <div className="text-sm font-medium w-full text-center">
           <span>Bạn chưa có tài khoản?</span>
-          <Link href="/register">
-            <span className="font-semibold cursor-pointer">Đăng kí ngay</span>
-          </Link>
+
+          <span className="font-semibold ">Đăng kí ngay</span>
         </div>
       </form>
     </Form>

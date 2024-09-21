@@ -1,15 +1,28 @@
 "use client";
 import dynamic from "next/dynamic";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AccordionExtra from "~/components/products/courses/(private-course)/AccordionExtra";
 import TitleLesson from "~/components/products/courses/(private-course)/TitleLesson";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
-
+// import Image from "next/image";
+// import Video from "next-video";
+// import awesomeVideo from "videos/about.mp4";
+// import awesomePoster from "~/assets/image/about/activity_insite/75c7a1fee3c744991dd6.jpg";
 const LazyAccordionExtra = dynamic(
   () => import("~/components/products/courses/(private-course)/AccordionExtra")
 );
 export default function TestPage() {
   const [isContinue, setContinue] = useState(false);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(async (res) => {
+        const data = await res.json();
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log("Error is: ", e);
+      });
+  }, []);
   return (
     <div className="flex flex-col items-center">
       <TitleLesson
@@ -18,7 +31,7 @@ export default function TestPage() {
         percent={"1"}
         author="Matthew Lace"
       />
-      <iframe
+      {/* <iframe
         width="560"
         height="315"
         src="https://www.youtube.com/embed/9QeNLypIiZs?si=PER2fGEqtYYy95kO"
@@ -26,7 +39,15 @@ export default function TestPage() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
-      ></iframe>
+      ></iframe> */}
+      {/* <Video src={awesomeVideo} width={150} height={150}>
+        <Image
+          slot="poster"
+          src={awesomePoster}
+          placeholder="blur"
+          alt="Some peeps doing something awesome"
+        />
+      </Video> */}
       <p>
         In this video, we will cover the evolution of 5G and how this technology
         has developed over the years from 1G to 5G.

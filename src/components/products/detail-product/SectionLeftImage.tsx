@@ -1,4 +1,5 @@
 import { IoMdCheckmark } from "react-icons/io";
+import Image from "next/image";
 type SectionLeftImageProps = {
   image: string;
   data: string[];
@@ -8,7 +9,7 @@ const SectionLeftImage = ({ image, data }: SectionLeftImageProps) => {
   return (
     <div className="flex">
       <div>
-        <img src={image} alt="image-section-left-product" />
+        <Image src={image} alt="image-section-left-product" />
       </div>
       <div>
         <ul>

@@ -72,13 +72,13 @@ const CourseInfor = ({
             Course
           </div>
         ) : (
-          <span className="text-[#081140] text-lg font-semibold ">
+          <span className="text-[#081140] text-sm font-semibold ">
             {price} VND
           </span>
         )}
       </div>
       <div className="text-center  ">
-        <div className=" px-2 py-1 text-black font-semibold text-xl rounded-md ">
+        <div className=" px-2 py-1 text-black font-semibold text-base rounded-md ">
           {nameCourse}
         </div>
       </div>

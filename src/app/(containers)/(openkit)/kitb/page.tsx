@@ -39,7 +39,7 @@ export default function OpenKitBPage() {
     }
   };
   return (
-    <MainLayout authPage={false}>
+    <MainLayout >
       <div>
         <div className="flex justify-center flex-col">
           <LazyBannerPage

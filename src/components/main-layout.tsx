@@ -3,10 +3,10 @@ import Header from "~/components/header/Header";
 import Footer from "~/components/footer/Footer";
 export default function MainLayout({
   children,
-  authPage,
+  authPage = false,
 }: Readonly<{
   children: React.ReactNode;
-  authPage: boolean;
+  authPage?: boolean;
 }>) {
   return (
     <>
