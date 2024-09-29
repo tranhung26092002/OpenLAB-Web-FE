@@ -1,8 +1,7 @@
 "use client";
 import { FaArrowRight } from "react-icons/fa6";
-import imagebg from "~/assets/background/nonbg-01.png"
+import imagebg from "~/assets/background/nonbg-01.png";
 const SectionBanner = () => {
-  
   return (
     <div className="body flex justify-center flex-col items-center w-full bg-gradient-to-r from-[#090979] from-0% via-[#054c5c] via-[41%]  to-[#090979] to-100% ">
       <div
@@ -25,7 +24,7 @@ const SectionBanner = () => {
               data-aos="fade-right"
               className="text-4xl font-semibold text-center text-white mt-2 sm:text-3xl xs:text-2xl  xs:mt-0 xs:px-5"
             >
-              Dịch dụ AI/IoT giá rẻ cho chuyển đổi số giáo dục
+              Dịch vụ AI/IoT giá rẻ cho chuyển đổi số giáo dục
             </span>
           </div>
 
