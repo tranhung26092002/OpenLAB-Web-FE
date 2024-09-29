@@ -6,8 +6,7 @@ import {
   LazySectionPartners,
   LazySectionContact,
   LazySectionBanner,LazySectionServices
-} from "~/configs/LazySection";
-
+} from "~/utils/LazySection";
 
 export default function Home() {
   return (

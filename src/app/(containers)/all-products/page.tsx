@@ -7,17 +7,17 @@ import SectionAllCourse from "~/components/products/all-products/SectionAllCours
 import MainLayout from "~/components/main-layout";
 export default function page() {
   return (
-    <MainLayout >
+    <MainLayout>
       <div>
         <BannerPage
           header={"Tất Cả Sản Phẩm"}
           homepage={"Trang chủ"}
           name={"Sản phẩm"}
         />
-        <div className="px-24 py-16 lg:px-14 sm:px-10 xs:px-10">
-          <div className=" flex justify-between">
+        <div className="px-24 py-16 lg:px-14 sm:px-10 xs:px-5 xs:py-14">
+          <div className=" flex justify-between xs:justify-center ">
             <span className="xs:hidden">Hiển thị 6 sản phẩm</span>
-            <div className=" relative">
+            <div className=" relative xs:w-[80%]">
               <input
                 type="text"
                 name=""

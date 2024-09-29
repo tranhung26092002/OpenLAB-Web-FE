@@ -6,7 +6,8 @@ import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { LoginBody, LoginBodyType } from "~/types/auth/AuthType";
-
+import { handleLogin } from "~/services/auth/authService";
+import { useRouter } from "next/navigation";
 import {
   Form,
   FormControl,
@@ -16,8 +17,13 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-
+import { useSearchParams } from "next/navigation";
+import { decodeUrl } from "~/utils/encryption-url";
+import { useAuthStore, UserProps } from "~/store/auth/AuthStore";
 export default function LoginForm() {
+  const { setUser, setIsAuth } = useAuthStore();
+  const router = useRouter();
+  const query = useSearchParams();
   const form = useForm<LoginBodyType>({
     resolver: zodResolver(LoginBody),
     defaultValues: {
@@ -25,14 +31,40 @@ export default function LoginForm() {
       password: "",
     },
   });
-  function onSubmit(values: LoginBodyType) {
-    console.log(values);
+  async function onSubmit(values: LoginBodyType) {
+    const res = await handleLogin(values.email, values.password);
+    const queryUrl = query?.get("back_to");
+    if (res && res.status === 200 && res.payload) {
+      const payload = res.payload as UserProps;
+      const user: UserProps = {
+        fullname: payload.fullname,
+        address: payload.address,
+        dateOfBirth: payload.dateOfBirth,
+        email: payload.email,
+        role: payload.role,
+        _id: payload._id,
+        access_token: payload.access_token,
+      };
+      setUser(user);
+      setIsAuth(true);
+      if (queryUrl) {
+        const back_to = decodeUrl(queryUrl);
+        router.push(`${back_to}`);
+      } else {
+        router.replace('/')
+      }
+    }
   }
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            form.handleSubmit(onSubmit);
+          }
+        }}
         className="space-y-4  bg-white h-fit px-5 py-4 rounded-md"
       >
         <div className="flex flex-col text-center">
@@ -81,7 +113,6 @@ export default function LoginForm() {
         </div>
         <div className="text-sm font-medium w-full text-center">
           <span>Bạn chưa có tài khoản?</span>
-
           <span className="font-semibold ">Đăng kí ngay</span>
         </div>
       </form>

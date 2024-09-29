@@ -81,7 +81,7 @@ export default function OptionProduct() {
         <hr />
         <Link href={"/product/prices"}>
           <div className="courses cursor-pointer pl-2   rounded-sm py-0.5 gap-4 flex flex-col">
-            <span className="font-semibold">Báo giá</span>
+            <span className="font-semibold hover:text-[#1464cc]">Báo giá</span>
             <div className=" flex flex-col gap-4 xs:hidden">
               <span className="hover:text-[#1464cc]">Giải pháp/Phần mềm</span>
               <span className="hover:text-[#1464cc]">
@@ -99,7 +99,7 @@ export default function OptionProduct() {
       <div className="bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100% flex justify-center rounded-md  xs:hidden ">
         <Link
           href={"/all-products"}
-          className="w-full flex justify-center hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out"
+          className="w-full flex justify-center hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out "
         >
           <div className="courses cursor-pointer  rounded-sm  text-white text-xl ">
             Tất cả sản phẩm
@@ -109,7 +109,7 @@ export default function OptionProduct() {
 
       <Link
         href={"/all-products"}
-        className="w-full xs:flex  pl-2 hover:bg-[#1513be] py-3 rounded-md hover:transition-colors duration-200 ease-out hidden "
+        className="w-full xs:flex pl-2 py-3 rounded-md hover:transition-colors duration-200 ease-out hidden xs:hover:text-[#1464cc]"
       >
         <div className="courses cursor-pointer  rounded-sm font-semibold">
           Tất cả sản phẩm

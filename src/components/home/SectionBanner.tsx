@@ -13,7 +13,7 @@ const SectionBanner = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="flex flex-col xs:px-10 justify-center ">
+        <div className="flex flex-col xs:px-6 justify-center ">
           <div className="flex flex-col gap-3 xs:gap-0 ">
             <span
               data-aos="fade-right"
@@ -23,7 +23,7 @@ const SectionBanner = () => {
             </span>
             <span
               data-aos="fade-right"
-              className="text-4xl font-semibold text-center text-white mt-2 sm:text-3xl xs:text-2xl  xs:mt-0 "
+              className="text-4xl font-semibold text-center text-white mt-2 sm:text-3xl xs:text-2xl  xs:mt-0 xs:px-5"
             >
               Dịch dụ AI/IoT giá rẻ cho chuyển đổi số giáo dục
             </span>

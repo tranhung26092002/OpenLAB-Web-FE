@@ -39,7 +39,6 @@ const readThreeDigits = (number: number, isBigNumber?: boolean) => {
         result += unitTexts[units];
     }
 
-    // console.log({ absNumber, hundreds, remain, tens, units, result });
     return result.trim();
 }
 

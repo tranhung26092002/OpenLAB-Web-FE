@@ -86,7 +86,7 @@ const SectionServices = () => {
   //console.log(practiceService);
 
   return (
-    <div className="body-service py-16  px-16 xs:px-10 xs:py-14">
+    <div className="body-service py-16  px-16 xs:px-5 xs:py-14">
       <div className="content-service text-center">
         <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
           Các dịch vụ chính

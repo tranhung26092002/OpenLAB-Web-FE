@@ -202,12 +202,12 @@ const MqttConnect = ({
 
   return (
     <div>
-      <div className="flex flex-col bg-[#eee] p-16  ">
-        <h2 className="text-center text-4xl font-semibold py-4">
+      <div className="flex flex-col bg-[#eee] p-16  xs:px-4 xs:py-10 ">
+        <h2 className="text-center text-4xl font-semibold py-4 xs:text-2xl">
           MQTT Controls
         </h2>
-        <div className="flex items-center justify-around  gap-4">
-          <div className="flex flex-col px-6 py-4 rounded-md bg-white w-1/3 gap-4">
+        <div className="flex items-center justify-around gap-4 xs:flex-col">
+          <div className="flex flex-col px-6 py-4 rounded-md bg-white w-1/3 gap-4 xs:w-full">
             <h1 className="text-center font-semibold text-xl">Connect</h1>
 
             <div className="flex justify-between items-center">
@@ -278,7 +278,7 @@ const MqttConnect = ({
             )}
           </div>
 
-          <div className="bg-yellow-50 flex rounded-md flex-col gap-4 px-6 py-4 w-1/3 h-96">
+          <div className="bg-yellow-50 flex rounded-md flex-col gap-4 px-6 py-4 w-1/3 h-96 xs:w-full">
             <h1 className="text-center font-semibold text-xl">Subcribe</h1>
             <div className="flex justify-between items-center">
               <label>Topic:</label>
@@ -322,7 +322,7 @@ const MqttConnect = ({
             </div>
           </div>
 
-          <div className="bg-blue-100 rounded-md flex items-center flex-col gap-5 px-5 py-4 w-1/3 h-96">
+          <div className="bg-blue-100 rounded-md flex items-center flex-col gap-5 px-5 py-4 w-1/3 h-96 xs:w-full">
             <h1 className="text-center font-semibold text-xl">Publish</h1>
             <div className="flex items-center justify-between w-full">
               <label>Topic:</label>

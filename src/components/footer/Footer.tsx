@@ -10,7 +10,7 @@ import Image from "next/image";
 import logoZalo from "~/assets/logo/contact/Icon_of_Zalo.svg";
 const SectionFooter = () => {
   return (
-    <div className="body-section-footer bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% px-20 py-14 border-t-2 border-[#48d6e9] lg:px-10 xs:px-10 z-10  ">
+    <div className="body-section-footer bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% px-20 py-14 border-t-2 border-[#48d6e9] lg:px-10 xs:px-4 z-10  ">
       <div className="content-section-footer">
         <div className="flex text-white justify-around px-5 lg:px-0 sm:flex-col sm:gap-8 xs:flex-col xs:gap-6 xs:px-0">
           <div className="flex w-[62%] justify-between lg:w-[56%] sm:w-full xs:w-full xs:flex-col xs:gap-6">

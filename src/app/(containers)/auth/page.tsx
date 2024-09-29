@@ -43,6 +43,7 @@ export default function LoginPage() {
         <div className="w-1/4 flex items-end h-full">
           <Image
             src={Chatbot}
+            priority
             alt="Chatbot-Image"
             className="w-full object-cover object-center h-80"
           />

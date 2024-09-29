@@ -54,10 +54,12 @@ const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
   }, [temperature, light, gas, humidity]);
 
   return (
-    <div className="flex flex-col w-full px-16 items-center py-10 gap-10">
-      <h1 className="text-center font-semibold  text-4xl">Dashboard</h1>
-      <div className="flex items-center justify-between  w-full ">
-        <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
+    <div className="flex flex-col w-full px-16 items-center py-10 gap-10 xs:px-4">
+      <h1 className="text-center font-semibold  text-4xl xs:text-2xl">
+        Dashboard
+      </h1>
+      <div className="flex items-center justify-between w-full xs:flex-col ">
+        <div className="w-[23%] xs:w-full flex items-center justify-center flex-col shadow-xl bg-white px-6 xs:px-2 py-6 rounded">
           <div className="w-full">
             <ParameterDashboard
               device={<DHT11Sensor />}
@@ -75,7 +77,7 @@ const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
             nameChart="Temperature"
           />
         </div>
-        <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
+        <div className="w-[23%] xs:w-full flex items-center justify-center flex-col shadow-xl bg-white px-6 xs:px-2 py-6 rounded">
           <div className="w-full">
             <ParameterDashboard
               device={<DHT11Sensor />}
@@ -93,7 +95,7 @@ const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
             nameChart="Humidy"
           />
         </div>
-        <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
+        <div className="w-[23%] xs:w-full flex items-center justify-center flex-col shadow-xl bg-white px-6 xs:px-2 py-6 rounded">
           <div className="w-full">
             <ParameterDashboard
               device={<MQ02Sensor />}
@@ -111,7 +113,7 @@ const Dashboard = ({ temperature, light, gas, humidity }: DashboardProps) => {
             nameChart="Gas"
           />
         </div>
-        <div className="w-[23%] flex items-center justify-center flex-col shadow-xl bg-white px-6 py-6 rounded">
+        <div className="w-[23%] xs:w-full flex items-center justify-center flex-col shadow-xl bg-white px-6 xs:px-2 py-6 rounded">
           <div className="w-full">
             <ParameterDashboard
               device={<MHSensor />}

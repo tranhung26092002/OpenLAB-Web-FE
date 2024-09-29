@@ -44,7 +44,7 @@ const setting = {
 const SectionPartners = () => {
   return (
     <div
-      className="body-section-partners px-44 py-16 xs:px-10 "
+      className="body-section-partners px-44 py-14 xs:px-5 "
       data-aos="fade-up"
     >
       <div className="content-section-partners flex flex-col text-center">

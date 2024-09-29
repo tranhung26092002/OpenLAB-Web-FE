@@ -1,8 +1,7 @@
 import MainLayout from "~/components/main-layout";
-import React from "react";
-
 import LayoutCarousel from "~/components/custom/embla-carousel/LayoutCarousel";
 import { EmblaOptionsType } from "embla-carousel";
+import PrivateRouter from "~/components/private-route";
 const optionCarousel: EmblaOptionsType = {
   axis: "y",
 };
@@ -27,21 +26,24 @@ const contentNav: unitCourse[] = [
   {
     title: "Khai báo trong Javascript",
   },
-  
 ];
-export default function CoursePage() {
+export default function CoursePage({ params }: { params: { slug: string } }) {
+  console.log("check param: ", params.slug);
+
   return (
-    <MainLayout >
-      <div className=" flex min-h-screen">
-        <div className="flex items-center justify-center w-full">
-          <LayoutCarousel
-            slides={[1, 2, 3, 4, 5]}
-            options={optionCarousel}
-            contentNav={contentNav}
-            //    className=" bg-red-500 "
-          />
+    <PrivateRouter>
+      <MainLayout>
+        <div className=" flex min-h-screen">
+          <div className="flex items-center justify-center w-full">
+            <LayoutCarousel
+              slides={[1, 2, 3, 4, 5]}
+              options={optionCarousel}
+              contentNav={contentNav}
+              //    className=" bg-red-500 "
+            />
+          </div>
         </div>
-      </div>
-    </MainLayout>
+      </MainLayout>
+    </PrivateRouter>
   );
 }

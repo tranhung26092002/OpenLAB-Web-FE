@@ -37,7 +37,7 @@ const dataSectionAbout: dataAbout[] = [
 
 const SectionAbout = () => {
   return (
-    <div className="body-section-about px-16 py-16 bg-[#f4f7fc] sm:px-24 xs:px-10 xs:py-14">
+    <div className="body-section-about px-16 py-16 bg-[#f4f7fc] sm:px-24 xs:px-4 xs:py-14">
       <div className="content-section-about flex justify-between items-center gap-14 sm:flex-col-reverse xs:flex-col-reverse">
         <div
           className=" flex w-[40%] lg:w-[43%] sm:w-full xs:w-full items-center px-10 xs:px-0"

@@ -1,6 +1,19 @@
 import { LuQuote } from "react-icons/lu";
 import { FaStar } from "react-icons/fa";
 import { FaUniversity } from "react-icons/fa";
+import { Cross2Icon } from "@radix-ui/react-icons";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "~/components/ui/alert-dialog";
+
 type BannerProductProps = {
   nameProduct: string;
   description: string;
@@ -37,9 +50,37 @@ const BannerProduct = ({ nameProduct, description }: BannerProductProps) => {
           </div>
         </div>
         <div className="py-6 flex gap-10">
-          <button className="px-5 py-3 text-white bg-red-500 rounded hover:bg-[#120f2d] hover:transition-colors hover:duration-300 hover:ease-in font-semibold">
+          {/* <button className="px-5 py-3 text-white bg-red-500 rounded hover:bg-[#120f2d] hover:transition-colors hover:duration-300 hover:ease-in font-semibold">
             Đăng Kí Ngay
-          </button>
+          </button> */}
+          <AlertDialog>
+            <AlertDialogTrigger className="px-5 py-3 text-white bg-red-500 rounded hover:bg-[#120f2d] hover:transition-colors hover:duration-300 hover:ease-in font-semibold">
+              Đăng Kí Ngay
+            </AlertDialogTrigger>
+            <AlertDialogContent className="bg-white rounded">
+              <AlertDialogHeader>
+                <AlertDialogTitle className="justify-between items-center  flex">
+                  <span>Bạn muốn đăng kí khóa học? </span>
+                  <AlertDialogCancel className="border-none outline-none shadow-none">
+                    <Cross2Icon />
+                  </AlertDialogCancel>
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  <span>Hoàn thành các thông tin để tiếp tục</span>
+                  
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter className="flex-row-reverse justify-between items-center ">
+                <AlertDialogCancel className="w-[40%]">
+                  Cancel
+                </AlertDialogCancel>
+                <AlertDialogAction className="w-[40%]">
+                  Continue
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
           <button className="px-5 py-3  bg-[#fff] rounded hover:bg-[#120f2d] hover:transition-colors hover:duration-300 hover:ease-in font-semibold hover:text-white">
             Nhận Tài Liệu Giới Thiệu
           </button>

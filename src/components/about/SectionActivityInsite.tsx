@@ -37,7 +37,7 @@ const setting = {
 
 const SectionActivityInsite = () => {
   return (
-    <div className="px-24 py-16 flex flex-col lg:px-16 xs:px-10 xs:py-14">
+    <div className="px-24 py-16 flex flex-col lg:px-16 xs:px-5 xs:py-14">
       <div className="text-center flex flex-col">
         <span className="font-semibold  text-3xl xs:text-2xl">
           Hình ảnh tại công ty

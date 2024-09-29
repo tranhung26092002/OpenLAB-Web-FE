@@ -17,7 +17,7 @@ const SectionAllProduct = ({ title, data ,type}: sectionAllProductProp) => {
             <div
               data-aos="fade-up"
               key={index}
-              className="w-[30%] sm:w-[48%] xs:w-[95%] xs:mb-4 mb-6"
+              className="w-[30%] sm:w-[48%] xs:w-[99%] xs:mb-4 mb-6 flex justify-center"
             >
               <ProductDescription
                 id={index}

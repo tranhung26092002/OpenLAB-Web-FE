@@ -6,8 +6,8 @@ import MainLayout from "~/components/main-layout";
 
 export default function BlogPage() {
   return (
-    <MainLayout >
-      <div className="pb-24">
+    <MainLayout>
+      <div className="pb-24 xs:py-0">
         <div>
           <BannerPage
             header={"Blog"}
@@ -15,7 +15,7 @@ export default function BlogPage() {
             name={"Tất cả bài viết"}
           />
         </div>
-        <div className="px-24 pt-24 flex gap-7 xs:px-10 xs:pt-14 xs:flex-col">
+        <div className="px-24 pt-24 flex gap-7 xs:px-5 xs:py-14 xs:flex-col">
           <div className="w-2/3  flex justify-end items-start gap-5 flex-wrap xs:flex-col xs:w-full">
             {dataBlog.map((item, index) => {
               return (

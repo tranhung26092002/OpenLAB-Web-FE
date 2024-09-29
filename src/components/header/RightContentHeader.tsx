@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import { RxAvatar } from "react-icons/rx";
 import { FaAddressCard } from "react-icons/fa";
 import Link from "next/link";
@@ -7,6 +7,8 @@ import { MdLogout } from "react-icons/md";
 import { MdEditCalendar } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { LuBellRing } from "react-icons/lu";
+import { handleLogout } from "~/services/auth/authService";
+import { useAuthStore } from "~/store/auth/AuthStore";
 import {
   Command,
   CommandEmpty,
@@ -24,7 +26,21 @@ import {
   TooltipTrigger,
 } from "~/components/ui/tooltip";
 export default function RightContentHeader() {
-  const isAuth = true;
+  const { isAuth, setIsAuth, setUser } = useAuthStore();
+  const handleLogoutPage = async () => {
+    await handleLogout();
+    const resetUser = {
+      _id: "",
+      fullname: "",
+      role: "",
+      email: "",
+      address: "",
+      dateOfBirth: "",
+      access_token: "",
+    };
+    setIsAuth(false);
+    setUser(resetUser);
+  };
   return (
     <div className="content-right w-[25%] flex items-center text-lg font-medium pl-5 justify-center gap-6 sm:hidden xs:hidden">
       {isAuth === true ? (
@@ -75,7 +91,8 @@ export default function RightContentHeader() {
                           Thông tin Thiết bị/Kit
                         </CommandItem>
                       </Link>
-                      <Link href="/login">
+
+                      <Link onClick={handleLogoutPage} href={"/auth"}>
                         <CommandItem className="flex items-center gap-2">
                           <MdLogout />
                           Đăng xuất
@@ -89,8 +106,8 @@ export default function RightContentHeader() {
           </TooltipProvider>
         </>
       ) : (
-        <div className=" flex items-center justify-start gap-6  ">
-          <Link href={"/login"}>
+        <div className="flex items-center justify-start gap-6  ">
+          <Link href={"/auth"}>
             <button className="px-5 py-2 rounded text-white bg-[#D32F2F] hover:transition-colors hover:duration-200 hover:ease-out hover:bg-[#1513be] shadow-2xl shadow-[#7A9598]">
               Đăng ký khoá học
             </button>

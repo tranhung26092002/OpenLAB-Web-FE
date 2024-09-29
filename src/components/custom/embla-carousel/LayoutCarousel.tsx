@@ -27,34 +27,32 @@ export default function LayoutCarousel({
   options,
   contentNav,
 }: PropType) {
+
+  
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
-  const [isOpenNaviCourse, setOpenNaviCourse] = useState(true);
+  const [isOpenNaviCourse, setOpenNaviCourse] = useState(false);
   const {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
-  console.log("check state", isOpenNaviCourse);
 
   return (
     <div className="embla w-screen h-screen  flex relative gap-3">
       <div
-        className={`embla__dots flex flex-col  justify-start bg-[#eee] w-[25%] transition-all shrink duration-200 ease-in items-start ${
-          isOpenNaviCourse === true
-            ? " translate-x-0 "
-            : "absolute z-10 h-screen translate-x-[-86%] "
+        className={`embla__dots flex flex-col z-10  justify-start bg-[#eee] w-[30%] transition-all shrink duration-200 ease-in items-start h-screen xs:w-[80%] ${
+          isOpenNaviCourse === true ? "xs:absolute translate-x-0 " : "absolute translate-x-[-86%] "
         }`}
       >
-        <div className="px-1 flex justify-end w-full">
+        <div className="px-2 flex justify-end w-full">
           <MdMenuOpen
             className="text-3xl cursor-pointer"
             onClick={() => setOpenNaviCourse(!isOpenNaviCourse)}
           />
         </div>
-
         {contentNav.map((_, index) => (
           <DotButton
             key={index}

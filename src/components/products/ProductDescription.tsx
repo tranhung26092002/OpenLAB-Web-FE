@@ -12,6 +12,7 @@ type ProductDescriptionProps = {
   description: string;
   id?: string | number;
 };
+
 const ProductDescription = ({
   srcImg,
   type,
@@ -32,6 +33,8 @@ const ProductDescription = ({
             href={
               type === "APP"
                 ? `/products/solutions/introduction/${id}`
+                : type === "COURSE"
+                ? `products/courses/introduction/${id}`
                 : `products/device-kits/introduction/${id}`
             }
             className="flex justify-center items-center w-full h-full  "

@@ -45,7 +45,7 @@ const setting = {
 const SectionProduct = () => {
   return (
     <div
-      className="body-product py-16 px-28 flex flex-col sm:px-16 xs:px-10 xs:py-14"
+      className="body-product py-16 px-28 flex flex-col sm:px-16 xs:px-5 xs:py-10"
       data-aos="fade-up"
     >
       <div className="content-top text-center">

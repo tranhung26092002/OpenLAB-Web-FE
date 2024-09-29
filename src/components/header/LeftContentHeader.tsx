@@ -4,6 +4,22 @@ import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 import { HiXMark } from "react-icons/hi2";
 import Link from "next/link";
+import { MdLogout } from "react-icons/md";
+import { MdEditCalendar } from "react-icons/md";
+import { FiShoppingCart } from "react-icons/fi";
+import { IoCalculatorOutline } from "react-icons/io5";
+import { FaAddressCard } from "react-icons/fa";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from "~/components/ui/command";
+import { RxAvatar } from "react-icons/rx";
+import { LuBellRing } from "react-icons/lu";
 import {
   Tooltip,
   TooltipContent,
@@ -21,7 +37,7 @@ export default function LeftContentHeader() {
     >
       <div
         className="logo flex flex-col justify-center items-center w-4/12 h-[75px]
-          sm:w-[35%] sm:items-start xs:w-2/3 xs:items-start"
+          sm:w-[35%] sm:items-start xs:w-[61%] xs:items-start"
       >
         <Link href={"/"} className="cursor-pointer flex flex-col">
           <span
@@ -38,12 +54,70 @@ export default function LeftContentHeader() {
           </span>
         </Link>
       </div>
+      <div className=" gap-4 items-center hidden xs:flex">
+        <div className="relative cursor-pointer">
+          <FiShoppingCart className="text-2xl" />
+          <span className="absolute text-white text-xs font-medium block bottom-[-4px] right-[-5px] bg-red-500 z-10 w-[16px] rounded-full text-center">
+            2
+          </span>
+        </div>
+        <div className="relative cursor-pointer">
+          <LuBellRing className="text-2xl" />
+          <span className="absolute text-white text-xs font-medium block bottom-[-4px] right-[-5px] bg-red-500 z-10 w-[16px] rounded-full text-center">
+            3
+          </span>
+        </div>
+        <TooltipProvider delayDuration={100}>
+          <Tooltip>
+            <TooltipTrigger className="xs:w-full sm:w-full">
+              <div className="flex justify-center items-center gap-2 cursor-pointer ">
+                <RxAvatar className="cursor-pointer text-2xl" />
+              </div>
+            </TooltipTrigger>
+            <TooltipContent className="px-0 py-0 bg-white ">
+              <Command>
+                <CommandInput placeholder="Type a command or search..." />
+                <CommandList>
+                  <CommandEmpty>No results found.</CommandEmpty>
+                  <CommandSeparator />
+                  <CommandGroup heading="Settings">
+                    <CommandItem className="flex items-center gap-2">
+                      <FaAddressCard className="cursor-pointer " />
+                      Thông tin cá nhân
+                    </CommandItem>
+
+                    <Link href="/products/courses/search-course">
+                      <CommandItem className="flex items-center gap-2">
+                        <MdEditCalendar />
+                        Thông tin khóa học
+                      </CommandItem>
+                    </Link>
+                    <Link href="/products/devices-kits/search-kit">
+                      <CommandItem className="flex items-center gap-2">
+                        <IoCalculatorOutline />
+                        Thông tin Thiết bị/Kit
+                      </CommandItem>
+                    </Link>
+                    <Link href="/login">
+                      <CommandItem className="flex items-center gap-2">
+                        <MdLogout />
+                        Đăng xuất
+                      </CommandItem>
+                    </Link>
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
       <div
-        className="bg-[#080544] px-3 py-3 rounded hidden sm:block xs:block cursor-pointer z-10"
+        className="hidden sm:block xs:block cursor-pointer z-10 ml-1"
         onClick={() => setIsOpenMenu(!isOpenMenu)}
       >
-        <FiMenu className="text-3xl text-[#1464cc]" />
+        <FiMenu className="text-2xl" />
       </div>
+
       <div
         className={`w-8/12 sm:flex-col xs:flex-col  xs:inline-flex flex text-lg font-medium justify-around items-center sm:justify-start sm:items-start xs:justify-start xs:items-start
               sm:bg-[#080544] xs:bg-[#080544] sm:text-[#1464cc] xs:text-[#1464cc]  sm:absolute xs:absolute sm:duration-200 xs:duration-200 sm:h-screen 

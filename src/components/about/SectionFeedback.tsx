@@ -38,7 +38,7 @@ const setting = {
 
 const SectionFeedback = () => {
   return (
-    <div className="px-20 bg-white py-16 sm:px-10 lg:px-10 xs:px-10 xs:py-14">
+    <div className="px-20 bg-white py-16 sm:px-10 lg:px-10 xs:px-5 xs:py-14">
       <div className="flex flex-col text-center">
         <span className="text-3xl font-semibold sm:text-2xl">
           Thông tin phản ánh
@@ -51,7 +51,7 @@ const SectionFeedback = () => {
             {dataFeedback.map((item, index) => {
               return (
                 <div className="my-3 " key={index}>
-                  <div className="bg-[#eee] px-7 py-10 sm:py-4 xs:py-4 xs:px-3 w-[95%] mx-1 shadow-lg rounded-md h-72 xs:h-64 sm:px-4 flex justify-around flex-col">
+                  <div className="bg-[#eee] px-7 py-10 sm:py-4 xs:py-4 xs:px-3 w-[95%] mx-1 shadow-lg rounded-md h-72 xs:h-52 sm:px-4 flex justify-around flex-col xs:justify-start ">
                     <LuQuote className="text-3xl text-red-300 mb-5 sm:text-x xs:text-xl lg:text-2xl" />
                     <p className="text-start pr-3 xs:pr-0 mb-2 xs:text-sm xs:text-justify">
                       {item.feedback}
