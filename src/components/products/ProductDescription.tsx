@@ -26,7 +26,7 @@ const ProductDescription = ({
         <Image
           src={srcImg}
           alt="image-product-section"
-          className="w-full h-48 object-center object-fill border-[#8AD9E4] border-2 rounded "
+          className="w-full h-56 object-center object-fill border-[#8AD9E4] border-2 rounded "
         />
         <div className="flex justify-end items-center  absolute w-full h-full  top-0 left-0 opacity-0 hover:opacity-100 ">
           <Link
@@ -59,7 +59,7 @@ const ProductDescription = ({
         </div>
       </div>
       <div className="flex justify-between py-2 ">
-        <div className="bg-[#081140] px-2 py-1 text-white rounded-md ">
+        <div className="bg-[#081140] px-2 py-1 text-white rounded-md uppercase">
           {type}
         </div>
 
@@ -69,7 +69,7 @@ const ProductDescription = ({
         </div>
       </div>
       <div className="text-center  ">
-        <span className="text-[#081140] text-lg font-semibold ">
+        <span className="text-[#081140] text-base font-semibold ">
           {nameProduct}
         </span>
         <p className="text-base  gap-[2px] text-justify  block  ">

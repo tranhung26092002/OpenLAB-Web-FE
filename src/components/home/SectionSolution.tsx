@@ -59,7 +59,7 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
               </li>
             </ul>
             <Image
-              className="object-cover hover:scale-105 cursor-pointer w-[210px] h-[310px] hidden sm:flex   object-center px-3 py-3 "
+              className="object-cover hover:scale-105 cursor-pointer w-[230px] h-[310px] hidden sm:flex   object-center px-3 py-3 "
               src={imageIphone}
               alt={""}
             />
@@ -82,36 +82,36 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
         >
           <div className="cover-image-left flex flex-col gap-7 mt-14 sm:mt-0">
             <Image
-              className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[210px] h-[210px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
+              className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[230px] h-[230px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
               src={imageSolution1}
               alt={""}
             />
             <Image
-              className="object-contain shadow-2xl w-[210px] h-[210px] hover:scale-105 cursor-pointer border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
+              className="object-contain shadow-2xl w-[230px] h-[230px] hover:scale-105 cursor-pointer border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
               src={imageSolution2}
               alt={""}
             />
           </div>
           <div className="cover-image-left flex-col gap-7 mt-14 sm:mt-0 hidden sm:flex">
             <Image
-              className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[210px] h-[210px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white"
+              className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[230px] h-[230px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white"
               src={imageSolution1}
               alt={""}
             />
             <Image
-              className="object-contain shadow-2xl w-[210px] h-[210px] hover:scale-105 cursor-pointer border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white"
+              className="object-contain shadow-2xl w-[230px] h-[230px] hover:scale-105 cursor-pointer border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white"
               src={imageSolution2}
               alt={""}
             />
           </div>
           <div className="cover-image-right  flex flex-col gap-7">
             <Image
-              className="object-contain w-[210px] shadow-2xl hover:scale-105 cursor-pointer h-[210px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
+              className="object-contain w-[230px] shadow-2xl hover:scale-105 cursor-pointer h-[230px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
               src={imageSolution3}
               alt={""}
             />
             <Image
-              className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[210px] h-[210px] border-[#8AD9E4] border-2 rounded object-center  bg-white xs:h-40"
+              className="object-contatin hover:scale-105 cursor-pointer shadow-2xl w-[230px] h-[230px] border-[#8AD9E4] border-2 rounded object-center  bg-white xs:h-40"
               src={imageSolution4}
               alt={""}
             />

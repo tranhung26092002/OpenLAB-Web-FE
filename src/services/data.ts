@@ -1,9 +1,9 @@
 import ArduinoProduct from "~/assets/image/product/lt-arduino.jpeg";
 import ESP8266Product from "~/assets/image/product/lt-esp8266.jpeg";
-import STM32Product from "~/assets/image/product/lt-stm32.jpeg";
+// import STM32Product from "~/assets/image/product/lt-stm32.jpeg";
 import ESP32CAMProduct from "~/assets/image/product/lt-esp32cam.jpeg";
 import ChatBotAIProduct from "~/assets/image/product/lt-chatbotAi.jpeg";
-import ESP32Product from "~/assets/image/product/ltiot-esp32.jpeg";
+// import ESP32Product from "~/assets/image/product/ltiot-esp32.jpeg";
 import funixLogo from "~/assets/logo/partner/funix.png";
 import itplusLogo from "~/assets/logo/partner/ItPlus.png";
 import vmuLogo from "~/assets/logo/partner/vmu.png";
@@ -25,9 +25,8 @@ import imageSolution1 from "~/assets/image/solution/solution1.jpeg";
 import imageSolution2 from "~/assets/image/solution/solution2.jpeg";
 import imageSolution3 from "~/assets/image/solution/solution3.jpeg";
 import imageSolution4 from "~/assets/image/solution/solution4.jpg";
-
-import imageSolution5 from "~/assets/image/solution/solution6.jpg";
-
+import imageSolution5 from "~/assets/image/solution/solution5.jpg";
+import imageSolution6 from "~/assets/image/solution/solution6.jpg";
 import imagekitb from "~/assets/image/about/activity_insite/a2061c9029a98ef7d7b8.jpg";
 import imagesmart from "~/assets/image/kit-device/5881145d3b989cc6c589.jpg";
 import imageC from "~/assets/image/kit-device/97203ac8160db153e81c.jpg";
@@ -137,88 +136,200 @@ export const courseInforAI: courseInforProps[] = [
 ];
 
 export const courseInforCloud: courseInforProps[] = [
-  { image: cloud, nameCourse: "Thực hành thiết kế AWS Iot server", price: "500.000" },
-  { image: cloud, nameCourse: "Thực hành thiết kế AWS Iot server", price: "500.000" },
-  { image: cloud, nameCourse: "Thực hành thiết kế AWS Iot server", price: "500.000" },
-  { image: cloud, nameCourse: "Thực hành thiết kế AWS Iot server", price: "500.000" },
+  {
+    image: cloud,
+    nameCourse: "Thực hành thiết kế AWS Iot server",
+    price: "500.000",
+  },
+  {
+    image: cloud,
+    nameCourse: "Thực hành thiết kế AWS Iot server",
+    price: "500.000",
+  },
+  {
+    image: cloud,
+    nameCourse: "Thực hành thiết kế AWS Iot server",
+    price: "500.000",
+  },
+  {
+    image: cloud,
+    nameCourse: "Thực hành thiết kế AWS Iot server",
+    price: "500.000",
+  },
 ];
 
 export const courseInforDataAnalyst: courseInforProps[] = [
-  { image: OOPArduino, nameCourse: "Thực hành mạng OOP với Arduino", price: "500.000" },
-  { image: IoTPython, nameCourse: "Thực hành trực quan hóa dữ liệu IoT với Python", price: "500.000" },
-  { image: IOTPowerBI, nameCourse: "Lập trình phân tích dữ liệu IoT với Power BI", price: "500.000" },
-  { image: PythonVsRaspherryPi, nameCourse: "Thực hành lập trình Python với Raspherry", price: "500.000" },
-]
+  {
+    image: OOPArduino,
+    nameCourse: "Thực hành mạng OOP với Arduino",
+    price: "500.000",
+  },
+  {
+    image: IoTPython,
+    nameCourse: "Thực hành trực quan hóa dữ liệu IoT với Python",
+    price: "500.000",
+  },
+  {
+    image: IOTPowerBI,
+    nameCourse: "Lập trình phân tích dữ liệu IoT với Power BI",
+    price: "500.000",
+  },
+  {
+    image: PythonVsRaspherryPi,
+    nameCourse: "Thực hành lập trình Python với Raspherry",
+    price: "500.000",
+  },
+];
 export const courseInforDronevsUav: courseInforProps[] = [
-  { image: ESP8266vsDrone, nameCourse: "Thực hành lập trình drone với ESP 8266", price: "500.000" },
-  { image: ESP8266vsDrone, nameCourse: "Thực hành lập trình drone với ESP 8266", price: "500.000" },
-  { image: ESP8266vsDrone, nameCourse: "Thực hành lập trình drone với ESP 8266", price: "500.000" },
-  { image: ESP8266vsDrone, nameCourse: "Thực hành lập trình drone với ESP 8266", price: "500.000" },
-]
+  {
+    image: ESP8266vsDrone,
+    nameCourse: "Thực hành lập trình drone với ESP 8266",
+    price: "500.000",
+  },
+  {
+    image: ESP8266vsDrone,
+    nameCourse: "Thực hành lập trình drone với ESP 8266",
+    price: "500.000",
+  },
+  {
+    image: ESP8266vsDrone,
+    nameCourse: "Thực hành lập trình drone với ESP 8266",
+    price: "500.000",
+  },
+  {
+    image: ESP8266vsDrone,
+    nameCourse: "Thực hành lập trình drone với ESP 8266",
+    price: "500.000",
+  },
+];
 
 export const courseInforLTN: courseInforProps[] = [
-  { image: STM32vsSIM800, nameCourse: "Thực hành lập trình STM32+SIM800", price: "500.000" },
-  { image: EEGvsArduino, nameCourse: "Thực hành tín hiệu EEG với Arduino", price: "500.000" },
-//  { image: ltnIOtvsArduino, nameCourse: "Thực hành lập trình nhúng Iot với Arduino cơ bản + nâng cao", price: "500.000" },
-  { image: IotvsESP32, nameCourse: "Thực hành lập trình nhúng Iot với ESP32", price: "500.000" },
-  { image: ESP32CAM, nameCourse: "Thực hành xe tự hành với ESP 32 CAM", price: "500.000" },
-  { image: ltGithub, nameCourse: "Thực hành lập trình với GitHub", price: "500.000" },
-  { image: STM32vsRTOS, nameCourse: "Thực hành lập trình STM 32 với RTOS", price: "500.000" },
-  { image: LTAvsPID, nameCourse: "Thực hành lập trình ứng dụng với PID", price: "500.000" },
-  { image: RFvsESP8266, nameCourse: "Thực hành lập trình remote RF với ESP 8266", price: "500.000" },
-  { image: ECGvsArduino, nameCourse: "Phân tích tín hiệu ECG với Arduino", price: "500.000" },
-  { image: smarthomevsESP32CAM, nameCourse: "Lập trình smart home với ESP32CAM", price: "500.000" },
+  {
+    image: STM32vsSIM800,
+    nameCourse: "Thực hành lập trình STM32+SIM800",
+    price: "500.000",
+  },
+  {
+    image: EEGvsArduino,
+    nameCourse: "Thực hành tín hiệu EEG với Arduino",
+    price: "500.000",
+  },
+  //  { image: ltnIOtvsArduino, nameCourse: "Thực hành lập trình nhúng Iot với Arduino cơ bản + nâng cao", price: "500.000" },
+  {
+    image: IotvsESP32,
+    nameCourse: "Thực hành lập trình nhúng Iot với ESP32",
+    price: "500.000",
+  },
+  {
+    image: ESP32CAM,
+    nameCourse: "Thực hành xe tự hành với ESP 32 CAM",
+    price: "500.000",
+  },
+  {
+    image: ltGithub,
+    nameCourse: "Thực hành lập trình với GitHub",
+    price: "500.000",
+  },
+  {
+    image: STM32vsRTOS,
+    nameCourse: "Thực hành lập trình STM 32 với RTOS",
+    price: "500.000",
+  },
+  {
+    image: LTAvsPID,
+    nameCourse: "Thực hành lập trình ứng dụng với PID",
+    price: "500.000",
+  },
+  {
+    image: RFvsESP8266,
+    nameCourse: "Thực hành lập trình remote RF với ESP 8266",
+    price: "500.000",
+  },
+  {
+    image: ECGvsArduino,
+    nameCourse: "Phân tích tín hiệu ECG với Arduino",
+    price: "500.000",
+  },
+  {
+    image: smarthomevsESP32CAM,
+    nameCourse: "Lập trình smart home với ESP32CAM",
+    price: "500.000",
+  },
   // { image: MLvsESP32CAM, nameCourse: "Object Detection(ML) với ESP32CAM", price: "500.000" },
- // { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
-  { image: designIotCircuit, nameCourse: "Thực hành thiết kế mạch IoT", price: "500.000" },
- // { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
-  { image: designIotCircuit, nameCourse: "Thực hành thiết kế mạch IoT", price: "500.000" },
-]
+  // { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
+  {
+    image: designIotCircuit,
+    nameCourse: "Thực hành thiết kế mạch IoT",
+    price: "500.000",
+  },
+  // { image: IOTvsSTM32, nameCourse: "Thực hành lập trình nhúng IoT với STM32", price: "500.000" },
+  {
+    image: designIotCircuit,
+    nameCourse: "Thực hành thiết kế mạch IoT",
+    price: "500.000",
+  },
+];
 export type productType = {
-  image: string |StaticImageData;
+  image: string | StaticImageData;
   nameProduct: string;
   description: string;
+  type?: string;
 };
 export const dataProduct: productType[] = [
   {
     image: ArduinoProduct,
-    nameProduct: "THỰC HÀNH HỆ THỐNG IoT",
+    nameProduct: "KHOÁ HỌC THỰC HÀNH HỆ THỐNG IoT",
     description:
-      "OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino, OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino",
+      "OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino",
   },
   {
     image: ESP8266Product,
-    nameProduct: "THỰC HÀNH MẠNG DI ĐỘNG 5G",
+    nameProduct: "KHOÁ HỌC THỰC HÀNH MẠNG DI ĐỘNG 5G",
     description: "OpenLAB cung cấp khóa học cơ bản về IoT với ESP8266",
   },
   {
     image: ChatBotAIProduct,
-    nameProduct: "THỰC HÀNH CHATBOT AI",
+    nameProduct: "KHOÁ HỌC THỰC HÀNH CHATBOT AI",
     description: " OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI",
   },
   {
-    image: STM32Product,
-    nameProduct: "THỰC HÀNH PHÂN TÍCH DỮ LIỆU",
-    description:
-      "OpenLAB cung cấp khóa học cơ bản lập trình nhúng IoT với STM32",
-  },
-  {
     image: ESP32CAMProduct,
-    nameProduct: "THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY",
+    nameProduct: "KHOÁ HỌC THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY",
     description:
       "OpenLAB cung cấp khóa học lập trình xe hơi tự hành với ESP32-CAM",
   },
-
   {
-    image: ESP32Product,
-    nameProduct: "THỰC HÀNH ROBOTICS",
+    image: imagekitb,
+    nameProduct: "KÍT THỰC HÀNH IoT CƠ BẢN",
     description:
-      "OpenLAB cung cấp khóa học thực hành lâp trình nhúng IoT với ESP32",
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
+    type: "KIT",
+  },
+  {
+    image: imagesmart,
+    nameProduct: "KÍT THỰC HÀNH THÔNG MINH",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
+    type: "KIT",
+  },
+  {
+    image: imageSolution5,
+    nameProduct: "PHẦN MỀM QUẢN LÝ THIẾT BỊ THÔNG MINH",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
+    type: "APP",
+  },
+  {
+    image: imageSolution6,
+    nameProduct: "PHẦN MỀM THI ONLINE",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
+    type: "APP",
   },
 ];
 
 type dataPartner = {
-  image: string |StaticImageData;
+  image: string | StaticImageData;
 };
 export const dataPartners: dataPartner[] = [
   {
@@ -351,10 +462,8 @@ export const dataCoursePrices: pricesProps[] = [
   { solution: "Khoá học thực hành Robotic", price: "2.800.000" },
 ];
 
-
-
 export type dataBenefitProduct = {
-  image: string |StaticImageData;
+  image: string | StaticImageData;
   label: string;
   detail: string;
 };
@@ -381,7 +490,7 @@ export const dataBenefitProducts: dataBenefitProduct[] = [
 ];
 
 type activityInsiteImage = {
-  image: string|StaticImageData;
+  image: string | StaticImageData;
 };
 
 export const dataActivityInsite: activityInsiteImage[] = [
@@ -396,7 +505,6 @@ export const dataKit: productType[] = [
   {
     image: imagekitb,
     nameProduct: "OpenKit-B: Kít thực hành IoT cơ bản",
-
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
@@ -464,7 +572,7 @@ export const dataSolution: productType[] = [
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
   },
   {
-    image: imageSolution4,
+    image: imageSolution6,
     nameProduct: "Giải pháp thi online: E-Exam",
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",

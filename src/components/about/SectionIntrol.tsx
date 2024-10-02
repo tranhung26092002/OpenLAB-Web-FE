@@ -2,7 +2,7 @@
 const SectionIntrol = () => {
   return (
     <div
-      className="px-28 lg:px-16 py-20 flex gap-10 sm:gap-10 bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100%  
+      className="px-28 lg:px-16 py-20 flex gap-10 sm:gap-10 bg-gradient-to-r from-[#090979] from-0% via-[#054c5c] via-[50%]  to-[#090979] to-100%   
     sm:flex-col  xs:flex-col xs:px-5 xs:py-14"
     >
       <div className="w-[58%] sm:w-full xs:w-full pr-20 text-white lg:px-0 sm:px-0 xs:px-0 xl:pr-28">

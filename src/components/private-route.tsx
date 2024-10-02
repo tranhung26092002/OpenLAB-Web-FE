@@ -9,11 +9,8 @@ export default function PrivateRouter({
   children: React.ReactNode;
 }>) {
   const {isAuth} = useAuthStore();
-  
-
   const router = useRouter();
   const pathname = usePathname();
-  console.log("check params:", encodeUrl(pathname));
   useEffect(() => {
     if (!isAuth) {
       router.replace(`/auth?back_to=${encodeUrl(pathname)}`);

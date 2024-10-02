@@ -4,6 +4,7 @@ import CloudImage from "~/assets/image/login/0a76d34eeb704c2e1561.png";
 import Chatbot from "~/assets/image/login/Chatbot_service.png";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { Suspense } from "react";
 import RegisterForm from "~/components/auth/FormRegister";
 export default function LoginPage() {
   return (
@@ -33,10 +34,14 @@ export default function LoginPage() {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="login" className=" w-full">
-            <LoginForm />
+            <Suspense>
+              <LoginForm />
+            </Suspense>
           </TabsContent>
           <TabsContent value="register" className=" w-full">
-            <RegisterForm />
+            <Suspense>
+              <RegisterForm />
+            </Suspense>
           </TabsContent>
         </Tabs>
 

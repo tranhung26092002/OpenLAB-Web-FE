@@ -3,7 +3,7 @@ import ProductDescription from "~/components/products/ProductDescription";
 import Slider from "react-slick";
 import { settings } from "~/configs/settingSlider";
 import { dataProduct } from "~/services/data";
-
+import slug from "slug";
 const setting = {
   ...settings,
 
@@ -63,10 +63,10 @@ const SectionProduct = () => {
               <div className="my-5 mx-1 " key={index}>
                 <ProductDescription
                   srcImg={item.image}
-                  type={"COURSE"}
+                  type={item.type ? item.type : "COURSE"}
                   nameProduct={item.nameProduct}
                   description={item.description}
-                  id={index}
+                  id={slug(item.nameProduct)}
                 />
               </div>
             );

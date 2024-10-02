@@ -18,26 +18,29 @@ const SectionFooter = () => {
               <div>
                 <Logo color="white" />
                 <div className="flex flex-col gap-8">
-                  <p className=" mt-3 lg:text-sm text-base font-normal text-white flex flex-col">
-                    <span className="uppercase font-semibold xs:text-sm xs:mb-3">
-                      Công ty cổ phần công nghệ OpenLab
-                    </span>
-                    <span className="text-sm text-justify xl:pr-8 xl:mt-1">
-                      Đơn vị phát triển những giải pháp toàn diện nhằm nâng cao
-                      chất lượng của công tác thí nghiệm thực hành trong các
-                      trường Đại học
+                  <p className=" mt-3 lg:text-sm text-base font-normal text-white flex flex-col  xl:w-[82%] xs:w-[89%]">
+                    <span className="text-sm text-justify  xl:mt-1 flex flex-col">
+                      <span className="uppercase text-base font-semibold xs:text-sm xs:mb-3 xl:mb-8">
+                        Công ty cổ phần công nghệ OpenLab
+                      </span>
+                      
+                      <span>
+                        Đơn vị phát triển những giải pháp toàn diện nhằm nâng
+                        cao chất lượng của công tác thí nghiệm thực hành trong
+                        các trường Đại học
+                      </span>
                     </span>
                   </p>
                 </div>
               </div>
 
-              <span className="flex items-center gap-1 text-center text-sm font-normal text-white sm:hidden xs:hidden">
+              <span className="flex items-center text-center text-sm font-normal text-white sm:hidden xs:hidden">
                 <LuCopyright />
-                <span className="text-sm font-normal text-white">
+                <span className="text-sm font-normal text-white mr-1">
                   2024 Bản quyền thuộc về
                 </span>
                 <span className=" text-base font-semibold text-white">
-                  Open LAB
+                  OpenLAB
                 </span>
               </span>
             </div>
@@ -45,16 +48,16 @@ const SectionFooter = () => {
               <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
                 ĐỊA CHỈ
               </span>
-              <span className="flex gap-1 cursor-pointer hover:text-white items-center lg:text-sm">
+              <span className="flex cursor-pointer hover:text-white items-center lg:text-sm">
                 <MdPhone className="text-lg lg:text-sm" />
                 (+84) 86 574 6698
               </span>
 
-              <span className="flex gap-1 cursor-pointer hover:text-white items-center lg:text-sm">
+              <span className="flex cursor-pointer hover:text-white items-center lg:text-sm">
                 <GrMail className="text-lg lg:text-sm" />
                 openlab.user@gmail.com
               </span>
-              <span className="flex gap-1 cursor-pointer hover:text-white items-center lg:text-sm">
+              <span className="flex cursor-pointer hover:text-white items-center lg:text-sm">
                 <IoLocation className="text-lg lg:text-sm" />
                 68B-6 Ao Sen, Hà Đông, HN
               </span>
@@ -76,7 +79,7 @@ const SectionFooter = () => {
               <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
                 Khám phá
               </span>
-              <div className="xs:flex-row w-full gap-2 flex flex-col">
+              <div className="xs:flex-row w-full gap-2 flex flex-col justify-center">
                 <div className="flex flex-col xs:w-1/2 gap-2 w-full">
                   <span className="cursor-pointer hover:text-white">
                     Giới thiệu
@@ -93,30 +96,28 @@ const SectionFooter = () => {
                   <span className="cursor-pointer hover:text-white">
                     Báo giá
                   </span>
-                  <span className="cursor-pointer hover:text-white">
-                    Khóa học
-                  </span>
+                
                 </div>
               </div>
             </div>
             <div className="w-[73%] flex flex-col justify-between lg:text-sm text-base font-medium text-white xs:w-full xs:gap-6 xl:w-[56%]">
-              <div className="gap-3 flex flex-col">
+              <div className="gap-2 flex flex-col item">
                 <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
                   Dịch vụ
                 </span>
-                <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+                <span className="cursor-pointer hover:text-white font-normal flex">
                   Nền tảng thực hành số
                 </span>
-                <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+                <span className="cursor-pointer hover:text-white font-normal flex">
                   Phần mềm CĐS Giáo dục
                 </span>
-                <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+                <span className="cursor-pointer hover:text-white font-normal flex">
                   Trợ giảng số AI
                 </span>
-                <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+                <span className="cursor-pointer hover:text-white font-normal flex">
                   Thiết bị thực hành thông minh
                 </span>
-                <span className="cursor-pointer hover:text-white font-normal flex gap-1">
+                <span className="cursor-pointer hover:text-white font-normal flex">
                   Khóa học thực hành trực tuyến
                 </span>
               </div>
@@ -142,13 +143,13 @@ const SectionFooter = () => {
           </div>
 
           <div className=" flex justify-between lg:hidden xl:hidden 2xl:hidden xs:justify-center">
-            <span className="flex items-center gap-1 text-center text-sm font-normal text-white ">
+            <span className="flex items-center text-center text-sm font-normal text-white ">
               <LuCopyright />
-              <span className="text-sm font-normal text-white">
+              <span className="text-sm font-normal text-white mr-1">
                 2024 Bản quyền thuộc về
               </span>
               <span className=" text-base font-semibold text-white">
-                Open LAB
+                OpenLAB
               </span>
             </span>
             <div className="flex justify-end items-center text-4xl rounded  gap-7 lg:pr-8 xs:hidden ">

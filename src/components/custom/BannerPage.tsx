@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import imageBg from "~/assets/background/Remove-bg.png";
 type contentBannerProps = {
   header: string;
   homepage: string;
@@ -13,8 +14,16 @@ const BannerPage = ({
   connectStatus,
 }: contentBannerProps) => {
   return (
-    <div className="w-full text-white flex justify-center items-center bg-gradient-to-r from-[#090979] from-0% via-[#090979] via-[41%]  to-[#090979] to-100%">
-      <div className="flex justify-center items-center flex-col  h-80 w-[80%] xs:h-64  bg-section_page bg-contain  bg-no-repeat bg-center  ">
+    <div className="w-full text-white flex justify-center items-center bg-gradient-to-r from-[#090979] from-0% via-[#054c5c] via-[50%]  to-[#090979] to-100% ">
+      <div
+        className="flex justify-center items-center flex-col  h-80 w-[80%] xs:h-64 "
+        style={{
+          backgroundImage: `url(${imageBg.src})`,
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat:'no-repeat'
+        }}
+      >
         <h1 className="text-5xl font-semibold mb-4 xs:text-2xl xs:mb-0">
           {header}
         </h1>
