@@ -1,7 +1,7 @@
 "use client";
 // import dynamic from "next/dynamic";
-import AccordionExtra from "~/components/products/courses/(private-course)/section/AccordionExtra";
-import TitleLesson from "~/components/products/courses/(private-course)/section/TitleLesson";
+import AccordionExtra from "~/components/products/courses/private-course/section/AccordionExtra";
+import TitleLesson from "~/components/products/courses/private-course/section/TitleLesson";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 // import Image from "next/image";
 // import Video from "next-video";
@@ -11,7 +11,7 @@ import TitleLesson from "~/components/products/courses/(private-course)/section/
 // const LazyAccordionExtra = dynamic(
 //   () => import("~/components/products/courses/(private-course)/AccordionExtra")
 // );
-import CourseOne from "~/components/products/courses/(private-course)/content/5g/CourseOne";
+import CourseOne from "~/components/products/courses/private-course/content/5g/CourseOne";
 export default function TestPage() {
   return (
     <div className="flex flex-col items-center w-screen max-w-full min-h-screen">
