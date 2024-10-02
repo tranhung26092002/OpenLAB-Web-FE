@@ -54,7 +54,7 @@ const SectionActivityInsite = () => {
                 <Image
                   src={item.image}
                   alt="image-activity-insite"
-                  className="object-fill object-center w-full h-80 rounded lg:h-72 sm:h-64 xs:h-56"
+                  className="object-fill object-center w-full h-72 rounded sm:h-64 xs:h-56"
                 />
               </div>
             </div>

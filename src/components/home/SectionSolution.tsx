@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import imageSolution1 from "~/assets/image/solution/solution1.jpeg";
 import imageSolution2 from "~/assets/image/solution/solution2.jpeg";
@@ -13,7 +13,7 @@ type sectionSolutionProp = {
 const SectionSolution = ({ isButton }: sectionSolutionProp) => {
   return (
     <div className="body-section-solution py-16 px-28 bg-[#f4f7fc] sm:px-16 lg:px-20 xs:px-4 xs:py-14">
-      <div className="content-section-solution  sm:flex-col xs:flex-col text-center flex justify-between gap-4 sm:gap-16 items-center">
+      <div className="content-section-solution  sm:flex-col xs:flex-col text-center flex justify-between gap-8 sm:gap-16 items-center">
         <div
           className="content-left sm:w-full xs:w-full text-start sm:text-center  w-[65%]"
           data-aos="fade-right"
@@ -60,7 +60,8 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
             </ul>
             <Image
               className="object-cover hover:scale-105 cursor-pointer w-[210px] h-[310px] hidden sm:flex   object-center px-3 py-3 "
-              src={imageIphone} alt={""} 
+              src={imageIphone}
+              alt={""}
             />
           </div>
           <div className=" flex sm:justify-center">
@@ -82,30 +83,37 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
           <div className="cover-image-left flex flex-col gap-7 mt-14 sm:mt-0">
             <Image
               className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[210px] h-[210px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
-              src={imageSolution1} alt={""}            />
+              src={imageSolution1}
+              alt={""}
+            />
             <Image
               className="object-contain shadow-2xl w-[210px] h-[210px] hover:scale-105 cursor-pointer border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
-              src={imageSolution2} alt={""} 
+              src={imageSolution2}
+              alt={""}
             />
           </div>
           <div className="cover-image-left flex-col gap-7 mt-14 sm:mt-0 hidden sm:flex">
             <Image
               className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[210px] h-[210px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white"
-              src={imageSolution1} alt={""} 
+              src={imageSolution1}
+              alt={""}
             />
             <Image
               className="object-contain shadow-2xl w-[210px] h-[210px] hover:scale-105 cursor-pointer border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white"
-              src={imageSolution2} alt={""} 
+              src={imageSolution2}
+              alt={""}
             />
           </div>
           <div className="cover-image-right  flex flex-col gap-7">
             <Image
               className="object-contain w-[210px] shadow-2xl hover:scale-105 cursor-pointer h-[210px] border-[#8AD9E4] border-2 rounded object-center px-3 py-3 bg-white xs:h-40"
-              src={imageSolution3} alt={""} 
+              src={imageSolution3}
+              alt={""}
             />
             <Image
               className="object-cover hover:scale-105 cursor-pointer shadow-2xl w-[210px] h-[210px] border-[#8AD9E4] border-2 rounded object-center  bg-white xs:h-40"
-              src={imageSolution4} alt={""} 
+              src={imageSolution4}
+              alt={""}
             />
           </div>
         </div>

@@ -9,7 +9,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  overflow-x: hidden;
+  overflow-x  : hidden;
 }
 
 .btn-container {
@@ -75,17 +75,23 @@
 }
 
 body {
-  color         : var(--foreground);
-  background    : var(--background);
-  font-family   : Arial, Helvetica, sans-serif;
+  color      : var(--foreground);
+  background : var(--background);
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x : hidden;
+  .control-panel {
+    display: none !important;
+  }
+}
+
+.control-panel {
+  display: none !important;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-
 }
 
 @layer components {
@@ -93,7 +99,7 @@ body {
     margin         : auto;
     --slide-height : 19rem;
     --slide-spacing: 0.9rem;
-    overflow: hidden;
+    overflow       : hidden;
     --slide-size   : 100%;
   }
 

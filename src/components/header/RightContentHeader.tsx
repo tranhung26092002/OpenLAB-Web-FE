@@ -25,6 +25,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "~/components/ui/tooltip";
+
 export default function RightContentHeader() {
   const { isAuth, setIsAuth, setUser } = useAuthStore();
   const handleLogoutPage = async () => {
@@ -109,7 +110,7 @@ export default function RightContentHeader() {
         <div className="flex items-center justify-start gap-6  ">
           <Link href={"/auth"}>
             <button className="px-5 py-2 rounded text-white bg-[#D32F2F] hover:transition-colors hover:duration-200 hover:ease-out hover:bg-[#1513be] shadow-2xl shadow-[#7A9598]">
-              Đăng ký khoá học
+              Đăng nhập ngay
             </button>
           </Link>
         </div>

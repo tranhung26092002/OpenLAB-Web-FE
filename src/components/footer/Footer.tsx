@@ -12,7 +12,7 @@ const SectionFooter = () => {
   return (
     <div className="body-section-footer bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% px-20 py-14 border-t-2 border-[#48d6e9] lg:px-10 xs:px-4 z-10  ">
       <div className="content-section-footer">
-        <div className="flex text-white justify-around px-5 lg:px-0 sm:flex-col sm:gap-8 xs:flex-col xs:gap-6 xs:px-0">
+        <div className="flex text-white justify-around  lg:px-0 sm:flex-col sm:gap-8 xs:flex-col xs:gap-6 xs:px-0">
           <div className="flex w-[62%] justify-between lg:w-[56%] sm:w-full xs:w-full xs:flex-col xs:gap-6">
             <div className="w-[49%] flex flex-col justify-between lg:w-[56%] lg:pr-2 xs:w-full">
               <div>
@@ -22,7 +22,7 @@ const SectionFooter = () => {
                     <span className="uppercase font-semibold xs:text-sm xs:mb-3">
                       Công ty cổ phần công nghệ OpenLab
                     </span>
-                    <span className="text-sm text-justify">
+                    <span className="text-sm text-justify xl:pr-8 xl:mt-1">
                       Đơn vị phát triển những giải pháp toàn diện nhằm nâng cao
                       chất lượng của công tác thí nghiệm thực hành trong các
                       trường Đại học
@@ -72,7 +72,7 @@ const SectionFooter = () => {
             </div>
           </div>
           <div className="flex w-[38%] justify-between lg:w-[42%] sm:w-full xs:w-full  xs:flex-col xs:justify-between xs:gap-6">
-            <div className="w-[24%]  flex flex-col text-base font-normal text-white gap-3 lg:text-sm xs:w-full xs:flex-col xl:w-[40%]">
+            <div className="w-[24%] flex flex-col text-base font-normal text-white gap-3 lg:text-sm xs:w-full xs:flex-col xl:w-[40%]">
               <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
                 Khám phá
               </span>

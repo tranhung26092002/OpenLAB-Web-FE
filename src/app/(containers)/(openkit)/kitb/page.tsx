@@ -1,12 +1,11 @@
 "use client";
 import MainLayout from "~/components/main-layout";
-
 import {
   LazySchemaKitb,
   LazyMqttConnect,
   LazyDashboard,
   LazyBannerPage,
-} from "~/configs/LazySection";
+} from "~/utils/LazySection";
 import { useState } from "react";
 import mqtt from "mqtt";
 
@@ -39,7 +38,7 @@ export default function OpenKitBPage() {
     }
   };
   return (
-    <MainLayout >
+    <MainLayout>
       <div>
         <div className="flex justify-center flex-col">
           <LazyBannerPage

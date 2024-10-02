@@ -32,7 +32,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
 
   return (
     <PrivateRouter>
-      <MainLayout>
+      <MainLayout coursePage={true}>
         <div className=" flex min-h-screen">
           <div className="flex items-center justify-center w-full">
             <LayoutCarousel

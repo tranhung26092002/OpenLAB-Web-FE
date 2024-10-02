@@ -1,9 +1,7 @@
 "use client";
-
 // import dynamic from "next/dynamic";
-import AccordionExtra from "~/components/products/courses/(private-course)/AccordionExtra";
-import TitleLesson from "~/components/products/courses/(private-course)/TitleLesson";
-import { useFetchApi } from "~/hooks/useFetchApi";
+import AccordionExtra from "~/components/products/courses/(private-course)/section/AccordionExtra";
+import TitleLesson from "~/components/products/courses/(private-course)/section/TitleLesson";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 // import Image from "next/image";
 // import Video from "next-video";
@@ -13,16 +11,10 @@ import { useFetchApi } from "~/hooks/useFetchApi";
 // const LazyAccordionExtra = dynamic(
 //   () => import("~/components/products/courses/(private-course)/AccordionExtra")
 // );
-
+import CourseOne from "~/components/products/courses/(private-course)/content/5g/CourseOne";
 export default function TestPage() {
-  const dataFetchApi = useFetchApi("users", {
-    method: "GET",
-  });
-  const handleCheck = async () => {
-    (await dataFetchApi)();
-  };
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-screen max-w-full min-h-screen">
       <TitleLesson
         title={"This is 5G"}
         complete={"9"}
@@ -55,14 +47,8 @@ export default function TestPage() {
             "Advanced Mobile Phone System (AMPS) was an analog mobile phone system standard originally developed by Bell Labs and later modified in a cooperative effort between Bell Labs and Motorola."
           }
         />
-
         <audio src="/audio/Test 01.mp3" controls></audio>
-        <button
-          className={`px-3 py-2 bg-blue-500 rounded-sm text-white `}
-          onClick={handleCheck}
-        >
-          Continue
-        </button>
+
         {/* {isContinue && (
           <>
             <LazyAccordionExtra
@@ -86,6 +72,7 @@ export default function TestPage() {
           </>
         )} */}
       </div>
+      <CourseOne />
     </div>
   );
 }

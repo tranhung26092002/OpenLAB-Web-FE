@@ -1,5 +1,5 @@
 import React from "react";
-import TitleLesson from "~/components/products/courses/(private-course)/TitleLesson";
+import TitleLesson from "~/components/products/courses/(private-course)/section/TitleLesson";
 type SlideViewProps = {
   emblaRef: React.LegacyRef<HTMLDivElement> | undefined;
   slides: number[];

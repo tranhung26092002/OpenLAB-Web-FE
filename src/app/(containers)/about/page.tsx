@@ -5,7 +5,7 @@ import {
   LazySectionAbout,
   LazySectionSolution,
   LazySectionServices, LazySectionFeedback,LazySectionIntrol,LazySectionActivityInsite,LazyBannerPage
-} from "~/configs/LazySection";
+} from "~/utils/LazySection";
 
 
 const AboutPage = () => {
