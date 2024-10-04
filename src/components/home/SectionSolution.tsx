@@ -6,11 +6,8 @@ import imageSolution3 from "~/assets/image/solution/solution3.jpeg";
 import imageSolution4 from "~/assets/image/solution/solution4.jpg";
 import imageIphone from "~/assets/image/solution/iPhone-2.png";
 import Image from "next/image";
-type sectionSolutionProp = {
-  isButton?: boolean;
-};
-
-const SectionSolution = ({ isButton }: sectionSolutionProp) => {
+import Link from "next/link";
+const SectionSolution = () => {
   return (
     <div className="body-section-solution py-16 px-28 bg-[#f4f7fc] sm:px-16 lg:px-20 xs:px-4 xs:py-14">
       <div className="content-section-solution  sm:flex-col xs:flex-col text-center flex justify-between gap-8 sm:gap-16 items-center">
@@ -63,7 +60,6 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
                 <span className="font-semibold">OpenClass</span>
               </li>
 
-            
               <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg xs:text-base xs:mb-3">
                 <IoCheckmarkCircle className="text-blue-600" />
                 Giải pháp Thi online:
@@ -76,17 +72,17 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
               alt={""}
             />
           </div>
-          <div className=" flex sm:justify-center">
-            <button
-              className={
-                isButton
-                  ? "px-5 py-3 rounded text-white bg-[#D32F2F] hover:transition-colors hover:duration-200 hover:ease-out hover:bg-[#1513be] shadow-2xl shadow-[#7A9598]"
-                  : "hidden"
-              }
-            >
-              Tất cả các giải pháp
-            </button>
-          </div>
+          <Link href={"/products/solutions"}>
+            <div className=" flex sm:justify-center">
+              <button
+                className={
+                  "px-5 text-xl py-3 rounded text-white bg-[#D32F2F] hover:transition-colors hover:duration-200 hover:ease-out hover:bg-[#1513be] shadow-2xl shadow-[#7A9598]"
+                }
+              >
+                Tất cả các giải pháp
+              </button>
+            </div>
+          </Link>
         </div>
         <div
           className="content-right w-1/2 sm:w-full xs:w-full flex gap-7 justify-center items-center "

@@ -19,7 +19,7 @@ export default function Home() {
         <LazySectionServices />
       </div>
       <div className="container-section-solution">
-        <LazySectionSolution isButton={true} />
+        <LazySectionSolution/>
       </div>
       <div className="container-section-product">
         <LazySectionProduct />

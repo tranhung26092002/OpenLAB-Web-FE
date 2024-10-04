@@ -10,8 +10,8 @@ import CourseInfor from "~/components/products/courses/CourseInfor";
 export default function SectionAllCourse() {
   return (
     <div className="px-16 py-10 xs:px-0 flex flex-col">
-      <span className="text-4xl font-bold xs:text-2xl uppercase w-full text-center block">
-        Khóa học
+      <span className="text-4xl font-bold xs:text-2xl  w-full text-center block">
+        Khóa học thực hành
       </span>
       <div className=" flex flex-col xl:px-1">
         <div className="  flex flex-col">

@@ -69,7 +69,7 @@ const SectionFeedback = ({ data }: SectionFeedbackProps) => {
                         <div></div>
                       )}
                     </div>
-                    <p className="text-start pr-3 xs:pr-0 mb-2 xs:text-sm xs:text-justify">
+                    <p className="text-justify pr-3 xs:pr-0 mb-2 xs:text-sm xs:text-justify">
                       {item.feedback}
                     </p>
                     <div className=" flex items-center gap-3">
