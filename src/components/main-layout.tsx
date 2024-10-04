@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "~/components/header/Header";
 import Footer from "~/components/footer/Footer";
+import ButtonGoToTop from "~/components/custom/ButtonGoToTop";
+import NavContact from "~/components/custom/NavContact";
 export default function MainLayout({
   children,
   authPage = false,
@@ -11,10 +13,12 @@ export default function MainLayout({
   coursePage?: boolean;
 }>) {
   return (
-    <>
+    <div className="w-screen max-w-full ">
+      {!authPage && <NavContact />}
       {!authPage && <Header />}
       {children}
+      {!authPage && <ButtonGoToTop />}
       {!authPage && !coursePage && <Footer />}
-    </>
+    </div>
   );
 }

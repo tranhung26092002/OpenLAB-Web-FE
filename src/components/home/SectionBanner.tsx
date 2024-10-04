@@ -6,11 +6,7 @@ const SectionBanner = () => {
     <div className="body flex justify-center flex-col items-center w-full bg-gradient-to-r from-[#090979] from-0% via-[#054c5c] via-[41%]  to-[#090979] to-100% ">
       <div
         className=" flex justify-center flex-col items-center  h-[560px] xs:h-[400px] sm:h-[490px]  sm:w-full xs:w-full bg-cover xs:bg-contain bg-no-repeat bg-center "
-        style={{
-          backgroundImage: `url(${imagebg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        style={{ backgroundImage: `url(${imagebg.src})` }}
       >
         <div className="flex flex-col xs:px-6 justify-center ">
           <div className="flex flex-col gap-3 xs:gap-0 ">

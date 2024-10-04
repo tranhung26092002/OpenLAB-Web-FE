@@ -14,15 +14,15 @@ const config: Config = {
     		},
     		sm: {
     			min: '576px',
-    			max: '776px'
+    			 max: '876px'
     		},
     		lg: {
-    			min: '777px',
-    			max: '1247px'
+    			min: '992px',
+    			 max: '1247px'
     		},
     		xl: {
     			min: '1248px',
-    			max: '1576px'
+    			 max: '1576px'
     		},
     		'2xl': {
     			min: '1577px'

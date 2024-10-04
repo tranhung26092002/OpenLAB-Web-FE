@@ -8,13 +8,13 @@ export default function PrivateRouter({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const {isAuth} = useAuthStore();
+  const { isAuth, user } = useAuthStore();
   const router = useRouter();
   const pathname = usePathname();
   useEffect(() => {
-    if (!isAuth) {
+    if (!isAuth || !user) {
       router.replace(`/auth?back_to=${encodeUrl(pathname)}`);
     }
-  }, [isAuth, pathname, router]);
-  return isAuth ? <>{children}</> : null;
+  }, [isAuth, pathname, router, user]);
+  return isAuth && user ? <>{children}</> : null;
 }
