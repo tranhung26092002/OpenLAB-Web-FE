@@ -49,7 +49,7 @@ export default function LeftContentHeader() {
           >
             OpenLAB
           </span>
-          <span className="text-[#D32F2F]  font-medium text-xl text-center tracking-widest">
+          <span className="text-[#D32F2F] font-semibold text-xl text-center tracking-widest">
             AI/IoT as a service
           </span>
         </Link>
@@ -137,7 +137,7 @@ export default function LeftContentHeader() {
         <Link href="/" className=" sm:w-full xs:w-full ">
           <span
             className="cursor-pointer hover:text-[#1464cc]  block  
-              sm:px-3 sm:py-1 sm:border-b-[1px] xs:px-3 xs:py-1 xs:border-b-[1px] "
+              sm:px-3 sm:py-1 sm:border-b-[1px] xs:px-3 xs:py-1 xs:border-b-[1px] font-semibold "
           >
             Trang chủ
           </span>
@@ -145,7 +145,7 @@ export default function LeftContentHeader() {
 
         <Link href="/about" className=" sm:w-full xs:w-full">
           <span
-            className="cursor-pointer hover:text-[#1464cc] flex 
+            className="cursor-pointer hover:text-[#1464cc] flex font-semibold
               sm:px-3 sm:py-1 sm:border-b-[1px] xs:px-3 xs:py-1 xs:border-b-[1px]"
           >
             Giới thiệu
@@ -156,7 +156,7 @@ export default function LeftContentHeader() {
           <Tooltip>
             <TooltipTrigger className="xs:w-full sm:w-full">
               <span
-                className="flex items-center gap-0.5 cursor-pointer title-product hover:text-[#1464cc] 
+                className="flex items-center gap-0.5 cursor-pointer title-product hover:text-[#1464cc] font-semibold
               sm:pl-3  sm:border-b-[1px] sm:justify-between xs:pl-3  xs:border-b-[1px] xs:justify-between sm:w-full xs:w-full"
               >
                 <span className=" sm:py-1">Sản phẩm</span>
@@ -176,7 +176,7 @@ export default function LeftContentHeader() {
             <TooltipTrigger className="xs:w-full sm:w-full">
               <Link href="/blog">
                 <span
-                  className="cursor-pointer hover:text-[#1464cc] flex items-center gap-0.5 sm:pl-3 sm:border-b-[1px] sm:justify-between  xs:pl-3  xs:border-b-[1px] xs:justify-between"
+                  className="cursor-pointer hover:text-[#1464cc] font-semibold flex items-center gap-0.5 sm:pl-3 sm:border-b-[1px] sm:justify-between  xs:pl-3  xs:border-b-[1px] xs:justify-between"
                   data-tooltip-id="my-blog"
                 >
                   <span className=" sm:py-1">Blog</span>
@@ -193,7 +193,7 @@ export default function LeftContentHeader() {
         </TooltipProvider>
 
         <Link href="/contact" className=" sm:w-full xs:w-full ">
-          <span className="cursor-pointer hover:text-[#1464cc] flex sm:pl-3 xs:pl-3">
+          <span className="cursor-pointer hover:text-[#1464cc] flex sm:pl-3 xs:pl-3 font-semibold">
             Liên hệ
           </span>
         </Link>
