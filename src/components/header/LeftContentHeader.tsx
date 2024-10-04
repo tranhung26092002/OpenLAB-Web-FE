@@ -49,7 +49,7 @@ export default function LeftContentHeader() {
           >
             OpenLAB
           </span>
-          <span className="text-[#D32F2F] text-center font-medium ">
+          <span className="text-[#D32F2F]  font-medium text-xl text-center tracking-widest">
             AI/IoT as a service
           </span>
         </Link>

@@ -3,6 +3,7 @@ import ProductDescription from "~/components/products/ProductDescription";
 import Slider from "react-slick";
 import { settings } from "~/configs/settingSlider";
 import { dataProduct } from "~/services/data";
+import Link from "next/link";
 import slug from "slug";
 const setting = {
   ...settings,
@@ -49,7 +50,7 @@ const SectionProduct = () => {
       data-aos="fade-up"
     >
       <div className="content-top text-center">
-        <span className="text-4xl font-semibold leading-10 mb-2 block xs:text-2xl">
+        <span className="text-4xl font-bold leading-10 mb-2 block xs:text-2xl">
           Sản phẩm phổ biến
         </span>
         <p className="mt-2 font-normal text-base mb-8 xs:mb-4 ">
@@ -76,7 +77,9 @@ const SectionProduct = () => {
       <div className="mt-8 text-center">
         Bạn muốn tìm hiểu thêm về chúng tôi, về các dự án chúng tôi đang nghiên
         cứu?{" "}
-        <span className="font-semibold cursor-pointer">Tất cả sản phẩm</span>
+        <Link href={"/all-products"}>
+          <span className="font-semibold cursor-pointer">Tất cả sản phẩm</span>
+        </Link>
       </div>
     </div>
   );

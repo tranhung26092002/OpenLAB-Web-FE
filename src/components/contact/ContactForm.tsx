@@ -9,7 +9,7 @@ const ContactForm = () => {
         className="px-8 shadow-lg w-1/3 rounded-md flex gap-5 py-6 flex-col xs:w-full xs:px-4"
         data-aos="fade-right"
       >
-        <h1 className="text-2xl font-semibold">Liên hệ OpenLAB</h1>
+        <h1 className="text-3xl font-semibold">Liên hệ OpenLAB</h1>
         <p>
           Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần. Chúng tôi sẽ phản
           hồi trong thời gian sớm nhất!

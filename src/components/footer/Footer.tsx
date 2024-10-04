@@ -19,14 +19,17 @@ const SectionFooter = () => {
                 <Logo color="white" />
                 <div className="flex flex-col gap-8 text-justify">
                   <p className=" mt-3 lg:text-sm text-base font-normal   text-white flex flex-col lg:w-[82%] xs:w-[89%] ">
-                    <span className="text-sm  xl:mt-1 flex flex-col 2xl:w-[82%] xl:w-[86%] ">
-                      <span className="uppercase text-base  2xl:text-xl font-semibold xs:text-sm xs:mb-3 xl:mb-8 2xl:mb-8 ">
-                        Công ty cổ phần công nghệ OpenLab
+                    <span className="text-sm  xl:mt-1 flex flex-col 2xl:w-[82%] xl:w-[75%] ">
+                      <span className=" text-base  2xl:text-xl font-semibold xs:text-sm xs:mb-3  2xl:mb-8 ">
+                      CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
                       </span>
-                      <span className="2xl:text-lg ">
-                        Đơn vị phát triển những giải pháp toàn diện nhằm nâng
+                      <span className="2xl:text-lg xl:text-base   ">
+                        Đơn vị cung cấp sản phẩm và giải pháp toàn diện nhằm nâng
                         cao chất lượng của công tác thí nghiệm thực hành trong
-                        các trường Đại học
+                        các trường Đại học, với mong muốn xóa khoảng cách trong
+                        giáo dục, nâng cao chất lượng thông qua cá nhân hóa quá
+                        trình đào tạo, đào tạo mọi lúc mọi nơi, phục vụ đa dạng
+                        nhu cầu đào tạo của mọi người trên môi trường số.
                       </span>
                     </span>
                   </p>
@@ -59,7 +62,7 @@ const SectionFooter = () => {
                 <IoLocation className="text-lg lg:text-sm" />
                 68B-6 Ao Sen, Hà Đông, HN
               </span>
-              <div className="flex mt-7 lg:hidden xs:hidden">
+              <div className="flex mt-7  xs:hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3725.28029825021!2d105.78630017525153!3d20.98139838940363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zNjhhLzYgUGjhu5EgQW8gU2VuLCBN4buZIExhbywgSMOgIMSQw7RuZywgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1724994267750!5m2!1svi!2s"
                   width="300"

@@ -1,6 +1,7 @@
 "use client";
 import { FaArrowRight } from "react-icons/fa6";
 import imagebg from "~/assets/background/nonbg-01.png";
+import Link from "next/link";
 const SectionBanner = () => {
   return (
     <div className="body flex justify-center flex-col items-center w-full bg-gradient-to-r from-[#090979] from-0% via-[#054c5c] via-[41%]  to-[#090979] to-100% ">
@@ -12,13 +13,13 @@ const SectionBanner = () => {
           <div className="flex flex-col gap-3 xs:gap-0 ">
             <span
               data-aos="fade-right"
-              className="text-4xl font-semibold text-center text-white sm:text-3xl xs:text-2xl  "
+              className="text-5xl font-semibold text-center text-white sm:text-3xl xs:text-2xl"
             >
               Nền tảng thực hành số
             </span>
             <span
               data-aos="fade-right"
-              className="text-4xl font-semibold text-center text-white mt-2 sm:text-3xl xs:text-2xl  xs:mt-0 xs:px-5"
+              className="text-5xl font-semibold text-center text-white mt-2 sm:text-3xl xs:text-2xl  xs:mt-0 xs:px-5"
             >
               Dịch vụ AI/IoT giá rẻ cho chuyển đổi số giáo dục
             </span>
@@ -33,19 +34,21 @@ const SectionBanner = () => {
             chất lượng, có giá trị thực tiễn cao!
           </p>
         </div>
-        <div
-          className="btn-container flex items-center mt-4"
-          data-aos="zoom-in"
-        >
-          <button className="btn-content px-7 py-3 bg-[#AA3232] rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be]">
-            <span className=" text-xl text-white  xs:text-lg">
-              Các giải pháp tiên phong
-            </span>
-            <div className="icon-btn-services">
-              <FaArrowRight className=" text-xl text-white" />
-            </div>
-          </button>
-        </div>
+        <Link href={"/products/solutions"}>
+          <div
+            className="btn-container flex items-center mt-4"
+            data-aos="zoom-in"
+          >
+            <button className="btn-content px-7 py-3 bg-[#AA3232] rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be]">
+              <span className=" text-xl text-white  xs:text-lg">
+                Các giải pháp tiên phong
+              </span>
+              <div className="icon-btn-services">
+                <FaArrowRight className=" text-xl text-white" />
+              </div>
+            </button>
+          </div>
+        </Link>
       </div>
     </div>
   );

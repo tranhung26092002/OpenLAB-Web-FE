@@ -53,7 +53,7 @@ const SectionAbout = () => {
           className=" flex w-1/2 items-start flex-col sm:w-full xs:w-full"
           data-aos="fade-left"
         >
-          <span className="text-3xl font-semibold xs:text-2xl xs:text-center w-full">
+          <span className="text-4xl font-semibold xs:text-2xl xs:text-center w-full">
             Tại sao lại là OpenLAB
           </span>
           <span className="font-light mb-14  w-full xs:mb-10 xs:text-justify">

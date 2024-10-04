@@ -48,7 +48,7 @@ const SectionPartners = () => {
       data-aos="fade-up"
     >
       <div className="content-section-partners flex flex-col text-center">
-        <span className="text-3xl font-semibold">Đối tác</span>
+        <span className="text-4xl font-bold">Đối tác</span>
         <p className="mb-16 xs:mb-10">Các đơn vị đang hợp tác cùng chúng tôi</p>
 
         <div className="shadow-lg rounded-lg">
@@ -61,7 +61,7 @@ const SectionPartners = () => {
                       <Image
                         src={item.image}
                         alt="partners-image"
-                        className="object-contain object-center w-[93%] h-32 border-2 border-[#8AD9E4] rounded-lg px-3 py-3 hover:scale-105 cursor-pointer"
+                        className="object-contain object-center w-[93%] h-32  rounded-lg px-3 py-3 hover:scale-105 cursor-pointer"
                       />
                     </div>
                   </div>

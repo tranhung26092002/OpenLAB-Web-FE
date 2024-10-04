@@ -18,7 +18,7 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
           className="content-left sm:w-full xs:w-full text-start sm:text-center  w-[65%]"
           data-aos="fade-right"
         >
-          <span className="text-4xl font-semibold leading-10 lg:text-3xl xs:text-2xl xs:text-center xs:w-full xs:mb-3 block">
+          <span className="text-4xl font-bold leading-10 lg:text-3xl xs:text-2xl xs:text-center xs:w-full xs:mb-3 block">
             Các giải pháp tiên phong
           </span>
           <p className="mt-2 font-normal text-base mb-8 ">
@@ -39,13 +39,13 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
               </li>
               <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg xs:text-base xs:mb-3">
                 <IoCheckmarkCircle className="text-blue-600" />
-                Trục liên thông dữ liệu:
-                <span className="font-semibold">LabLink</span>
+                Giải pháp Thực hành từ xa:
+                <span className="font-semibold">E-Lab</span>
               </li>
               <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg xs:text-base xs:mb-3">
                 <IoCheckmarkCircle className="text-blue-600" />
-                Giải pháp Thực hành từ xa:
-                <span className="font-semibold">E-Lab</span>
+                Trục liên thông dữ liệu:
+                <span className="font-semibold">LabLink</span>
               </li>
               <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg xs:text-base xs:mb-3">
                 <IoCheckmarkCircle className="text-blue-600" />
@@ -54,7 +54,19 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
               </li>
               <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg xs:text-base xs:mb-3">
                 <IoCheckmarkCircle className="text-blue-600" />
-                Giải pháp thi online:
+                Giải pháp Thư viện thông minh:
+                <span className="font-semibold">OpenLibrary</span>
+              </li>
+              <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg xs:text-base xs:mb-3">
+                <IoCheckmarkCircle className="text-blue-600" />
+                Giải pháp Lớp học thông minh:
+                <span className="font-semibold">OpenClass</span>
+              </li>
+
+            
+              <li className="flex items-center gap-2 font-medium leading-5 mb-5 text-lg xs:text-base xs:mb-3">
+                <IoCheckmarkCircle className="text-blue-600" />
+                Giải pháp Thi online:
                 <span className="font-semibold">E-Exam</span>
               </li>
             </ul>
@@ -72,7 +84,7 @@ const SectionSolution = ({ isButton }: sectionSolutionProp) => {
                   : "hidden"
               }
             >
-              Giới Thiệu Công Ty
+              Tất cả các giải pháp
             </button>
           </div>
         </div>

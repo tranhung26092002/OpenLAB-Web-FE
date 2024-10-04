@@ -16,13 +16,8 @@ const BannerPage = ({
   return (
     <div className="w-full text-white flex justify-center items-center bg-gradient-to-r from-[#090979] from-0% via-[#054c5c] via-[50%]  to-[#090979] to-100% ">
       <div
-        className="flex justify-center items-center flex-col  h-80 w-[80%] xs:h-64 "
-        style={{
-          backgroundImage: `url(${imageBg.src})`,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat:'no-repeat'
-        }}
+        className="flex justify-center items-center flex-col  h-96 w-[80%] xs:h-64 bg-contain bg-no-repeat bg-center"
+        style={{ backgroundImage: `url(${imageBg.src})` }}
       >
         <h1 className="text-5xl font-semibold mb-4 xs:text-2xl xs:mb-0">
           {header}

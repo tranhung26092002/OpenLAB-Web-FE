@@ -1,9 +1,10 @@
 "use client";
 import Slider from "react-slick";
 import { settings } from "~/configs/settingSlider";
-import { dataFeedback } from "~/services/data";
+import Image from "next/image";
 import { LuQuote } from "react-icons/lu";
 import { FaUser } from "react-icons/fa";
+import { feedback } from "~/services/data";
 const setting = {
   ...settings,
   dots: false,
@@ -35,12 +36,14 @@ const setting = {
     },
   ],
 };
-
-const SectionFeedback = () => {
+type SectionFeedbackProps = {
+  data: feedback[];
+};
+const SectionFeedback = ({ data }: SectionFeedbackProps) => {
   return (
     <div className="px-20 bg-white py-16 sm:px-10 lg:px-10 xs:px-5 xs:py-14">
       <div className="flex flex-col text-center">
-        <span className="text-3xl font-semibold sm:text-2xl">
+        <span className="text-4xl font-bold sm:text-2xl">
           Thông tin phản ánh
         </span>
         <span className=" mb-16 sm:mb-8 xs:mb-10  ">
@@ -48,11 +51,24 @@ const SectionFeedback = () => {
         </span>
         <div>
           <Slider {...setting}>
-            {dataFeedback.map((item, index) => {
+            {data.map((item, index) => {
               return (
                 <div className="my-3 " key={index}>
-                  <div className="bg-[#eee] px-7 py-10 sm:py-4 xs:py-4 xs:px-3 w-[95%] mx-1 shadow-lg rounded-md h-72 xs:h-52 sm:px-4 flex justify-around flex-col xs:justify-start ">
-                    <LuQuote className="text-3xl text-red-300 mb-5 sm:text-x xs:text-xl lg:text-2xl" />
+                  <div className=" px-7 py-10 sm:py-4 xs:py-4   xs:px-3 w-[95%] mx-1 shadow-lg rounded-md h-72 xs:h-52 sm:px-4 flex justify-around flex-col xs:justify-start ">
+                    <div className="flex justify-between items-center">
+                      <LuQuote className="text-3xl text-red-300 mb-5 sm:text-x xs:text-xl lg:text-2xl" />
+                      {item.bgImg ? (
+                        <div className="flex items-center">
+                          <Image
+                            className="w-20 h-16 object-contain object-center"
+                            src={item.bgImg}
+                            alt="image-bgFeedback"
+                          ></Image>
+                        </div>
+                      ) : (
+                        <div></div>
+                      )}
+                    </div>
                     <p className="text-start pr-3 xs:pr-0 mb-2 xs:text-sm xs:text-justify">
                       {item.feedback}
                     </p>

@@ -58,7 +58,7 @@ const CourseInfor = ({
           <FaStarHalfAlt className="text-yellow-500" />
         </div>
         <div className="flex items-center gap-2">
-          <FaSignal className="text-red-500" />
+          <FaSignal className="text-green-600" />
           <span className="text-xs font-normal">Có sẵn</span>
         </div>
       </div>

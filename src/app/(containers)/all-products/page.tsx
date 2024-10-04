@@ -29,7 +29,7 @@ export default function page() {
             </div>
           </div>
           <SectionAllProduct
-            title={"giải pháp/Dịch vụ"}
+            title={"Giải pháp/Dịch vụ"}
             data={dataSolution}
             type="APP"
           />

@@ -10,7 +10,7 @@ import vmuLogo from "~/assets/logo/partner/vmu.png";
 import isvnu from "~/assets/logo/partner/is-vnu.png";
 import uottLogo from "~/assets/logo/partner/university-of-transport technology.png";
 import imic from "~/assets/logo/partner/imic.png";
-
+import attt from "~/assets/logo/partner/attt.jpg";
 import img1BenefitProduct from "~/assets/image/detail-product/Tat_ca_tren_1_diem_cham_fdd50fe132.jpeg";
 import img2BenefitProduct from "~/assets/image/detail-product/Toi_uu_quy_trinh_cu_b8392a59ed.jpeg";
 import img3BenefitProduct from "~/assets/image/detail-product/online_product_presentation_with_project_team_vector_id1054541696_bec8c46918.jpeg";
@@ -283,31 +283,8 @@ export const dataProduct: productType[] = [
       "OpenLAB cung cấp khóa học cơ bản về lập trình nhúng IoT với Arduino",
   },
   {
-    image: ESP8266Product,
-    nameProduct: "KHOÁ HỌC THỰC HÀNH MẠNG DI ĐỘNG 5G",
-    description: "OpenLAB cung cấp khóa học cơ bản về IoT với ESP8266",
-  },
-  {
-    image: ChatBotAIProduct,
-    nameProduct: "KHOÁ HỌC THỰC HÀNH CHATBOT AI",
-    description: " OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI",
-  },
-  {
-    image: ESP32CAMProduct,
-    nameProduct: "KHOÁ HỌC THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY",
-    description:
-      "OpenLAB cung cấp khóa học lập trình xe hơi tự hành với ESP32-CAM",
-  },
-  {
     image: imagekitb,
     nameProduct: "KÍT THỰC HÀNH IoT CƠ BẢN",
-    description:
-      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
-    type: "KIT",
-  },
-  {
-    image: imagesmart,
-    nameProduct: "KÍT THỰC HÀNH THÔNG MINH",
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
     type: "KIT",
@@ -319,12 +296,36 @@ export const dataProduct: productType[] = [
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
     type: "APP",
   },
+
+  {
+    image: ESP8266Product,
+    nameProduct: "KHOÁ HỌC THỰC HÀNH MẠNG DI ĐỘNG 5G",
+    description: "OpenLAB cung cấp khóa học cơ bản về IoT với ESP8266",
+  },
+  {
+    image: imagesmart,
+    nameProduct: "KÍT THỰC HÀNH THÔNG MINH",
+    description:
+      "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
+    type: "KIT",
+  },
   {
     image: imageSolution6,
     nameProduct: "PHẦN MỀM THI ONLINE",
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
     type: "APP",
+  },
+  {
+    image: ChatBotAIProduct,
+    nameProduct: "KHOÁ HỌC THỰC HÀNH CHATBOT AI",
+    description: " OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI",
+  },
+  {
+    image: ESP32CAMProduct,
+    nameProduct: "KHOÁ HỌC THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY",
+    description:
+      "OpenLAB cung cấp khóa học lập trình xe hơi tự hành với ESP32-CAM",
   },
 ];
 
@@ -352,11 +353,50 @@ export const dataPartners: dataPartner[] = [
   },
 ];
 
-type feedback = {
+export type feedback = {
   name: string;
   location: string;
   feedback: string;
+  bgImg?: string | StaticImageData;
 };
+
+export const PartnersdataFeedback: feedback[] = [
+  {
+    name: "TS. Nguyễn Hữu Cầm",
+    location: "Giảng viên CNTT VNU-IS",
+    feedback:
+      "Giải pháp Lớp học thông minh: OpenClass thực sự đã mở ra không gian học tập tương tác không giới hạn cho Học sinh-Giáo viên-Phụ huynh, tạo nên một môi trường mở giữa nhà trường-Doanh nghiệp-Xã hội!",
+    bgImg: isvnu,
+  },
+  {
+    name: "Kỹ sư Vũ Hữu Đạo",
+    location: "Kỹ sư AI IMIC",
+    feedback:
+      "Các khoá học thực hành thực chiến OpenCourse trang bị cho sinh viên những kỹ năng làm việc thực tế trên các dự án thật ngoài xã hội, đây là thứ quan trọng nhất nhưng đang bị thiếu khi sinh viên ngồi trên ghế nhà trường.",
+    bgImg: imic,
+  },
+  {
+    name: "TS.Trần Huy Long",
+    location: "Giảng viên ĐTVT FUNIX",
+    feedback:
+      "Nền tảng thực hành trực tuyến OpenLab đã tạo ra cơ hội to lớn cho sinh viên vận dụng  kiến thức thật để giải quyết các bài toán thực tế trong doanh nghiệp trong thời đại công nghệ số.",
+    bgImg: funixLogo,
+  },
+  {
+    name: "Tùng Lâm",
+    location: "FullStack Dev",
+    feedback:
+      "Các giải pháp của OpenLAB luôn tuân thủ các nguyên tắc về an toàn, bảo mật thông tin của các tiêu chuẩn trong nước và quốc tế.",
+    bgImg: attt,
+  },
+  {
+    name: "Trần Văn Hưng",
+    location: "Sinh viên IoT-PTIT",
+    feedback:
+      "Học thật là thực hành kiến thức ngay từ kỳ học đầu tiên, là được làm việc với các dự án thực tế của khách hàng trong ngành, là bước vào thị trường nghề nghiệp với tâm thế tự tin.",
+    bgImg: imgactivity1,
+  },
+];
 
 export const dataFeedback: feedback[] = [
   {
@@ -576,5 +616,48 @@ export const dataSolution: productType[] = [
     nameProduct: "Giải pháp thi online: E-Exam",
     description:
       "Đơn vị cung cấp nền tảng thực hành số, thiết bị thực hành thông minh, khóa học thực hành chuyên sâu.",
+  },
+];
+
+export type Statiscal = {
+  typeStatiscal: string;
+  Statiscal: string;
+};
+
+export const StatiscalIntrol: Statiscal[] = [
+  {
+    typeStatiscal: "Sản phẩm",
+    Statiscal: "28",
+  },
+  {
+    typeStatiscal: "Đối tác",
+    Statiscal: "9",
+  },
+  {
+    typeStatiscal: "Khách hàng",
+    Statiscal: "2169",
+  },
+  {
+    typeStatiscal: "Hài lòng",
+    Statiscal: "80%",
+  },
+];
+
+export const StatiscalSolution: Statiscal[] = [
+  {
+    typeStatiscal: "Giải pháp",
+    Statiscal: "18",
+  },
+  {
+    typeStatiscal: "Đối tác",
+    Statiscal: "9",
+  },
+  {
+    typeStatiscal: "Đơn vị sử dụng",
+    Statiscal: "19",
+  },
+  {
+    typeStatiscal: "Hài lòng",
+    Statiscal: "85%",
   },
 ];

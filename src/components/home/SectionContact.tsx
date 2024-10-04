@@ -9,7 +9,7 @@ const SectionContact = () => {
           <Image src={imageContact} alt="image-section-contact" />
         </div>
         <div className=" sm:pr-0 w-1/2 sm:w-2/3 flex flex-col gap-4 items-start justify-center xs:w-full">
-          <span className="text-3xl font-semibold">Liên hệ Open LAB</span>
+          <span className="text-4xl font-bold">Liên hệ OpenLAB</span>
           <p>
             Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần. Chúng tôi sẽ phản
             hồi trong thời gian sớm nhất!
