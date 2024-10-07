@@ -21,15 +21,16 @@ const SectionFooter = () => {
                   <p className=" mt-3 lg:text-sm text-base font-normal   text-white flex flex-col lg:w-[82%] xs:w-[89%] ">
                     <span className="text-sm  xl:mt-1 flex flex-col 2xl:w-[82%] xl:w-[75%] ">
                       <span className=" text-base  2xl:text-xl font-semibold xs:text-sm xs:mb-3  2xl:mb-8 ">
-                      CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
+                        CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
                       </span>
                       <span className="2xl:text-lg xl:text-base   ">
-                        Đơn vị cung cấp sản phẩm và giải pháp toàn diện nhằm nâng
-                        cao chất lượng của công tác thí nghiệm thực hành trong
-                        các trường Đại học, với mong muốn xóa khoảng cách trong
-                        giáo dục, nâng cao chất lượng thông qua cá nhân hóa quá
-                        trình đào tạo, đào tạo mọi lúc mọi nơi, phục vụ đa dạng
-                        nhu cầu đào tạo của mọi người trên môi trường số.
+                        Đơn vị cung cấp sản phẩm và giải pháp toàn diện nhằm
+                        nâng cao chất lượng của công tác thí nghiệm thực hành
+                        trong các trường Đại học, với mong muốn xóa khoảng cách
+                        trong giáo dục, nâng cao chất lượng thông qua cá nhân
+                        hóa quá trình đào tạo, đào tạo mọi lúc mọi nơi, phục vụ
+                        đa dạng nhu cầu đào tạo của mọi người trên môi trường
+                        số.
                       </span>
                     </span>
                   </p>
@@ -77,7 +78,7 @@ const SectionFooter = () => {
           </div>
           <div className="flex w-[35%] justify-between lg:w-[42%] sm:w-full xs:w-full  xs:flex-col xs:justify-between xs:gap-6">
             <div className="w-[40%] lg:w-[30%] flex flex-col text-base font-normal text-white gap-3 lg:text-sm xs:w-full xs:flex-col">
-              <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
+              <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0 uppercase">
                 Khám phá
               </span>
               <div className="xs:flex-row w-full gap-2 flex flex-col justify-center">
@@ -102,7 +103,7 @@ const SectionFooter = () => {
             </div>
             <div className="w-[60%] lg:w-[70%] flex flex-col justify-between lg:text-sm text-base font-medium text-white xs:w-full xs:gap-6">
               <div className="gap-2 flex flex-col item 2xl:text-lg">
-                <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0">
+                <span className="text-lg font-semibold text-white mb-2 lg:text-sm xs:mb-0 uppercase">
                   Dịch vụ
                 </span>
                 <span className="cursor-pointer hover:text-white font-normal ">

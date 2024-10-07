@@ -21,6 +21,16 @@ import { Input } from "~/components/ui/input";
 import { useSearchParams } from "next/navigation";
 import { decodeUrl } from "~/utils/encryption-url";
 import { useAuthStore, UserProps } from "~/store/auth/AuthStore";
+type payload = {
+  data: {
+    fullname: string;
+    address: string;
+    date_of_birth: string;
+    role: string;
+    id: string;
+    token: string;
+  };
+};
 export default function LoginForm() {
   const { setUser, setIsAuth } = useAuthStore();
   const router = useRouter();
@@ -28,23 +38,23 @@ export default function LoginForm() {
   const form = useForm<LoginBodyType>({
     resolver: zodResolver(LoginBody),
     defaultValues: {
-      email: "",
+      phoneNumber: "",
       password: "",
     },
   });
   async function onSubmit(values: LoginBodyType) {
-    const res = await handleLogin(values.email, values.password);
+    const res = await handleLogin(values.phoneNumber, values.password);
+
     const queryUrl = query?.get("back_to");
     if (res && res.status === 200 && res.payload) {
-      const payload = res.payload as UserProps;
+      const payload = (res.payload as payload).data as UserProps;
       const user: UserProps = {
         fullname: payload.fullname,
         address: payload.address,
-        dateOfBirth: payload.dateOfBirth,
-        email: payload.email,
+        date_of_birth: payload.date_of_birth,
         role: payload.role,
-        _id: payload._id,
-        access_token: payload.access_token,
+        id: payload.id,
+        token: payload.token,
       };
       setUser(user);
       setIsAuth(true);
@@ -52,7 +62,7 @@ export default function LoginForm() {
         const back_to = decodeUrl(queryUrl);
         router.push(`${back_to}`);
       } else {
-        router.replace('/')
+        router.replace("/");
       }
     }
   }
@@ -74,12 +84,12 @@ export default function LoginForm() {
         </div>
         <FormField
           control={form.control}
-          name="email"
+          name="phoneNumber"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Tên tài khoản</FormLabel>
+              <FormLabel>Số điện thoại</FormLabel>
               <FormControl>
-                <Input placeholder="Nhập email" {...field} />
+                <Input placeholder="Nhập số điện thoại" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

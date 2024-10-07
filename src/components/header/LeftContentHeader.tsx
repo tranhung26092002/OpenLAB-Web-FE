@@ -41,7 +41,7 @@ export default function LeftContentHeader() {
       >
         <Link href={"/"} className="cursor-pointer flex flex-col">
           <span
-            className="text-5xl font-semibold text-center text-[#D32F2F] text-shadow-lg xs:text-4xl"
+            className="text-5xl xs:tracking-widest font-semibold text-center text-[#D32F2F] text-shadow-lg xs:text-4xl"
             style={{
               textShadow:
                 "rgb(106 109 129) 3px 0px 0px, rgba(0, 0, 0, 0) 4px -1px 10px, rgba(0, 0, 0, 0) 16px 1px 2px, rgba(115, 86, 86, 0) 22px 18px 30px",
@@ -49,7 +49,7 @@ export default function LeftContentHeader() {
           >
             OpenLAB
           </span>
-          <span className="text-[#D32F2F] font-semibold text-xl text-center tracking-widest">
+          <span className="text-[#D32F2F] font-semibold text-xl text-center tracking-widest xs:tracking-normal">
             AI/IoT as a service
           </span>
         </Link>

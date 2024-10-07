@@ -19,8 +19,8 @@ export const RegisterBody = z.object({
 export type RegisterBodyType = z.TypeOf<typeof RegisterBody>
 
 export const LoginBody = z.object({
-    email: z.string().email(),
-    password: z.string().min(6).max(100),
+    phoneNumber: z.string().min(8, 'Số điện thoại không hợp lệ').max(12),
+    password: z.string().min(6,'Mật khẩu quá yếu').max(100),
 }).strict()
 
 export type LoginBodyType = z.TypeOf<typeof LoginBody>

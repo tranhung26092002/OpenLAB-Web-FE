@@ -35,7 +35,7 @@ export default function IntrolSolutions() {
         srcVideo={"/videos/about.mp4"}
         ishiddenContentVideo={false}
       />
-      <div className="px-14 pt-16">
+      <div className="px-14 pt-16 xs:px-4 xs:py-6">
         <SectionAllProduct
           title="Các Giải Pháp Tiên Phong"
           description1={

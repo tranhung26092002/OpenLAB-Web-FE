@@ -14,7 +14,11 @@ export default function MainLayout({
 }>) {
   return (
     <div className="w-screen max-w-full ">
-      {!authPage && <NavContact />}
+      {!authPage && (
+        <div className="xs:hidden">
+          <NavContact />
+        </div>
+      )}
       {!authPage && <Header />}
       {children}
       {!authPage && <ButtonGoToTop />}

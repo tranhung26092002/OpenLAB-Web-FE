@@ -17,8 +17,10 @@ const SectionAllProduct = ({
   return (
     <div className="flex flex-wrap justify-center items-center gap-7  xs:py-6 flex-col ">
       <div>
-        <div className="text-4xl font-bold xs:text-2xl  text-center">{title}</div>
-        <div className="text-base font-normal xs:text-2xl  text-center">
+        <div className="text-4xl font-bold xs:text-2xl  text-center">
+          {title}
+        </div>
+        <div className="text-base font-normal  text-justify ">
           {description1}
         </div>
       </div>

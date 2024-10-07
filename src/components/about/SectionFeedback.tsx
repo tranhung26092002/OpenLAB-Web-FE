@@ -41,11 +41,12 @@ type SectionFeedbackProps = {
 };
 const SectionFeedback = ({ data }: SectionFeedbackProps) => {
   return (
-    <div className="px-20 bg-white py-16 sm:px-10 lg:px-10 xs:px-5 xs:py-14">
+    <div className="px-20 bg-white py-16 sm:px-10 lg:px-10 xs:px-5 xs:py-10">
       <div className="flex flex-col text-center">
-        <span className="text-4xl font-bold sm:text-2xl">
+        <span className="text-4xl font-bold sm:text-2xl xs:text-2xl">
           Thông tin phản ánh
         </span>
+
         <span className=" mb-16 sm:mb-8 xs:mb-10  ">
           Các khách hàng, đối tác nói gì khi làm việc với chúng tôi
         </span>
@@ -54,7 +55,7 @@ const SectionFeedback = ({ data }: SectionFeedbackProps) => {
             {data.map((item, index) => {
               return (
                 <div className="my-3 " key={index}>
-                  <div className=" px-7 py-10 sm:py-4 xs:py-4   xs:px-3 w-[95%] mx-1 shadow-lg rounded-md h-72 xs:h-52 sm:px-4 flex justify-around flex-col xs:justify-start ">
+                  <div className=" px-7 py-10 sm:py-4 xs:py-4   xs:px-3 w-[95%] mx-1 shadow-lg rounded-md h-72 xs:h-56 sm:px-4 flex justify-around flex-col xs:justify-start ">
                     <div className="flex justify-between items-center">
                       <LuQuote className="text-3xl text-red-300 mb-5 sm:text-x xs:text-xl lg:text-2xl" />
                       {item.bgImg ? (

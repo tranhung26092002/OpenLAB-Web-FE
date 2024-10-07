@@ -20,14 +20,14 @@ type BannerProductProps = {
 };
 const BannerProduct = ({ nameProduct, description }: BannerProductProps) => {
   return (
-    <div className="flex px-20 py-16 bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100%">
-      <div className="w-[60%] flex flex-col">
+    <div className="flex px-20 py-16 xs:flex-col xs:px-4 bg-gradient-to-r from-blue-900 from-0% via-cyan-800 via-58% to-sky-800 to-100%">
+      <div className="w-[60%] flex flex-col xs:w-full pr-16 xs:pr-0">
         <div className=" flex gap-1">
           <span className="text-[#D32F2F] font-semibold">Trang chủ /</span>
           <span className="text-[#D32F2F] font-semibold">Sản phẩm /</span>
           <span className="text-white font-semibold">{nameProduct}</span>
         </div>
-        <span className="text-white text-4xl font-semibold py-5">
+        <span className="text-white text-4xl font-semibold py-5 xs:text-2xl">
           {nameProduct}
         </span>
         <div className="flex  items-start gap-2">
@@ -86,7 +86,7 @@ const BannerProduct = ({ nameProduct, description }: BannerProductProps) => {
           </button>
         </div>
       </div>
-      <div className="w-[38%] px-3 py-3">
+      <div className="w-[38%] px-3 py-3 xs:w-full xs:px-0  xs:py-0 xs:h-52"  >
         <iframe
           className="w-full h-full rounded-md"
           src="https://www.youtube.com/embed/xzu3QXwo1BU?si=A36ch_COhP-rivIR"

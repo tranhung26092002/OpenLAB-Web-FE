@@ -27,11 +27,11 @@ export const useFetchApi = async (url: string, options?: RequestInit) => {
     const { user, setUser, setIsAuth } = useAuthStore();
     const router = useRouter();
     const fetchData = async () => {
-        const { access_token } = user;
+        const { token } = user;
         const baseUrl = process.env.NEXT_PUBLIC_ENDPOINT
         const fullUrl = url.startsWith("/") ? `${baseUrl}${url}` : `${baseUrl}/${url}`
-        if (access_token) {
-            const validateJwt = jwtDecode(access_token)
+        if (token) {
+            const validateJwt = jwtDecode(token)
             const expToken = validateJwt.exp as number;
             const timestampNow = new Date().getTime();
             console.log(expToken, timestampNow / 1000, expToken < timestampNow / 1000);
@@ -50,13 +50,12 @@ export const useFetchApi = async (url: string, options?: RequestInit) => {
                     }).then(async (res) => {
                         if (res.ok && res.status === 200) {
                             const resetUser = {
-                                _id: '',
+                                id: '',
                                 fullname: '',
                                 role: '',
-                                email: '',
                                 address: '',
-                                dateOfBirth: '',
-                                access_token: '',
+                                date_of_birth: '',
+                                token: '',
                             }
                             setIsAuth(false)
                             setUser(resetUser)
@@ -74,7 +73,7 @@ export const useFetchApi = async (url: string, options?: RequestInit) => {
                     return data
                 }
             } else {
-                const data = await fetcher(fullUrl, access_token, options)
+                const data = await fetcher(fullUrl, token, options)
                 return data
             }
         }
