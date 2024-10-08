@@ -3,6 +3,7 @@ import { dataBlog } from "~/services/data";
 import { FaRegUser } from "react-icons/fa";
 import { IoCalendar } from "react-icons/io5";
 import MainLayout from "~/components/main-layout";
+import { IoIosSearch } from "react-icons/io";
 
 export default function BlogPage() {
   return (
@@ -49,9 +50,12 @@ export default function BlogPage() {
                 type="search"
                 name=""
                 id=""
-                placeholder="Search"
+                placeholder="Tìm kiếm bài viết mới nhất"
                 className="px-4 py-2 bg-[#eee] focus:ring-2 focus:outline-none focus:outline-1 focus:border-none focus:ring-black focus:bg-white rounded w-[380px]"
               />
+              <div className=" relative xs:w-[80%]">
+                <IoIosSearch className="absolute top-1/2 right-2 ext-base translate-y-[-50%] cursor-pointer" />
+              </div>
             </div>
 
             <div className="px-7 py-7 bg-white rounded border-dotted border-black border-[1px] ">

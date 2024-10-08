@@ -19,18 +19,16 @@ const SectionFooter = () => {
                 <Logo color="white" />
                 <div className="flex flex-col gap-8 text-justify">
                   <p className=" mt-3 lg:text-sm text-base font-normal   text-white flex flex-col lg:w-[82%] xs:w-[89%] ">
-                    <span className="text-sm  xl:mt-1 flex flex-col 2xl:w-[82%] xl:w-[75%] ">
+                    <span className="text-sm flex flex-col 2xl:w-[82%] xl:w-[75%] ">
                       <span className=" text-base  2xl:text-xl font-semibold xs:text-sm xs:mb-3  2xl:mb-8 ">
                         CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
                       </span>
-                      <span className="2xl:text-lg xl:text-base   ">
-                        Đơn vị cung cấp sản phẩm và giải pháp toàn diện nhằm
+                      <span className="2xl:text-lg xl:text-base xl:mt-1  ">
+                        Đơn vị cung cấp các sản phẩm & giải pháp toàn diện nhằm
                         nâng cao chất lượng của công tác thí nghiệm thực hành
-                        trong các trường Đại học, với mong muốn xóa khoảng cách
-                        trong giáo dục, nâng cao chất lượng thông qua cá nhân
-                        hóa quá trình đào tạo, đào tạo mọi lúc mọi nơi, phục vụ
-                        đa dạng nhu cầu đào tạo của mọi người trên môi trường
-                        số.
+                        trong các trường Đại học, thông qua cá nhân hoá quá
+                        trình đào tạo, đào tạo mọi lúc mọi nơi, phục vụ đa dạng
+                        như cầu đào tạo của mọi người trên môi trường số.
                       </span>
                     </span>
                   </p>

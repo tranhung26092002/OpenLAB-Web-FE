@@ -16,13 +16,13 @@ const NavContact = () => {
     xs:flex-col xs:px-0
     "
     >
-      <div className="flex">
+      <div className="flex  xl:w-[20%] justify-center">
         <span className="flex gap-1 items-center">
           <GrMail />
           openlab.user@gmail.com
         </span>
       </div>
-      <div className="flex  gap-2 items-center">
+      <div className="flex  gap-2 items-center  xl:w-[20%] justify-center">
         <TooltipProvider delayDuration={100}>
           <Tooltip>
             <TooltipTrigger className="xs:w-full sm:w-full">

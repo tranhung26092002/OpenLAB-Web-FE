@@ -1,12 +1,13 @@
+import SectionFeedback from "~/components/about/SectionFeedback";
 import SectionStatiscal from "~/components/about/SectionStatiscal";
 import MainLayout from "~/components/main-layout";
-import { dataFeedback, StatiscalIntrol } from "~/services/data";
+import {  PartnersdataFeedback, StatiscalIntrol } from "~/services/data";
 
 import {
   LazySectionAbout,
   LazySectionSolution,
   LazySectionServices,
-  LazySectionFeedback,
+  
   LazySectionIntrol,
   LazySectionActivityInsite,
   LazyBannerPage,
@@ -40,9 +41,9 @@ const AboutPage = () => {
         />
         <LazySectionServices />
         <LazySectionSolution />
-        <LazySectionActivityInsite />
         <LazySectionAbout />
-        <LazySectionFeedback data={dataFeedback} />
+        <LazySectionActivityInsite />
+        <SectionFeedback data={PartnersdataFeedback} />
       </div>
     </MainLayout>
   );

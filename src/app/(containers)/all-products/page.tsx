@@ -23,9 +23,9 @@ export default function page() {
                 name=""
                 id=""
                 placeholder="Tìm kiếm sản phẩm"
-                className="px-4 py-2 placeholder:text-sm bg-[#eee] rounded xs:w-full"
+                className="px-4 py-3 placeholder:text-base bg-[#eee] rounded xs:w-full xl:w-96"
               />
-              <IoIosSearch className="absolute top-1/2 right-2 translate-y-[-50%] cursor-pointer" />
+              <IoIosSearch className="absolute top-1/2 right-2 ext-base translate-y-[-50%] cursor-pointer" />
             </div>
           </div>
           <SectionAllProduct
