@@ -20,7 +20,7 @@ type AuthStoreSliceProps = {
 
 const createAuthSlice: StateCreator<AuthStoreSliceProps> = (set) => (
     {
-        isAuth: false,
+        isAuth: true,
         user: {
             id: '',
             fullname: '',

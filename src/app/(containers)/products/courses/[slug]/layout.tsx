@@ -7,26 +7,28 @@ export default function CourseLayout({
   params,
 }: Readonly<{ children: React.ReactNode; params: { slug: string } }>) {
   console.log(params.slug);
-  
+
   return (
     <PrivateRouter>
       <MainLayout>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link href={""}>Giới thiệu</Link>
-              </li>
-              <li>
-                <Link href={""}>Cấu tạo</Link>
-              </li>
-              <li>
-                <Link href={""}>Thực hành</Link>
-              </li>
-            </ul>
-          </nav>
+        <div className="flex">
+          <div className="bg-red-500 w-[20%] px-4 py-4">
+            <nav>
+              <ul>
+                <li>
+                  <Link href={""}>Giới thiệu</Link>
+                </li>
+                <li>
+                  <Link href={""}>Cấu tạo</Link>
+                </li>
+                <li>
+                  <Link href={""}>Thực hành</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div>{children}</div>
         </div>
-        <div>{children}</div>
       </MainLayout>
     </PrivateRouter>
   );

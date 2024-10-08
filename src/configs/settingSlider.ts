@@ -6,7 +6,6 @@ export const settings = {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-
     pauseOnHover: true,
     pauseOnFocus: true,
     responsive: [
