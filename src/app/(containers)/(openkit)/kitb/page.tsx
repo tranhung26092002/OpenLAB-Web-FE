@@ -19,8 +19,8 @@ export default function OpenKitBPage() {
   const [mqttClient, setMqttClient] = useState<mqtt.MqttClient | null>(null);
   const [mqttTopic, setMqttTopic] = useState("");
   const handleSwitchChange = (id: string, state: boolean) => {
-    // const message = JSON.stringify({ [id]: state ? 1 : 0 });
-    const message = `[id]:${state ? 1 : 0}`;
+     const message = JSON.stringify({ [id]: state ? 1 : 0 });
+    // const message = `{[id]:${state ? 1 : 0}}`;
     if (mqttClient) {
       mqttClient.publish(
         `${mqttTopic}/client`,

@@ -20,7 +20,7 @@ const SectionFooter = () => {
                 <div className="flex flex-col gap-8 text-justify">
                   <p className=" mt-3 lg:text-sm text-base font-normal   text-white flex flex-col lg:w-[82%] xs:w-[89%] ">
                     <span className="text-sm flex flex-col 2xl:w-[82%] xl:w-[75%] ">
-                      <span className=" text-base  2xl:text-xl font-semibold xs:text-sm xs:mb-3  2xl:mb-8 ">
+                      <span className=" text-lg  2xl:text-xl font-semibold xs:text-sm xs:mb-3  2xl:mb-8 ">
                         CÔNG TY CỔ PHẦN CÔNG NGHỆ OpenLAB
                       </span>
                       <span className="2xl:text-lg xl:text-base xl:mt-1  ">
