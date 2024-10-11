@@ -1,50 +1,59 @@
-import { create, StateCreator } from 'zustand'
-import { devtools, persist, createJSONStorage } from 'zustand/middleware'
+import { create, StateCreator } from "zustand";
+import { devtools, persist, createJSONStorage } from "zustand/middleware";
 
 export type UserProps = {
-    fullname: string,
-    role: string,
-    accessToken: string,
-    _id: string,
-    email: string
-    address: string,
-    dateOfBirth: string,
-    courses?: []
-}
+  fullname: string;
+  role: string;
+  accessToken: string;
+  _id: string;
+  email: string;
+  address: string;
+  dateOfBirth: string;
+  courses?: Array<string>;
+};
 
 type AuthStoreSliceProps = {
-    isAuth: boolean,
-    user: UserProps,
+  isAuth: boolean;
+  user: UserProps;
+  isLoading: boolean;
+  setIsAuth: (isAuth: boolean) => void;
+  setUser: (user: UserProps) => void;
+  setLoading: (isLoading: boolean) => void;
+};
 
-    setIsAuth: (isAuth: boolean) => void,
-    setUser: (user: UserProps) => void,
-}
-
-const createAuthSlice: StateCreator<AuthStoreSliceProps> = (set) => (
-    {
-        isAuth: false,
-        user: {
-            _id: '',
-            fullname: '',
-            email: '',
-            role: '',
-            address: '',
-            dateOfBirth: '',
-            accessToken: '',
-        },
-        setIsAuth: (isAuth: boolean) => set(() => ({ isAuth })),
-        setUser: (user: UserProps) => set(() => ({ user }))
-    }
-)
+const createAuthSlice: StateCreator<AuthStoreSliceProps> = (set) => ({
+  isAuth: false,
+  isLoading: true,
+  user: {
+    _id: "",
+    fullname: "",
+    email: "",
+    role: "",
+    address: "",
+    dateOfBirth: "",
+    accessToken: "",
+    courses: [],
+  },
+  setIsAuth: (isAuth: boolean) => set(() => ({ isAuth })),
+  setUser: (user: UserProps) => set(() => ({ user })),
+  setLoading: (isLoading: boolean) => set(() => ({ isLoading })),
+});
 
 export const useAuthStore = create(
-    devtools(
-        persist<AuthStoreSliceProps>(
-            (...a) => ({
-                ...createAuthSlice(...a)
-            }),
-            {
-                name: 'auth', storage: createJSONStorage(() => localStorage),
-            }
-        ),)
-)
+  devtools(
+    persist<AuthStoreSliceProps>(
+      (...a) => ({
+        ...createAuthSlice(...a),
+      }),
+      {
+        name: "auth",
+        storage: createJSONStorage(() => localStorage),
+        onRehydrateStorage: () => (state) => {
+          if (state) {
+            state.setLoading(false); // Set loading to false once state is rehydrated
+          }
+        },
+      }
+    )
+  )
+);

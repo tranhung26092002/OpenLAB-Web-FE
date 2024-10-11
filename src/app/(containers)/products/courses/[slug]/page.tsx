@@ -5,12 +5,13 @@ import AccordionExtra from "~/components/products/courses/private-course/section
 import TitleLesson from "~/components/products/courses/private-course/section/TitleLesson";
 import carTechImg from "~/assets/image/course/5g/KttKrAFGkfnR7WRV_OugaeZSszOB1pHPz.jpg";
 import { settings } from "~/configs/settingSlider";
-import schema5gimg from "~/assets/image/product/course/5g/schema-5g.png";
 import Slider from "react-slick";
 import { GoDotFill } from "react-icons/go";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import Image5G from "~/components/custom/image-course/image5G";
+import Link from "next/link";
 type dataTest = {
   title: string;
   image: string | StaticImageData;
@@ -71,7 +72,11 @@ const dataSlide: dataTest[] = [
       "5G use case can vary to meet different user demands and running applications. Lets take a look at why this is and how this is managed.",
   },
 ];
-export default function OverviewCourse() {
+export default function OverviewCourse({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const sliderRef = useRef<Slider | null>(null);
   const next = () => {
     sliderRef.current?.slickNext();
@@ -79,9 +84,10 @@ export default function OverviewCourse() {
   const previous = () => {
     sliderRef.current?.slickPrev();
   };
-
+  const { slug } = params;
   return (
     <div className="px-16 flex flex-col justify-center items-center w-full ">
+      
       <TitleLesson
         title={"This is 5G"}
         complete={"9"}
@@ -135,7 +141,11 @@ export default function OverviewCourse() {
               <div className="my-4" key={index}>
                 <div className="w-full text-center">
                   <span>{item.title}</span>
-                  <Image src={item.image} alt="image-description-course" className="rounded" />
+                  <Image
+                    src={item.image}
+                    alt="image-description-course"
+                    className="rounded"
+                  />
                   <p className="text-justify">{item.description}</p>
                 </div>
               </div>
@@ -150,7 +160,7 @@ export default function OverviewCourse() {
         </button>
       </div>
       <div>
-        <Image src={schema5gimg} alt={"schema-5g"} />
+        <Image5G />
       </div>
       <div>
         <Tabs defaultValue="login" className="w-full ">
@@ -210,6 +220,12 @@ export default function OverviewCourse() {
           </TabsContent>
         </Tabs>
       </div>
+      <div>
+        <video muted controls className="rounded sm:w-[70%] xs:w-[94%]">
+          <source src={"/videos/about.mp4"} type="video/mp4" />
+        </video>
+      </div>
+      <Link href={`/products/courses/${slug}/lesson2`} className="px-4 py-2 bg-blue-500 w-full rounded-sm mt-4 text-center text-white">Tiếp tục</Link>
     </div>
   );
 }
