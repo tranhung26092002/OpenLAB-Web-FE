@@ -15,7 +15,7 @@ export default function PrivateRouter({
     if (!isLoading && !isAuth) {
       router.replace(`/auth?back_to=${encodeUrl(pathname)}`);
     }
-  }, [isAuth, pathname, router]);
+  }, [isAuth, pathname, router, isLoading]);
   if (isLoading) return null;
   return isAuth ? <>{children}</> : null;
 }
