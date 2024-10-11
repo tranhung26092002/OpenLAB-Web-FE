@@ -319,7 +319,7 @@ export const dataProduct: productType[] = [
   {
     image: ChatBotAIProduct,
     nameProduct: "KHOÁ HỌC THỰC HÀNH CHATBOT AI",
-    description: " OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI",
+    description: "OpenLAB cung cấp khóa học lập trình phát triển ChatBot AI",
   },
   {
     image: ESP32CAMProduct,

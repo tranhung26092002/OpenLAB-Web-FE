@@ -21,16 +21,7 @@ import { Input } from "~/components/ui/input";
 import { useSearchParams } from "next/navigation";
 import { decodeUrl } from "~/utils/encryption-url";
 import { useAuthStore, UserProps } from "~/store/auth/AuthStore";
-type payload = {
-  data: {
-    fullname: string;
-    address: string;
-    date_of_birth: string;
-    role: string;
-    id: string;
-    token: string;
-  };
-};
+
 export default function LoginForm() {
   const { setUser, setIsAuth } = useAuthStore();
   const router = useRouter();
@@ -38,23 +29,24 @@ export default function LoginForm() {
   const form = useForm<LoginBodyType>({
     resolver: zodResolver(LoginBody),
     defaultValues: {
-      phoneNumber: "",
+      email: "",
       password: "",
     },
   });
   async function onSubmit(values: LoginBodyType) {
-    const res = await handleLogin(values.phoneNumber, values.password);
-
+    const res = await handleLogin(values.email, values.password);
     const queryUrl = query?.get("back_to");
     if (res && res.status === 200 && res.payload) {
-      const payload = (res.payload as payload).data as UserProps;
+      const payload = res.payload as UserProps;
       const user: UserProps = {
         fullname: payload.fullname,
         address: payload.address,
-        date_of_birth: payload.date_of_birth,
+        dateOfBirth: payload.dateOfBirth,
         role: payload.role,
-        id: payload.id,
-        token: payload.token,
+        _id: payload._id,
+        email: payload.email,
+        accessToken: payload.accessToken,
+        courses: payload.courses,
       };
       setUser(user);
       setIsAuth(true);
@@ -84,12 +76,12 @@ export default function LoginForm() {
         </div>
         <FormField
           control={form.control}
-          name="phoneNumber"
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Số điện thoại</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Nhập số điện thoại" {...field} />
+                <Input placeholder="Nhập email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

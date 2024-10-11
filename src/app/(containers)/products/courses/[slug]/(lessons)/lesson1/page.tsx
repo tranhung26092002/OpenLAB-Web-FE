@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Structure5G() {
+export default function Lesson1() {
   return (
     <div>
       structure 5g

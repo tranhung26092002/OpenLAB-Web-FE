@@ -4,10 +4,12 @@ import { devtools, persist, createJSONStorage } from 'zustand/middleware'
 export type UserProps = {
     fullname: string,
     role: string,
-    token: string,
-    id: string,
+    accessToken: string,
+    _id: string,
+    email: string
     address: string,
-    date_of_birth: string,
+    dateOfBirth: string,
+    courses?: []
 }
 
 type AuthStoreSliceProps = {
@@ -20,14 +22,15 @@ type AuthStoreSliceProps = {
 
 const createAuthSlice: StateCreator<AuthStoreSliceProps> = (set) => (
     {
-        isAuth: true,
+        isAuth: false,
         user: {
-            id: '',
+            _id: '',
             fullname: '',
+            email: '',
             role: '',
             address: '',
-            date_of_birth: '',
-            token: '',
+            dateOfBirth: '',
+            accessToken: '',
         },
         setIsAuth: (isAuth: boolean) => set(() => ({ isAuth })),
         setUser: (user: UserProps) => set(() => ({ user }))
