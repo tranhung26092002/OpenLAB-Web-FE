@@ -3,7 +3,7 @@ import { FaArrowRight, FaStar } from "react-icons/fa";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 type CourseInforProps = {
-  srcImg: string|StaticImageData;
+  srcImg: string | StaticImageData;
   id: string | number;
   nameCourse: string;
   price: string;

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import MainLayout from "~/components/main-layout";
+
 import Link from "next/link";
 import PrivateRouter from "~/components/private-route";
 import { MdMenuOpen } from "react-icons/md";
@@ -13,7 +13,6 @@ export default function CourseLayout({
   const [isOpenMenu, setOpenMenu] = useState(false);
   return (
     <PrivateRouter>
-      <MainLayout>
         <div className="flex  h-fit min-h-screen">
           <div className="bg-red-500 w-[20%] px-4 py-4">
             <nav>
@@ -42,7 +41,6 @@ export default function CourseLayout({
             </div>
           </div>
         </div>
-      </MainLayout>
     </PrivateRouter>
   );
 }
