@@ -33,12 +33,14 @@ export default function RightContentHeader() {
   const handleLogoutPage = async () => {
     await handleLogout();
     const resetUser = {
-      id: "",
+      _id: "",
+      email: "",
       fullname: "",
       role: "",
       address: "",
-      date_of_birth: "",
-      token: "",
+      dateOfBirth: "",
+      accessToken: "",
+      course: [],
     };
     setIsAuth(false);
     setUser(resetUser);

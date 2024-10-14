@@ -102,6 +102,12 @@ export default function BenerfitCourse({
           </div>
         </div>
       </div>
+      <div>
+        <video muted controls className="rounded sm:w-[70%] xs:w-[94%]">
+          <source src={"/videos/about.mp4"} type="video/mp4" />
+        </video>
+      </div>
+      <Link href={`/products/courses/${slug}/lesson2`} className="px-4 py-2 bg-blue-500 w-full rounded-sm mt-4 text-center text-white">Tiếp tục</Link>
     </div>
   );
 }
