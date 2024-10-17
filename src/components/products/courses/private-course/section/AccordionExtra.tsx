@@ -17,7 +17,7 @@ export default function AccordionExtra({
     <div>
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger>{content}</AccordionTrigger>
+          <AccordionTrigger className="font-semibold">{content}</AccordionTrigger>
           <AccordionContent>
             {description}
           </AccordionContent>
