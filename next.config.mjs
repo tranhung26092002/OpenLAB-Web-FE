@@ -18,13 +18,15 @@ const nextConfig = {
         underscore: "lodash",
         mocha: { browser: "mocha/browser-entry.js" },
       },
-      // rules: {
-      //   "*.svg": {
-      //     loaders: ["@svgr/webpack"],
-      //     as: "*.js",
-      //   },
-      // },
     },
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
+    ],
   },
 };
 

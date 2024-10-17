@@ -1,12 +1,13 @@
 import { FaSignal, FaStarHalfAlt, FaUsers } from "react-icons/fa";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import Link from "next/link";
+import slug from 'slug'
 import Image, { StaticImageData } from "next/image";
 type CourseInforProps = {
   srcImg: string | StaticImageData;
   id: string | number;
   nameCourse: string;
-  price: string;
+  price?: string;
   isActive?: boolean;
 };
 const CourseInfor = ({
@@ -21,6 +22,8 @@ const CourseInfor = ({
       <div className="mb-5 flex justify-center relative hover:scale-105 hover:transition-all ease-in duration-200">
         <Image
           src={srcImg}
+          width={500}
+          height={100}
           alt="image-product-section"
           className="w-full h-48 object-center object-fill border-[#8AD9E4] border-2 rounded "
         />
@@ -28,7 +31,7 @@ const CourseInfor = ({
           <Link
             href={
               isActive === true
-                ? `/products/courses/${id}`
+                ? `/products/courses/${slug(nameCourse)}?id=${id}`
                 : `/products/courses/introduction/${id}`
             }
             className="flex justify-center items-center w-full h-full"

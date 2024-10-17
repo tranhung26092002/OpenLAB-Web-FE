@@ -38,6 +38,8 @@ export default function LoginForm() {
     const queryUrl = query?.get("back_to");
     if (res && res.status === 200 && res.payload) {
       const payload = res.payload as UserProps;
+      console.log(payload);
+
       const user: UserProps = {
         fullname: payload.fullname,
         address: payload.address,

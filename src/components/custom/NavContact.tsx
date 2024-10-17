@@ -1,4 +1,4 @@
-import { GrMail } from "react-icons/gr";
+
 import {
   Tooltip,
   TooltipContent,
@@ -9,19 +9,18 @@ import flagVN from "~/assets/icon/vietnam_flags.png";
 import flagEN from "~/assets/icon/united-states_flags.png";
 import { FaCaretDown } from "react-icons/fa";
 import Image from "next/image";
-const NavContact = () => {
+import { ReactNode } from "react";
+type NavContactProps = {
+  contentLeft?: ReactNode;
+  contentRight?: ReactNode;
+};
+const NavContact = ({ contentLeft }: NavContactProps) => {
   return (
     <div
       className="flex  justify-between items-center px-14 py-1 bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% text-white
-    xs:flex-col xs:px-0
-    "
+    xs:flex-col xs:px-0 "
     >
-      <div className="flex  xl:w-[20%] justify-center">
-        <span className="flex gap-1 items-center">
-          <GrMail />
-          openlab.user@gmail.com
-        </span>
-      </div>
+      <div className="flex xl:w-[20%] justify-center">{contentLeft}</div>
       <div className="flex  gap-2 items-center  xl:w-[20%] justify-center">
         <TooltipProvider delayDuration={100}>
           <Tooltip>

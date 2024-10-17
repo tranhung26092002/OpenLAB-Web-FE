@@ -5,7 +5,7 @@ const Logo = ({ color }: logoProps) => {
   return (
     <div className="flex flex-col ">
       <span
-        className={`  font-semibold  text-5xl text-shadow-lg`}
+        className={` font-semibold  text-5xl text-shadow-lg`}
         style={{
           color: color,
           textShadow:

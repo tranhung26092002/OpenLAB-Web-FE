@@ -1,17 +1,42 @@
+"use client";
 import React from "react";
 import imageSale from "~/assets/image/product/sales.jpeg";
-import slug from "slug";
-import {
-  courseInforCloud,
-  courseInforDataAnalyst,
-  courseInforDronevsUav,
-} from "~/services/data";
+// import slug from "slug";
+// import {
+//   courseInforCloud,
+//   // courseInforDataAnalyst,
+//   // courseInforDronevsUav,
+// } from "~/services/data";
 import BannerPage from "~/components/custom/BannerPage";
 import CourseInfor from "~/components/products/courses/CourseInfor";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import MainLayout from "~/components/main-layout";
 import PrivateRouter from "~/components/private-route";
+import { useSWRPrivate } from "~/hooks/useSWRCustom";
+import { useAuthStore } from "~/store/auth/AuthStore";
+type courseListProps = {
+  image: StaticImageData | string;
+  name: string;
+  starNumber: string;
+  _id: string;
+  subType: string;
+  type: string;
+};
 export default function SearchCourse() {
+  const { user } = useAuthStore();
+  const { _id, courses } = user;
+  const { isLoading, error, data } = useSWRPrivate("courses/active", {
+    method: "POST",
+    body: JSON.stringify({
+      userId: _id,
+      courseId: courses,
+    }),
+  });
+
+  console.log("check data ", isLoading, error, data);
+  const courseList: courseListProps[] = data?.payload.data;
+  console.log(courseList);
+
   return (
     <PrivateRouter>
       <MainLayout>
@@ -49,7 +74,7 @@ export default function SearchCourse() {
             </div>
           </div>
           <div className=" xs:px-4 xs:py-14">
-            <span className="text-3xl font-semibold xs:text-2xl uppercase w-full text-center  block">
+            <span className="text-3xl font-semibold xs:text-2xl uppercase w-full text-center mt-10 block">
               Khóa học
             </span>
             <div className="px-14 xs:px-0">
@@ -59,7 +84,7 @@ export default function SearchCourse() {
                     Thực hành điện toán đám mây
                   </span>
                   <div className="flex items-center w-full flex-wrap xl:justify-around xs:flex-col">
-                    {courseInforCloud.map((item, index) => {
+                    {courseList?.map((item, index) => {
                       return (
                         <div
                           className="flex  flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
@@ -67,9 +92,8 @@ export default function SearchCourse() {
                         >
                           <CourseInfor
                             srcImg={item.image}
-                            id={slug(item.nameCourse)}
-                            nameCourse={item.nameCourse}
-                            price={item.price}
+                            id={item._id}
+                            nameCourse={item.name}
                             isActive={true}
                           />
                         </div>
@@ -77,7 +101,7 @@ export default function SearchCourse() {
                     })}
                   </div>
                 </div>
-                <div className=" flex flex-col">
+                {/* <div className=" flex flex-col">
                   <span className="text-xl font-semibold py-10 uppercase text-blue-600 xs:text-center xs:pb-0">
                     Thực hành phân tích dữ liệu
                   </span>
@@ -99,8 +123,8 @@ export default function SearchCourse() {
                       );
                     })}
                   </div>
-                </div>
-                <div className=" flex flex-col">
+                </div> */}
+                {/* <div className=" flex flex-col">
                   <span className="text-xl font-semibold py-10 uppercase text-blue-600 xs:text-center xs:pb-0">
                     Thực hành Drone/UAV
                   </span>
@@ -122,7 +146,7 @@ export default function SearchCourse() {
                       );
                     })}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
