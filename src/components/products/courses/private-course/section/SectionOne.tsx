@@ -18,7 +18,7 @@ export default function SectionOne({
 }: SectionOneProps) {
   return (
     <div className="flex flex-col justify-center items-center w-full py-14 px-16">
-      <div className="mb-8 flex flex-col gap-6  w-full ">
+      <div className="mb-8 flex flex-col gap-6 text-center w-full ">
         <span className="text-2xl font-semibold ">{header.nameItem}</span>
         {/* <hr className="w-full border-red-600 border-1" /> */}
       </div>

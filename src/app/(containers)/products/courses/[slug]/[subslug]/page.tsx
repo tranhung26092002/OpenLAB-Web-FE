@@ -20,13 +20,23 @@ export default function CourseView() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
-  const [isOpenMenu, setOpenMenu] = useState(false);
+  const [isOpenMenu, setOpenMenu] = useState(true);
+  const [isContinue, setContinue] = useState(false);
   const { isLoading, error, data } = useSWRPrivate(`lessons?id=${id}`);
   if (isLoading) return <div>Loading...</div>;
   if (error || !data) return <div>Error loading course data.</div>;
   const indexItem: indexItemProps[] = data?.payload?.indexItem || [];
   const nameLesson = data?.payload?.name;
   const contentCourse: ContentLesson[] = data?.payload?.content || [];
+
+  // const handleContinue = () => {
+  //   setContinue(true);
+  //   console.log("check value scroll y outside if:", window.scrollY);
+  //   if (window.scrollY > 0 && isContinue === true) {
+  //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  //     console.log("Vị trí cuộn sau khi cuộn lại:", window.scrollY);
+  //   }
+  // };
 
   return (
     <div
@@ -70,7 +80,9 @@ export default function CourseView() {
             <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
               Sơ đồ đấu nối
             </li>
-            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">Code mẫu</li>
+            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
+              Code mẫu
+            </li>
             <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
               Video & tài liệu
             </li>
@@ -102,8 +114,8 @@ export default function CourseView() {
             contentCourse.map((item, index) => {
               switch (index) {
                 case 0:
-                  return (
-                    <div id={`${index}`}>
+                  return isContinue === false ? (
+                    <div id={`${index}`} key={`${index}`}>
                       <SectionOne
                         header={indexItem[0]}
                         title={item.title}
@@ -112,10 +124,12 @@ export default function CourseView() {
                         contentText={item.contentText}
                       />
                     </div>
+                  ) : (
+                    <></>
                   );
                 case 1:
-                  return (
-                    <div id={`${index}`}>
+                  return isContinue === false ? (
+                    <div id={`${index}`} key={`${index}`}>
                       <SectionTwo
                         title={item.title}
                         header={indexItem[1]}
@@ -123,10 +137,17 @@ export default function CourseView() {
                         contentText={item.contentText}
                       />
                     </div>
+                  ) : (
+                    <></>
                   );
+
                 case 2:
-                  return (
-                    <div id={`${index}`}>
+                  return isContinue === false ? (
+                    <div
+                      id={`${index}`}
+                      key={`${index}`}
+                      className="flex justify-center items-center flex-col"
+                    >
                       <SectionThree
                         dataImage={item.dataImage}
                         header={indexItem[2]}
@@ -135,11 +156,30 @@ export default function CourseView() {
                         dataList2={item.dataList2}
                         dataMerge={item.dataMerge}
                       />
+                      <div className="py-10 w-full flex justify-center items-center">
+                        <Link
+                          href={`#${index + 1}`}
+                          className="bg-blue-500 w-1/3 py-4 text-white text-lg flex justify-center items-center"
+                          onClick={() => setContinue(true)}
+                        >
+                          Continue
+                        </Link>
+                      </div>
                     </div>
+                  ) : (
+                    <></>
                   );
                 case 3:
-                  return (
-                    <div id={`${index}`}>
+                  return isContinue === true ? (
+                    <div id={`${index}`} className="flex-col" key={`${index}`}>
+                      <div className=" w-full flex justify-center items-center">
+                        <button
+                          className="bg-blue-500 w-1/3 py-4 text-white text-lg flex justify-center items-center mb-10"
+                          onClick={() => setContinue(false)}
+                        >
+                          Back
+                        </button>
+                      </div>
                       <SectionFour
                         title={item.title}
                         dataImage={item.dataImage}
@@ -149,10 +189,12 @@ export default function CourseView() {
                         header={indexItem[3]}
                       />
                     </div>
+                  ) : (
+                    <></>
                   );
                 case 4:
-                  return (
-                    <div id={`${index}`}>
+                  return isContinue === true ? (
+                    <div id={`${index}`} key={`${index}`}>
                       <SectionFive
                         title={item.title}
                         dataImage={item.dataImage}
@@ -161,12 +203,16 @@ export default function CourseView() {
                         dataSlides={item.dataSlides}
                       />
                     </div>
+                  ) : (
+                    <></>
                   );
                 case 5:
-                  return (
-                    <div id={`${index}`}>
+                  return isContinue === true ? (
+                    <div id={`${index}`} key={`${index}`}>
                       <SectionLast dataVideo={item.dataVideo} />
                     </div>
+                  ) : (
+                    <></>
                   );
                 default:
                   return null;

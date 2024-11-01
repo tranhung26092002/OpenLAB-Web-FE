@@ -68,7 +68,7 @@ export default function SectionFour({
   console.log(title);
   const subtitle = title ? title[0] : "";
   return (
-    <div className="flex flex-col w-full items-center ">
+    <div className="flex flex-col w-full items-center px-16   ">
       <div className="mb-8 flex flex-col gap-6  w-full ">
         <hr className="w-full border-2 border-red-600 mb-2" />
         <span className="text-2xl font-semibold ">{header?.nameItem}</span>
@@ -83,7 +83,7 @@ export default function SectionFour({
       />
       <div className="flex flex-col w-full items-center px-14 ">
         <span className="text-3xl font-semibold">{title ? title[1] : ""}</span>
-        <div className="w-full flex justify-center items-center ">
+        <div className="w-full flex justify-between items-center ">
           <button
             className=" px-5 py-5 rounded-full bg-black w-fit h-fit  "
             onClick={previous}

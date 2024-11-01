@@ -2,6 +2,7 @@ import React from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import { dataTab, dataSlide } from "~/types/CustomType";
 import { StaticImageData } from "next/image";
+import SchemaEsp8266 from "~/components/custom/image-course/esp8266/SchemaEsp8266";
 type SectionFiveProps = {
   dataTab?: dataTab[];
   title?: Array<string>;
@@ -11,7 +12,11 @@ type SectionFiveProps = {
 };
 export default function SectionFive({ title, dataTab }: SectionFiveProps) {
   return (
-    <div className="flex flex-col justify-center items-center w-full bg-red-300">
+    <div className="flex flex-col justify-center items-center w-full ">
+      <div className="mb-7">
+        <SchemaEsp8266 />
+      </div>
+
       <span className="text-3xl font-semibold">{title ? title[0] : ""}</span>
       <div className="flex justify-center items-center w-full">
         {dataTab && dataTab?.length !== 0 ? (
