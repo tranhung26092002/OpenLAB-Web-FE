@@ -4,7 +4,7 @@ type SectionLastProps = {
 };
 export default function SectionLast({ dataVideo }: SectionLastProps) {
   return (
-    <div>
+    <div className=" w-full flex justify-center items-center">
       <iframe
         width="560"
         height="315"

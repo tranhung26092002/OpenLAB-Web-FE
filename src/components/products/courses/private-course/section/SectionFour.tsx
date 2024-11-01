@@ -83,7 +83,6 @@ export default function SectionFour({
       />
       <div className="flex flex-col w-full items-center px-14 ">
         <span className="text-3xl font-semibold">{title ? title[1] : ""}</span>
-
         <div className="w-full flex justify-center items-center ">
           <button
             className=" px-5 py-5 rounded-full bg-black w-fit h-fit  "
@@ -100,7 +99,6 @@ export default function SectionFour({
                       <span className=" bg-blue-600 text-white px-3 py-2 rounded text-lg font-semibold">
                         Step {index + 1}
                       </span>
-
                       <div className="w-full flex items-center gap-8">
                         <Image
                           src={item.image}
@@ -177,8 +175,8 @@ export default function SectionFour({
                     key={index}
                   >
                     <Suspense>
-                      <div className="flex justify-around  items-center py-8 gap-4 w-full  ">
-                        <p className="text-justify w-[30%]   block ">
+                      <div className="flex justify-around items-center py-8 gap-4 w-full">
+                        <p className="text-justify w-[30%] block ">
                           {item.description}
                         </p>
                         <div className="w-[45%]">

@@ -1,7 +1,7 @@
 
 export default function CourseOne() {
   return (
-    <div className="bg-red-500 w-[960px] relative flex justify-center items-center ">
+    <div className=" w-[960px] relative flex justify-center items-center ">
       <iframe
         width="960"
         height="540"

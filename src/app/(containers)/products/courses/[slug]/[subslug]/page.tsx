@@ -55,11 +55,11 @@ export default function CourseView() {
               return (
                 <li
                   key={index}
-                  className="py-4 hover:bg-[#eee] rounded-sm pl-4 "
+                  className="py-4 hover:bg-[#eee] rounded-sm pl-3 "
                 >
                   <Link
                     href={`#${index}`}
-                    className="flex items-center gap-1 font-normal text-sm"
+                    className="flex items-center gap-1 font-normal text-sm "
                   >
                     <BsCameraVideo />
                     {item.nameItem}
@@ -67,6 +67,13 @@ export default function CourseView() {
                 </li>
               );
             })}
+            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
+              Sơ đồ đấu nối
+            </li>
+            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">Code mẫu</li>
+            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
+              Video & tài liệu
+            </li>
           </ul>
         </nav>
       </div>

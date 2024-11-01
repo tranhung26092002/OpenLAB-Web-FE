@@ -18,9 +18,9 @@ export default function Image5G() {
     >
       <Dialog>
         <DialogTrigger>
-          <button className="absolute text-2xl text-blue-500 top-[42%] left-[8%]">
+          <div className="absolute text-2xl text-blue-500 top-[42%] left-[8%]">
             <FiPlusCircle />
-          </button>
+          </div>
         </DialogTrigger>
         <DialogContent className="bg-white">
           <DialogHeader>
