@@ -1,16 +1,17 @@
 import useSWR from "swr";
 import { useFetchApi } from "~/hooks/useFetchApi";
-export async function useSWRPublic(url: string) {
+
+export function useSWRPublic(url: string) {
   const { data, error, isLoading } = useSWR(
     url,
-    async () => {
-      await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}/${url}`)
+    () =>
+      fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}/${url}`)
         .then((res) => res.json())
         .catch((e) => {
           throw new Error(`message Error is: ${e}`);
         })
-    }
   );
+
   return { data, error, isLoading };
 }
 

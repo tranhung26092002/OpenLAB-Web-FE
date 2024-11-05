@@ -9,20 +9,26 @@ export default function SchemaEsp8266() {
       className="w-[750px] h-[450px]  bg-center bg-contain bg-no-repeat relative"
     >
       <div
-        className="absolute text-2xl text-blue-500 bottom-[22%] left-[20%] hover:border-2 hover:border-blue-600"
+        className="absolute text-2xl cursor-pointer text-blue-500 bottom-[22%] left-[20%] rounded-full border-2 border-blue-600"
         data-tooltip-id="my-tooltip1"
       >
-      <FaPlus />
+        <div className="absolute rounded-full border-2 w-full h-full animate-ping border-blue-400 "></div>
+        <FaPlus className="text-base text-blue-600" />
       </div>
       <Tooltip
         id="my-tooltip1"
         clickable
         openOnClick
         place="right"
-        variant="light"
-        className="px-0 py-0"
+        //  variant="success"
+        className="px-0 py-0 opacity-100 bg-white"
+        style={{
+          padding: 0,
+          opacity: 1,
+          backgroundColor: "red",
+        }}
       >
-        <div className="w-96 bg-red-300">
+        <div className="w-96  opacity-100">
           <span>Are you absolutely sure1?</span>
           <p>
             This action cannot be undone. This will permanently delete your
@@ -31,17 +37,19 @@ export default function SchemaEsp8266() {
         </div>
       </Tooltip>
       <div
-        className="absolute text-2xl text-blue-500 top-[14%] left-[52%] shadow-xl rounded-full"
+        className="absolute cursor-pointer text-2xl text-blue-500 top-[14%] left-[52%] shadow-xl rounded-full border-2 border-blue-600"
         data-tooltip-id="my-tooltip2"
       >
-       <FaPlus />
+        <div className="absolute rounded-full border-2 w-full h-full animate-ping border-blue-400 "></div>
+
+        <FaPlus className="text-base text-blue-600" />
       </div>
       <Tooltip
         id="my-tooltip2"
         clickable
         openOnClick
         place="bottom"
-        variant="light"
+        variant="success"
       >
         <div>
           <span>Are you absolutely sure2?</span>
@@ -53,17 +61,20 @@ export default function SchemaEsp8266() {
       </Tooltip>
 
       <div
-        className="absolute text-2xl text-blue-500 top-[35%] right-[5%]"
+        className=" absolute cursor-pointer text-2xl text-blue-500 top-[35%] right-[5%] border-2 border-blue-600 rounded-full"
         data-tooltip-id="my-tooltip3"
       >
-       <FaPlus />
+        <div className="absolute rounded-full border-2 w-full h-full animate-ping border-blue-400 "></div>
+
+        <FaPlus className="text-base text-blue-600" />
       </div>
       <Tooltip
         id="my-tooltip3"
         clickable
         openOnClick
         place="right"
-        variant="light"
+        variant="success"
+        className="bg-white"
       >
         <div>
           <span>Are you absolutely sure3?</span>
