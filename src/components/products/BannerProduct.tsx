@@ -33,7 +33,7 @@ const BannerProduct = ({
   idCourse,
 }: BannerProductProps) => {
   const startLength = Math.floor(parseInt(starNumber));
-  const startOdd = starNumber.split(".")[1];
+  const startOdd = starNumber?.split(".")[1];
   const { user } = useAuthStore();
   const { _id } = user;
   const [isOpenAlert, setOpenAlert] = useState(false);
