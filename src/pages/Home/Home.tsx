@@ -378,7 +378,7 @@ export const Home = (props: Props) => {
                 <div className={styles.container_about}>
                     <div className={styles.about_img}>
                         <span>
-                            <img src={require("../../assets/img/home/9.jpg")} alt="about" />
+                            <img src={require("../../assets/img/home/section_about.webp")} alt="about" />
                         </span>
                     </div>
                     <div className={styles.about_content}>
