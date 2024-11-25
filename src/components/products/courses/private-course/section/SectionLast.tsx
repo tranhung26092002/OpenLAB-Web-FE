@@ -4,9 +4,10 @@ type SectionLastProps = {
 };
 export default function SectionLast({ dataVideo }: SectionLastProps) {
   return (
-    <div className=" w-full flex justify-center items-center">
+    <div className=" w-full flex justify-center items-center ">
       <iframe
         width="560"
+        className="rounded"
         height="315"
         src={dataVideo}
         title="YouTube video player"

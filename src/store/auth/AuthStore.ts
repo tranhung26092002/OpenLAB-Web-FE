@@ -7,8 +7,9 @@ export type UserProps = {
     accessToken: string;
     _id: string;
     email: string;
-    address: string;
-    dateOfBirth: string;
+    address?: string;
+    image?: string
+    dateOfBirth?: string;
     courses?: Array<string>;
 };
 

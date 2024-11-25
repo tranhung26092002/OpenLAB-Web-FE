@@ -10,6 +10,8 @@ import {
 } from "~/utils/LazySection";
 
 export default function Home() {
+
+
   return (
     <MainLayout>
       <div className="container-section-banner">
@@ -19,7 +21,7 @@ export default function Home() {
         <LazySectionServices />
       </div>
       <div className="container-section-solution">
-        <LazySectionSolution/>
+        <LazySectionSolution />
       </div>
       <div className="container-section-product">
         <LazySectionProduct />

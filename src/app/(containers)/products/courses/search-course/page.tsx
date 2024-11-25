@@ -10,10 +10,11 @@ import imageSale from "~/assets/image/product/sales.jpeg";
 import BannerPage from "~/components/custom/BannerPage";
 import CourseInfor from "~/components/products/courses/CourseInfor";
 import Image, { StaticImageData } from "next/image";
-import MainLayout from "~/components/main-layout";
+
 import PrivateRouter from "~/components/private-route";
 import { useSWRPrivate } from "~/hooks/useSWRCustom";
 import { useAuthStore } from "~/store/auth/AuthStore";
+import MainLayout from "~/components/main-layout";
 type courseListProps = {
   image: StaticImageData | string;
   name: string;
@@ -21,6 +22,7 @@ type courseListProps = {
   _id: string;
   subType: string;
   type: string;
+  lessons: Array<string>;
 };
 export default function SearchCourse() {
   const { user } = useAuthStore();
@@ -95,6 +97,7 @@ export default function SearchCourse() {
                             id={item._id}
                             nameCourse={item.name}
                             isActive={true}
+                            firstLesson={item.lessons[0]}
                           />
                         </div>
                       );

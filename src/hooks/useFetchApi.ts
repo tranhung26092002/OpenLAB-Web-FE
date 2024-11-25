@@ -46,55 +46,56 @@ export const useFetchApi = (url: string, options?: RequestInit) => {
       : `${baseUrl}/${url}`;
 
     if (!accessToken) {
+      // to do
       throw new Error('Access Token is not exist !')
-    }
+    } else {
+      const validateJwt = jwtDecode(accessToken);
+      const expToken = validateJwt.exp as number;
+      const timestampNow = new Date().getTime();
 
-    const validateJwt = jwtDecode(accessToken);
-    const expToken = validateJwt.exp as number;
-    const timestampNow = new Date().getTime();
-
-    if (expToken < timestampNow / 1000) {
-      console.log('is running!');
-      const refresh = await fetch(`${baseUrl}/auth/refresh`, {
-        credentials: "include",
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      }).then((res) => res.json());
-      console.log('check refresh:', refresh);
-
-      if (refresh.statusCode === 401 || refresh.message === "Unauthorized") {
-        await fetch(`${baseUrl}/auth/logout`, {
+      if (expToken < timestampNow / 1000) {
+        console.log('is running!');
+        const refresh = await fetch(`${baseUrl}/auth/refresh`, {
           credentials: "include",
           method: "GET",
           headers: { "Content-Type": "application/json" },
-        }).then(async (res) => {
-          if (res.ok && res.status === 200) {
-            const resetUser = {
-              _id: "",
-              fullname: "",
-              role: "",
-              email: "",
-              address: "",
-              dateOfBirth: "",
-              accessToken: "",
-              courses: [],
-            };
-            setIsAuth(false);
-            setUser(resetUser);
-            router.replace("/auth");
-          }
-        });
+        }).then((res) => res.json());
+        console.log('check refresh:', refresh);
+
+        if (refresh.statusCode === 401 || refresh.message === "Unauthorized") {
+          await fetch(`${baseUrl}/auth/logout`, {
+            credentials: "include",
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          }).then((res) => {
+            if (res.ok && res.status === 200) {
+              const resetUser = {
+                _id: "",
+                fullname: "",
+                role: "",
+                email: "",
+                address: "",
+                dateOfBirth: "",
+                accessToken: "",
+                courses: [],
+              };
+              setIsAuth(false);
+              setUser(resetUser);
+              router.replace("/auth");
+            }
+          });
+        }
+        const newUser = {
+          ...user,
+          accessToken: refresh.accessToken,
+        };
+        setUser(newUser);
+        const data = await fetcher(fullUrl, refresh.accessToken, options);
+        return data;
       }
-      const newUser = {
-        ...user,
-        accessToken: refresh.accessToken,
-      };
-      setUser(newUser);
-      const data = await fetcher(fullUrl, refresh.accessToken, options);
+      const data = await fetcher(fullUrl, accessToken, options);
       return data;
     }
-    const data = await fetcher(fullUrl, accessToken, options);
-    return data;
   };
   return fetchData;
 };

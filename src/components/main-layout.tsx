@@ -27,7 +27,12 @@ export default function MainLayout({
           />
         </div>
       )}
-      {!authPage && <Header />}
+
+      {!authPage && (
+        <header className="sticky top-0 z-10">
+          <Header />
+        </header>
+      )}
       {children}
       {!authPage && <ButtonGoToTop />}
       {!authPage && !coursePage && <Footer />}

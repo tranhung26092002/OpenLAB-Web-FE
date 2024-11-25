@@ -1,7 +1,7 @@
 import { FaSignal, FaStarHalfAlt, FaUsers } from "react-icons/fa";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import Link from "next/link";
-import slug from 'slug'
+import slug from "slug";
 import Image, { StaticImageData } from "next/image";
 type CourseInforProps = {
   srcImg: string | StaticImageData;
@@ -9,6 +9,7 @@ type CourseInforProps = {
   nameCourse: string;
   price?: string;
   isActive?: boolean;
+  firstLesson?: string;
 };
 const CourseInfor = ({
   srcImg,
@@ -16,6 +17,7 @@ const CourseInfor = ({
   nameCourse,
   price,
   isActive,
+  firstLesson,
 }: CourseInforProps) => {
   return (
     <div className=" flex flex-col relative cursor-pointer w-[95%] xs:w-[95%]  h-[430px] rounded-xl px-4 py-4 shadow-md  item-center hover:shadow-2xl  sm:mt-4  ">
@@ -31,7 +33,7 @@ const CourseInfor = ({
           <Link
             href={
               isActive === true
-                ? `/products/courses/${slug(nameCourse)}?id=${id}`
+                ? `/products/courses/${slug(nameCourse)}?id=${firstLesson}`
                 : `/products/courses/introduction/${id}`
             }
             className="flex justify-center items-center w-full h-full"

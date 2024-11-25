@@ -34,11 +34,11 @@ export const LazySectionActivityInsite = dynamic(
   () => import("~/components/about/SectionActivityInsite")
 );
 
-export const LazySchemaKitb = dynamic(() => import('~/components/openkit/kitb/schema/SchemaKitb'), { ssr: false })
+export const LazySchemaKitb = dynamic(() => import('~/components/openkit/kitb/schema/SchemaKitb'))
 
 export const LazyMqttConnect = dynamic(
   () => import("~/components/openkit/kitb/MqttConnect")
 );
 
-export const LazyDashboard = dynamic(() => import('~/components/openkit/kitb/Dashboard'), { ssr: false })
+export const LazyDashboard = dynamic(() => import('~/components/openkit/kitb/Dashboard'))
 

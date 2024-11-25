@@ -1,133 +1,219 @@
 "use client";
-import React from "react";
-import { FaAngleDown } from "react-icons/fa6";
-import imageCourse from "~/assets/image/product/course/ai-ml/0e4ce4245298f5c6ac89.jpg";
-import { GoDotFill } from "react-icons/go";
-import { BsCameraVideo } from "react-icons/bs";
-import { FaRegCircle } from "react-icons/fa";
+import schema5gimg from "~/assets/image/product/course/5g/schema-5g.png";
+// import { GoDotFill } from "react-icons/go";
 import Link from "next/link";
-import slug from "slug";
+import Image from "next/image";
+import { MdMenuOpen } from "react-icons/md";
 import { useSWRPrivate } from "~/hooks/useSWRCustom";
 import { useSearchParams } from "next/navigation";
-
-const data1: string[] = [
-  "Define 5G and explain its history and evolution",
-  "Understand the key 5G requirements and standards",
-  "Describe the fundamentals of 5G RAN and CORE",
-  "Explore 5G use cases",
-  "Evaluate the 5G impact on health and environment",
-];
-
-type benefitCourseProps = { _id: string; name: string };
-
-export default function BenefitCourse({
-  params,
-}: {
-  params: { slug: string };
-}) {
+import { indexItemProps, ContentLesson } from "~/types/CustomType";
+// import TitleLesson from "~/components/products/courses/private-course/section/TitleLesson";
+import { useState } from "react";
+import SectionOne from "~/components/products/courses/private-course/section/SectionOne";
+import SectionTwo from "~/components/products/courses/private-course/section/SectionTwo";
+import SectionFour from "~/components/products/courses/private-course/section/SectionFour";
+import SectionFive from "~/components/products/courses/private-course/section/SectionFive";
+import SectionLast from "~/components/products/courses/private-course/section/SectionLast";
+import { BsCameraVideo } from "react-icons/bs";
+import SectionThree from "~/components/products/courses/private-course/section/SectionThree";
+export default function CourseView() {
   const searchParams = useSearchParams();
-  const slugPage = params.slug;
   const id = searchParams.get("id");
-  
-  const { isLoading, error, data } = useSWRPrivate(`courses?id=${id}`);
 
-  // Kiểm tra khi dữ liệu chưa tải hoặc gặp lỗi
+  const [isOpenMenu, setOpenMenu] = useState(true);
+  const [isContinue, setContinue] = useState(false);
+  const { isLoading, error, data } = useSWRPrivate(`lessons?id=${id}`);
   if (isLoading) return <div>Loading...</div>;
   if (error || !data) return <div>Error loading course data.</div>;
+  const indexItem: indexItemProps[] = data?.payload?.indexItem || [];
+  const nameLesson = data?.payload?.name;
+  const contentCourse: ContentLesson[] = data?.payload?.content || [];
 
-  const nameCourse = data?.payload?.name;
-  const descriptionCourse = data?.payload?.description;
-  const benefitCourse: benefitCourseProps[] = data?.payload?.lessons || [];
-  const firstLesson = benefitCourse.length > 0 ? benefitCourse[0] : null;
+  // const handleContinue = () => {
+  //   setContinue(true);
+  //   console.log("check value scroll y outside if:", window.scrollY);
+  //   if (window.scrollY > 0 && isContinue === true) {
+  //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  //     console.log("Vị trí cuộn sau khi cuộn lại:", window.scrollY);
+  //   }
+  // };
 
   return (
-    <div className="w-screen max-w-full flex flex-col">
+    <div
+      className={`flex w-full relative ${isOpenMenu ? "justify-end pr-4" : ""}`}
+    >
       <div
-        className="bg-no-repeat bg-cover bg-center px-20 py-10 h-96"
-        style={{ backgroundImage: `url(${imageCourse.src})` }}
+        className={`w-[19%] h-screen  overflow-y-auto transition-opacity ease-out duration-200 ${
+          isOpenMenu
+            ? "opacity-100 fixed top-0 left-0 "
+            : " opacity-0 pointer-events-none absolute top-0 left-0"
+        }`}
       >
-        <div className="flex items-center justify-center">
-          <div className="w-fit flex flex-col justify-center gap-7">
-            <div className="flex gap-3 items-center">
-              <div className="border-2 border-white bg-blue-400 px-2 py-2 rounded-full text-white">
-                ML
-              </div>
-              <span className="text-base text-white">Matthew Lace</span>
-            </div>
-            <div>
-              <span className="text-3xl font-semibold text-white">
-                {nameCourse || "Course Name"}
-              </span>
-            </div>
-            <div className="flex justify-center items-center gap-4">
-              <Link
-                href={
-                  firstLesson
-                    ? `/products/courses/${slugPage}/${slug(
-                        firstLesson.name
-                      )}?id=${firstLesson._id}`
-                    : "#"
-                }
-              >
-                <button
-                  className={`px-6 py-2 rounded-full bg-white text-sm font-semibold hover:opacity-80 ${
-                    !firstLesson && "cursor-not-allowed"
-                  }`}
-                  disabled={!firstLesson}
-                >
-                  START COURSE
-                </button>
-              </Link>
-
-              <button className="px-6 hover:opacity-80 py-2 text-sm text-white font-semibold rounded-full bg-transparent flex gap-1 items-center justify-center">
-                DETAILS
-                <FaAngleDown />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-20 flex justify-center items-center flex-col">
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-col">
-            <span className="font-semibold text-base">Description</span>
-            <p>{descriptionCourse || "No description available."}</p>
-          </div>
-          <div className="flex flex-col">
-            <span className="font-semibold text-base">
-              By the end of this course, you will be able to
+        <nav className="flex flex-col">
+          <div className="mb-5 relative">
+            <Image
+              src={schema5gimg}
+              alt="Image-5G"
+              className="border-2 border-red-500 opacity-60 bg-green-500"
+            />
+            <span className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] uppercase font-semibold text-xl ">
+              {nameLesson}
             </span>
-            <ul>
-              {data1.map((item, index) => (
-                <li key={index} className="flex gap-1 items-center">
-                  <GoDotFill />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
-          <div>
-            <ul>
-              {benefitCourse.map((item, index) => (
-                <Link
-                  href={`/products/courses/${slugPage}/${slug(
-                    item.name
-                  )}?id=${item._id}`}
+          <ul>
+            {indexItem.map((item, index) => {
+              return (
+                <li
                   key={index}
+                  className="py-4 hover:bg-[#eee] rounded-sm pl-3 "
                 >
-                  <li className="flex justify-between items-center hover:bg-gray-300 py-4 px-2">
-                    <div className="flex items-center gap-2">
-                      <BsCameraVideo />
-                      <span className="font-medium text-sm">{item.name}</span>
-                    </div>
-                    <FaRegCircle className="text-gray-400 font-semibold" />
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </div>
+                  <Link
+                    href={`#${index}`}
+                    className="flex items-center gap-1 font-normal text-sm "
+                  >
+                    <BsCameraVideo />
+                    {item.nameItem}
+                  </Link>
+                </li>
+              );
+            })}
+            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
+              Sơ đồ đấu nối
+            </li>
+            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
+              Code mẫu
+            </li>
+            <li className="py-4 hover:bg-[#eee] rounded-sm pl-4 font-normal text-sm">
+              Video & tài liệu
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        className={` flex flex-col justify-center transition-all ease-out duration-200 items-center   ${
+          isOpenMenu ? "w-[81%] px-4 " : "w-full px-24 z-10"
+        }`}
+      >
+        <div className=" flex w-full ">
+          <button
+            onClick={() => setOpenMenu(!isOpenMenu)}
+            className="px-2 py-2 hover:bg-[#eee] rounded"
+          >
+            <MdMenuOpen className="text-2xl" />
+          </button>
         </div>
+
+        {/* <TitleLesson
+          title={nameLesson}
+          complete={"9"}
+          percent={"1"}
+          author="Matthew Lace"
+        /> */}
+        <div className="w-full">
+          {contentCourse && contentCourse.length !== 0 ? (
+            contentCourse.map((item, index) => {
+              switch (index) {
+                case 0:
+                  return isContinue === false ? (
+                    <div id={`${index}`} key={index}>
+                      <SectionOne
+                        header={indexItem[0]}
+                        title={item.title}
+                        dataImage={item.dataImage}
+                        dataPlus={item.dataPlus}
+                        contentText={item.contentText}
+                      />
+                    </div>
+                  ) : null;
+                case 1:
+                  return isContinue === false ? (
+                    <div id={`${index}`} key={index}>
+                      <SectionTwo
+                        title={item.title}
+                        header={indexItem[1]}
+                        dataImage={item.dataImage}
+                        contentText={item.contentText}
+                      />
+                    </div>
+                  ) : null;
+
+                case 2:
+                  return isContinue === false ? (
+                    <div
+                      id={`${index}`}
+                      key={index}
+                      className="flex justify-center items-center flex-col"
+                    >
+                      <SectionThree
+                        dataImage={item.dataImage}
+                        header={indexItem[2]}
+                        title={item.title}
+                        dataList={item.dataList}
+                        dataList2={item.dataList2}
+                        dataMerge={item.dataMerge}
+                      />
+                      <div className="py-10 w-full flex justify-center items-center">
+                        <Link
+                          href={`#${index + 1}`}
+                          className="bg-blue-500 w-1/3 py-4 text-white text-lg flex justify-center items-center"
+                          onClick={() => setContinue(true)}
+                        >
+                          Continue
+                        </Link>
+                      </div>
+                    </div>
+                  ) : null;
+                case 3:
+                  return isContinue === true ? (
+                    <div id={`${index}`} className="flex-col" key={index}>
+                      <div className=" w-full flex justify-center items-center">
+                        <button
+                          className="bg-blue-500 w-1/3 py-4 text-white text-lg flex justify-center items-center mb-10"
+                          onClick={() => setContinue(false)}
+                        >
+                          Back
+                        </button>
+                      </div>
+                      <SectionFour
+                        title={item.title}
+                        dataImage={item.dataImage}
+                        contentText={item.contentText}
+                        dataTab={item.dataTab}
+                        dataSlides={item.dataSlides}
+                        header={indexItem[3]}
+                      />
+                    </div>
+                  ) : null;
+                case 4:
+                  return isContinue === true ? (
+                    <div id={`${index}`} key={index}>
+                      <SectionFive
+                        title={item.title}
+                        dataImage={item.dataImage}
+                        contentText={item.contentText}
+                        dataTab={item.dataTab}
+                        dataSlides={item.dataSlides}
+                      />
+                    </div>
+                  ) : null;
+                case 5:
+                  return isContinue === true ? (
+                    <div id={`${index}`} key={index}>
+                      <SectionLast dataVideo={item.dataVideo} />
+                    </div>
+                  ) : null;
+                default:
+                  return null;
+              }
+            })
+          ) : (
+            <></>
+          )}
+        </div>
+
+        {/* <div>
+          <Image src={schema5gimg} alt={"schema-5g"} />
+        </div> */}
       </div>
     </div>
   );

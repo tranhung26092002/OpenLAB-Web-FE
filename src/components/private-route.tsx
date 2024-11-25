@@ -17,5 +17,5 @@ export default function PrivateRouter({
     }
   }, [isAuth, pathname, router, isLoading]);
   if (isLoading) return null;
-  return isAuth ? <>{children}</> : null;
+  return isAuth ? <div>{children}</div> : null;
 }

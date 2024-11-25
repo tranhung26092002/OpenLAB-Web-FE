@@ -1,7 +1,9 @@
 "use client";
-import { FaArrowRight } from "react-icons/fa6";
+
 import imagebg from "~/assets/background/nonbg-01.png";
 import Link from "next/link";
+import { Button } from "~/components/ui/button";
+import { ArrowRightIcon } from "lucide-react";
 const SectionBanner = () => {
   return (
     <div className="body flex justify-center flex-col items-center w-full bg-gradient-to-r from-[#090979] from-0% via-[#054c5c] via-[41%]  to-[#090979] to-100% ">
@@ -39,14 +41,16 @@ const SectionBanner = () => {
             className="btn-container flex items-center mt-4"
             data-aos="zoom-in"
           >
-            <button className="btn-content px-7 py-3 bg-[#AA3232] rounded-md flex gap-2 items-center text-white font-medium hover:bg-[#1513be]">
+            <Button
+              variant="expandIcon"
+              Icon={ArrowRightIcon}
+              iconPlacement="right"
+              className="px-7 py-3 bg-[#AA3232] rounded-md flex items-center text-white font-medium hover:bg-[#1513be] h-fit"
+            >
               <span className=" text-xl text-white  xs:text-lg">
                 Các giải pháp tiên phong
               </span>
-              <div className="icon-btn-services">
-                <FaArrowRight className=" text-xl text-white" />
-              </div>
-            </button>
+            </Button>
           </div>
         </Link>
       </div>
