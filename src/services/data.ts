@@ -299,7 +299,7 @@ export const dataProduct: productType[] = [
 
   {
     image: ESP8266Product,
-    nameProduct: "KHOÁ HỌC THỰC HÀNH MẠNG DI ĐỘNG 5G",
+    nameProduct: "KHOÁ HỌC THỰC HÀNH ESP8266",
     description: "OpenLAB cung cấp khóa học cơ bản về IoT với ESP8266",
   },
   {

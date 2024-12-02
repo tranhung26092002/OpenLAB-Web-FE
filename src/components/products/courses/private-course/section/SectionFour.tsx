@@ -82,7 +82,7 @@ export default function SectionFour({
         dataImage={dataImage}
       />
       <div className="flex flex-col w-full items-center px-14 ">
-        <span className="text-3xl font-semibold">{title ? title[1] : ""}</span>
+        <span className="text-xl font-semibold">{title ? title[1] : ""}</span>
         <div className="w-full flex justify-between items-center ">
           <button
             className=" px-5 py-5 rounded-full bg-black w-fit h-fit  "
@@ -150,7 +150,9 @@ export default function SectionFour({
         </div>
       </div> */}
       <div className="flex flex-col justify-center items-center w-full">
-        <span className="text-3xl font-semibold">{title ? title[0] : ""}</span>
+        <span className="text-2xl font-semibold mb-8">
+          {title ? title[0] : ""}
+        </span>
         <div className="flex justify-center items-center w-full ">
           {dataTab && dataTab?.length !== 0 ? (
             <Tabs defaultValue="0" className="w-full ">
@@ -160,7 +162,7 @@ export default function SectionFour({
                     <TabsTrigger
                       value={`${index}`}
                       key={index}
-                      className="w-[50%] whitespace-nowrap  h-full rounded data-[state=active]:bg-blue-700 data-[state=active]:text-white py-4"
+                      className="w-[50%] whitespace-nowrap h-full rounded data-[state=active]:bg-blue-700 data-[state=active]:text-white py-4"
                     >
                       {item.title}
                     </TabsTrigger>
@@ -179,13 +181,14 @@ export default function SectionFour({
                         <p className="text-justify w-[30%] block ">
                           {item.description}
                         </p>
-                        <div className="w-[45%]">
+
+                        <div className="w-[45%]  flex justify-center">
                           <Image
                             src={item.image}
                             alt="data-image"
                             width={900}
                             height={500}
-                            className="object-center object-contain w-full"
+                            className="object-center object-contain w-1/2 "
                           />
                         </div>
                       </div>

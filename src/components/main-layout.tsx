@@ -15,7 +15,7 @@ export default function MainLayout({
 }>) {
   return (
     <div className="w-screen max-w-full ">
-      {!authPage && (
+      {!authPage && !coursePage && (
         <div className="xs:hidden">
           <NavContact
             contentLeft={
@@ -29,7 +29,7 @@ export default function MainLayout({
       )}
 
       {!authPage && (
-        <header className="sticky top-0 z-10">
+        <header className="sticky top-0 z-20">
           <Header />
         </header>
       )}

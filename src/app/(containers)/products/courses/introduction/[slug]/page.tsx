@@ -12,6 +12,7 @@ import SectionLast from "~/components/products/courses/private-course/section/Se
 import { useAuthStore } from "~/store/auth/AuthStore";
 import { generateQR } from "~/utils/generateQr";
 import moment from "moment";
+import logoBank from "~/assets/logo/logobank.png";
 import "moment/locale/vi";
 import { useCallback } from "react";
 import { useFetchApi } from "~/hooks/useFetchApi";
@@ -42,7 +43,6 @@ export default function BenefitCourse({
   const [description, setDescription] = useState("");
   const [expiredAt, setExpiredAt] = useState("");
   const [amount, setAmount] = useState("");
-
   const { _id, courses } = user;
   const { isLoading, error, data } = useSWRPublic(`courses/${id}`);
   const nameCourse = data?.name;
@@ -126,23 +126,37 @@ export default function BenefitCourse({
           </div>
         </div>
         <div>
-          <SectionLast dataVideo="https://www.youtube.com/embed/Fe0hWZ_mjy8?si=iBwSxOvnY8b3-YWs" />
+          <iframe
+            width="560"
+            className="rounded"
+            height="315"
+            src={
+              "https://www.youtube.com/embed/Fe0hWZ_mjy8?si=iBwSxOvnY8b3-YWs"
+            }
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
-      <div className="flex items-center justify-around">
+      <div className="flex items-center  p-16 flex-wrap gap-8 bg-[#eee]">
         {lessonsCourse.map((item, index) => {
           return (
             <div
               key={index}
-              className="p-3 border-2 border-gray-500 rounded space-y-2"
+              className="p-3 border-2 border-gray-500 rounded space-y-2 w-[23%] h-[234px]  flex flex-col justify-center items-center bg-white cursor-pointer hover:border-blue-500 "
             >
               <Image
                 src={item.linkImage}
                 width={230}
                 height={150}
+                className="w-[230px] h-[150px]"
                 alt="lessons's name of  course"
               />
-              <span className="block">{item.name}</span>
+              <span className="block text-center font-semibold">
+                {`Bài ${index + 1}. ${item.name}`}
+              </span>
             </div>
           );
         })}
@@ -199,7 +213,11 @@ export default function BenefitCourse({
                     .slice(1)}
               </span>
               <div className="flex justify-center gap-16 items-center">
-                <div className="w-[35%] flex justify-center items-center">
+                <div className="w-[30%] flex justify-center items-center flex-col bg-white p-4 space-y-4 rounded">
+                  <div className="flex items-center gap-4">
+                    <Image src={logoBank} alt="logo-banking" />
+                    <span className="font-semibold">Ngân hàng TMCP Quân Đội</span>
+                  </div>
                   <Image
                     src={qrcode}
                     alt={"qr-code"}
