@@ -8,7 +8,7 @@ import { use } from "react";
 import { Button } from "~/components/ui/button";
 import { useToast } from "~/hooks/use-toast";
 import { ToastAction } from "~/components/ui/toast";
-import SectionLast from "~/components/products/courses/private-course/section/SectionLast";
+
 import { useAuthStore } from "~/store/auth/AuthStore";
 import { generateQR } from "~/utils/generateQr";
 import moment from "moment";
@@ -47,6 +47,7 @@ export default function BenefitCourse({
   const { isLoading, error, data } = useSWRPublic(`courses/${id}`);
   const nameCourse = data?.name;
   const idCourse = data?._id;
+  const type = data?.type;
   const descriptionCourse = data?.description;
   const benefitCourse: string[] = data?.benefit || [];
   const lessonsCourse: LessonProp[] = data?.lessons || [];
@@ -54,7 +55,7 @@ export default function BenefitCourse({
 
   console.log(pathname);
   const fetcher = useFetchApi(
-    `payments/get-link?userId=${_id}&courseId=${idCourse}`,
+    `payments/get-link?userId=${_id}&courseId=${idCourse}&type=${type}`,
     {
       headers: {
         "Content-Type": "application/json",
@@ -216,7 +217,9 @@ export default function BenefitCourse({
                 <div className="w-[30%] flex justify-center items-center flex-col bg-white p-4 space-y-4 rounded">
                   <div className="flex items-center gap-4">
                     <Image src={logoBank} alt="logo-banking" />
-                    <span className="font-semibold">Ngân hàng TMCP Quân Đội</span>
+                    <span className="font-semibold">
+                      Ngân hàng TMCP Quân Đội
+                    </span>
                   </div>
                   <Image
                     src={qrcode}
