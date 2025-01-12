@@ -89,11 +89,7 @@ export const courseInfor5G: courseInforProps[] = [
     nameCourse: "Lập trình Mạng cảm biến WSN với Raspherry Pi",
     price: "500.000",
   },
-  {
-    image: WSN,
-    nameCourse: "Lập trình Mạng cảm biến WSN với Raspherry Pi",
-    price: "500.000",
-  },
+ 
 ];
 
 export const courseInforAI: courseInforProps[] = [
@@ -123,16 +119,7 @@ export const courseInforAI: courseInforProps[] = [
     nameCourse: "Thực hành lập trình phát triển Chatbot AI ",
     price: "500.000",
   },
-  {
-    image: Chatbot,
-    nameCourse: "Thực hành lập trình phát triển Chatbot AI ",
-    price: "500.000",
-  },
-  {
-    image: Chatbot,
-    nameCourse: "Thực hành lập trình phát triển Chatbot AI ",
-    price: "500.000",
-  },
+ 
 ];
 
 export const courseInforCloud: courseInforProps[] = [
@@ -151,11 +138,7 @@ export const courseInforCloud: courseInforProps[] = [
     nameCourse: "Thực hành thiết kế AWS Iot server",
     price: "500.000",
   },
-  {
-    image: cloud,
-    nameCourse: "Thực hành thiết kế AWS Iot server",
-    price: "500.000",
-  },
+ 
 ];
 
 export const courseInforDataAnalyst: courseInforProps[] = [
@@ -172,11 +155,6 @@ export const courseInforDataAnalyst: courseInforProps[] = [
   {
     image: IOTPowerBI,
     nameCourse: "Lập trình phân tích dữ liệu IoT với Power BI",
-    price: "500.000",
-  },
-  {
-    image: PythonVsRaspherryPi,
-    nameCourse: "Thực hành lập trình Python với Raspherry",
     price: "500.000",
   },
 ];
@@ -196,11 +174,7 @@ export const courseInforDronevsUav: courseInforProps[] = [
     nameCourse: "Thực hành lập trình drone với ESP 8266",
     price: "500.000",
   },
-  {
-    image: ESP8266vsDrone,
-    nameCourse: "Thực hành lập trình drone với ESP 8266",
-    price: "500.000",
-  },
+ 
 ];
 
 export const courseInforLTN: courseInforProps[] = [
@@ -272,7 +246,7 @@ export const courseInforLTN: courseInforProps[] = [
 export type productType = {
   image: string | StaticImageData;
   nameProduct: string;
-  description: string;
+  description?: string;
   type?: string;
 };
 export const dataProduct: productType[] = [
@@ -326,6 +300,25 @@ export const dataProduct: productType[] = [
     nameProduct: "KHOÁ HỌC THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY",
     description:
       "OpenLAB cung cấp khóa học lập trình xe hơi tự hành với ESP32-CAM",
+  },
+];
+
+export const dataCourse: productType[] = [
+  {
+    image: ArduinoProduct,
+    nameProduct: "KHOÁ HỌC THỰC HÀNH HỆ THỐNG IoT",
+  },
+  {
+    image: ESP8266Product,
+    nameProduct: "KHOÁ HỌC THỰC HÀNH ESP8266",
+  },
+  {
+    image: ChatBotAIProduct,
+    nameProduct: "KHOÁ HỌC THỰC HÀNH CHATBOT AI",
+  },
+  {
+    image: ESP32CAMProduct,
+    nameProduct: "KHOÁ HỌC THỰC HÀNH ĐIỆN TOÁN ĐÁM MÂY",
   },
 ];
 

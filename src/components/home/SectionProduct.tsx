@@ -2,9 +2,9 @@
 import ProductDescription from "~/components/products/ProductDescription";
 import Slider from "react-slick";
 import { settings } from "~/configs/settingSlider";
-import { dataProduct } from "~/services/data";
 import Link from "next/link";
 import slug from "slug";
+import { productType } from "~/services/data";
 const setting = {
   ...settings,
 
@@ -12,7 +12,7 @@ const setting = {
     {
       breakpoint: 10000,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
       },
@@ -42,8 +42,16 @@ const setting = {
     },
   ],
 };
-
-const SectionProduct = () => {
+type SectionProductPorps = {
+  dataSlice: productType[];
+  title: string;
+  subtitle?: string;
+};
+const SectionProduct = ({
+  dataSlice,
+  title,
+  subtitle,
+}: SectionProductPorps) => {
   return (
     <div
       className="body-product py-16 px-28 flex flex-col sm:px-16 xs:px-5 xs:py-10"
@@ -51,15 +59,15 @@ const SectionProduct = () => {
     >
       <div className="content-top text-center">
         <span className="text-4xl font-bold leading-10 mb-2 block xs:text-2xl">
-          Sản phẩm phổ biến
+          {title}
         </span>
         <p className="mt-2 font-normal text-base mb-8 xs:mb-4 ">
-          Các sản phẩm tiêu biểu của chúng tôi
+          {subtitle}
         </p>
       </div>
       <div className="content-product">
         <Slider {...setting}>
-          {dataProduct.map((item, index) => {
+          {dataSlice.map((item, index) => {
             return (
               <div className="my-5 mx-1 " key={index}>
                 <ProductDescription

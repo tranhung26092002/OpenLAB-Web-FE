@@ -9,7 +9,7 @@ type ProductDescriptionProps = {
   srcImg: string | StaticImageData;
   type?: string;
   nameProduct: string;
-  description: string;
+  description?: string;
   id?: string | number;
 };
 
@@ -32,10 +32,10 @@ const ProductDescription = ({
           <Link
             href={
               type === "APP"
-                ? `/products/solutions/introduction/${id}`
+                ? `                                                                                                                                                                                                                                                 `
                 : type === "COURSE"
-                ? `products/courses/introduction/${id}`
-                : `products/device-kits/introduction/${id}`
+                ? `/products/courses/introduction/${id}`
+                : `/products/device-kits/introduction/${id}`
             }
             className="flex justify-center items-center w-full h-full  "
           >

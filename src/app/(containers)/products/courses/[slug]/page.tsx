@@ -3,7 +3,7 @@ import schema5gimg from "~/assets/image/product/course/5g/schema-5g.png";
 // import { GoDotFill } from "react-icons/go";
 import Link from "next/link";
 import Image from "next/image";
-import { MdMenuOpen } from "react-icons/md";
+import { MdEditCalendar, MdLogout, MdMenuOpen } from "react-icons/md";
 import { useSWRPrivate } from "~/hooks/useSWRCustom";
 import { useSearchParams } from "next/navigation";
 import { use } from "react";
@@ -17,11 +17,29 @@ import SectionFive from "~/components/products/courses/private-course/section/Se
 import SectionLast from "~/components/products/courses/private-course/section/SectionLast";
 import { BsCameraVideo } from "react-icons/bs";
 import SectionThree from "~/components/products/courses/private-course/section/SectionThree";
-import { useFetchApi } from "~/hooks/useFetchApi";
-import Header from "~/components/header/Header";
+// import { useFetchApi } from "~/hooks/useFetchApi";
+// import Header from "~/components/header/Header";
 import MainLayout from "~/components/main-layout";
 import SectionSix from "~/components/products/courses/private-course/section/SectionSix";
 import SectionSeven from "~/components/products/courses/private-course/section/SectionSeven";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from "~/components/ui/command";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "~/components/ui/tooltip";
+import { RxAvatar } from "react-icons/rx";
+import { FaAddressCard } from "react-icons/fa";
+import { IoCalculatorOutline } from "react-icons/io5";
 
 type ArrLessons = {
   _id: string;
@@ -48,7 +66,7 @@ export default function CourseView({
     error: errorCourse,
     data: dataCourse,
   } = useSWRPrivate(`courses/${slug}?isActive=${true}`);
-  const fetcher = useFetchApi(`lessons?id=${id}`);
+  // const fetcher = useFetchApi(`lessons?id=${id}`);
   if (isLoadingLesson || isLoadingCourse) return <div>Loading...</div>;
   if (errorLesson || errorCourse) return <div>Error loading course data.</div>;
   const indexItem: indexItemProps[] = dataLesson?.payload?.indexItem || [];
@@ -67,7 +85,7 @@ export default function CourseView({
   // };
 
   return (
-    <MainLayout coursePage={true}>
+    <MainLayout  authPage={true}>
       <div className={`flex w-full  ${isOpenMenu ? "justify-end pr-4" : ""}`}>
         <div
           className={`w-[21%] h-screen z-20 bg-white overflow-y-auto transition-opacity ease-out duration-200 ${
@@ -89,6 +107,9 @@ export default function CourseView({
             </div>
 
             <ul>
+              <li className="py-4 hover:bg-[#eee] cursor-pointer rounded-sm pl-3 font-normal text-sm flex items-center gap-1 ">
+                <BsCameraVideo /> Mục lục
+              </li>
               {indexItem.map((item, index) => {
                 return (
                   <li
@@ -137,13 +158,56 @@ export default function CourseView({
             isOpenMenu ? "w-[79%] px-4 " : "w-full px-24 z-10"
           }`}
         >
-          <div className=" flex w-full bg-red-400 ">
+          <div className=" flex w-full p-3 bg-gradient-to-r from-[#080541] from-0% via-[#090979] via-58% to-[#06044a] to-100% justify-between items-center">
             <button
               onClick={() => setOpenMenu(!isOpenMenu)}
-              className="px-2 py-2 hover:bg-[#eee] rounded"
+              className="px-2 py-2 hover:bg-blue-500 rounded"
             >
-              <MdMenuOpen className="text-2xl" />
+              <MdMenuOpen className="text-2xl text-white" />
             </button>
+            <Link
+              href={"/"}
+              className="uppercase text-white font-semibold hover:text-blue-400"
+            >
+              Home
+            </Link>
+            <TooltipProvider delayDuration={100}>
+              <Tooltip>
+                <TooltipTrigger className="xs:w-full sm:w-full">
+                  <div className="flex justify-center items-center gap-2 cursor-pointer ">
+                    <RxAvatar className="cursor-pointer text-2xl text-white" />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent className="px-0 py-0 bg-white ">
+                  <Command>
+                    <CommandInput placeholder="Type a command or search..." />
+                    <CommandList>
+                      <CommandEmpty>No results found.</CommandEmpty>
+                      <CommandSeparator />
+                      <CommandGroup heading="Settings">
+                        <CommandItem className="flex items-center gap-2">
+                          <FaAddressCard className="cursor-pointer " />
+                          Thông tin cá nhân
+                        </CommandItem>
+
+                        <Link href="/products/courses/search-course">
+                          <CommandItem className="flex items-center gap-2">
+                            <MdEditCalendar />
+                            Thông tin khóa học
+                          </CommandItem>
+                        </Link>
+                        <Link href="/products/devices-kits/search-kit">
+                          <CommandItem className="flex items-center gap-2">
+                            <IoCalculatorOutline />
+                            Thông tin Thiết bị/Kit
+                          </CommandItem>
+                        </Link>
+                      </CommandGroup>
+                    </CommandList>
+                  </Command>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
 
           {/* <TitleLesson
@@ -152,126 +216,153 @@ export default function CourseView({
           percent={"1"}
           author="Matthew Lace"
         /> */}
+
           <div className="w-full">
             {contentCourse && contentCourse.length !== 0 ? (
-              contentCourse.map((item, index) => {
-                switch (index) {
-                  case 0:
-                    return isContinue === false ? (
-                      <div id={`${index}`} key={index}>
-                        <SectionOne
-                          header={indexItem[0]}
-                          title={item.title}
-                          dataImage={item.dataImage}
-                          dataPlus={item.dataPlus}
-                          contentText={item.contentText}
-                        />
-                      </div>
-                    ) : null;
-                  case 1:
-                    return isContinue === false ? (
-                      <div id={`${index}`} key={index}>
-                        <SectionTwo
-                          title={item.title}
-                          header={indexItem[1]}
-                          dataImage={item.dataImage}
-                          contentText={item.contentText}
-                        />
-                      </div>
-                    ) : null;
-
-                  case 2:
-                    return isContinue === false ? (
-                      <div
-                        id={`${index}`}
-                        key={index}
-                        className="flex justify-center items-center flex-col"
-                      >
-                        <SectionThree
-                          dataImage={item.dataImage}
-                          header={indexItem[2]}
-                          title={item.title}
-                          dataList={item.dataList}
-                          dataList2={item.dataList2}
-                          dataMerge={item.dataMerge}
-                        />
-                        <div className="py-10 w-full flex justify-center items-center">
-                          <Link
-                            href={`#${index + 1}`}
-                            className="bg-blue-500 w-1/3 py-4 text-white text-lg flex justify-center items-center"
-                            onClick={() => setContinue(true)}
+              <div>
+                {isContinue === false && (
+                  <div className="px-16 pt-8">
+                    <span className="font-semibold block uppercase text-2xl w-full text-center">
+                      {nameLesson}
+                    </span>
+                    <ul>
+                      {indexItem.map((item, index) => {
+                        return (
+                          <li
+                            key={index}
+                            className="py-4 hover:bg-[#eee] rounded-sm pl-3 "
                           >
-                            Continue
-                          </Link>
-                        </div>
-                      </div>
-                    ) : null;
-                  case 3:
-                    return isContinue === true ? (
-                      <div id={`${index}`} className="flex-col" key={index}>
-                        <div className=" w-full flex justify-center items-center">
-                          <button
-                            className="bg-blue-500 w-1/3 py-4 text-white text-lg flex justify-center items-center mb-10"
-                            onClick={() => setContinue(false)}
-                          >
-                            Back
-                          </button>
-                        </div>
-                        <SectionFour
-                          title={item.title}
-                          dataImage={item.dataImage}
-                          contentText={item.contentText}
-                          dataTab={item.dataTab}
-                          dataSlides={item.dataSlides}
-                          header={indexItem[3]}
-                        />
-                      </div>
-                    ) : null;
-                  case 4:
-                    return isContinue === true ? (
-                      <div id={`${index}`} key={index}>
-                        <SectionFive
-                          header={indexItem[4]}
-                          title={item.title}
-                          dataImage={item.dataImage}
-                          contentText={item.contentText}
-                          dataTab={item.dataTab}
-                          dataSlides={item.dataSlides}
-                        />
-                      </div>
-                    ) : null;
-                  case 5:
-                    return isContinue === true ? (
-                      <div id={`${index}`} key={index}>
-                        <SectionSeven
-                          header={indexItem[5]}
-                          dataImage={item.dataImage}
-                        />
-                      </div>
-                    ) : null;
-                  case 6:
-                    return isContinue === true ? (
-                      <div id={`${index}`} key={index}>
-                        <SectionSix
-                          header={indexItem[5]}
-                          contentText={item.contentText}
-                        />
-                      </div>
-                    ) : null;
-                  case 7:
-                    return isContinue === true ? (
-                      <div id={`${index}`} key={index}>
-                        <SectionLast dataVideo={item.dataVideo} />
-                      </div>
-                    ) : null;
+                            <Link
+                              href={`#${index}`}
+                              className="flex items-center gap-1 text-base font-semibold "
+                            >
+                              <BsCameraVideo /> {item.nameItem}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    <hr className="w-full border-2 border-red-600 mt-2" />
+                  </div>
+                )}
 
-                  default:
-                    return null;
-                }
-              })
-            ) : (
-              <></>
-            )}
+                {contentCourse.map((item, index) => {
+                  switch (index) {
+                    case 0:
+                      return isContinue === false ? (
+                        <div id={`${index}`} key={index}>
+                          <SectionOne
+                            header={indexItem[0]}
+                            title={item.title}
+                            dataImage={item.dataImage}
+                            dataPlus={item.dataPlus}
+                            contentText={item.contentText}
+                          />
+                        </div>
+                      ) : null;
+                    case 1:
+                      return isContinue === false ? (
+                        <div id={`${index}`} key={index}>
+                          <SectionTwo
+                            title={item.title}
+                            header={indexItem[1]}
+                            dataImage={item.dataImage}
+                            contentText={item.contentText}
+                          />
+                        </div>
+                      ) : null;
+
+                    case 2:
+                      return isContinue === false ? (
+                        <div
+                          id={`${index}`}
+                          key={index}
+                          className="flex justify-center items-center flex-col"
+                        >
+                          <SectionThree
+                            dataImage={item.dataImage}
+                            header={indexItem[2]}
+                            title={item.title}
+                            dataList={item.dataList}
+                            dataList2={item.dataList2}
+                            dataMerge={item.dataMerge}
+                          />
+                          <div className="py-10 w-full flex justify-center items-center">
+                            <Link
+                              href={`#${index + 1}`}
+                              className="bg-blue-500 w-1/3 py-4  text-white text-lg flex justify-center items-center"
+                              onClick={() => setContinue(true)}
+                            >
+                              Continue
+                            </Link>
+                          </div>
+                        </div>
+                      ) : null;
+                    case 3:
+                      return isContinue === true ? (
+                        <div id={`${index}`} className="flex-col" key={index}>
+                          <div className=" w-full flex justify-center items-center">
+                            <button
+                              className="bg-blue-500 w-1/3 py-4 text-white text-lg flex justify-center items-center mb-10"
+                              onClick={() => setContinue(false)}
+                            >
+                              Back
+                            </button>
+                          </div>
+                          <SectionFour
+                            title={item.title}
+                            dataImage={item.dataImage}
+                            contentText={item.contentText}
+                            dataTab={item.dataTab}
+                            dataSlides={item.dataSlides}
+                            header={indexItem[3]}
+                          />
+                        </div>
+                      ) : null;
+                    case 4:
+                      return isContinue === true ? (
+                        <div id={`${index}`} key={index}>
+                          <SectionFive
+                            header={indexItem[4]}
+                            title={item.title}
+                            dataImage={item.dataImage}
+                            contentText={item.contentText}
+                            dataTab={item.dataTab}
+                            dataSlides={item.dataSlides}
+                          />
+                        </div>
+                      ) : null;
+                    case 5:
+                      return isContinue === true ? (
+                        <div id={`${index}`} key={index}>
+                          <SectionSeven
+                            header={indexItem[5]}
+                            dataImage={item.dataImage}
+                          />
+                        </div>
+                      ) : null;
+                    case 6:
+                      return isContinue === true ? (
+                        <div id={`${index}`} key={index}>
+                          <SectionSix
+                            header={indexItem[6]}
+                            contentText={item.contentText}
+                          />
+                        </div>
+                      ) : null;
+                    case 7:
+                      return isContinue === true ? (
+                        <div id={`${index}`} key={index}>
+                          <SectionLast dataVideo={item.dataVideo} />
+                        </div>
+                      ) : null;
+
+                    default:
+                      return null;
+                  }
+                })}
+              </div>
+            ) : null}
           </div>
 
           {/* <div>

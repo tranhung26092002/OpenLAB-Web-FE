@@ -33,13 +33,7 @@ export function useSWRPrivate(
   const { isLoading, error, data } = useSWR(
     url,
     () => fetchData(),
-    config ?? {
-      revalidateIfStale: false,
-      revalidateOnFocus: false,
-      // revalidateOnMount: false,
-      revalidateOnReconnect: false,
-      dedupingInterval: 2000,
-    }
+    config ? config : {}
   );
 
   return { isLoading, error, data };

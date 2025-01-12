@@ -7,6 +7,8 @@ export default function ButtonGoToTop() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
+        console.log(window.scrollY);
+
         setShowButton(true);
       } else {
         setShowButton(false);

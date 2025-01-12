@@ -34,12 +34,13 @@ const fetcher = async (
   }
 };
 
-
 export const useFetchApi = (url: string, options?: RequestInit) => {
   const { user, setUser, setIsAuth } = useAuthStore();
   const router = useRouter();
   const fetchData = async () => {
     const { accessToken } = user;
+    console.log(accessToken, user);
+
     const baseUrl = process.env.NEXT_PUBLIC_ENDPOINT;
     const fullUrl = url.startsWith("/")
       ? `${baseUrl}${url}`
@@ -47,20 +48,20 @@ export const useFetchApi = (url: string, options?: RequestInit) => {
 
     if (!accessToken) {
       // to do
-      throw new Error('Access Token is not exist !')
+      throw new Error("Access Token is not exist !");
     } else {
       const validateJwt = jwtDecode(accessToken);
       const expToken = validateJwt.exp as number;
       const timestampNow = new Date().getTime();
 
       if (expToken < timestampNow / 1000) {
-        console.log('is running!');
+        console.log("is running!");
         const refresh = await fetch(`${baseUrl}/auth/refresh`, {
           credentials: "include",
           method: "GET",
           headers: { "Content-Type": "application/json" },
         }).then((res) => res.json());
-        console.log('check refresh:', refresh);
+        console.log("check refresh:", refresh);
 
         if (refresh.statusCode === 401 || refresh.message === "Unauthorized") {
           await fetch(`${baseUrl}/auth/logout`, {

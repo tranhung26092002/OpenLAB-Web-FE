@@ -1,26 +1,28 @@
-import z from 'zod';
+import z from "zod";
 
-export const RegisterBody = z.object({
-    name: z.string().trim().min(2).max(125),
+export const RegisterBody = z
+  .object({
     email: z.string().email(),
     password: z.string().min(6).max(100),
-    confirmPassword: z.string().min(6).max(100)
-})
-    .strict()
-    .superRefine(({ confirmPassword, password }, ctx) => {
-        if (confirmPassword !== password) {
-            ctx.addIssue({
-                code: 'custom',
-                message: 'Mật khẩu không khớp',
-                path: ['confirmPassword']
-            })
-        }
-    })
-export type RegisterBodyType = z.TypeOf<typeof RegisterBody>
+    confirmPassword: z.string().min(6).max(100),
+  })
+  .strict()
+  .superRefine(({ confirmPassword, password }, ctx) => {
+    if (confirmPassword !== password) {
+      ctx.addIssue({
+        code: "custom",
+        message: "Mật khẩu không khớp",
+        path: ["confirmPassword"],
+      });
+    }
+  });
+export type RegisterBodyType = z.TypeOf<typeof RegisterBody>;
 
-export const LoginBody = z.object({
+export const LoginBody = z
+  .object({
     email: z.string().email("Email không hợp lệ"),
-    password: z.string().min(5, 'Mật khẩu quá yếu').max(100),
-}).strict()
+    password: z.string().min(5, "Mật khẩu quá yếu").max(100),
+  })
+  .strict();
 
-export type LoginBodyType = z.TypeOf<typeof LoginBody>
+export type LoginBodyType = z.TypeOf<typeof LoginBody>;

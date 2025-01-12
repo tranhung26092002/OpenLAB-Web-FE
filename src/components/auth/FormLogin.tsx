@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { LoginBody, LoginBodyType } from "~/types/auth/AuthType";
 import { handleLogin } from "~/services/auth/authService";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 // import { useGoogleLogin } from "@react-oauth/google";
 import {
@@ -21,10 +22,11 @@ import { Input } from "~/components/ui/input";
 import { useSearchParams } from "next/navigation";
 import { decodeUrl } from "~/utils/encryption-url";
 import { useAuthStore, UserProps } from "~/store/auth/AuthStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 export default function LoginForm() {
   const { setUser, setIsAuth } = useAuthStore();
+  const [isShowPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const query = useSearchParams();
   const form = useForm<LoginBodyType>({
@@ -54,7 +56,7 @@ export default function LoginForm() {
       setIsAuth(true);
       if (queryUrl) {
         const back_to = decodeUrl(queryUrl);
-        router.push(`${back_to}`);
+        router.replace(`${back_to}`, {});
       } else {
         router.replace("/");
       }
@@ -147,8 +149,25 @@ export default function LoginForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Mật khẩu</FormLabel>
-                <FormControl>
-                  <Input placeholder="Nhập mật khẩu" {...field} />
+                <FormControl className=" ">
+                  <div className="relative">
+                    <Input
+                      placeholder="Nhập mật khẩu"
+                      {...field}
+                      type={isShowPassword === true ? "text" : "password"}
+                    />
+                    {isShowPassword === true ? (
+                      <AiOutlineEye
+                        className=" absolute top-1/2 right-2  transform  -translate-y-1/2 cursor-pointer"
+                        onClick={() => setShowPassword(!isShowPassword)}
+                      />
+                    ) : (
+                      <AiOutlineEyeInvisible
+                        className="absolute top-1/2 right-2  transform  -translate-y-1/2 cursor-pointer"
+                        onClick={() => setShowPassword(!isShowPassword)}
+                      />
+                    )}
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>

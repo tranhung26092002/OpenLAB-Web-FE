@@ -18,11 +18,11 @@ export default function SectionAllCourse() {
           <span className="text-xl font-semibold py-10 text-blue-600 xs:text-center">
             THỰC HÀNH HỆ THỐNG IoT
           </span>
-          <div className="flex  items-center w-full flex-wrap xl:justify-around xs:flex-col">
+          <div className="flex items-center w-full  flex-wrap xl:justify-around xs:flex-col ">
             {courseInforLTN.map((item, index) => {
               return (
                 <div
-                  className="flex flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
+                  className="flex flex-wrap justify-center items-center w-[32%]  mt-4 xs:w-full"
                   key={index}
                 >
                   <CourseInfor
@@ -44,7 +44,7 @@ export default function SectionAllCourse() {
             {courseInforAI.map((item, index) => {
               return (
                 <div
-                  className="flex mt-2  justify-center items-center w-[24%] xs:w-full"
+                  className="flex justify-center items-center w-[30%] mt-4  xs:w-full"
                   key={index}
                 >
                   <CourseInfor
@@ -66,7 +66,7 @@ export default function SectionAllCourse() {
             {courseInfor5G.map((item, index) => {
               return (
                 <div
-                  className="flex justify-center items-center w-[24%] xs:w-full"
+                  className="flex justify-center items-center w-[30%] xs:w-full mt-4"
                   key={index}
                 >
                   <CourseInfor
@@ -89,7 +89,7 @@ export default function SectionAllCourse() {
             {courseInforCloud.map((item, index) => {
               return (
                 <div
-                  className="flex  flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
+                  className="flex  flex-wrap justify-center items-center w-[30%] mt-4 xs:w-full"
                   key={index}
                 >
                   <CourseInfor
@@ -111,7 +111,7 @@ export default function SectionAllCourse() {
             {courseInforDataAnalyst.map((item, index) => {
               return (
                 <div
-                  className="flex  flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
+                  className="flex  flex-wrap justify-center items-center w-[30%] mt-4 xs:w-full"
                   key={index}
                 >
                   <CourseInfor
@@ -133,7 +133,7 @@ export default function SectionAllCourse() {
             {courseInforDronevsUav.map((item, index) => {
               return (
                 <div
-                  className="flex  flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
+                  className="flex  flex-wrap justify-center items-center w-[30%] mt-4  xs:w-full"
                   key={index}
                 >
                   <CourseInfor

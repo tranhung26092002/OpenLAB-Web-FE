@@ -8,10 +8,8 @@ import {
   LazySectionBanner,
   LazySectionServices,
 } from "~/utils/LazySection";
-
+import { dataProduct } from "~/services/data";
 export default function Home() {
-
-
   return (
     <MainLayout>
       <div className="container-section-banner">
@@ -24,7 +22,7 @@ export default function Home() {
         <LazySectionSolution />
       </div>
       <div className="container-section-product">
-        <LazySectionProduct />
+        <LazySectionProduct dataSlice={dataProduct} title="Sản phẩm phổ biến"  subtitle="Các sản phẩm tiêu biểu của chúng tôi"/>
       </div>
       <div className="container-section-about">
         <LazySectionAbout />

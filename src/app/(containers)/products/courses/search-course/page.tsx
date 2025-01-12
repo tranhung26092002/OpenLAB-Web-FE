@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import imageSale from "~/assets/image/product/sales.jpeg";
+import React, { useEffect } from "react";
+import imageSale from "~/assets/image/product/sales.jpg";
 // import slug from "slug";
 // import {
 //   courseInforCloud,
@@ -13,8 +13,10 @@ import Image, { StaticImageData } from "next/image";
 
 import PrivateRouter from "~/components/private-route";
 import { useSWRPrivate } from "~/hooks/useSWRCustom";
-import { useAuthStore } from "~/store/auth/AuthStore";
+import { useAuthStore, UserProps } from "~/store/auth/AuthStore";
 import MainLayout from "~/components/main-layout";
+import { LazySectionProduct } from "~/utils/LazySection";
+import { dataCourse } from "~/services/data";
 type courseListProps = {
   image: StaticImageData | string;
   name: string;
@@ -25,8 +27,30 @@ type courseListProps = {
   lessons: Array<string>;
 };
 export default function SearchCourse() {
-  const { user } = useAuthStore();
+  const { user, setCourses } = useAuthStore();
   const { _id, courses } = user;
+  const {
+    isLoading: isLoadingUser,
+    error: errorUser,
+    data: dataUser,
+  } = useSWRPrivate(
+    `users/${_id}`,
+    {
+      method: "GET",
+    },
+    { revalidateOnFocus: true }
+  );
+  useEffect(() => {
+    console.log("check dataUser", dataUser);
+    if (!dataUser) {
+      return;
+    }
+    const { payload } = dataUser;
+    const courses = payload.courses;
+    console.log(courses);
+
+    setCourses(courses);
+  }, [dataUser]);
   const { isLoading, error, data } = useSWRPrivate("courses/active", {
     method: "POST",
     body: JSON.stringify({
@@ -35,13 +59,13 @@ export default function SearchCourse() {
     }),
   });
 
-  console.log("check data ", isLoading, error, data);
-  const courseList: courseListProps[] = data?.payload.data;
-  console.log(courseList);
+  // console.log("check data ", isLoading, error, data);
+  const courseList: courseListProps[] = data?.payload.data ?? [];
+  // console.log(courseList);
 
   return (
     <PrivateRouter>
-      <MainLayout>
+      <MainLayout coursePage={true}>
         <div>
           <BannerPage
             header={"Tìm kiếm khóa học"}
@@ -77,19 +101,16 @@ export default function SearchCourse() {
           </div>
           <div className=" xs:px-4 xs:py-14">
             <span className="text-3xl font-semibold xs:text-2xl uppercase w-full text-center mt-10 block">
-              Khóa học
+              Khóa học của tôi
             </span>
             <div className="px-14 xs:px-0">
               <div className="px-10 flex flex-col py-10 xl:px-1  xs:px-0 xs:py-5 ">
                 <div className="  flex flex-col ">
-                  <span className="text-xl font-semibold pb-10 uppercase text-blue-600 xs:pb-0 xs:text-center">
-                    Thực hành điện toán đám mây
-                  </span>
                   <div className="flex items-center w-full flex-wrap xl:justify-around xs:flex-col">
                     {courseList?.map((item, index) => {
                       return (
                         <div
-                          className="flex  flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
+                          className="flex  flex-wrap justify-center items-center w-[31%] mt-2 xs:w-full"
                           key={index}
                         >
                           <CourseInfor
@@ -102,56 +123,23 @@ export default function SearchCourse() {
                         </div>
                       );
                     })}
+
+                    {courseList.length === 0 && (
+                      <span className="text-xl font-semibold ">
+                        Bạn chưa đăng kí khóa học
+                      </span>
+                    )}
                   </div>
                 </div>
-                {/* <div className=" flex flex-col">
-                  <span className="text-xl font-semibold py-10 uppercase text-blue-600 xs:text-center xs:pb-0">
-                    Thực hành phân tích dữ liệu
-                  </span>
-                  <div className="flex  items-center w-full flex-wrap xl:justify-around xs:flex-col">
-                    {courseInforDataAnalyst.map((item, index) => {
-                      return (
-                        <div
-                          className="flex  flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
-                          key={index}
-                        >
-                          <CourseInfor
-                            srcImg={item.image}
-                            id={slug(item.nameCourse)}
-                            isActive={true}
-                            nameCourse={item.nameCourse}
-                            price={item.price}
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div> */}
-                {/* <div className=" flex flex-col">
-                  <span className="text-xl font-semibold py-10 uppercase text-blue-600 xs:text-center xs:pb-0">
-                    Thực hành Drone/UAV
-                  </span>
-                  <div className="flex   items-center w-full flex-wrap xl:justify-around xs:flex-col">
-                    {courseInforDronevsUav.map((item, index) => {
-                      return (
-                        <div
-                          className="flex  flex-wrap justify-center items-center w-[24%] mt-2 xs:w-full"
-                          key={index}
-                        >
-                          <CourseInfor
-                            srcImg={item.image}
-                            id={slug(item.nameCourse)}
-                            isActive={true}
-                            nameCourse={item.nameCourse}
-                            price={item.price}
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div> */}
               </div>
             </div>
+          </div>
+          <hr className="border-2 border-red-500" />
+          <div className="container-section-product">
+            <LazySectionProduct
+              dataSlice={dataCourse}
+              title="Các khóa học đề xuất"
+            />
           </div>
         </div>
       </MainLayout>

@@ -14,7 +14,7 @@ export default function MainLayout({
   coursePage?: boolean;
 }>) {
   return (
-    <div className="w-screen max-w-full ">
+    <div className="w-screen max-w-full  ">
       {!authPage && !coursePage && (
         <div className="xs:hidden">
           <NavContact
@@ -34,8 +34,8 @@ export default function MainLayout({
         </header>
       )}
       {children}
-      {!authPage && <ButtonGoToTop />}
       {!authPage && !coursePage && <Footer />}
+      {(!authPage || !coursePage) && <ButtonGoToTop />}
     </div>
   );
 }

@@ -2,8 +2,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
+import { useToast } from "~/hooks/use-toast";
 import { RegisterBody, RegisterBodyType } from "~/types/auth/AuthType";
-
+import { handleSignUp } from "~/services/auth/authService";
 import {
   Form,
   FormControl,
@@ -13,19 +14,34 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useState } from "react";
 
 export default function RegisterForm() {
+  const { toast } = useToast();
+  const [isShowPassword, setShowPassword] = useState(false);
   const form = useForm<RegisterBodyType>({
     resolver: zodResolver(RegisterBody),
     defaultValues: {
       email: "",
       password: "",
       confirmPassword: "",
-      name: "",
     },
   });
-  function onSubmit(values: RegisterBodyType) {
+  async function onSubmit(values: RegisterBodyType) {
     console.log(values);
+    const res = await handleSignUp(
+      values.email,
+      values.password,
+      values.confirmPassword
+    );
+    console.log(res);
+    if (res && res.status === 201) {
+      toast({
+        title: "Bạn đã đăng kí thành công!",
+        description: "Hãy đăng nhập để trải nghiệm những dịch vụ tuyệt vời",
+      });
+    }
   }
 
   return (
@@ -35,22 +51,9 @@ export default function RegisterForm() {
         className="space-y-4  bg-white h-fit px-5 py-4 rounded-md"
       >
         <div className="flex flex-col text-center">
-          <span className=" text-xl font-semibold">Đăng nhập</span>
+          <span className=" text-xl font-semibold">Đăng kí</span>
           <span className="">Hoàn thiện thông tin để tiếp tục</span>
         </div>
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Họ và tên</FormLabel>
-              <FormControl>
-                <Input placeholder="Nhập họ và tên" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <FormField
           control={form.control}
           name="email"
@@ -58,7 +61,7 @@ export default function RegisterForm() {
             <FormItem>
               <FormLabel>Tên tài khoản</FormLabel>
               <FormControl>
-                <Input placeholder="Nhập tên tài khoản" {...field} />
+                <Input type="email" placeholder="Nhập tên email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -71,7 +74,24 @@ export default function RegisterForm() {
             <FormItem>
               <FormLabel>Mật khẩu</FormLabel>
               <FormControl>
-                <Input placeholder="Nhập mật khẩu" {...field} />
+                <div className="relative">
+                  <Input
+                    placeholder="Nhập mật khẩu"
+                    {...field}
+                    type={isShowPassword === true ? "text" : "password"}
+                  />
+                  {isShowPassword === true ? (
+                    <AiOutlineEye
+                      className=" absolute top-1/2 right-2  transform  -translate-y-1/2 cursor-pointer"
+                      onClick={() => setShowPassword(!isShowPassword)}
+                    />
+                  ) : (
+                    <AiOutlineEyeInvisible
+                      className="absolute top-1/2 right-2  transform  -translate-y-1/2 cursor-pointer"
+                      onClick={() => setShowPassword(!isShowPassword)}
+                    />
+                  )}
+                </div>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,7 +104,24 @@ export default function RegisterForm() {
             <FormItem>
               <FormLabel>Nhập lại mật khẩu</FormLabel>
               <FormControl>
-                <Input placeholder="Nhập lại mật khẩu" {...field} />
+                <div className="relative">
+                  <Input
+                    placeholder="Nhập mật khẩu"
+                    {...field}
+                    type={isShowPassword === true ? "text" : "password"}
+                  />
+                  {isShowPassword === true ? (
+                    <AiOutlineEye
+                      className=" absolute top-1/2 right-2  transform  -translate-y-1/2 cursor-pointer"
+                      onClick={() => setShowPassword(!isShowPassword)}
+                    />
+                  ) : (
+                    <AiOutlineEyeInvisible
+                      className="absolute top-1/2 right-2  transform  -translate-y-1/2 cursor-pointer"
+                      onClick={() => setShowPassword(!isShowPassword)}
+                    />
+                  )}
+                </div>
               </FormControl>
               <FormMessage />
             </FormItem>

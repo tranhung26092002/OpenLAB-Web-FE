@@ -20,14 +20,14 @@ const CourseInfor = ({
   firstLesson,
 }: CourseInforProps) => {
   return (
-    <div className=" flex flex-col relative cursor-pointer w-[95%] xs:w-[95%]  h-[430px] rounded-xl px-4 py-4 shadow-md  item-center hover:shadow-2xl  sm:mt-4  ">
+    <div className=" flex flex-col relative cursor-pointer w-[96%] xs:w-[95%]  h-[430px] rounded-xl px-4 py-4 shadow-md  item-center hover:shadow-2xl  sm:mt-4  ">
       <div className="mb-5 flex justify-center relative hover:scale-105 hover:transition-all ease-in duration-200">
         <Image
           src={srcImg}
           width={500}
           height={100}
           alt="image-product-section"
-          className="w-full h-48 object-center object-fill border-[#8AD9E4] border-2 rounded "
+          className="w-full h-56 object-center object-fill border-[#8AD9E4] border-2 rounded"
         />
         <div className="flex justify-end items-center  absolute w-full h-full  top-0 left-0 opacity-0 hover:opacity-100 ">
           <Link
