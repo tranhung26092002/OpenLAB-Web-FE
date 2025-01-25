@@ -1,24 +1,26 @@
-# Bước 1: Sử dụng image Node.js chính thức để build ứng dụng
+# Sử dụng Node.js phiên bản 20 (Alpine nhẹ hơn)
 FROM node:20-alpine
 
 # Thiết lập thư mục làm việc trong container
 WORKDIR /usr/src/app
 
-# Sao chép các file cấu hình của dự án
-COPY package.json ./
-COPY package-lock.json ./
+# Sao chép file phụ thuộc trước (tối ưu cache Docker)
+COPY package*.json ./
 
 # Cài đặt các phụ thuộc
 RUN npm install --only=production
 
-# Sao chép toàn bộ mã nguồn vào container
+# Sao chép mã nguồn còn lại
 COPY . .
 
-# Chạy lệnh build
+# Chạy lệnh build (React)
 RUN npm run build
+
+# Cài đặt gói `serve` để phục vụ ứng dụng React
+RUN npm install -g serve
 
 # Mở cổng 3000 để phục vụ ứng dụng
 EXPOSE 3000
 
-# Khởi động node
-CMD ["npm", "start"]
+# Khởi động ứng dụng React (build đã được phục vụ)
+CMD ["serve", "-s", "build", "-l", "3000"]

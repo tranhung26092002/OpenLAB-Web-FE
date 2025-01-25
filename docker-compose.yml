@@ -3,12 +3,14 @@ services:
   react-app:
     build: .
     container_name: openlab-app
-    image: openlab-app:latest  # Đặt tên image duy nhất
+    image: openlab-app:latest
     ports:
-      - "3000:3000"  # Ánh xạ cổng 3000 của container sang cổng 3000 trên máy chủ
+      - "3000:3000"  # Ánh xạ cổng 3000
     networks:
       - app-network
-    restart: always 
+    environment:
+      NODE_ENV: production  # Chạy môi trường production
+    restart: always  # Tự động khởi động lại khi container dừng
 
 networks:
   app-network:
