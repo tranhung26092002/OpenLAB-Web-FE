@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'openlab-app:latest'  // Tên image Docker
-        CONTAINER_NAME = 'openlab-app'  // Tên container
+        DOCKER_IMAGE = 'nextjs:latest'  // Tên image Docker
+        CONTAINER_NAME = 'nextjs'  // Tên container
     }
 
     stages {
