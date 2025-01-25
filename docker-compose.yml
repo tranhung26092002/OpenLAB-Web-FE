@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  react-app:
+    build: .
+    container_name: openlab-app
+    image: openlab-app:latest  # Đặt tên image duy nhất
+    ports:
+      - "3000:3000"  # Ánh xạ cổng 3000 của container sang cổng 3000 trên máy chủ
+    networks:
+      - app-network
+    restart: always 
+
+networks:
+  app-network:
+    driver: bridge
